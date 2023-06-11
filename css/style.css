@@ -465,7 +465,15 @@
 
 #tbodyView {
     color: #000000;
-    /* font-size: 12px; */
+    font-size: 12px;
+}
+#tbodyView1 {
+    color: #000000;
+    font-size: 12px;
+}
+#tbodyView2 {
+    color: #000000;
+    font-size: 12px;
 }
 
 #myTableVivew {
@@ -619,4 +627,9 @@
 
 label {
     font-size: 12px;
+}
+.khmerTakteng{
+    font-size: 3.3vw;
+    font-family: takteng;
+
 }
