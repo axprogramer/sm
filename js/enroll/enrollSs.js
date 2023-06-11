@@ -373,8 +373,10 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
   var td6 = document.createElement('td');
   var td7 = document.createElement('td');
 
-
-
+  var ch = document.createElement('input');
+  ch.type = "checkbox";
+  ch.setAttribute('value','');
+  ch.value = `${myKh}`;
 
   stdList.push([name, id, sex, grade, year, myKh]);
   td0.innerHTML = ++studentN0;
@@ -384,6 +386,7 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
   td4.innerHTML = sex;
   td5.innerHTML = grade;
   td6.innerHTML = year;
+  td7.innerHTML = year;
 
 
   trow.appendChild(td0);
@@ -393,6 +396,7 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
   trow.appendChild(td4);
   trow.appendChild(td5);
   trow.appendChild(td6);
+  trow.appendChild(ch);
 
   td1.innerHTML = `<button type="button" class="button-6" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);

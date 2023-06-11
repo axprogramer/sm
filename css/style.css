@@ -296,15 +296,15 @@
 }
 
 .myTable {
-    font-size: 1.2vh;
+    font-size: 12px;
     text-align: center;
 }
 .myTable4 {
-    font-size: 1.2vh;
+    font-size: 12px;
     text-align: center;
 }
 .myTable3 {
-    font-size: 1vh;
+    font-size: 12px;
     text-align: center;
 }
 .myTable3 td:nth-child(5) {
@@ -318,7 +318,7 @@
 }
 
 .myTable2 {
-    font-size: 1.2vh;
+    font-size: 12px;
     text-align: center;
 }
 .title {
@@ -430,6 +430,11 @@
     padding: 10px;
     height: 33em;
 }
+.Div10 {
+    background-color: transparent;
+    padding: 10px;
+    height: 35em;
+}
 
 #myNovemberSaveT {
     background-color: white;
@@ -442,6 +447,7 @@
 
 #tbodyView {
     color: #000000;
+    font-size: 12px;
 }
 
 #myTableVivew {
@@ -542,4 +548,29 @@
 }
 #fullname{
     width: 60em;
+}
+.form-control{
+    font-size: 12px;
+}
+.form-select{
+    font-size: 12px;
+}
+.btn{
+    font-size: 12px;
+}
+.navbar-nav{
+    font-size: 12px;
+}
+.bi{
+    font-size: 12px;
+}
+.gen{
+    font-size: 12px;
+}
+.gen-center{
+    font-size: 12px;
+    text-align: center;
+}
+label{
+    font-size: 12px;
 }
