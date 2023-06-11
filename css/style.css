@@ -296,23 +296,28 @@
 }
 
 .myTable {
-    font-size: 12px;
+    font-size: 1.3vw;
     text-align: center;
 }
+
 .myTable4 {
-    font-size: 12px;
+    font-size: 1.3vw;
     text-align: center;
 }
+
 .myTable3 {
-    font-size: 12px;
+    font-size: 1.3vw;
     text-align: center;
 }
+
 .myTable3 td:nth-child(5) {
     width: 10em;
 }
+
 .myTable3 td:nth-child(6) {
     width: 10em;
 }
+
 .myTable3 td:nth-child(7) {
     width: 10em;
 }
@@ -321,6 +326,7 @@
     font-size: 12px;
     text-align: center;
 }
+
 .title {
     position: relative;
     border-collapse: collapse;
@@ -332,7 +338,9 @@
 #tbody3 td:nth-child(9) {
     color: red;
 }
-
+#tbody4{
+    font-size: 1.3vw;
+}
 #tbody4 td:nth-child(7) {
     color: red;
 }
@@ -345,6 +353,7 @@
     text-align: left;
     padding-left: 1em;
 }
+
 #tbody5 td:nth-child(8) {
     color: red;
 }
@@ -366,15 +375,19 @@
 #tbodyView td:nth-child(9) {
     color: red;
 }
+
 #tbodyView1 td:nth-child(7) {
     color: red;
 }
+
 #tbodyView1 td:nth-child(8) {
     color: red;
 }
+
 #tbodyView2 td:nth-child(8) {
     color: red;
 }
+
 #tbodyView2 td:nth-child(9) {
     color: red;
 }
@@ -383,10 +396,12 @@
     text-align: left;
     padding-left: 1em;
 }
+
 #tbodyView1 td:nth-child(2) {
     text-align: left;
     padding-left: 1em;
 }
+
 #tbodyView2 td:nth-child(2) {
     text-align: left;
     padding-left: 1em;
@@ -425,11 +440,13 @@
     padding: 10px;
     height: 24em;
 }
+
 .Div7 {
     background-color: transparent;
     padding: 10px;
     height: 33em;
 }
+
 .Div10 {
     background-color: transparent;
     padding: 10px;
@@ -440,6 +457,7 @@
     background-color: white;
     padding: 1em;
 }
+
 #myfirstSemeRSaveT2 {
     background-color: white;
     padding: 1em;
@@ -447,15 +465,17 @@
 
 #tbodyView {
     color: #000000;
-    font-size: 12px;
+    /* font-size: 12px; */
 }
 
 #myTableVivew {
     color: #000000;
 }
+
 #myTableVivew1 {
     color: #000000;
 }
+
 #myTableVivew2 {
     color: #000000;
 }
@@ -469,49 +489,61 @@
 .fit-me {
     width: 75vw;
 }
-#inMonth{
-        color: rgb(250, 198, 134);
+
+#inMonth {
+    color: rgb(250, 198, 134);
 }
-#ssTotal{
-        color: rgb(250, 198, 134);
+
+#ssTotal {
+    color: rgb(250, 198, 134);
 }
-#fsTotal{
-        color: rgb(250, 198, 134);
+
+#fsTotal {
+    color: rgb(250, 198, 134);
 }
-#PsTotal{
-        color: rgb(250, 198, 134);
+
+#PsTotal {
+    color: rgb(250, 198, 134);
 }
-#fasTotal{
-        color: rgb(250, 198, 134);
+
+#fasTotal {
+    color: rgb(250, 198, 134);
 }
-#showGradedata{
-        color: rgb(250, 198, 134);
+
+#showGradedata {
+    color: rgb(250, 198, 134);
 }
-#inGrade{
-        color: rgb(251, 30, 30);
+
+#inGrade {
+    color: rgb(251, 30, 30);
 }
-.newtable{
+
+.newtable {
     width: 100%;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     overflow-x: auto;
-
+    font-size: 1.5vw;
 }
-.newtable1{
+
+.newtable1 {
     width: 100%;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     overflow-x: auto;
+    font-size: 1.5vw;
 
 }
-.newtable3{
+
+.newtable3 {
     width: 100%;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     overflow-x: auto;
-
+    font-size: 1.5vw;
 }
-.newtable4{
+
+.newtable4 {
     width: 100%;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
@@ -520,57 +552,71 @@
     margin-top: 5px;
     margin-left: 10px;
     color: rgb(247, 27, 27);
+    font-size: 1.5vw;
 }
-.newtable td:nth-child(2){
+
+.newtable td:nth-child(2) {
     text-align: center;
+    width: 35em;
 
 }
-.newtable td:nth-child(1){
+
+.newtable td:nth-child(1) {
     text-align: left;
-    width: 15.8em;
+    width: 18em;
 
 }
-.newtable3 td:nth-child(1){
+
+.newtable3 td:nth-child(1) {
     text-align: center;
 
 }
-.newtable3 td:nth-child(2){
+
+.newtable3 td:nth-child(2) {
     text-align: center;
 
 }
-.newtable1 td:nth-child(2){
+
+.newtable1 td:nth-child(2) {
     text-align: right;
 
 }
-.newtable td:nth-child(3){
+
+.newtable td:nth-child(3) {
     text-align: center;
 
 }
-#fullname{
+
+#fullname {
     width: 60em;
 }
-.form-control{
+
+.form-control {
     font-size: 12px;
 }
-.form-select{
+
+.form-select {
     font-size: 12px;
 }
-.btn{
+
+.btn {
     font-size: 12px;
 }
-.navbar-nav{
+
+.navbar-nav {
     font-size: 12px;
 }
-.bi{
+
+
+.gen {
     font-size: 12px;
 }
-.gen{
-    font-size: 12px;
-}
-.gen-center{
+
+.gen-center {
     font-size: 12px;
     text-align: center;
 }
-label{
+
+label {
     font-size: 12px;
 }
