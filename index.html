@@ -144,7 +144,7 @@
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <h6 class="mb-4 gen"><i class="bi bi-file-person me-2"></i>Add New Students</h6>
+                                        <h6 class="mb-4 gen"><i class="bi bi-file-person me-2" style="color: red;"></i>Add New Students</h6>
                                     </td>
                                     <td style="text-align: right;">
                                         <h6 class="mb-4 gen">Grade: <span id="showGradedata"></span></h6>
@@ -297,28 +297,28 @@
                                             <td>
                                                 <div class="form-floating">
                                                     <button type="button" class="btn btn-success rounded-pill m-2"
-                                                        id="myGo" onclick="setData()">Go</button>
+                                                        id="myGo" onclick="setData()"><i class="bi bi-box-arrow-right me-2"></i>Go</button>
                                                 </div>
             
                                             </td>
                                             <td>
                                                 <div class="form-floating">
                                                     <button type="button" class="btn btn-success rounded-pill m-2"
-                                                        id="mySubmit" onclick="AddStd(event)">Add</button>
+                                                        id="mySubmit" onclick="AddStd(event)"><i class="bi bi-cloud-plus me-2"></i>Add</button>
                                                 </div>
             
                                             </td>
                                             <td>
                                                 <div class="form-floating">
                                                     <button type="button" class="btn btn-success rounded-pill m-2"
-                                                        id="myUpdate" onclick="UpStd(event)">Update</button>
+                                                        id="myUpdate" onclick="UpStd(event)"><i class="bi bi-cloud-upload me-2"></i>Update</button>
                                                 </div>
             
                                             </td>
                                             <td>
                                                 <div class="form-floating">
-                                                    <button type="button" class="btn btn-success rounded-pill m-2"
-                                                        id="myDelete" onclick="DelStd(event)">Delete</button>
+                                                    <button type="button" class="btn btn-danger rounded-pill m-2"
+                                                        id="myDelete" onclick="DelStd(event)"><i class="bi bi-trash-fill me-2" style="color: rgb(255, 255, 255);"></i>Delete</button>
                                                 </div>
             
                                             </td>
@@ -337,7 +337,7 @@
                         <h6 class="mb-4 gen-center">Student's Names</h6>
                         <div style="overflow-x: auto;font-family:Times New Roman,serif">
 
-                            <table class="myTable2 table table-bordered" id="myTable">
+                            <table class="myTable2 table table-bordered" id="myTable" style="color: rgb(209, 177, 136);">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>

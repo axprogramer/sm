@@ -58,7 +58,6 @@ function GetData2(datas) {
       myKh,
     });
   });
-
   students.sort(function (a, b) { return b.my2Sa - a.my2Sa });
 
   for (let i = 0; i < students.length; i++) {
@@ -95,7 +94,7 @@ function GetData2(datas) {
             <td>${student.name}</td>
             <td>${student.sex}</td>
             <td>${student.grade}</td>
-            <td>${student.my1Se}</td>
+            <td>${student.my2Se}</td>
             <td>${student.my2Sa}</td>
             <td>${student.Rank}</td>
             <td>${mention}</td>
@@ -167,7 +166,7 @@ function GetDataView(datas) {
             <td>${student.name}</td>
             <td>${student.sex}</td>
               <td>${student.grade}</td>
-              <td>${student.my1Se}</td>
+              <td>${student.my2Se}</td>
               <td>${student.my2Sa}</td>
               <td>${student.Rank}</td>
               <td>${mention}</td>
@@ -239,7 +238,7 @@ function GetDataSave2(datas) {
             <td>${student.myKh}</td>
             <td>${student.sex}</td>
               <td>${student.grade}</td>
-              <td>${student.my1Se}</td>
+              <td>${student.my2Se}</td>
               <td>${student.my2Sa}</td>
               <td>${student.Rank}</td>
               <td>${mention}</td>

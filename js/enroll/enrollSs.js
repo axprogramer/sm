@@ -352,6 +352,7 @@ function selectAllData() {
           var year = CurrentRecord.val().year;
           var myKh = CurrentRecord.val().myKh;
           addItemsToTable(name, id, sex, grade, year, myKh);
+          // getBox(name, id, sex, grade, year, myKh);
         }
       );
     });
@@ -361,6 +362,7 @@ var studentN0;
 
 var stdList = [];
 var stdListPop = [];
+var upStd = [];
 function addItemsToTable(name, id, sex, grade, year, myKh) {
   var tbody = document.getElementById('showInput5a');
   var trow = document.createElement('tr');
@@ -375,8 +377,11 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
 
   var ch = document.createElement('input');
   ch.type = "checkbox";
-  ch.setAttribute('value','');
-  ch.value = `${myKh}`;
+  ch.setAttribute('value', '');
+  ch.setAttribute('class', 'checkbox');
+  ch.value = `${name}`;
+  ch.id = `${name}`;
+  ch.name = "myCheck";
 
   stdList.push([name, id, sex, grade, year, myKh]);
   td0.innerHTML = ++studentN0;
@@ -400,7 +405,84 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
 
   td1.innerHTML = `<button type="button" class="button-6" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
+  getBox();
 }
+function getBox() {
+  // stdList.push([name, id, sex, grade, year, myKh]);
+  var table = document.getElementById("showInput5a"), rIndex;
+  for (var i = 0; i < table.rows.length; i++) {
+    table.rows[i].onclick = function (name, khname, sex, grade, year) {
+      rIndex = this.rowIndex;
+      // document.getElementById("getVv").value = name;
+      var name = this.cells[2].innerHTML;
+      var khname = this.cells[3].innerHTML;
+      var sex = this.cells[4].innerHTML;
+      var grade = this.cells[5].innerHTML;
+      var year = this.cells[6].innerHTML;
+      newData = [{
+        name: name,
+        id: khname,
+        sex: sex,
+        grade: grade,
+        year: year,
+        myKh: khname,
+      }];
+      console.log(newData);
+      newData1 = [];
+      var checkboxes = document.getElementsByName('myCheck'), rIndex;
+      for (var checkbox of checkboxes) {
+        checkbox.addEventListener('click', function (name, khname, sex, grade, year) {
+          rIndex = this.rowIndex;
+          var name = this.cells[2].innerHTML;
+          var khname = this.cells[3].innerHTML;
+          var sex = this.cells[4].innerHTML;
+          var grade = this.cells[5].innerHTML;
+          var year = this.cells[6].innerHTML;
+          newData = [{
+            name: name,
+            id: khname,
+            sex: sex,
+            grade: grade,
+            year: year,
+            myKh: khname,
+          }];
+
+          if (this.checked == true) {
+            let obj = JSON.stringify(newData);
+
+            localStorage.setItem("stdRol", obj);
+
+            newData.push([name, khname, sex, grade, year]);
+            // localStorage.setItem('listName', newData);
+            // list.innerHTML = text + listArray.join(' / ')
+          } else {
+            // localStorage.setItem('listName', newData);
+            newData = newData.filter(e => e !== this.value);
+            // list.innerHTML = text + listArray.join(' / ')
+          }
+        });
+      }
+
+
+
+    }
+  }
+  // let newData = {
+  //   name: name,
+  //   id: id,
+  //   sex: sex,
+  //   grade: grade,
+  //   year: year,
+  //   myKh: myKh,
+  // };
+  // console.log(showObj);
+  // let obj = JSON.stringify(newData);
+  // localStorage.setItem("stdRol", obj);
+  let showObj = JSON.parse(localStorage.getItem("stdRol"));
+
+  // var listArray = [];
+}
+
 
 var Mname = document.getElementById('myName');
 var Mkhname = document.getElementById('myKh');

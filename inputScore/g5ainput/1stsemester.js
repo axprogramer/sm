@@ -97,13 +97,8 @@ function Fillbox(index) {
     Mname.value = stdList[index][0];
     Mid.value = stdList[index][1];
     Msex.value = stdList[index][2];
-    MspeakingNov.value = stdList[index][3];
-    MwritingNov.value = stdList[index][4];
-    MlisteningNov.value = stdList[index][5];
-    MreadingNov.value = stdList[index][6];
-    MaverageNov.value = stdList[index][7];
-    firtSescore.value = stdList[index][8];
-    firstSeA.value = stdList[index][9];
+    firtSescore.value = stdList[index][3];
+    firstSeA.value = stdList[index][4];
     submit.style.display = 'none';
     update.style.display = 'inline-block';
     dele.style.display = 'none';
