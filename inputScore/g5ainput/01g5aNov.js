@@ -167,10 +167,11 @@ function AddStd(e) {
       rankNOv: MrankNov.value,
     },
   )
-  selectAllData();
+  // selectAllData();
   // window.location.reload();
 
 }
+
 function UpStd(e) {
   e.preventDefault();
 
@@ -186,7 +187,18 @@ function UpStd(e) {
       averageNov: MaverageNov.value,
     },
   )
-  selectAllData();
+  document.getElementById("showAlert").style.display = "block";
+  document.getElementById("info").innerText = `${Mid.value} has been updated!`;
+  const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+      return setTimeout(resolve, milliseconds);
+    });
+    document.getElementById("showAlert").style.display = "none";
+
+
+  };
+  sleep(2000);
+  // selectAllData();
   // window.location.reload();
 
 }
@@ -194,7 +206,7 @@ function UpStd(e) {
 function DelStd(e) {
   firebase.database().ref(`${db}/` + `${db3}/` + Mid.value).remove().then(
     function () {
-      selectAllData();
+      // selectAllData();
       // window.location.reload();
       e.preventDefault();
 
@@ -297,3 +309,28 @@ var table1 = document.getElementById("my1stsemetable");
 var table2 = document.getElementById("myTable2");
 table1.style.display = "none";
 table2.style.display = "none";
+
+// $(function () {
+//   $.bootstrapGrowl("This is a test.");
+
+//   setTimeout(function () {
+//     $.bootstrapGrowl("This is another test.", { type: 'success' });
+//   }, 1000);
+
+//   setTimeout(function () {
+//     $.bootstrapGrowl("Danger, Danger!", {
+//       type: 'danger',
+//       align: 'center',
+//       width: 'auto',
+//       allow_dismiss: false
+//     });
+//   }, 2000);
+
+//   setTimeout(function () {
+//     $.bootstrapGrowl("Danger, Danger!", {
+//       type: 'info',
+//       align: 'left',
+//       stackup_spacing: 30
+//     });
+//   }, 3000);
+// });

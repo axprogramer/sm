@@ -641,3 +641,9 @@ label {
 .form-select{
     color: rgb(155, 165, 254);
 }
+#showAlert{
+    align-items: center;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+}

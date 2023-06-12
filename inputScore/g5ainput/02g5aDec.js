@@ -179,7 +179,19 @@ function UpStd(e) {
       averageDec: MaverageNov.value,
     },
   )
-  selectAllData();
+  document.getElementById("showAlert").style.display = "block";
+  document.getElementById("info").innerText = `${Mid.value} has been updated!`;
+  const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+      return setTimeout(resolve, milliseconds);
+    });
+    document.getElementById("showAlert").style.display = "none";
+
+
+  };
+  sleep(2000);
+
+  // selectAllData();
   // window.location.reload();
 
 }

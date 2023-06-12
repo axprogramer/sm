@@ -299,3 +299,4 @@ document.getElementById("my1stsemetable").style.display = "none";
 document.getElementById("mySubmit").style.display = "none";
 document.getElementById("myUpdate").style.display = "none";
 document.getElementById("myDelete").style.display = "none";
+document.getElementById("showAlert").style.display = "none";

@@ -138,63 +138,66 @@
                 </div>
             </div> -->
             <div class="container-fluid pt-4 px-4 Div1">
+                <div class="alert alert-success" role="alert" id="showAlert">
+                    <i class="bi bi-check-circle-fill me-2"></i> <span id="info"></span> <span id="getname"></span>
+                </div>
                 <div class="row bg-secondary rounded align-items-center justify-content-center mx-0">
                     <div class="bg-secondary rounded h-100 p-4" style="overflow-x: auto;">
                         <div class="bg-secondary rounded pt-4">
                             <table class="table">
                                 <tr>
                                     <td>
-                                        <h6 class="mb-4 gen"><i class="bi bi-file-person me-2" style="color: red;"></i>Add New Students</h6>
+                                        <h6 class="mb-4 gen"><i class="bi bi-file-person me-2"
+                                                style="color: red;"></i>Add New Students</h6>
                                     </td>
                                     <td style="text-align: right;">
                                         <h6 class="mb-4 gen">Grade: <span id="showGradedata"></span></h6>
                                     </td>
                                 </tr>
                             </table>
-                            
-                                <tr>
-                                    <td>
-                                        <table class="table">
-                                            <tr>
-                                                <td>
-                                                    <div class="form-floating mb-3">
-                                                        <input type="text" class="form-control" id="myID"
-                                                            placeholder="ID">
-                                                        <label for="myID">ID</label>
-                                                    </div>
-            
-                                                </td>
-                                                <td>
-                                                    <div class="form-floating mb-3">
-                                                        <select class="form-select" id="mySex"
-                                                            aria-label="Floating label select example">
-                                                            <option selected>Sex</option>
-                                                            <option value="M">M</option>
-                                                            <option value="F">F</option>
-            
-                                                        </select>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="form-floating mb-3">
-                                                        <select class="form-select" id="myGrade"
-                                                            aria-label="Floating label select example">
-                                                            <option selected>Grade</option>
-                                                            <option value="K2">មត្តេយ្យកម្រិតទាប</option>
-                                                            <option value="K3">មត្តេយ្យកម្រិតខ្ពស់</option>
-                                                            <option value="1A">1A</option>
-                                                            <option value="1B">1B</option>
-                                                            <option value="2A">2A</option>
-                                                            <option value="2B">2B</option>
-                                                            <option value="3A">3A</option>
-                                                            <option value="3B">3B</option>
-                                                            <option value="4A">4A</option>
-                                                            <option value="4B">4B</option>
-                                                            <option value="5A">5A</option>
-                                                            <option value="5B">5B</option>
-                                                            <option value="6A">6A</option>
-                                                            <option value="6B">6B</option>
-                                                            <!-- <option value="7A">7A</option>
+
+                            <tr>
+                                <td>
+                                    <table class="table">
+                                        <tr>
+                                            <td>
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="myID" placeholder="ID">
+                                                    <label for="myID">ID</label>
+                                                </div>
+
+                                            </td>
+                                            <td>
+                                                <div class="form-floating mb-3">
+                                                    <select class="form-select" id="mySex"
+                                                        aria-label="Floating label select example">
+                                                        <option selected>Sex</option>
+                                                        <option value="M">M</option>
+                                                        <option value="F">F</option>
+
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating mb-3">
+                                                    <select class="form-select" id="myGrade"
+                                                        aria-label="Floating label select example">
+                                                        <option selected>Grade</option>
+                                                        <option value="K2">មត្តេយ្យកម្រិតទាប</option>
+                                                        <option value="K3">មត្តេយ្យកម្រិតខ្ពស់</option>
+                                                        <option value="1A">1A</option>
+                                                        <option value="1B">1B</option>
+                                                        <option value="2A">2A</option>
+                                                        <option value="2B">2B</option>
+                                                        <option value="3A">3A</option>
+                                                        <option value="3B">3B</option>
+                                                        <option value="4A">4A</option>
+                                                        <option value="4B">4B</option>
+                                                        <option value="5A">5A</option>
+                                                        <option value="5B">5B</option>
+                                                        <option value="6A">6A</option>
+                                                        <option value="6B">6B</option>
+                                                        <!-- <option value="7A">7A</option>
                                                             <option value="7B">7B</option>
                                                             <option value="8A">8A</option>
                                                             <option value="8B">8B</option>
@@ -207,29 +210,29 @@
                                                             <option value="12A">12A</option>
                                                             <option value="12B">12B</option>
             -->
-                                                        </select>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="form-floating mb-3">
-                                                        <select class="form-select" id="enrolGrade"
-                                                            aria-label="Floating label select example">
-                                                            <option selected>Chosse grade</option>
-                                                            <option value="K2">មត្តេយ្យកម្រិតទាប</option>
-                                                            <option value="K3">មត្តេយ្យកម្រិតខ្ពស់</option>
-                                                            <option value="1A">1A</option>
-                                                            <option value="1B">1B</option>
-                                                            <option value="2A">2A</option>
-                                                            <option value="2B">2B</option>
-                                                            <option value="3A">3A</option>
-                                                            <option value="3B">3B</option>
-                                                            <option value="4A">4A</option>
-                                                            <option value="4B">4B</option>
-                                                            <option value="5A">5A</option>
-                                                            <option value="5B">5B</option>
-                                                            <option value="6A">6A</option>
-                                                            <option value="6B">6B</option>
-                                                            <!-- <option value="7A">7A</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating mb-3">
+                                                    <select class="form-select" id="enrolGrade"
+                                                        aria-label="Floating label select example">
+                                                        <option selected>Chosse grade</option>
+                                                        <option value="K2">មត្តេយ្យកម្រិតទាប</option>
+                                                        <option value="K3">មត្តេយ្យកម្រិតខ្ពស់</option>
+                                                        <option value="1A">1A</option>
+                                                        <option value="1B">1B</option>
+                                                        <option value="2A">2A</option>
+                                                        <option value="2B">2B</option>
+                                                        <option value="3A">3A</option>
+                                                        <option value="3B">3B</option>
+                                                        <option value="4A">4A</option>
+                                                        <option value="4B">4B</option>
+                                                        <option value="5A">5A</option>
+                                                        <option value="5B">5B</option>
+                                                        <option value="6A">6A</option>
+                                                        <option value="6B">6B</option>
+                                                        <!-- <option value="7A">7A</option>
                                                             <option value="7B">7B</option>
                                                             <option value="8A">8A</option>
                                                             <option value="8B">8B</option>
@@ -241,90 +244,94 @@
                                                             <option value="11B">11B</option>
                                                             <option value="12A">12A</option>
                                                             <option value="12B">12B</option> -->
-            
-                                                        </select>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="form-floating mb-3" style="width: 6em;">
-                                                        <select class="form-select" id="academicYear"
-                                                            aria-label="Floating label select example">
-                                                            <option selected>Add Academic Year</option>
-                                                            <option value="2022-2023">2022-2023</option>
-                                                            <option value="2023-2024">2023-2024</option>
-                                                            <option value="2024-2025">2024-2025</option>
-                                                            <option value="2025-2026">2025-2026</option>
-                                                            <option value="2026-2027">2026-2027</option>
-                                                            <option value="2027-2028">2027-2028</option>
-                                                            <option value="2028-2029">2028-2029</option>
-                                                            <option value="2029-2030">2029-2030</option>
-                                                            <option value="2030-2031">2030-2031</option>
-                                                        </select>
-                                                    </div>
-                                                </td>
-            
-            
-                                            </tr>
-                                        </table>
-                                    </td>
-                                    <td>
-                                        <div class="form-floating mb-3">
-            
-                                            <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" id="myKh"
-                                                    placeholder="Khmer Name">
-                                                <label for="myKh">Khmer Name</label>
-                                            </div>
-            
-                                            <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" id="myName"
-                                                    placeholder="English Name">
-                                                <label for="myName">English Name</label>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                                <input type="text" class="form-control" id="myNewYear"
-                                                    placeholder="New Academic Year">
-                                                <label for="myNewYear">New Academic</label>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </table>
-            
-                                <div>
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <div class="form-floating">
-                                                    <button type="button" class="btn btn-success rounded-pill m-2"
-                                                        id="myGo" onclick="setData()"><i class="bi bi-box-arrow-right me-2"></i>Go</button>
+
+                                                    </select>
                                                 </div>
-            
                                             </td>
                                             <td>
-                                                <div class="form-floating">
-                                                    <button type="button" class="btn btn-success rounded-pill m-2"
-                                                        id="mySubmit" onclick="AddStd(event)"><i class="bi bi-cloud-plus me-2"></i>Add</button>
+                                                <div class="form-floating mb-3" style="width: 6em;">
+                                                    <select class="form-select" id="academicYear"
+                                                        aria-label="Floating label select example">
+                                                        <option selected>Add Academic Year</option>
+                                                        <option value="2022-2023">2022-2023</option>
+                                                        <option value="2023-2024">2023-2024</option>
+                                                        <option value="2024-2025">2024-2025</option>
+                                                        <option value="2025-2026">2025-2026</option>
+                                                        <option value="2026-2027">2026-2027</option>
+                                                        <option value="2027-2028">2027-2028</option>
+                                                        <option value="2028-2029">2028-2029</option>
+                                                        <option value="2029-2030">2029-2030</option>
+                                                        <option value="2030-2031">2030-2031</option>
+                                                    </select>
                                                 </div>
-            
                                             </td>
-                                            <td>
-                                                <div class="form-floating">
-                                                    <button type="button" class="btn btn-success rounded-pill m-2"
-                                                        id="myUpdate" onclick="UpStd(event)"><i class="bi bi-cloud-upload me-2"></i>Update</button>
-                                                </div>
-            
-                                            </td>
-                                            <td>
-                                                <div class="form-floating">
-                                                    <button type="button" class="btn btn-danger rounded-pill m-2"
-                                                        id="myDelete" onclick="DelStd(event)"><i class="bi bi-trash-fill me-2" style="color: rgb(255, 255, 255);"></i>Delete</button>
-                                                </div>
-            
-                                            </td>
+
+
                                         </tr>
                                     </table>
-                                </div>
+                                </td>
+                                <td>
+                                    <div class="form-floating mb-3">
+
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="myKh" placeholder="Khmer Name">
+                                            <label for="myKh">Khmer Name</label>
+                                        </div>
+
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="myName"
+                                                placeholder="English Name">
+                                            <label for="myName">English Name</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="myNewYear"
+                                                placeholder="New Academic Year">
+                                            <label for="myNewYear">New Academic</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </table>
+
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="form-floating">
+                                                <button type="button" class="btn btn-success rounded-pill m-2" id="myGo"
+                                                    onclick="setData()"><i
+                                                        class="bi bi-box-arrow-right me-2"></i>Go</button>
+                                            </div>
+
+                                        </td>
+                                        <td>
+                                            <div class="form-floating">
+                                                <button type="button" class="btn btn-success rounded-pill m-2"
+                                                    id="mySubmit" onclick="AddStd(event)"><i
+                                                        class="bi bi-cloud-plus me-2"></i>Add</button>
+                                            </div>
+
+                                        </td>
+                                        <td>
+                                            <div class="form-floating">
+                                                <button type="button" class="btn btn-success rounded-pill m-2"
+                                                    id="myUpdate" onclick="UpStd(event)"><i
+                                                        class="bi bi-cloud-upload me-2"></i>Update</button>
+                                            </div>
+
+                                        </td>
+                                        <td>
+                                            <div class="form-floating">
+                                                <button type="button" class="btn btn-danger rounded-pill m-2"
+                                                    id="myDelete" onclick="DelStd(event)"><i
+                                                        class="bi bi-trash-fill me-2"
+                                                        style="color: rgb(255, 255, 255);"></i>Delete</button>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -337,7 +344,8 @@
                         <h6 class="mb-4 gen-center">Student's Names</h6>
                         <div style="overflow-x: auto;font-family:Times New Roman,serif">
 
-                            <table class="myTable2 table table-bordered" id="myTable" style="color: rgb(209, 177, 136);">
+                            <table class="myTable2 table table-bordered" id="myTable"
+                                style="color: rgb(209, 177, 136);">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>

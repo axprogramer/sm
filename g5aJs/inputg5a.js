@@ -440,6 +440,18 @@ function AddStd(e) {
       year: Myear.value,
     },
   )
+  document.getElementById("showAlert").style.display = "block";
+  document.getElementById("info").innerText = `${Mid.value} has been added!`;
+  const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+      return setTimeout(resolve, milliseconds);
+    });
+    document.getElementById("showAlert").style.display = "none";
+
+
+  };
+  sleep(2000);
+
   selectAllData();
   // window.location.reload();
 
@@ -457,6 +469,18 @@ function UpStd(e) {
       year: Myear.value,
     },
   )
+  document.getElementById("showAlert").style.display = "block";
+  document.getElementById("info").innerText = `${Mid.value} has been updated!`;
+  const sleep = async (milliseconds) => {
+    await new Promise(resolve => {
+      return setTimeout(resolve, milliseconds);
+    });
+    document.getElementById("showAlert").style.display = "none";
+
+
+  };
+  sleep(2000);
+
   selectAllData();
   // window.location.reload();
 
@@ -465,6 +489,18 @@ function UpStd(e) {
 function DelStd(e) {
   firebase.database().ref(`${db}/` + `${db3}/` + Mid.value).remove().then(
     function () {
+      document.getElementById("showAlert").style.display = "block";
+      document.getElementById("info").innerText = `${Mid.value} has been deleted!`;
+      const sleep = async (milliseconds) => {
+        await new Promise(resolve => {
+          return setTimeout(resolve, milliseconds);
+        });
+        document.getElementById("showAlert").style.display = "none";
+
+
+      };
+      sleep(2000);
+
       selectAllData();
       // window.location.reload();
       e.preventDefault();
@@ -477,4 +513,5 @@ function DelStdAll() {
 
   // window.location.reload();
 }
+document.getElementById("showAlert").style.display = "none";
 

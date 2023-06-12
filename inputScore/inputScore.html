@@ -33,6 +33,7 @@
 </head>
 
 <body>
+    
     <div style="display: none;">
         <p id="dataBase"><span id="mydataBase"></span></p>
         <p id="dataBase2"><span id="mydataBase2"></span></p>
@@ -111,7 +112,7 @@
                 <a href="#" class="sidebar-toggler flex-shrink-0">
                     <i class="fa fa-bars"></i>
                 </a>
-
+                
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -127,7 +128,11 @@
 
             <!-- Blank Start -->
 
+            
             <div class="container-fluid pt-4 px-4 Div1">
+                <div class="alert alert-success" role="alert" id="showAlert">
+                    <i class="bi bi-check-circle-fill me-2"></i> <span id="info"></span> <span id="getname"></span>
+                </div>
                 <div class="row bg-secondary rounded align-items-center justify-content-center mx-0">
                     <div>
                         <div class="bg-secondary rounded h-100 p-4">
@@ -406,6 +411,9 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+    <script src="../js/jquery.bootstrap-growl.js"></script>
+    <!-- <script src="../js/jquery.bootstrap-growl.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/caculate.js"></script>
     <!-- <script src="./js/firebaseShow.js"></script> -->
