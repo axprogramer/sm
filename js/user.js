@@ -14,14 +14,9 @@ function user(){
     document.getElementById("myImg").src = img;
     document.getElementById("myImg2").src = img;
     document.getElementById("myTitle").innerHTML = title;
-    document.getElementById('gradeName3').innerHTML = g5a;
-    document.getElementById('gradeName4').innerHTML = g5b;
-    document.getElementById('gradeName5').innerHTML = g5b;
-    document.getElementById('gradeName6').innerHTML = g5b;
     document.getElementById('companyName').innerHTML = name;
     document.getElementById('year').innerHTML = year;
     document.getElementById('mydataBase').innerHTML = db;
-    document.getElementById('iconPage').href = img;
 
     
 }

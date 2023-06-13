@@ -407,80 +407,121 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
   tbody.appendChild(trow);
   getBox();
 }
+var io = JSON.parse(localStorage.getItem("students"));
+
+function cook(e) {
+  e.preventDefault();
+  for (i = 0; i < io.length; i++) {
+    var enname = io[i].name;
+    var idM = io[i].khname;
+    var sex = io[i].sex;
+    var grade = io[i].grade;
+    var year = io[i].year;
+    var khname = io[i].khname;
+    firebase.database().ref("Chosse grade/" + idM).set(
+      {
+        name: enname,
+        id: idM,
+        sex: sex,
+        grade: grade,
+        myKh: khname,
+        year: year,
+      },
+    )
+
+  }
+
+
+  selectAllData();
+
+  // const sleep = async (milliseconds) => {
+  //   await new Promise(resolve => {
+  //     return setTimeout(resolve, milliseconds);
+  //   });
+  //   firebase.database().ref(`${db}/` + Mid.value).remove().then(
+  //     function () {
+  //       // window.location.reload();
+  //       e.preventDefault();
+
+  //     }
+  //   )
+  // };
+  // sleep(1000);
+  // // window.location.reload();
+
+}
+console.log(io);
 function getBox() {
-  // stdList.push([name, id, sex, grade, year, myKh]);
   var table = document.getElementById("showInput5a"), rIndex;
   for (var i = 0; i < table.rows.length; i++) {
     table.rows[i].onclick = function (name, khname, sex, grade, year) {
       rIndex = this.rowIndex;
-      // document.getElementById("getVv").value = name;
       var name = this.cells[2].innerHTML;
       var khname = this.cells[3].innerHTML;
       var sex = this.cells[4].innerHTML;
       var grade = this.cells[5].innerHTML;
       var year = this.cells[6].innerHTML;
-      newData = [{
-        name: name,
-        id: khname,
-        sex: sex,
-        grade: grade,
-        year: year,
-        myKh: khname,
-      }];
-      console.log(newData);
-      newData1 = [];
-      var checkboxes = document.getElementsByName('myCheck'), rIndex;
-      for (var checkbox of checkboxes) {
-        checkbox.addEventListener('click', function (name, khname, sex, grade, year) {
-          rIndex = this.rowIndex;
-          var name = this.cells[2].innerHTML;
-          var khname = this.cells[3].innerHTML;
-          var sex = this.cells[4].innerHTML;
-          var grade = this.cells[5].innerHTML;
-          var year = this.cells[6].innerHTML;
-          newData = [{
-            name: name,
-            id: khname,
-            sex: sex,
-            grade: grade,
-            year: year,
-            myKh: khname,
-          }];
+      const students = JSON.parse(localStorage.getItem("students")) || [];
 
-          if (this.checked == true) {
-            let obj = JSON.stringify(newData);
-
-            localStorage.setItem("stdRol", obj);
-
-            newData.push([name, khname, sex, grade, year]);
-            // localStorage.setItem('listName', newData);
-            // list.innerHTML = text + listArray.join(' / ')
-          } else {
-            // localStorage.setItem('listName', newData);
-            newData = newData.filter(e => e !== this.value);
-            // list.innerHTML = text + listArray.join(' / ')
-          }
+      const addStudent = (name, khname, sex, grade, year) => {
+        students.push({
+          name,
+          khname,
+          sex,
+          grade,
+          year,
         });
-      }
+
+        localStorage.setItem("students", JSON.stringify(students));
+
+        return { name, khname, sex, grade, year };
+      };
+
+      const newStudent = addStudent(
+        name,
+        khname,
+        sex,
+        grade,
+        year,
+      );
+
+
+      // newData = {
+      //   name: name,
+      //   id: khname,
+      //   sex: sex,
+      //   grade: grade,
+      //   year: year,
+      //   myKh: khname,
+      // };
+      // if (localStorage.getItem('student' == null)) {
+      //   localStorage.setItem('student', '[]');
+      // }
+      // var cook = newData;
+      // var old_data = JSON.parse(localStorage.getItem('student'));
+      // old_data.push(cook);
+
+      // localStorage.setItem('student', JSON.stringify(old_data));
+
+      // old_data = [];
 
 
 
     }
   }
-  // let newData = {
-  //   name: name,
-  //   id: id,
-  //   sex: sex,
-  //   grade: grade,
-  //   year: year,
-  //   myKh: myKh,
-  // };
-  // console.log(showObj);
-  // let obj = JSON.stringify(newData);
-  // localStorage.setItem("stdRol", obj);
-  let showObj = JSON.parse(localStorage.getItem("stdRol"));
+  // var checkboxes = document.querySelectorAll('.checkbox');
+  // for (var checkbox of checkboxes) {
 
-  // var listArray = [];
+  //   checkbox.addEventListener('click', function () {
+
+  //     if (this.checked == true) {
+  //       console.log(idM);
+  //     } else {
+  //       console.log('False');
+  //       // data1 = data1.filter(e => e !== this.value);
+  //     }
+  //   });
+  // }
 }
 
 
@@ -557,22 +598,8 @@ function AddStd(e) {
   )
   selectAllData();
 
-  // const sleep = async (milliseconds) => {
-  //   await new Promise(resolve => {
-  //     return setTimeout(resolve, milliseconds);
-  //   });
-  //   firebase.database().ref(`${db}/` + Mid.value).remove().then(
-  //     function () {
-  //       // window.location.reload();
-  //       e.preventDefault();
-
-  //     }
-  //   )
-  // };
-  // sleep(1000);
-  // // window.location.reload();
-
 }
+
 function UpStdgade(e) {
   e.preventDefault();
 
