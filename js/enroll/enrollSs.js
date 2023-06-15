@@ -153,6 +153,7 @@ var db3 = localStorage.getItem("myData3");
 var db4 = localStorage.getItem("myData9");
 console.log(db2);
 console.log(db4);
+console.log(db3);
 function showGrade() {
   var getdb = localStorage.getItem("myData2");
   var gg1 = "K2";
@@ -352,7 +353,11 @@ function selectAllData() {
           var year = CurrentRecord.val().year;
           var myKh = CurrentRecord.val().myKh;
           addItemsToTable(name, id, sex, grade, year, myKh);
-          // getBox(name, id, sex, grade, year, myKh);
+          showAuto(name, id, sex, grade, year, myKh);
+          b = 1;
+          document.getElementById('showNNN').value = b;
+          cccSS();
+
         }
       );
     });
@@ -377,12 +382,12 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
 
   var ch = document.createElement('input');
   ch.type = "checkbox";
-  ch.setAttribute('value', '');
-  ch.setAttribute('class', 'checkbox');
-  ch.value = `${name}`;
-  ch.id = `${name}`;
-  ch.name = "myCheck";
-
+  ch.name = "mCheck";
+  ch.setAttribute('class', 'chk');
+  td2.setAttribute('class', 'Enname');
+  td3.setAttribute('class', 'Khname');
+  td4.setAttribute('class', 'mySex');
+  td5.setAttribute('class', 'myGrade');
   stdList.push([name, id, sex, grade, year, myKh]);
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
@@ -390,9 +395,6 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
   td3.innerHTML = myKh;
   td4.innerHTML = sex;
   td5.innerHTML = grade;
-  td6.innerHTML = year;
-  td7.innerHTML = year;
-
 
   trow.appendChild(td0);
   trow.appendChild(td1);
@@ -401,24 +403,23 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
   trow.appendChild(td4);
   trow.appendChild(td5);
   trow.appendChild(td6);
-  trow.appendChild(ch);
+  td6.appendChild(ch);
 
-  td1.innerHTML = `<button type="button" class="button-6" onclick="Fillbox(${studentN0})">${myKh}</button>`;
+  td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
-  getBox();
+
 }
 var io = JSON.parse(localStorage.getItem("students"));
-
-function cook(e) {
-  e.preventDefault();
-  for (i = 0; i < io.length; i++) {
-    var enname = io[i].name;
-    var idM = io[i].khname;
-    var sex = io[i].sex;
-    var grade = io[i].grade;
-    var year = io[i].year;
-    var khname = io[i].khname;
-    firebase.database().ref("Chosse grade/" + idM).set(
+function cook() {
+  // e.preventDefault();
+  for (i = 0; i < aData.length; i++) {
+    var enname = aData[i].myenname;
+    var idM = aData[i].id;
+    var sex = aData[i].mySex;
+    var grade = aData[i].mygrade;
+    var khname = aData[i].mykhname;
+    console.log(enname);
+    firebase.database().ref(`${db2}/` + `${db4}/` + idM).set(
       {
         name: enname,
         id: idM,
@@ -433,97 +434,61 @@ function cook(e) {
 
 
   selectAllData();
-
-  // const sleep = async (milliseconds) => {
-  //   await new Promise(resolve => {
-  //     return setTimeout(resolve, milliseconds);
-  //   });
-  //   firebase.database().ref(`${db}/` + Mid.value).remove().then(
-  //     function () {
-  //       // window.location.reload();
-  //       e.preventDefault();
-
-  //     }
-  //   )
-  // };
-  // sleep(1000);
-  // // window.location.reload();
-
 }
-console.log(io);
-function getBox() {
-  var table = document.getElementById("showInput5a"), rIndex;
-  for (var i = 0; i < table.rows.length; i++) {
-    table.rows[i].onclick = function (name, khname, sex, grade, year) {
-      rIndex = this.rowIndex;
-      var name = this.cells[2].innerHTML;
-      var khname = this.cells[3].innerHTML;
-      var sex = this.cells[4].innerHTML;
-      var grade = this.cells[5].innerHTML;
-      var year = this.cells[6].innerHTML;
-      const students = JSON.parse(localStorage.getItem("students")) || [];
-
-      const addStudent = (name, khname, sex, grade, year) => {
-        students.push({
-          name,
-          khname,
-          sex,
-          grade,
-          year,
-        });
-
-        localStorage.setItem("students", JSON.stringify(students));
-
-        return { name, khname, sex, grade, year };
-      };
-
-      const newStudent = addStudent(
-        name,
-        khname,
-        sex,
-        grade,
-        year,
-      );
-
-
-      // newData = {
-      //   name: name,
-      //   id: khname,
-      //   sex: sex,
-      //   grade: grade,
-      //   year: year,
-      //   myKh: khname,
-      // };
-      // if (localStorage.getItem('student' == null)) {
-      //   localStorage.setItem('student', '[]');
-      // }
-      // var cook = newData;
-      // var old_data = JSON.parse(localStorage.getItem('student'));
-      // old_data.push(cook);
-
-      // localStorage.setItem('student', JSON.stringify(old_data));
-
-      // old_data = [];
-
-
-
-    }
+function toggle(source) {
+  checkboxes = document.getElementsByName('mCheck');
+  for (var i = 0, n = checkboxes.length; i < n; i++) {
+    checkboxes[i].checked = source.checked;
   }
-  // var checkboxes = document.querySelectorAll('.checkbox');
-  // for (var checkbox of checkboxes) {
-
-  //   checkbox.addEventListener('click', function () {
-
-  //     if (this.checked == true) {
-  //       console.log(idM);
-  //     } else {
-  //       console.log('False');
-  //       // data1 = data1.filter(e => e !== this.value);
-  //     }
-  //   });
-  // }
 }
+var aData = [];
+$(document).ready(function () {
 
+  $("#btnRows").on('click', function () {
+
+    $("#myTable tbody tr").each(function () {
+      var currentRow = $(this);
+      var col1 = currentRow.find("td:eq(3)").html();
+      var col2 = currentRow.find("td:eq(2)").html();
+      var col3 = currentRow.find("td:eq(3)").html();
+      var col4 = currentRow.find("td:eq(4)").html();
+      var col5 = currentRow.find("td:eq(5)").html();
+      var obj = {};
+      obj.id = col1;
+      obj.myenname = col2;
+      obj.mykhname = col3;
+      obj.mySex = col4;
+      obj.mygrade = db2;
+      if (currentRow.find(".chk").is(":checked")) {
+        aData.push(obj);
+        const sleep = async (milliseconds) => {
+          await new Promise(resolve => {
+            return setTimeout(resolve, milliseconds);
+          });
+          cook();
+          document.getElementById("showAlert").style.display = "block";
+          document.getElementsByClassName("showAlert").style.display = "block";
+          document.getElementById("info").innerText = `All students have been upgraded!`;
+          const sleep = async (milliseconds) => {
+            await new Promise(resolve => {
+              return setTimeout(resolve, milliseconds);
+            });
+            // document.getElementById("showAlert").style.display = "none";
+            window.location.reload();
+          };
+          sleep(2000);
+
+        };
+        sleep(1000);
+
+      }
+    });
+
+    console.log(aData);
+
+  });
+
+});
 
 var Mname = document.getElementById('myName');
 var Mkhname = document.getElementById('myKh');
@@ -541,14 +506,67 @@ var dele = document.getElementById("myDelete");
 submit.style.display = 'inline-block';
 update.style.display = 'none';
 dele.style.display = 'none';
+//Show data input auto
+function showAuto(name, id, sex, grade, year, myKh){
+  Mname.value = stdList[0][0];
+  Mid.value = stdList[0][1];
+  Msex.value = stdList[0][2];
+  Mgrade.value = stdList[0][3];
+  Myear.value = stdList[0][4];
+  Mkhname.value = stdList[0][5];
 
-function Fillbox(index) {
-  if (index == null) {
-    submit.style.display = 'inline-block';
-    update.style.display = 'none';
-    dele.style.display = 'none';
+}
+//Count students in table row
+function cccSS(){
+  var ss = document.getElementById("myTable");
+  var tbodyRowCount = ss.tBodies[0].rows.length;
+  // console.log(tbodyRowCount);
+  return tbodyRowCount;
+}
+// Next data show in input
+let b = 0;
+function nextBtn(){
+  var stdNum = cccSS();
+  if (b < stdNum){
+    b++;
+    document.getElementById('showNNN').value = b;
+
   }
-  else {
+  var oo = b;
+  // console.log(b);
+  --oo;
+  Mname.value = stdList[oo][0];
+  Mid.value = stdList[oo][1];
+  Msex.value = stdList[oo][2];
+  Mgrade.value = stdList[oo][3];
+  Myear.value = stdList[oo][4];
+  Mkhname.value = stdList[oo][5];
+
+}
+function goBack(){
+  if (b > 1) {
+    b--;
+    document.getElementById('showNNN').value = b;
+  }
+  var oo = b;
+  // console.log(oo);
+  --oo;
+  Mname.value = stdList[oo][0];
+  Mid.value = stdList[oo][1];
+  Msex.value = stdList[oo][2];
+  Mgrade.value = stdList[oo][3];
+  Myear.value = stdList[oo][4];
+  Mkhname.value = stdList[oo][5];
+}
+function Fillbox(index) {
+  b = index;
+  document.getElementById('showNNN').value = index;
+  // if (index == null) {
+  //   submit.style.display = 'inline-block';
+  //   update.style.display = 'none';
+  //   dele.style.display = 'none';
+  // }
+  // else {
     --index;
     Mname.value = stdList[index][0];
     Mid.value = stdList[index][1];
@@ -559,10 +577,10 @@ function Fillbox(index) {
 
     submit.style.display = 'none';
     update.style.display = 'inline-block';
-    dele.style.display = 'none';
+    dele.style.display = 'inline-block';
 
 
-  }
+  // }
 }
 function NewBox(e) {
   e.preventDefault();
@@ -586,7 +604,7 @@ function NewBox(e) {
 
 function AddStd(e) {
   e.preventDefault();
-  firebase.database().ref(`${db2}/` + `${db4}/` + Mid.value).set(
+  firebase.database().ref(`${db2}/` + `${db3}/` + Mid.value).set(
     {
       name: Mname.value,
       id: Mid.value,
@@ -633,4 +651,5 @@ function DelStdAll() {
 
   // window.location.reload();
 }
+document.getElementById("showAlert").style.display = "none";
 
