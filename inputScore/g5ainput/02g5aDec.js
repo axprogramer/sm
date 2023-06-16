@@ -37,6 +37,11 @@ function selectAllData() {
           var myKh = CurrentRecord.val().myKh;
           addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
             readingDec, averageDec, myKh);
+          showAuto();
+          b = 1;
+          document.getElementById('showNNN').value = b;
+          cccSS();
+
         }
       );
     });
@@ -82,7 +87,7 @@ function addItemsToTable(name, id, sex, speakingDec, writingDec, listeningDec,
   trow.appendChild(td6);
   trow.appendChild(td7);
 
-  td1.innerHTML = `<button type="button" class="button-6" onclick="Fillbox(${studentN0})">${myKh}</button>`;
+  td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
 }
 
@@ -99,30 +104,116 @@ var submit = document.getElementById("mySubmit");
 var update = document.getElementById("myUpdate");
 var dele = document.getElementById("myDelete");
 
+//Show data input auto
+function showAuto(name, id, sex, grade, year, myKh) {
+  Mname.value = stdList[0][0];
+  Mid.value = stdList[0][1];
+  Msex.value = stdList[0][2];
+  MspeakingNov.value = stdList[0][3];
+  MwritingNov.value = stdList[0][4];
+  MlisteningNov.value = stdList[0][5];
+  MreadingNov.value = stdList[0][6];
+  MaverageNov.value = stdList[0][7];
+  update.style.display = 'inline-block';
+  dele.style.display = 'inline-block';
 
-function Fillbox(index) {
-  if (index == null) {
-    submit.style.display = 'none';
-    update.style.display = 'none';
-    dele.style.display = 'none';
-  }
-  else {
-    --index;
-    Mname.value = stdList[index][0];
-    Mid.value = stdList[index][1];
-    Msex.value = stdList[index][2];
-    MspeakingNov.value = stdList[index][3];
-    MwritingNov.value = stdList[index][4];
-    MlisteningNov.value = stdList[index][5];
-    MreadingNov.value = stdList[index][6];
-    MaverageNov.value = stdList[index][7];
-    submit.style.display = 'none';
-    update.style.display = 'inline-block';
-    dele.style.display = 'none';
-
-
-  }
 }
+//Count students in table row
+function cccSS() {
+  var ss = document.getElementById("myTable");
+  var tbodyRowCount = ss.tBodies[0].rows.length;
+  // console.log(tbodyRowCount);
+  return tbodyRowCount;
+}
+// Next data show in input
+let b = 0;
+function nextBtn() {
+  var stdNum = cccSS();
+  if (b < stdNum) {
+    b++;
+    document.getElementById('showNNN').value = b;
+
+  }
+  var oo = b;
+  // console.log(b);
+  --oo;
+  Mname.value = stdList[oo][0];
+  Mid.value = stdList[oo][1];
+  Msex.value = stdList[oo][2];
+  MspeakingNov.value = stdList[oo][3];
+  MwritingNov.value = stdList[oo][4];
+  MlisteningNov.value = stdList[oo][5];
+  MreadingNov.value = stdList[oo][6];
+  MaverageNov.value = stdList[oo][7];
+
+}
+function goBack() {
+  if (b > 1) {
+    b--;
+    document.getElementById('showNNN').value = b;
+  }
+  var oo = b;
+  // console.log(oo);
+  --oo;
+  Mname.value = stdList[oo][0];
+  Mid.value = stdList[oo][1];
+  Msex.value = stdList[oo][2];
+  MspeakingNov.value = stdList[oo][3];
+  MwritingNov.value = stdList[oo][4];
+  MlisteningNov.value = stdList[oo][5];
+  MreadingNov.value = stdList[oo][6];
+  MaverageNov.value = stdList[oo][7];
+}
+function Fillbox(index) {
+  b = index;
+  document.getElementById('showNNN').value = index;
+  // if (index == null) {
+  //   submit.style.display = 'inline-block';
+  //   update.style.display = 'none';
+  //   dele.style.display = 'none';
+  // }
+  // else {
+  --index;
+  Mname.value = stdList[index][0];
+  Mid.value = stdList[index][1];
+  Msex.value = stdList[index][2];
+  MspeakingNov.value = stdList[index][3];
+  MwritingNov.value = stdList[index][4];
+  MlisteningNov.value = stdList[index][5];
+  MreadingNov.value = stdList[index][6];
+  MaverageNov.value = stdList[index][7];
+
+  submit.style.display = 'none';
+  update.style.display = 'inline-block';
+  dele.style.display = 'inline-block';
+
+
+  // }
+}
+
+// function Fillbox(index) {
+//   if (index == null) {
+//     submit.style.display = 'none';
+//     update.style.display = 'none';
+//     dele.style.display = 'none';
+//   }
+//   else {
+//     --index;
+//     Mname.value = stdList[index][0];
+//     Mid.value = stdList[index][1];
+//     Msex.value = stdList[index][2];
+//     MspeakingNov.value = stdList[index][3];
+//     MwritingNov.value = stdList[index][4];
+//     MlisteningNov.value = stdList[index][5];
+//     MreadingNov.value = stdList[index][6];
+//     MaverageNov.value = stdList[index][7];
+//     submit.style.display = 'none';
+//     update.style.display = 'inline-block';
+//     dele.style.display = 'none';
+
+
+//   }
+// }
 function NewBox() {
   submit.style.display = 'none';
   update.style.display = 'none';
@@ -186,10 +277,10 @@ function UpStd(e) {
       return setTimeout(resolve, milliseconds);
     });
     document.getElementById("showAlert").style.display = "none";
-
+    nextBtn();
 
   };
-  sleep(2000);
+  sleep(1000);
 
   // selectAllData();
   // window.location.reload();
@@ -268,7 +359,7 @@ function divid2() {
   total1 = parseFloat(total1).toFixed(2);
   document.getElementById("myAnov").value = total1;
 
-  console.log(get2);
+  // console.log(get2);
   var num9 = parseFloat(document.getElementById('myScorenov').value);
   var score1 = num9;
   var get4 = score1 / 4;

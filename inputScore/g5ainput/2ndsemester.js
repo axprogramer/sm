@@ -32,6 +32,10 @@ function selectAllData() {
           var my2Sa = CurrentRecord.val().my2Sa;
           var myKh = CurrentRecord.val().myKh;
           addItemsToTable(name, id, sex, my2Se, my2Sa, myKh);
+          showAuto();
+          b = 1;
+          document.getElementById('showNNN').value = b;
+          cccSS();
         }
       );
     });
@@ -66,7 +70,7 @@ function addItemsToTable(name, id, sex, my2Se, my2Sa, myKh) {
   trow.appendChild(td3);
   trow.appendChild(td4);
 
-  td1.innerHTML = `<button type="button" class="button-6" onclick="Fillbox(${studentN0})">${myKh}</button>`;
+  td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
 }
 
@@ -85,27 +89,100 @@ var submit = document.getElementById("mySubmit");
 var update = document.getElementById("myUpdate");
 var dele = document.getElementById("myDelete");
 
+//Show data input auto
+function showAuto() {
+  Mname.value = stdList[0][0];
+  Mid.value = stdList[0][1];
+  Msex.value = stdList[0][2];
+  firtSescore.value = stdList[0][3];
+  firstSeA.value = stdList[0][4];
+  update.style.display = 'inline-block';
+  dele.style.display = 'inline-block';
 
-function Fillbox(index) {
-  if (index == null) {
-    submit.style.display = 'none';
-    update.style.display = 'none';
-    dele.style.display = 'none';
-  }
-  else {
-    --index;
-    Mname.value = stdList[index][0];
-    Mid.value = stdList[index][1];
-    Msex.value = stdList[index][2];
-    firtSescore.value = stdList[index][3];
-    firstSeA.value = stdList[index][4];
-    submit.style.display = 'none';
-    update.style.display = 'inline-block';
-    dele.style.display = 'none';
-
-
-  }
 }
+//Count students in table row
+function cccSS() {
+  var ss = document.getElementById("myTable2");
+  var tbodyRowCount = ss.tBodies[0].rows.length;
+  // console.log(tbodyRowCount);
+  return tbodyRowCount;
+}
+// Next data show in input
+let b = 0;
+function nextBtn() {
+  var stdNum = cccSS();
+  if (b < stdNum) {
+    b++;
+    document.getElementById('showNNN').value = b;
+
+  }
+  var oo = b;
+  // console.log(b);
+  --oo;
+  Mname.value = stdList[oo][0];
+  Mid.value = stdList[oo][1];
+  Msex.value = stdList[oo][2];
+  firtSescore.value = stdList[oo][3];
+  firstSeA.value = stdList[oo][4];
+
+}
+function goBack() {
+  if (b > 1) {
+    b--;
+    document.getElementById('showNNN').value = b;
+  }
+  var oo = b;
+  // console.log(oo);
+  --oo;
+  Mname.value = stdList[oo][0];
+  Mid.value = stdList[oo][1];
+  Msex.value = stdList[oo][2];
+  firtSescore.value = stdList[oo][3];
+  firstSeA.value = stdList[oo][4];
+}
+function Fillbox(index) {
+  b = index;
+  document.getElementById('showNNN').value = index;
+  // if (index == null) {
+  //   submit.style.display = 'inline-block';
+  //   update.style.display = 'none';
+  //   dele.style.display = 'none';
+  // }
+  // else {
+  --index;
+  Mname.value = stdList[index][0];
+  Mid.value = stdList[index][1];
+  Msex.value = stdList[index][2];
+  firtSescore.value = stdList[index][3];
+  firstSeA.value = stdList[index][4];
+
+  submit.style.display = 'none';
+  update.style.display = 'inline-block';
+  dele.style.display = 'inline-block';
+
+
+  // }
+}
+// function Fillbox(index) {
+//   if (index == null) {
+//     submit.style.display = 'none';
+//     update.style.display = 'none';
+//     dele.style.display = 'none';
+//   }
+//   else {
+//     --index;
+//     Mname.value = stdList[index][0];
+//     Mid.value = stdList[index][1];
+//     Msex.value = stdList[index][2];
+//     firtSescore.value = stdList[index][3];
+//     firstSeA.value = stdList[index][4];
+//     submit.style.display = 'none';
+//     update.style.display = 'inline-block';
+//     dele.style.display = 'none';
+
+
+//   }
+// }
 function NewBox() {
   submit.style.display = 'none';
   update.style.display = 'none';
@@ -167,10 +244,10 @@ function UpStd(e) {
       return setTimeout(resolve, milliseconds);
     });
     document.getElementById("showAlert").style.display = "none";
-
+    nextBtn();
 
   };
-  sleep(2000);
+  sleep(1000);
 
   // selectAllData();
   // window.location.reload();
@@ -198,7 +275,7 @@ function divid2() {
   var num6 = parseFloat(document.getElementById('my1Sescore').value);
   var total = num6 / 4;
   total = parseFloat(total).toFixed(2);
-  console.log(total);
+  // console.log(total);
   document.getElementById('my1SeA').value = total;
 }
 var iii = document.getElementById("my1Sescore");
