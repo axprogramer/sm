@@ -339,7 +339,8 @@
     background-color: aliceblue;
     color: #000000;
 }
-.whiteBack{
+
+.whiteBack {
     background-color: #ffffff;
     color: #000000;
 }
@@ -813,8 +814,8 @@ label {
 .nexttt {
     position: relative;
 }
-
-#nextBtn {
+/* Class for Enroll Students */
+.heighBtnN2 {
     position: fixed;
     margin-right: 2vh;
     color: #ffffff;
@@ -829,10 +830,39 @@ label {
     border: 1px solid rgba(0, 0, 0, 0.168);
 }
 
-#backBtn {
+.heighBtnB2 {
     position: absolute;
     left: 0;
     height: 27.5rem;
+    color: #ffffff;
+    /* From https://css.glass */
+    background: rgba(108, 114, 147, 0.159);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.168);
+}
+/* Class for input score */
+.heighBtnN {
+    position: fixed;
+    margin-right: 2vh;
+    color: #ffffff;
+    right: 0;
+    height: 31rem;
+    /* From https://css.glass */
+    background: rgba(108, 114, 147, 0.159);
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.168);
+}
+
+.heighBtnB {
+    position: absolute;
+    left: 0;
+    height: 31rem;
     color: #ffffff;
     /* From https://css.glass */
     background: rgba(108, 114, 147, 0.159);
