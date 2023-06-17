@@ -36,7 +36,8 @@ function selectAllData() {
                     var total = CurrentRecord.val().total;
                     addItemsToTable(name, id, ids, idw, ida, idatt, sex, date, s, w, a, attitude, note,
                         total);
-                        
+                    uii();
+                    autoCheck();
                 }
             );
         });
@@ -49,6 +50,7 @@ function getS() {
     return ssChcek;
 }
 var stdList = [];
+console.log(stdList);
 function addItemsToTable(name, id, ids, idw, ida, idatt, sex, date, s, w, a, attitude, note,
     total) {
     var tbody = document.getElementById('myActivities');
@@ -69,25 +71,22 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, sex, date, s, w, a, att
     td4.style.color = 'green';
     td5.style.color = 'green';
     td6.style.color = 'red';
+    td8.style.color = 'red';
     //checkbox
     var chkS = document.createElement('input');
     chkS.type = "checkbox";
-    chkS.value = '3';
     chkS.setAttribute('name', 'myS');
     chkS.setAttribute('id', `${ids}`);
     var chkW = document.createElement('input');
     chkW.type = "checkbox";
-    chkW.value = '1';
     chkW.setAttribute('name', 'myW');
     chkW.setAttribute('id', `${idw}`);
     var chkA = document.createElement('input');
     chkA.type = "checkbox";
-    chkA.value = '1';
     chkA.setAttribute('name', 'myA');
     chkA.setAttribute('id', `${ida}`);
     var chkAtt = document.createElement('input');
     chkAtt.type = "checkbox";
-    chkAtt.value = '-1';
     chkAtt.setAttribute('name', 'myAtt');
     chkAtt.setAttribute('id', `${idatt}`);
     var chkGet = document.createElement('input');
@@ -96,9 +95,8 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, sex, date, s, w, a, att
     chkGet.setAttribute('id', 'myGet');
     chkGet.setAttribute('class', 'chk');
     chkGet.checked = true;
-        console.log(idatt);
     var ddd = document.getElementById('getDate');
-    stdList.push([name, id, ids, idw, ida,idatt, sex, date, s, w, a, attitude, note,
+    stdList.push([name, id, ids, idw, ida, idatt, sex, date, s, w, a, attitude, note,
         total]);
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
@@ -109,7 +107,7 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, sex, date, s, w, a, att
     td5.innerHTML = a;
     td6.innerHTML = attitude;
     td7.innerHTML = note;
-    td8.innerHTML = total;
+    td8.innerText = parseFloat(s) + parseFloat(w) + parseFloat(a) + parseFloat(attitude);
 
 
     trow.appendChild(td0);
@@ -163,261 +161,323 @@ function toggleGet(source) {
     }
 }
 toggleGet(this);
-//Get All data to array
-var activityData = [];
-console.log(activityData);
-$(document).ready(function () {
 
-    $("#btnRows").on('click', function () {
+function uii() {
+    $(document).ready(function () {
 
-        $("#myTbaleActivity tbody tr").each(function () {
-            var currentRow = $(this);
-            var col1 = currentRow.find("td:eq(1)").html();
-            var col2 = currentRow.find("td:eq(1)").html();
-            var col3 = currentRow.find("td:eq(2)").html();
-            var col4 = currentRow.find("td:eq(3)").text();
-            var col5 = currentRow.find("td:eq(4)").text();
-            var col6 = currentRow.find("td:eq(5)").text();
-            var col7 = currentRow.find("td:eq(6)").text();
-            var col8 = currentRow.find("td:eq(7)").html();
-            var col9 = currentRow.find("td:eq(8)").html();
-            var col10 = currentRow.find("td:eq(3)").html();
-            var obj = {};
-            obj.id = col1;
-            obj.ids = col1 + 's';
-            obj.idw = col1 + 'w';
-            obj.ida = col1 + 'a';
-            obj.idatt = col1 + 'att';
-            obj.name = col2;
-            obj.sex = col3;
-            obj.s = col4;
-            obj.w = col5;
-            obj.a = col6;
-            obj.attitude = col7;
-            obj.note = col8;
-            obj.total = col9;
-            if (currentRow.find(".chk").is(":checked")) {
-                activityData.push(obj);
-                //Check for S
-                for (i = 0; i < activityData.length; i++) {
-                    var idss = activityData[i].ids;
+        $("#btnRows").on('click', function () {
 
-                    var checkBox = document.getElementById(`${idss}`);
-                    if (checkBox.checked == true && checkBox.id == idss) {
-                        console.log(idss);
-                        // console.log('3');
-                        obj.s = '3';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            cook();
-                            document.getElementById("showAlert").style.display = "block";
-                            document.getElementById("info").innerText = `All students have been upgraded!`;
+            $("#myTbaleActivity tbody tr").each(function (checkBoxs) {
+                var currentRow = $(this);
+                var col1 = currentRow.find("td:eq(1)").html();
+                var col2 = currentRow.find("td:eq(1)").html();
+                var col3 = currentRow.find("td:eq(2)").html();
+                var col4 = currentRow.find("td:eq(3)").text();
+                var col5 = currentRow.find("td:eq(4)").text();
+                var col6 = currentRow.find("td:eq(5)").text();
+                var col7 = currentRow.find("td:eq(6)").text();
+                var col8 = currentRow.find("td:eq(7)").html();
+                var col9 = currentRow.find("td:eq(8)").html();
+                var col10 = currentRow.find("td:eq(3)").html();
+                var obj = {};
+                obj.id = col1;
+                obj.ids = col1 + 's';
+                obj.idw = col1 + 'w';
+                obj.ida = col1 + 'a';
+                obj.idatt = col1 + 'att';
+                obj.name = col2;
+                obj.sex = col3;
+                obj.s = col4;
+                obj.w = col5;
+                obj.a = col6;
+                obj.attitude = col7;
+                obj.note = col8;
+                obj.total = col9;
+                if (currentRow.find(".chk").is(":checked")) {
+                    activityData.push(obj);
+
+                    // Check for S
+                    for (i = 0; i < activityData.length; i++) {
+                        var idss = activityData[i].ids;
+                        var checkBox = document.getElementById(`${idss}`);
+                        if (checkBox.checked == true && checkBox.id == idss) {
+                            console.log(idss);
+                            // console.log('3');
+                            obj.s = '3';
                             const sleep = async (milliseconds) => {
                                 await new Promise(resolve => {
                                     return setTimeout(resolve, milliseconds);
                                 });
-                                document.getElementById("showAlert").style.display = "none";
-                                window.location.reload();
-                                // sum();
-                                // getS();
+                                cook();
+                                document.getElementById("showAlert").style.display = "block";
+                                document.getElementById("info").innerText = `All students have been upgraded!`;
+                                const sleep = async (milliseconds) => {
+                                    await new Promise(resolve => {
+                                        return setTimeout(resolve, milliseconds);
+                                    });
+                                    document.getElementById("showAlert").style.display = "none";
+                                    window.location.reload();
+                                    // sum();
+                                    // getS();
+                                };
+                                sleep(1000);
+
                             };
                             sleep(1000);
-
-                        };
-                        sleep(1000);
-                    } else {
-                        obj.s = '0';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            cook();
-                            document.getElementById("showAlert").style.display = "block";
-                            document.getElementById("info").innerText = `All students have been upgraded!`;
+                        } else {
+                            obj.s = '0';
                             const sleep = async (milliseconds) => {
                                 await new Promise(resolve => {
                                     return setTimeout(resolve, milliseconds);
                                 });
-                                document.getElementById("showAlert").style.display = "none";
-                                window.location.reload();
-                                // sum();
-                                // getS();
+                                cook();
+                                document.getElementById("showAlert").style.display = "block";
+                                document.getElementById("info").innerText = `All students have been upgraded!`;
+                                const sleep = async (milliseconds) => {
+                                    await new Promise(resolve => {
+                                        return setTimeout(resolve, milliseconds);
+                                    });
+                                    document.getElementById("showAlert").style.display = "none";
+                                    window.location.reload();
+                                    // sum();
+                                    // getS();
+                                };
+                                sleep(1000);
+
                             };
                             sleep(1000);
+                        }
 
-                        };
-                        sleep(1000);
+                    }
+                    // //Check for W
+                    for (i = 0; i < activityData.length; i++) {
+                        var idww = activityData[i].idw;
+
+                        var checkBox = document.getElementById(`${idww}`);
+                        if (checkBox.checked == true && checkBox.id == idww) {
+                            console.log(idww);
+                            // console.log('3');
+                            obj.w = '1';
+                            const sleep = async (milliseconds) => {
+                                await new Promise(resolve => {
+                                    return setTimeout(resolve, milliseconds);
+                                });
+                                cook();
+                                document.getElementById("showAlert").style.display = "block";
+                                document.getElementById("info").innerText = `All students have been upgraded!`;
+                                const sleep = async (milliseconds) => {
+                                    await new Promise(resolve => {
+                                        return setTimeout(resolve, milliseconds);
+                                    });
+                                    document.getElementById("showAlert").style.display = "none";
+                                    window.location.reload();
+                                    // sum();
+                                    // getS();
+                                };
+                                sleep(1000);
+
+                            };
+                            sleep(1000);
+                        } else {
+                            obj.w = '0';
+                            const sleep = async (milliseconds) => {
+                                await new Promise(resolve => {
+                                    return setTimeout(resolve, milliseconds);
+                                });
+                                cook();
+                                document.getElementById("showAlert").style.display = "block";
+                                document.getElementById("info").innerText = `All students have been upgraded!`;
+                                const sleep = async (milliseconds) => {
+                                    await new Promise(resolve => {
+                                        return setTimeout(resolve, milliseconds);
+                                    });
+                                    document.getElementById("showAlert").style.display = "none";
+                                    window.location.reload();
+                                    // sum();
+                                    // getS();
+                                };
+                                sleep(1000);
+
+                            };
+                            sleep(1000);
+                        }
+                    }
+                    // //Check for A
+                    for (i = 0; i < activityData.length; i++) {
+                        var idaa = activityData[i].ida;
+
+                        var checkBox = document.getElementById(`${idaa}`);
+                        if (checkBox.checked == true && checkBox.id == idaa) {
+                            console.log(idaa);
+                            // console.log('3');
+                            obj.a = '1';
+                            const sleep = async (milliseconds) => {
+                                await new Promise(resolve => {
+                                    return setTimeout(resolve, milliseconds);
+                                });
+                                cook();
+                                document.getElementById("showAlert").style.display = "block";
+                                document.getElementById("info").innerText = `All students have been upgraded!`;
+                                const sleep = async (milliseconds) => {
+                                    await new Promise(resolve => {
+                                        return setTimeout(resolve, milliseconds);
+                                    });
+                                    document.getElementById("showAlert").style.display = "none";
+                                    window.location.reload();
+                                    // sum();
+                                    // getS();
+                                };
+                                sleep(1000);
+
+                            };
+                            sleep(1000);
+                        } else {
+                            obj.a = '0';
+                            const sleep = async (milliseconds) => {
+                                await new Promise(resolve => {
+                                    return setTimeout(resolve, milliseconds);
+                                });
+                                cook();
+                                document.getElementById("showAlert").style.display = "block";
+                                document.getElementById("info").innerText = `All students have been upgraded!`;
+                                const sleep = async (milliseconds) => {
+                                    await new Promise(resolve => {
+                                        return setTimeout(resolve, milliseconds);
+                                    });
+                                    document.getElementById("showAlert").style.display = "none";
+                                    window.location.reload();
+                                    // sum();
+                                    // getS();
+                                };
+                                sleep(1000);
+
+                            };
+                            sleep(1000);
+                        }
+                    }
+                    // //Check for Attitude
+                    for (i = 0; i < activityData.length; i++) {
+                        var idattu = activityData[i].idatt;
+
+                        var checkBox = document.getElementById(`${idattu}`);
+                        if (checkBox.checked == true && checkBox.id == idattu) {
+                            console.log(idattu);
+                            // console.log('3');
+                            obj.attitude = '-1';
+                            const sleep = async (milliseconds) => {
+                                await new Promise(resolve => {
+                                    return setTimeout(resolve, milliseconds);
+                                });
+                                cook();
+                                document.getElementById("showAlert").style.display = "block";
+                                document.getElementById("info").innerText = `All students have been upgraded!`;
+                                const sleep = async (milliseconds) => {
+                                    await new Promise(resolve => {
+                                        return setTimeout(resolve, milliseconds);
+                                    });
+                                    document.getElementById("showAlert").style.display = "none";
+                                    window.location.reload();
+                                    // sum();
+                                    // getS();
+                                };
+                                sleep(1000);
+
+                            };
+                            sleep(1000);
+                        } else {
+                            obj.attitude = '0';
+                            const sleep = async (milliseconds) => {
+                                await new Promise(resolve => {
+                                    return setTimeout(resolve, milliseconds);
+                                });
+                                cook();
+                                document.getElementById("showAlert").style.display = "block";
+                                document.getElementById("info").innerText = `All students have been upgraded!`;
+                                const sleep = async (milliseconds) => {
+                                    await new Promise(resolve => {
+                                        return setTimeout(resolve, milliseconds);
+                                    });
+                                    document.getElementById("showAlert").style.display = "none";
+                                    window.location.reload();
+                                    // sum();
+                                    // getS();
+                                };
+                                sleep(1000);
+
+                            };
+                            sleep(1000);
+                        }
                     }
                 }
-                // //Check for W
-                for (i = 0; i < activityData.length; i++) {
-                    var idww = activityData[i].idw;
+            });
 
-                    var checkBox = document.getElementById(`${idww}`);
-                    if (checkBox.checked == true && checkBox.id == idww) {
-                        console.log(idww);
-                        // console.log('3');
-                        obj.w = '1';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            cook();
-                            document.getElementById("showAlert").style.display = "block";
-                            document.getElementById("info").innerText = `All students have been upgraded!`;
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                document.getElementById("showAlert").style.display = "none";
-                                window.location.reload();
-                                // sum();
-                                // getS();
-                            };
-                            sleep(1000);
+            console.log(activityData);
 
-                        };
-                        sleep(1000);
-                    } else {
-                        obj.w = '0';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            cook();
-                            document.getElementById("showAlert").style.display = "block";
-                            document.getElementById("info").innerText = `All students have been upgraded!`;
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                document.getElementById("showAlert").style.display = "none";
-                                window.location.reload();
-                                // sum();
-                                // getS();
-                            };
-                            sleep(1000);
-
-                        };
-                        sleep(1000);
-                    }
-                }
-                // //Check for A
-                for (i = 0; i < activityData.length; i++) {
-                    var idaa = activityData[i].ida;
-
-                    var checkBox = document.getElementById(`${idaa}`);
-                    if (checkBox.checked == true && checkBox.id == idaa) {
-                        console.log(idaa);
-                        // console.log('3');
-                        obj.a = '1';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            cook();
-                            document.getElementById("showAlert").style.display = "block";
-                            document.getElementById("info").innerText = `All students have been upgraded!`;
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                document.getElementById("showAlert").style.display = "none";
-                                window.location.reload();
-                                // sum();
-                                // getS();
-                            };
-                            sleep(1000);
-
-                        };
-                        sleep(1000);
-                    } else {
-                        obj.a = '0';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            cook();
-                            document.getElementById("showAlert").style.display = "block";
-                            document.getElementById("info").innerText = `All students have been upgraded!`;
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                document.getElementById("showAlert").style.display = "none";
-                                window.location.reload();
-                                // sum();
-                                // getS();
-                            };
-                            sleep(1000);
-
-                        };
-                        sleep(1000);
-                    }
-                }
-                // //Check for Attitude
-                for (i = 0; i < activityData.length; i++) {
-                    var idattu = activityData[i].idatt;
-
-                    var checkBox = document.getElementById(`${idattu}`);
-                    if (checkBox.checked == true && checkBox.id == idattu) {
-                        console.log(idattu);
-                        // console.log('3');
-                        obj.attitude = '-1';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            cook();
-                            document.getElementById("showAlert").style.display = "block";
-                            document.getElementById("info").innerText = `All students have been upgraded!`;
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                document.getElementById("showAlert").style.display = "none";
-                                window.location.reload();
-                                // sum();
-                                // getS();
-                            };
-                            sleep(1000);
-
-                        };
-                        sleep(1000);
-                    } else {
-                        obj.attitude = '0';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            cook();
-                            document.getElementById("showAlert").style.display = "block";
-                            document.getElementById("info").innerText = `All students have been upgraded!`;
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                document.getElementById("showAlert").style.display = "none";
-                                window.location.reload();
-                                // sum();
-                                // getS();
-                            };
-                            sleep(1000);
-
-                        };
-                        sleep(1000);
-                    }
-                }
-            }
         });
-
-        console.log(activityData);
 
     });
 
-});
+}
+
+function autoCheck() {
+    //S checked for checkbook
+    for (i = 0; i < stdList.length; i++) {
+        var idget1 = stdList[i][2];
+        da1 = '3';
+        var get1 = stdList[i][8];
+        var checkBoxs = document.getElementById(`${idget1}`);
+        if (get1 == da1) {
+            checkBoxs.checked = true;
+        } else {
+            checkBoxs.checked = false;
+
+        }
+    }
+    //W checked for checkbook
+    for (i = 0; i < stdList.length; i++) {
+        var idget2 = stdList[i][3];
+        da2 = '1';
+        var get2 = stdList[i][9];
+        var checkBoxs = document.getElementById(`${idget2}`);
+        if (get2 == da2) {
+            checkBoxs.checked = true;
+        } else {
+            checkBoxs.checked = false;
+
+        }
+    }
+    //A checked for checkbook
+    for (i = 0; i < stdList.length; i++) {
+        var idget3 = stdList[i][4];
+        da3 = '1';
+        var get3 = stdList[i][10];
+        var checkBoxs = document.getElementById(`${idget3}`);
+        if (get3 == da3) {
+            checkBoxs.checked = true;
+        } else {
+            checkBoxs.checked = false;
+
+        }
+    }
+    //Attitude checked for checkbook
+    for (i = 0; i < stdList.length; i++) {
+        var idget4 = stdList[i][5];
+        da4 = '-1';
+        var get4 = stdList[i][11];
+        var checkBoxs = document.getElementById(`${idget4}`);
+        if (get4 == da4) {
+            checkBoxs.checked = true;
+        } else {
+            checkBoxs.checked = false;
+
+        }
+    }
+
+};
+
+//Get All data to array
+var activityData = [];
+
 // Push data to firebase
 function cook() {
     // e.preventDefault();
