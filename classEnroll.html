@@ -97,6 +97,12 @@
                             <span id="gradeName"></span>
                         </a>
                     </div>
+                    <div class="dropdown">
+                        <a href="./recordActivities.html" class="nav-link" type="button">
+                            <i class="bi bi-person-lines-fill me-2"></i>Actitvities
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -137,9 +143,11 @@
             <div class="container-fluid pt-4 px-4 Div1 ">
 
                 <div class="nexttt">
-                    <button onclick="nextBtn()" id="nextBtn" class="heighBtnN2"><i class="bi bi-caret-right-fill" style="color: brown;"></i></button>
-                    <button onclick="goBack()" id="backBtn" class="heighBtnB2"><i class="bi bi-caret-left-fill" style="color: brown;"></i></button>
-                
+                    <button onclick="nextBtn()" id="nextBtn" class="heighBtnN2"><i class="bi bi-caret-right-fill"
+                            style="color: brown;"></i></button>
+                    <button onclick="goBack()" id="backBtn" class="heighBtnB2"><i class="bi bi-caret-left-fill"
+                            style="color: brown;"></i></button>
+
                 </div>
                 <div class="row bg-secondary rounded align-items-center justify-content-center mx-0">
                     <div class="fit-me ">
@@ -154,8 +162,8 @@
                                             <tr>
                                                 <td>
                                                     <div class="form-floating mb-3">
-                                                        <input type="text" disabled class="form-control color-bac kh" id="showNNN"
-                                                            placeholder="#">
+                                                        <input type="text" disabled class="form-control color-bac kh"
+                                                            id="showNNN" placeholder="#">
                                                         <label for="showStdNum">#</label>
                                                     </div>
 
@@ -351,9 +359,6 @@
                                                     placeholder="Khmer Name">
                                                 <label for="myKh">Khmer Name</label>
                                             </div>
-
-
-
                                         </div>
                                     </td>
                                     <td>
@@ -366,6 +371,36 @@
                                     </td>
                                 </tr>
                                 </table>
+                                <h6 class="mb-4" style="text-align: center;"><i class="bi bi-arrow-down-up me-2"></i>
+                                    Class Activities</h6>
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div class="form-floating mb-3">
+                                                <select class="form-select" id="myMonthAct" 
+                                                    aria-label="Floating label select example">
+                                                    <option selected>Month</option>
+                                                    <option value="October">October</option>
+                                                    <option value="November">November</option>
+                                                    <option value="December">December</option>
+                                                    <option value="January">January</option>
+                                                    <option value="February">February</option>
+                                                    <option value="March">March</option>
+                                                    <option value="April-May">April-May</option>
+                                                    <option value="June">June</option>
+                                                    <option value="July">July</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-floating mb-3">
+                                                <input type="text" class="form-control" id="myTimesAct" placeholder="Times">
+                                                <label for="myTimesAct">Times</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
 
                                 <div>
                                     <table>
@@ -375,9 +410,13 @@
                                                     <button type="button" class="btn btn-success rounded-pill m-2"
                                                         id="mySubmit" onclick="setData()"><i
                                                             class="bi bi-box-arrow-right me-2"></i>Go</button>
-                                                    <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal"
-                                                        data-bs-target="#exampleModal">
+                                                    <button type="button" class="btn btn-success rounded-pill"
+                                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                         <i class="bi bi-box-arrow-in-up me-2"></i>Upgrade
+                                                    </button>
+                                                    <button type="button" class="btn btn-info rounded-pill"
+                                                        data-bs-toggle="modal" data-bs-target="#getActivity">
+                                                        <i class="bi bi-box-arrow-in-up me-2"></i>Activity
                                                     </button>
 
                                                     <!-- <button onclick="nextBtn()" type="button" class="btn btn-success rounded-pill"
@@ -394,7 +433,7 @@
                                             <td>
                                                 <div class="form-floating">
                                                     <button type="button" class="btn btn-success rounded-pill m-2"
-                                                        id="myUpdate" onclick="AddStd(event)">Upgrade</button>
+                                                        id="myUpdate" onclick="UpStdgade(event)">Upgrade</button>
                                                 </div>
 
                                             </td>
@@ -407,7 +446,7 @@
                                             </td>
                                         </tr>
                                     </table>
-                                   
+
                                 </div>
                         </div>
                     </div>
@@ -466,6 +505,29 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
                             <button type="button" id="btnRows" class="btn btn-success">Yes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="getActivity" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div> -->
+                        <div class="alert alert-success" role="alert" id="showAlert2">
+                            <i class="bi bi-check-circle-fill me-2"></i> <span id="info"></span> <span
+                                id="getname"></span>
+                        </div>
+
+                        <div class="modal-body text-center myWaa">
+                            ⚠️ Are you sure? ⚠️
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                            <button type="button" id="btnAct" class="btn btn-success">Yes</button>
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@ const getElementVal = (id) => {
 function selectAllData() {
     document.getElementById('myActivities').innerHTML = "";
     studentN0 = 0;
-    firebase.database().ref(`4A/` + `2022-2023/` + `recordActivity/`).once('value',
+    firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `${dbmonthAct}/` + `${dbtimesAct}/`).once('value',
         function (AllRecords) {
             AllRecords.forEach(
                 function (CurrentRecord) {
@@ -89,16 +89,15 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, sex, date, s, w, a, att
     var chkGet = document.createElement('input');
     chkGet.type = "checkbox";
     chkGet.setAttribute('name', 'myGet');
-    chkGet.setAttribute('id', 'myGet');
     chkGet.setAttribute('class', 'chk');
     chkGet.checked = true;
-    var ddd = document.getElementById('getDate');
+    var ddd = document.getElementById('myDate');
     stdList.push([name, id, ids, idw, ida, idatt, sex, date, s, w, a, attitude, note,
         total]);
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
     td2.innerHTML = sex;
-    ddd.innerText = date;
+    ddd.value = date;
     td3.innerHTML = s;
     td4.innerHTML = w;
     td5.innerHTML = a;
@@ -449,6 +448,34 @@ function autoCheck() {
 
 //Get All data to array
 var activityData = [];
+//Month and Times for Activity
+document.getElementById('myMonthAct').addEventListener('change', function () {
+    var monthact = document.getElementById('myMonthAct').value;
+    localStorage.setItem('ownmonthAct', monthact);
+    console.log(monthact);
+    window.location.reload();
+
+})
+document.getElementById('myTimesAct').addEventListener('change', function () {
+    var timesact = document.getElementById('myTimesAct').value;
+    localStorage.setItem('owntimesAct', timesact);
+    console.log(timesact);
+    window.location.reload();
+
+})
+document.getElementById('myDate').addEventListener('change', function () {
+    var timesact = document.getElementById('myDate').value;
+    localStorage.setItem('owndateAct', timesact);
+    console.log(timesact);
+    window.location.reload();
+
+})
+var dbmonthAct = localStorage.getItem('ownmonthAct'); //month activity
+var dbtimesAct = localStorage.getItem('owntimesAct'); // times activity
+var dbdateAct = localStorage.getItem('owndateAct'); // date activity
+document.getElementById('myMonthAct').value = dbmonthAct;
+document.getElementById('myTimesAct').value = dbtimesAct;
+document.getElementById('todayDate').innerText = dbdateAct;
 
 // Push data to firebase
 function cook() {
@@ -467,7 +494,7 @@ function cook() {
         var attitude = activityData[i].attitude;
         var note = activityData[i].note;
         var total = activityData[i].total;
-        firebase.database().ref(`4A/` + `2022-2023/` + `recordActivity/` + idM).set(
+        firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).set(
             {
                 name: name,
                 id: idM,
@@ -482,6 +509,7 @@ function cook() {
                 attitude: attitude,
                 note: note,
                 total: total,
+                date: dbdateAct,
             },
         )
 

@@ -303,6 +303,23 @@ function dbAcadamic() {
 
 }
 dbAcadamic();
+//Month and Times for Activity
+document.getElementById('myMonthAct').addEventListener('change',function(){
+  var monthact = document.getElementById('myMonthAct').value;
+  localStorage.setItem('monthAct',monthact);
+  console.log(monthact);
+})
+document.getElementById('myTimesAct').addEventListener('change',function(){
+  var timesact = document.getElementById('myTimesAct').value;
+  localStorage.setItem('timesAct', timesact);
+
+  console.log(timesact);
+})
+var dbmonthAct = localStorage.getItem('monthAct'); //month activity
+var dbtimesAct = localStorage.getItem('timesAct'); // times activity
+document.getElementById('myMonthAct').value = dbmonthAct;
+document.getElementById('myTimesAct').value = dbtimesAct;
+
 //Firebase Store
 
 firebase.initializeApp(firebaseConfig);
@@ -431,10 +448,10 @@ function cook() {
 }
 function cook2() {
   // e.preventDefault();
-  for (i = 0; i < aData.length; i++) {
-    var enname = aData[i].myenname;
-    var idM = aData[i].id;
-    var sex = aData[i].mySex;
+  for (i = 0; i < aData2.length; i++) {
+    var enname = aData2[i].myenname;
+    var idM = aData2[i].id;
+    var sex = aData2[i].mySex;
     var nameS = idM+'s';
     var nameW = idM+'w';
     var nameA = idM+'a';
@@ -446,7 +463,7 @@ function cook2() {
     var attitude = '';
     var note = '';
     var total = '';
-    firebase.database().ref(`4A/` + `2022-2023/` + `recordActivity/` + idM).set(
+    firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).set(
       {
         name: enname,
         id: idM,
@@ -501,10 +518,57 @@ $(document).ready(function () {
           await new Promise(resolve => {
             return setTimeout(resolve, milliseconds);
           });
+          cook();
+          // cook2();
+          document.getElementById("showAlert").style.display = "block";
+          document.getElementById("info").innerText = `All students have been upgraded!`;
+          const sleep = async (milliseconds) => {
+            await new Promise(resolve => {
+              return setTimeout(resolve, milliseconds);
+            });
+            // document.getElementById("showAlert").style.display = "none";
+            window.location.reload();
+          };
+          sleep(2000);
+
+        };
+        sleep(1000);
+
+      }
+    });
+
+
+  });
+
+});
+var aData2 = [];
+$(document).ready(function () {
+
+  $("#btnAct").on('click', function () {
+
+    $("#myTable tbody tr").each(function () {
+      var currentRow = $(this);
+      var col1 = currentRow.find("td:eq(3)").html();
+      var col2 = currentRow.find("td:eq(2)").html();
+      var col3 = currentRow.find("td:eq(3)").html();
+      var col4 = currentRow.find("td:eq(4)").html();
+      var col5 = currentRow.find("td:eq(5)").html();
+      var obj = {};
+      obj.id = col1;
+      obj.myenname = col2;
+      obj.mykhname = col3;
+      obj.mySex = col4;
+      obj.mygrade = db2;
+      if (currentRow.find(".chk").is(":checked")) {
+        aData2.push(obj);
+        const sleep = async (milliseconds) => {
+          await new Promise(resolve => {
+            return setTimeout(resolve, milliseconds);
+          });
           // cook();
           cook2();
           document.getElementById("showAlert").style.display = "block";
-          document.getElementById("info").innerText = `All students have been upgraded!`;
+          document.getElementById("info").innerText = "Students have been added ✔️";
           const sleep = async (milliseconds) => {
             await new Promise(resolve => {
               return setTimeout(resolve, milliseconds);
@@ -679,4 +743,5 @@ function DelStdAll() {
   // window.location.reload();
 }
 document.getElementById("showAlert").style.display = "none";
+document.getElementById("showAlert2").style.display = "none";
 

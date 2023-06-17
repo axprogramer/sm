@@ -136,10 +136,50 @@
                 <div class="row bg-secondary rounded align-items-center justify-content-center ">
                     <div class="bg-secondary rounded h-100 p-4" style="overflow-x: auto;">
                         <div class="bg-secondary rounded ">
-                            <button type="button" class="btn btn-success rounded-pill" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
-                                <i class="bi bi-box-arrow-in-up me-2"></i>Upgrade
-                            </button>
+
+                            <table class="table-borderless table">
+                                <tr>
+                                    <td>
+                                        <div class="form-floating">
+                                            <select class="form-select" id="myMonthAct"
+                                                aria-label="Floating label select example">
+                                                <option selected>Month</option>
+                                                <option value="October">October</option>
+                                                <option value="November">November</option>
+                                                <option value="December">December</option>
+                                                <option value="January">January</option>
+                                                <option value="February">February</option>
+                                                <option value="March">March</option>
+                                                <option value="April-May">April-May</option>
+                                                <option value="June">June</option>
+                                                <option value="July">July</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="myTimesAct" placeholder="Times">
+                                            <label for="myTimesAct">Times</label>
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                            <table class="allCenter mb-3">
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-info rounded-pill" id="goAct">
+                                            <i class="bi bi-box-arrow-in-up me-2"></i>Go
+                                        </button>
+                                        <button type="button" class="btn btn-success rounded-pill"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="bi bi-box-arrow-in-up me-2"></i>Upgrade
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+
                             <div class="tg-wrap">
                                 <table class="tg table whiteBack" id="myTbaleActivity">
                                     <thead>
@@ -148,10 +188,10 @@
                                             <th class="tg-5ihh" rowspan="3">Full Name</th>
                                             <th class="tg-5ihh" rowspan="3">Sex</th>
                                             <th class="tg-5ihh" colspan="5"><input type="date" name="myGetDate"
-                                                    id="myDate"><span id="getDate"></span></th>
+                                                    id="myDate"><br>Today: <span id="todayDate" style="color: red;"></span></th>
                                             <th class="tg-5ihh" rowspan="3">Total</th>
                                             <th class="tg-5ihh" rowspan="3">Check<br><input type="checkbox"
-                                                    name="chckAA" id="myChkAaa" onClick="toggleGet(this)" checked></th>
+                                                    name="chckAA"  onClick="toggleGet(this)" checked></th>
                                         </tr>
                                         <tr>
                                             <th class="tg-4wxp" colspan="3">Activities</th>
@@ -164,7 +204,7 @@
                                                     onClick="toggleS(this)"></th>
                                             <th class="tg-2efg">W<br><input type="checkbox" name="chckWW" id="myChkww"
                                                     onClick="toggleW(this)"></th>
-                                            <th class="tg-2efg">A<br><input type="checkbox" name="chckAA" id="myChkAaa"
+                                            <th class="tg-2efg">A<br><input type="checkbox" name="chckAA" 
                                                     onClick="toggleA(this)"></th>
                                         </tr>
                                     </thead>
@@ -192,7 +232,8 @@
 
                         <div class="modal-body text-center myWaa">
                             <span id="alertMag">⚠️ Are you sure that you want to upgrade? ⚠️</span>
-                            <span id="alertMagWait">Please wait!! ⚠️ <br> <img src="./img/clock.gif" width="50px" alt=""></span>
+                            <span id="alertMagWait">Please wait!! ⚠️ <br> <img src="./img/clock.gif" width="50px"
+                                    alt=""></span>
                         </div>
                         <div class="modal-footer" id="showBtnn">
                             <button type="button" id="btnNo" class="btn btn-danger" data-bs-dismiss="modal">No</button>
