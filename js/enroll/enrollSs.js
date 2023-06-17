@@ -151,9 +151,6 @@ var db = localStorage.getItem("myData");
 var db2 = localStorage.getItem("myData2");
 var db3 = localStorage.getItem("myData3");
 var db4 = localStorage.getItem("myData9");
-console.log(db2);
-console.log(db4);
-console.log(db3);
 function showGrade() {
   var getdb = localStorage.getItem("myData2");
   var gg1 = "K2";
@@ -366,7 +363,6 @@ window.onload = selectAllData;
 var studentN0;
 
 var stdList = [];
-var stdListPop = [];
 var upStd = [];
 function addItemsToTable(name, id, sex, grade, year, myKh) {
   var tbody = document.getElementById('showInput5a');
@@ -409,7 +405,7 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
   tbody.appendChild(trow);
 
 }
-var io = JSON.parse(localStorage.getItem("students"));
+// var io = JSON.parse(localStorage.getItem("students"));
 function cook() {
   // e.preventDefault();
   for (i = 0; i < aData.length; i++) {
@@ -418,7 +414,6 @@ function cook() {
     var sex = aData[i].mySex;
     var grade = aData[i].mygrade;
     var khname = aData[i].mykhname;
-    console.log(enname);
     firebase.database().ref(`${db2}/` + `${db4}/` + idM).set(
       {
         name: enname,
@@ -426,7 +421,47 @@ function cook() {
         sex: sex,
         grade: grade,
         myKh: khname,
-        year: year,
+      },
+    )
+
+  }
+
+
+  selectAllData();
+}
+function cook2() {
+  // e.preventDefault();
+  for (i = 0; i < aData.length; i++) {
+    var enname = aData[i].myenname;
+    var idM = aData[i].id;
+    var sex = aData[i].mySex;
+    var nameS = idM+'s';
+    var nameW = idM+'w';
+    var nameA = idM+'a';
+    var nameAtt = idM+'att';
+    var s = '';
+    var w = '';
+    var a = '';
+    var a = '';
+    var attitude = '';
+    var note = '';
+    var total = '';
+    firebase.database().ref(`4A/` + `2022-2023/` + `recordActivity/` + idM).set(
+      {
+        name: enname,
+        id: idM,
+        sex: sex,
+        ids: nameS,
+        idw: nameW,
+        ida: nameA,
+        idatt: nameAtt,
+        s:s,
+        w:w,
+        a:a,
+        attitude:attitude,
+        note:note,
+        total:total,
+
       },
     )
 
@@ -466,9 +501,9 @@ $(document).ready(function () {
           await new Promise(resolve => {
             return setTimeout(resolve, milliseconds);
           });
-          cook();
+          // cook();
+          cook2();
           document.getElementById("showAlert").style.display = "block";
-          document.getElementsByClassName("showAlert").style.display = "block";
           document.getElementById("info").innerText = `All students have been upgraded!`;
           const sleep = async (milliseconds) => {
             await new Promise(resolve => {
@@ -485,7 +520,6 @@ $(document).ready(function () {
       }
     });
 
-    console.log(aData);
 
   });
 
@@ -521,7 +555,6 @@ function showAuto(name, id, sex, grade, year, myKh){
 function cccSS(){
   var ss = document.getElementById("myTable");
   var tbodyRowCount = ss.tBodies[0].rows.length;
-  // console.log(tbodyRowCount);
   return tbodyRowCount;
 }
 // Next data show in input
@@ -534,7 +567,6 @@ function nextBtn(){
 
   }
   var oo = b;
-  // console.log(b);
   --oo;
   Mname.value = stdList[oo][0];
   Mid.value = stdList[oo][1];
@@ -550,7 +582,6 @@ function goBack(){
     document.getElementById('showNNN').value = b;
   }
   var oo = b;
-  // console.log(oo);
   --oo;
   Mname.value = stdList[oo][0];
   Mid.value = stdList[oo][1];
@@ -562,12 +593,7 @@ function goBack(){
 function Fillbox(index) {
   b = index;
   document.getElementById('showNNN').value = index;
-  // if (index == null) {
-  //   submit.style.display = 'inline-block';
-  //   update.style.display = 'none';
-  //   dele.style.display = 'none';
-  // }
-  // else {
+
     --index;
     Mname.value = stdList[index][0];
     Mid.value = stdList[index][1];
