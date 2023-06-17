@@ -66,7 +66,7 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <div class="dropdown">
-                        <a href="./index.html" class="nav-link  active" type="button">
+                        <a href="./index.html" class="nav-link" type="button">
                             <i class="bi bi-plus-square-dotted me-2"></i>New Student
                             <span id="gradeName"></span>
                         </a>
@@ -86,6 +86,12 @@
                     <div class="dropdown">
                         <a href="./classEnroll.html" class="nav-link" type="button">
                             <i class="bi bi-arrow-down-up me-2"></i>Upgrade Class
+                            <span id="gradeName"></span>
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./recordActivities.html" class="nav-link active" type="button">
+                            <i class="bi bi-person-lines-fill me-2"></i>Actitvities
                             <span id="gradeName"></span>
                         </a>
                     </div>
@@ -188,10 +194,11 @@
                                             <th class="tg-5ihh" rowspan="3">Full Name</th>
                                             <th class="tg-5ihh" rowspan="3">Sex</th>
                                             <th class="tg-5ihh" colspan="5"><input type="date" name="myGetDate"
-                                                    id="myDate"><br>Today: <span id="todayDate" style="color: red;"></span></th>
+                                                    id="myDate"><br>Today: <span id="todayDate"
+                                                    style="color: red;"></span></th>
                                             <th class="tg-5ihh" rowspan="3">Total</th>
                                             <th class="tg-5ihh" rowspan="3">Check<br><input type="checkbox"
-                                                    name="chckAA"  onClick="toggleGet(this)" checked></th>
+                                                    name="chckAA" onClick="toggleGet(this)" checked></th>
                                         </tr>
                                         <tr>
                                             <th class="tg-4wxp" colspan="3">Activities</th>
@@ -204,7 +211,7 @@
                                                     onClick="toggleS(this)"></th>
                                             <th class="tg-2efg">W<br><input type="checkbox" name="chckWW" id="myChkww"
                                                     onClick="toggleW(this)"></th>
-                                            <th class="tg-2efg">A<br><input type="checkbox" name="chckAA" 
+                                            <th class="tg-2efg">A<br><input type="checkbox" name="chckAA"
                                                     onClick="toggleA(this)"></th>
                                         </tr>
                                     </thead>
