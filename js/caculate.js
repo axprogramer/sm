@@ -46,3 +46,21 @@ var dele = document.getElementById("myDelete");
 //     }
 // }
 
+// function sum() {
+//     var checkBox = document.getElementById('ckS');
+//     if (checkBox.checked == true) {
+//         console.log('3');
+//     } else {
+//         console.log('0');
+//     }
+    
+// }
+// sum();
+// document.getElementById('ckS').addEventListener('click',sum);
+// let checkboxes = document.querySelectorAll('input[name="sCheck"]:checked');
+// let values = [];
+// checkboxes.forEach((checkbox) => {
+//     values.push(checkbox.value);
+// });
+
+// alert(values);

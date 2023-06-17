@@ -435,6 +435,7 @@ function cook() {
 
   selectAllData();
 }
+//Checkbox all check function
 function toggle(source) {
   checkboxes = document.getElementsByName('mCheck');
   for (var i = 0, n = checkboxes.length; i < n; i++) {
