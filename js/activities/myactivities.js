@@ -47,7 +47,6 @@ window.onload = selectAllData;
 var studentN0;
 
 var stdList = [];
-// console.log(stdList);
 function addItemsToTable(name, id, ids, idw, ida, idatt, sex, date, s, w, a, attitude, note,
     total) {
     var tbody = document.getElementById('myActivities');
@@ -92,6 +91,7 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, sex, date, s, w, a, att
     chkGet.setAttribute('class', 'chk');
     chkGet.checked = true;
     var ddd = document.getElementById('myDate');
+
     stdList.push([name, id, ids, idw, ida, idatt, sex, date, s, w, a, attitude, note,
         total]);
     td0.innerHTML = ++studentN0;
@@ -162,7 +162,7 @@ $(document).ready(function () {
 
     $("#btnRows").on('click', function () {
 
-        $("#myTbaleActivity tbody tr").each(function (checkBoxs) {
+        $("#myTbaleActivity tbody tr").each(function () {
             var currentRow = $(this);
             var col1 = currentRow.find("td:eq(1)").html();
             var col2 = currentRow.find("td:eq(1)").html();
@@ -173,7 +173,6 @@ $(document).ready(function () {
             var col7 = currentRow.find("td:eq(6)").text();
             var col8 = currentRow.find("td:eq(7)").html();
             var col9 = currentRow.find("td:eq(8)").html();
-            var col10 = currentRow.find("td:eq(3)").html();
             var obj = {};
             obj.id = col1;
             obj.ids = col1 + 's';
@@ -190,199 +189,84 @@ $(document).ready(function () {
             obj.total = col9;
             if (currentRow.find(".chk").is(":checked")) {
                 activityData.push(obj);
-
-                // Check for S
-                for (i = 0; i < activityData.length; i++) {
-                    var idss = activityData[i].ids;
-                    var checkBox = document.getElementById(`${idss}`);
-                    if (checkBox.checked == true && checkBox.id == idss) {
-                        obj.s = '3';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
+                const sleep = async (milliseconds) => {
+                    await new Promise(resolve => {
+                        return setTimeout(resolve, milliseconds);
+                    });
+                    
+                    // Check for All
+                    for (i = 0; i < activityData.length; i++) {
+                        var idss = activityData[i].ids;
+                        var idww = activityData[i].idw;
+                        var idaa = activityData[i].ida;
+                        var idattu = activityData[i].idatt;
+    
+                        var checkBoxss = document.getElementById(`${idss}`);
+                        var checkBoxww = document.getElementById(`${idww}`);
+                        var checkBoxaa = document.getElementById(`${idaa}`);
+                        var checkBoxatt = document.getElementById(`${idattu}`);
+                        if (checkBoxss.checked == true
+                            && checkBoxss.id == idss) {
+                            obj.s = '3';
                             cook();
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                window.location.reload();
-                            };
-                            sleep(3000);
-
-                        };
-                        sleep(1000);
-                    } else {
-                        obj.s = '0';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
+    
+                        }
+                        if (checkBoxss.checked == false
+                            && checkBoxss.id == idss) {
+                            obj.s = '0';
                             cook();
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
-
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                window.location.reload();
-                            };
-                            sleep(3000);
-
-                        };
-                        sleep(1000);
+                        }
+                        if (checkBoxww.checked == true && checkBoxww.id == idww) {
+                            obj.w = '1';
+                            cook();
+                        }
+                        if (checkBoxww.checked == false && checkBoxww.id == idww) {
+                            obj.w = '0';
+                            cook();
+                        }
+                         if (checkBoxaa.checked == true && checkBoxaa.id == idaa) {
+                            obj.a = '1';
+                            cook();
+                        } 
+                        if (checkBoxaa.checked == false && checkBoxaa.id == idaa) {
+                            obj.a = '0';
+                            cook();
+                        }
+                        if (checkBoxatt.checked == true && checkBoxatt.id == idattu) {
+                            obj.attitude = '-1';
+                                document.getElementById("alertMagWait").style.display = "block";
+                                document.getElementById("alertMag").style.display = "none";
+                                document.getElementById("showBtnn").style.display = "none";
+                                cook();
+                                const sleep = async (milliseconds) => {
+                                    await new Promise(resolve => {
+                                        return setTimeout(resolve, milliseconds);
+                                    });
+                                    window.location.reload();
+                                };
+                                sleep(3000);
+    
+                        } 
+                        if (checkBoxatt.checked == false && checkBoxatt.id == idattu) {
+                            obj.attitude = '0';
+                                document.getElementById("alertMagWait").style.display = "block";
+                                document.getElementById("alertMag").style.display = "none";
+                                document.getElementById("showBtnn").style.display = "none";
+                                cook();
+                                const sleep = async (milliseconds) => {
+                                    await new Promise(resolve => {
+                                        return setTimeout(resolve, milliseconds);
+                                    });
+                                    window.location.reload();
+                                };
+                                sleep(3000);
+    
+                        }
+    
                     }
 
-                }
-                //Check for W
-                for (i = 0; i < activityData.length; i++) {
-                    var idww = activityData[i].idw;
-
-                    var checkBox = document.getElementById(`${idww}`);
-                    if (checkBox.checked == true && checkBox.id == idww) {
-                        obj.w = '1';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
-                            cook();
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                window.location.reload();
-                            };
-                            sleep(3000);
-
-                        };
-                        sleep(1000);
-                    } else {
-                        obj.w = '0';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
-                            cook();
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                window.location.reload();
-                            };
-                            sleep(3000);
-
-                        };
-                        sleep(1000);
-                    }
-                }
-                //Check for A
-                for (i = 0; i < activityData.length; i++) {
-                    var idaa = activityData[i].ida;
-
-                    var checkBox = document.getElementById(`${idaa}`);
-                    if (checkBox.checked == true && checkBox.id == idaa) {
-                        obj.a = '1';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
-                            cook();
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                window.location.reload();
-                            };
-                            sleep(3000);
-
-
-                        };
-                        sleep(1000);
-                    } else {
-                        obj.a = '0';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
-                            cook();
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                window.location.reload();
-                            };
-                            sleep(3000);
-
-
-                        };
-                        sleep(1000);
-                    }
-                }
-                //Check for Attitude
-                for (i = 0; i < activityData.length; i++) {
-                    var idattu = activityData[i].idatt;
-
-                    var checkBox = document.getElementById(`${idattu}`);
-                    if (checkBox.checked == true && checkBox.id == idattu) {
-                        obj.attitude = '-1';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
-                            cook();
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                window.location.reload();
-                            };
-                            sleep(3000);
-
-
-                        };
-                        sleep(1000);
-                    } else {
-                        obj.attitude = '0';
-                        const sleep = async (milliseconds) => {
-                            await new Promise(resolve => {
-                                return setTimeout(resolve, milliseconds);
-                            });
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
-                            cook();
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                window.location.reload();
-                            };
-                            sleep(3000);
-
-                        };
-                        sleep(1000);
-                    }
-                }
+                };
+                sleep(1500);
             }
         });
     });
@@ -452,21 +336,18 @@ var activityData = [];
 document.getElementById('myMonthAct').addEventListener('change', function () {
     var monthact = document.getElementById('myMonthAct').value;
     localStorage.setItem('ownmonthAct', monthact);
-    console.log(monthact);
     window.location.reload();
 
 })
 document.getElementById('myTimesAct').addEventListener('change', function () {
     var timesact = document.getElementById('myTimesAct').value;
     localStorage.setItem('owntimesAct', timesact);
-    console.log(timesact);
     window.location.reload();
 
 })
 document.getElementById('myDate').addEventListener('change', function () {
     var timesact = document.getElementById('myDate').value;
     localStorage.setItem('owndateAct', timesact);
-    console.log(timesact);
     window.location.reload();
 
 })
@@ -479,7 +360,6 @@ document.getElementById('todayDate').innerText = dbdateAct;
 
 // Push data to firebase
 function cook() {
-    // e.preventDefault();
     for (i = 0; i < activityData.length; i++) {
         var name = activityData[i].name;
         var idM = activityData[i].id;
@@ -517,12 +397,12 @@ function cook() {
 
 
     // selectAllData();
-    const sleep = async (milliseconds) => {
-        await new Promise(resolve => {
-            return setTimeout(resolve, milliseconds);
-        });
-        window.location.reload();
-    };
-    sleep(3000);
+    // const sleep = async (milliseconds) => {
+    //     await new Promise(resolve => {
+    //         return setTimeout(resolve, milliseconds);
+    //     });
+    //     window.location.reload();
+    // };
+    // sleep(3000);
 }
 document.getElementById("showAlert").style.display = "none";

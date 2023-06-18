@@ -303,22 +303,31 @@ function dbAcadamic() {
 
 }
 dbAcadamic();
-//Month and Times for Activity
+//Month, Times, and date for Activity
 document.getElementById('myMonthAct').addEventListener('change',function(){
   var monthact = document.getElementById('myMonthAct').value;
   localStorage.setItem('monthAct',monthact);
-  console.log(monthact);
+  window.location.reload();
+
 })
 document.getElementById('myTimesAct').addEventListener('change',function(){
   var timesact = document.getElementById('myTimesAct').value;
   localStorage.setItem('timesAct', timesact);
+  window.location.reload();
 
-  console.log(timesact);
+})
+document.getElementById('myDate').addEventListener('change',function(){
+  var dateact = document.getElementById('myDate').value;
+  localStorage.setItem('dateAct', dateact);
+  window.location.reload();
+
 })
 var dbmonthAct = localStorage.getItem('monthAct'); //month activity
 var dbtimesAct = localStorage.getItem('timesAct'); // times activity
+var dateAact = localStorage.getItem('dateAct'); // date activity
 document.getElementById('myMonthAct').value = dbmonthAct;
 document.getElementById('myTimesAct').value = dbtimesAct;
+document.getElementById('myDate').value = dateAact;
 
 //Firebase Store
 
@@ -478,6 +487,7 @@ function cook2() {
         attitude:attitude,
         note:note,
         total:total,
+        date: dateAact,
 
       },
     )
