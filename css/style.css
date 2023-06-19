@@ -472,6 +472,11 @@
     padding: 10px;
     height: 35em;
 }
+.Div11 {
+    background-color: transparent;
+    padding: 10px;
+    height: 13em;
+}
 
 #myNovemberSaveT {
     background-color: white;
@@ -778,7 +783,7 @@ label {
     border-color: black;
     border-style: solid;
     border-width: 1px;
-    font-family: Arial, sans-serif;
+    font-family: khmerCN;
     font-size: 14px;
     overflow: hidden;
     padding: 10px 5px;
@@ -789,7 +794,7 @@ label {
     border-color: black;
     border-style: solid;
     border-width: 1px;
-    font-family: Arial, sans-serif;
+    font-family: khmerCN;
     font-size: 14px;
     font-weight: normal;
     overflow: hidden;
@@ -799,7 +804,7 @@ label {
 
 .tg .tg-4wxp {
     border-color: inherit;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: khmerCN !important;
     font-size: 12px;
     font-weight: bold;
     position: -webkit-sticky;
@@ -812,7 +817,7 @@ label {
 
 .tg .tg-2efg {
     border-color: inherit;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: khmerCN !important;
     font-size: 12px;
     position: -webkit-sticky;
     position: sticky;
@@ -824,7 +829,7 @@ label {
 
 .tg .tg-6zdp {
     border-color: inherit;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: khmerCN !important;
     font-size: 12px;
     font-weight: bold;
     position: -webkit-sticky;
@@ -837,7 +842,7 @@ label {
 
 .tg .tg-5ihh {
     border-color: inherit;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: khmerCN !important;
     font-size: 12px;
     font-weight: bold;
     position: -webkit-sticky;
@@ -850,7 +855,7 @@ label {
 
 .tg .tg-go0h {
     border-color: inherit;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: khmerCN !important;
     font-size: 12px;
     text-align: left;
     vertical-align: top
@@ -882,7 +887,7 @@ label {
     border-color: black;
     border-style: solid;
     border-width: 1px;
-    font-family: Arial, sans-serif;
+    font-family: khmerCN;
     font-size: 14px;
     overflow: hidden;
     padding: 10px 5px;
@@ -893,7 +898,7 @@ label {
     border-color: black;
     border-style: solid;
     border-width: 1px;
-    font-family: Arial, sans-serif;
+    font-family: khmerCN;
     font-size: 14px;
     font-weight: normal;
     overflow: hidden;
@@ -903,19 +908,19 @@ label {
 
 .tg .tg-6i5q {
     border-color: inherit;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: khmerCN !important;
     font-size: 12px;
     position: -webkit-sticky;
     position: sticky;
     text-align: left;
     top: -1px;
     vertical-align: middle;
-    will-change: transform
+    will-change: transform;
 }
 
 .tg .tg-6zdp {
     border-color: inherit;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: khmerCN !important;
     font-size: 12px;
     font-weight: bold;
     position: -webkit-sticky;
@@ -923,12 +928,12 @@ label {
     text-align: left;
     top: -1px;
     vertical-align: middle;
-    will-change: transform
+    will-change: transform;
 }
 
 .tg .tg-5ihh {
     border-color: inherit;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: khmerCN !important;
     font-size: 12px;
     font-weight: bold;
     position: -webkit-sticky;
@@ -936,12 +941,12 @@ label {
     text-align: center;
     top: -1px;
     vertical-align: middle;
-    will-change: transform
+    will-change: transform;
 }
 
 .tg .tg-go0h {
     border-color: inherit;
-    font-family: "Comic Sans MS", cursive, sans-serif !important;
+    font-family: khmerCN !important;
     font-size: 12px;
     text-align: left;
     vertical-align: top
@@ -968,5 +973,4 @@ label {
     width: 100%;
     height: 100%;
     text-align: center;
-
 }

@@ -380,7 +380,8 @@ function selectAllData() {
           b = 1;
           document.getElementById('showNNN').value = b;
           cccSS();
-
+          document.getElementById("alertMagWait").style.display = "none";
+          document.getElementById("alertMagWait2").style.display = "none";
         }
       );
     });
@@ -465,6 +466,7 @@ function cook2() {
     var nameW = idM+'w';
     var nameA = idM+'a';
     var nameAtt = idM+'att';
+    var nameRow = idM+'row';
     var s = '';
     var w = '';
     var a = '';
@@ -481,6 +483,7 @@ function cook2() {
         idw: nameW,
         ida: nameA,
         idatt: nameAtt,
+        nameRow: nameRow,
         s:s,
         w:w,
         a:a,
@@ -530,13 +533,13 @@ $(document).ready(function () {
           });
           cook();
           // cook2();
-          document.getElementById("showAlert").style.display = "block";
-          document.getElementById("info").innerText = `All students have been upgraded!`;
+          document.getElementById("alertMagWait").style.display = "block";
+          document.getElementById("alertMag").style.display = "none";
+          document.getElementById("showBtnn").style.display = "none";
           const sleep = async (milliseconds) => {
             await new Promise(resolve => {
               return setTimeout(resolve, milliseconds);
             });
-            // document.getElementById("showAlert").style.display = "none";
             window.location.reload();
           };
           sleep(2000);
@@ -577,13 +580,13 @@ $(document).ready(function () {
           });
           // cook();
           cook2();
-          document.getElementById("showAlert").style.display = "block";
-          document.getElementById("info").innerText = "Students have been added ✔️";
+          document.getElementById("alertMagWait2").style.display = "block";
+          document.getElementById("alertMag2").style.display = "none";
+          document.getElementById("showBtnn2").style.display = "none";
           const sleep = async (milliseconds) => {
             await new Promise(resolve => {
               return setTimeout(resolve, milliseconds);
             });
-            // document.getElementById("showAlert").style.display = "none";
             window.location.reload();
           };
           sleep(2000);

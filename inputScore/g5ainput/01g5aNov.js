@@ -17,7 +17,8 @@ var db4 = localStorage.getItem("myData13"); //simple
 // console.log(db3);
 firebase.initializeApp(firebaseConfig);
 
-var my5aAll = firebase.database().ref(`${db}/` + `${db3}/`);
+// var actScore = firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `October`);
+
 const getElementVal = (id) => {
   return document.getElementById(id).value;
 };
@@ -46,15 +47,46 @@ function selectAllData() {
           b = 1;
           document.getElementById('showNNN').value = b;
           cccSS();
+         
         }
       );
     });
 }
+//Get activity score
+getScoreAct();
+var actArr = [];
+console.log(actArr);
+function getScoreAct() {
+  firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `October/`).once('value',
+    function (allact) {
+      allact.forEach(
+        function (getData) {
+          var name = getData.val().name;
+          var date = getData.val().date;
+          var total = getData.val().total;
+          actPuch(name,date,total);
+        }
+      );
+    });
+}
+function actPuch(name,date,total){
+  actArr.push({ name, date, total });
+
+}
+function totalCount(){
+  var count = actArr.length;
+  console.log(count);
+  if (actArr == count) {
+    console.log('4');
+  }
+}
+totalCount();
+
+
 window.onload = selectAllData;
 var studentN0;
 
 var stdList = [];
-var stdListPop = [];
 function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
   readingNov, averageNov, rankNOv, myKh) {
   var tbody = document.getElementById('showData');
@@ -399,7 +431,7 @@ var table1 = document.getElementById("my1stsemetable");
 var table2 = document.getElementById("myTable2");
 table1.style.display = "none";
 table2.style.display = "none";
-
+//Alert Function
 // $(function () {
 //   $.bootstrapGrowl("This is a test.");
 
