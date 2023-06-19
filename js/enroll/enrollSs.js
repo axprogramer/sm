@@ -466,7 +466,7 @@ function cook2() {
     var nameW = idM+'w';
     var nameA = idM+'a';
     var nameAtt = idM+'att';
-    var nameRow = idM+'row';
+    var nameRowS = idM+'rowS';
     var s = '';
     var w = '';
     var a = '';
@@ -483,7 +483,7 @@ function cook2() {
         idw: nameW,
         ida: nameA,
         idatt: nameAtt,
-        nameRow: nameRow,
+        nameRowS: nameRowS,
         s:s,
         w:w,
         a:a,

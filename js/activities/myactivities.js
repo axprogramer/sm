@@ -26,7 +26,7 @@ function selectAllData() {
                     var idw = CurrentRecord.val().idw;
                     var ida = CurrentRecord.val().ida;
                     var idatt = CurrentRecord.val().idatt;
-                    var nameRow = CurrentRecord.val().nameRow;
+                    var nameRowS = CurrentRecord.val().nameRowS;
                     var sex = CurrentRecord.val().sex;
                     var date = CurrentRecord.val().date;
                     var s = CurrentRecord.val().s;
@@ -35,7 +35,7 @@ function selectAllData() {
                     var attitude = CurrentRecord.val().attitude;
                     var note = CurrentRecord.val().note;
                     var total = CurrentRecord.val().total;
-                    addItemsToTable(name, id, ids, idw, ida, idatt, nameRow, sex, date, s, w, a, attitude, note,
+                    addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, sex, date, s, w, a, attitude, note,
                         total);
                     autoCheck();
                     dataS();
@@ -50,7 +50,7 @@ var studentN0;
 
 var stdList = [];
 console.log(stdList);
-function addItemsToTable(name, id, ids, idw, ida, idatt, nameRow, sex, date, s, w, a, attitude, note,
+function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, sex, date, s, w, a, attitude, note,
     total) {
     var tbody = document.getElementById('myActivities');
     var trow = document.createElement('tr');
@@ -73,7 +73,7 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRow, sex, date, s, 
 
 
     td3.style.color = 'green';
-    span.id = `${nameRow}`;
+    span.id = `${nameRowS}`;
     td4.style.color = 'green';
     td5.style.color = 'green';
     td6.style.color = 'red';
@@ -111,7 +111,7 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRow, sex, date, s, 
     chkGet.checked = true;
     var ddd = document.getElementById('myDate');
 
-    stdList.push([name, id, ids, idw, ida, idatt, nameRow, sex, date, s, w, a, attitude, note,
+    stdList.push([name, id, ids, idw, ida, idatt, nameRowS, sex, date, s, w, a, attitude, note,
         total]);
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
