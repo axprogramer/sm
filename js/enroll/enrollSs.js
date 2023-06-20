@@ -467,6 +467,14 @@ function cook2() {
     var nameA = idM+'a';
     var nameAtt = idM+'att';
     var nameRowS = idM+'rowS';
+    var nameRowW = idM+'rowW';
+    var nameRowA = idM+'rowA';
+    var nameRowAtt = idM+'rowAtt';
+    var nameRowTotal = idM+'rowTotal';
+    var spanTotalS = idM+'TotalS';
+    var spanTotalW = idM+'TotalW';
+    var spanTotalA = idM+'TotalA';
+    var spanTotalAtt = idM+'TotalAtt';
     var s = '';
     var w = '';
     var a = '';
@@ -484,6 +492,14 @@ function cook2() {
         ida: nameA,
         idatt: nameAtt,
         nameRowS: nameRowS,
+        nameRowW: nameRowW,
+        nameRowA: nameRowA,
+        nameRowAtt: nameRowAtt,
+        nameRowTotal: nameRowTotal,
+        spanTotalS: spanTotalS,
+        spanTotalW: spanTotalW,
+        spanTotalA: spanTotalA,
+        spanTotalAtt: spanTotalAtt,
         s:s,
         w:w,
         a:a,

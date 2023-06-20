@@ -27,6 +27,14 @@ function selectAllData() {
                     var ida = CurrentRecord.val().ida;
                     var idatt = CurrentRecord.val().idatt;
                     var nameRowS = CurrentRecord.val().nameRowS;
+                    var nameRowW = CurrentRecord.val().nameRowW;
+                    var nameRowA = CurrentRecord.val().nameRowA;
+                    var nameRowAtt = CurrentRecord.val().nameRowAtt;
+                    var nameRowTotal = CurrentRecord.val().nameRowTotal;
+                    var spanTotalS = CurrentRecord.val().spanTotalS;
+                    var spanTotalW = CurrentRecord.val().spanTotalW;
+                    var spanTotalA = CurrentRecord.val().spanTotalA;
+                    var spanTotalAtt = CurrentRecord.val().spanTotalAtt;
                     var sex = CurrentRecord.val().sex;
                     var date = CurrentRecord.val().date;
                     var s = CurrentRecord.val().s;
@@ -35,11 +43,16 @@ function selectAllData() {
                     var attitude = CurrentRecord.val().attitude;
                     var note = CurrentRecord.val().note;
                     var total = CurrentRecord.val().total;
-                    addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, sex, date, s, w, a, attitude, note,
+                    addItemsToTable(name, id, ids, idw, ida, idatt,
+                         nameRowS, nameRowW, nameRowA, nameRowAtt,
+                        nameRowTotal, spanTotalS, spanTotalW, spanTotalA,
+                         spanTotalAtt,
+                          sex, date, s, w, a, attitude, note,
                         total);
                     autoCheck();
                     dataS();
-                    toggleS(this);
+                    // toggleS(this);
+                    // toggleW(this);
                     document.getElementById("alertMagWait").style.display = "none";
                 }
             );
@@ -50,7 +63,9 @@ var studentN0;
 
 var stdList = [];
 console.log(stdList);
-function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, sex, date, s, w, a, attitude, note,
+function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nameRowA, nameRowAtt, nameRowTotal,
+    spanTotalS, spanTotalW, spanTotalA,
+    spanTotalAtt, sex, date, s, w, a, attitude, note,
     total) {
     var tbody = document.getElementById('myActivities');
     var trow = document.createElement('tr');
@@ -68,17 +83,34 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, sex, date, s,
     var td11 = document.createElement('br');
     var td12 = document.createElement('br');
     var td13 = document.createElement('br');
+    var td14 = document.createElement('br');
     var div1 = document.createElement('div');
     var span = document.createElement('span');
+    var span1 = document.createElement('span');
+    var span2 = document.createElement('span');
+    var span3 = document.createElement('span');
+    var span4 = document.createElement('span');
 
+
+    var noSpSS = spanTotalS.replace(/\s+/g, '');
+    var noSpWW = spanTotalW.replace(/\s+/g, '');
+    var noSpAA = spanTotalS.replace(/\s+/g, '');
+    var noSpAtt = spanTotalAtt.replace(/\s+/g, '');
+    span.id = `${nameRowS}`;
+    span.className = `${noSpSS}`;
+    span1.id = `${nameRowW}`;
+    span1.className = `${noSpWW}`;
+    span2.id = `${nameRowA}`;
+    span2.className = `${noSpAA}`;
+    span3.id = `${nameRowAtt}`;
+    span3.className = `${noSpAtt}`;
+    span4.id = `${nameRowTotal}`;
 
     td3.style.color = 'green';
-    span.id = `${nameRowS}`;
     td4.style.color = 'green';
     td5.style.color = 'green';
     td6.style.color = 'red';
     td8.style.color = 'red';
-    td8.setAttribute('id', `${name}`);
     trow.setAttribute('class', 'item table');
     //checkbox
     var chkS = document.createElement('input');
@@ -111,16 +143,19 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, sex, date, s,
     chkGet.checked = true;
     var ddd = document.getElementById('myDate');
 
-    stdList.push([name, id, ids, idw, ida, idatt, nameRowS, sex, date, s, w, a, attitude, note,
+    stdList.push([name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nameRowA, nameRowAtt, nameRowTotal, 
+        spanTotalS, spanTotalW, spanTotalA,
+        spanTotalAtt,sex, date, s, w, a, attitude, note,
         total]);
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
     td2.innerHTML = sex;
     ddd.value = date;
-    td3.innerHTML = s;
-    td4.innerHTML = w;
-    td5.innerHTML = a;
-    td6.innerHTML = attitude;
+    span.innerText = s;
+    span1.innerText = w;
+    span2.innerText = a;
+    span3.innerText = attitude;
+    span4.innerText = total;
     td7.innerHTML = note;
     // td8.innerText = parseFloat(s) + parseFloat(w) + parseFloat(a) + parseFloat(attitude);
 
@@ -136,11 +171,21 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, sex, date, s,
     trow.appendChild(td8);
     trow.appendChild(td9);
     td9.appendChild(chkGet);
+
     td3.appendChild(span);
     td3.appendChild(td10);
+
+    td4.appendChild(span1);
     td4.appendChild(td11);
+
+    td5.appendChild(span2);
     td5.appendChild(td12);
+
+    td6.appendChild(span3);
     td6.appendChild(td13);
+
+    td8.appendChild(span4);
+
     td3.appendChild(chkS);
     td4.appendChild(chkW);
     td5.appendChild(chkA);
@@ -150,48 +195,88 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, sex, date, s,
     // td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
     tbody.appendChild(trow);
 }
+
 //Check all box
 function toggleS(source) {
     checkboxes = document.getElementsByName('myS');
-        for (var i = 0, n = checkboxes.length; i < n; i++) {
-            var nameSS = stdList[i][6]; //for name S
-            var idget1 = stdList[i][2]; // for s
-            var checkBoxs = document.getElementById(`${idget1}`);
-            checkboxes[i].checked = source.checked;
-            if (checkBoxs.checked == true) {
-                var s = 3;
-                checkBoxs.checked = true;
-                document.getElementById(`${nameSS}`).innerHTML = s;
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        var idget1 = stdList[i][2]; // for s
+        var nameSS = stdList[i][6]; //for name S
+        var checkBoxs = document.getElementById(`${idget1}`);
+        checkboxes[i].checked = source.checked;
+        if (checkBoxs.checked == true) {
+            var s = 3;
+            checkBoxs.checked = true;
+            document.getElementById(`${nameSS}`).innerHTML = 3;
+            // document.getElementById(`${sumS}`).innerText = s;
 
-            }
-            if (checkBoxs.checked == false) {
-                var s = 0;
-                checkBoxs.checked = false;
-                document.getElementById(`${nameSS}`).innerHTML = s;
-
-            }
         }
+        if (checkBoxs.checked == false) {
+            checkBoxs.checked = false;
+            document.getElementById(`${nameSS}`).innerHTML = 0;
 
+        }
+    }
 
 }
 function toggleW(source) {
     checkboxes = document.getElementsByName('myW');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
         checkboxes[i].checked = source.checked;
+        var idget2 = stdList[i][3]; // for w
+        var nameWW = stdList[i][7]; //for name s
+        var checkBoxw = document.getElementById(`${idget2}`);
+        if (checkBoxw.checked == true) {
+            var w = 1;
+            checkBoxw.checked = true;
+            document.getElementById(`${nameWW}`).innerHTML = w;
+        }
+        if (checkBoxw.checked == false) {
+            var w = 0;
+            checkBoxw.checked = false;
+            document.getElementById(`${nameWW}`).innerHTML = w;
+        }
     }
 }
 function toggleA(source) {
     checkboxes = document.getElementsByName('myA');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
+        var idget3 = stdList[i][4]; // for a
+        var nameAA = stdList[i][8]; //for name a
+        var checkBoxa = document.getElementById(`${idget3}`);
         checkboxes[i].checked = source.checked;
+        if (checkBoxa.checked == true) {
+            var a = 1;
+            checkBoxa.checked = true;
+            document.getElementById(`${nameAA}`).innerHTML = a;
+        }
+        if (checkBoxa.checked == false) {
+            var a = 0;
+            checkBoxa.checked = false;
+            document.getElementById(`${nameAA}`).innerHTML = a;
+        }
     }
 }
 function toggleAtt(source) {
     checkboxes = document.getElementsByName('myAtt');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
+        var idget4 = stdList[i][5]; // for a
+        var nameAtt = stdList[i][9]; //for name att
+        var checkBoxatt = document.getElementById(`${idget4}`);
         checkboxes[i].checked = source.checked;
+        if (checkBoxatt.checked == true) {
+            var att = -1;
+            checkBoxatt.checked = true;
+            document.getElementById(`${nameAtt}`).innerHTML = att;
+        }
+        if (checkBoxatt.checked == false) {
+            var att = 0;
+            checkBoxatt.checked = false;
+            document.getElementById(`${nameAtt}`).innerHTML = att;
+        }
     }
 }
+//Check all row data in table
 function toggleGet(source) {
     checkboxes = document.getElementsByName('myGet');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
@@ -200,58 +285,6 @@ function toggleGet(source) {
 }
 toggleGet(this);
 
-//Create Id for S/W/A
-// var nameS = [];
-// console.log(nameS);
-// function idStd(){
-//     for(i=0;i<stdList.length;i++){
-//         var stdname = stdList[i][2];
-//         nameS.push(stdname)
-//     }
-//     for(i=0;i<nameS.length;i++){
-//         var sname = nameS[i][2];
-//         var item = document.getElementById(`${sname}`);
-//         console.log(sname);
-//         if (item.checked) {
-//             total += parseInt(item.value);
-//         } else {
-//             total -= parseInt(item.value);
-//         }
-//         //alert(total);
-//         document.getElementById('myTotal').innerHTML = total;
-//     }
-// }
-
-//Select all checkbox
-// function selectAll() {
-//     var input = document.getElementsByTagName("input");
-//     var total = 0;
-//     for (i = 0; i < input.length; i++) {
-//         // alert(input[i].type);
-//         if (input[i].type == 'checkbox' && input[i].id != 'selall') {
-//             input[i].checked = true;
-//             total += parseInt(input[i].value);
-//         }
-//     }
-//     document.getElementById('last').value = total;
-// }
-
-
-var total = 0;
-// function testS() {
-//     for (i = 0; i < stdList.length; i++) {
-//         var stdname = stdList[i][2];
-//         console.log(stdname);
-//     }
-//     var item = document.getElementById('កឹម លីហាយs');
-//     if (item.checked) {
-//         total += parseInt(item.value);
-//     } else {
-//         total -= parseInt(item.value);
-//     }
-//     //alert(total);
-//     document.getElementById('myTotal').innerHTML = total;
-// }
 $(document).ready(function () {
 
     $("#btnRows").on('click', function () {
@@ -266,7 +299,7 @@ $(document).ready(function () {
             var col6 = currentRow.find("td:eq(5)").text();
             var col7 = currentRow.find("td:eq(6)").text();
             var col8 = currentRow.find("td:eq(7)").html();
-            var col9 = currentRow.find("td:eq(8)").html();
+            var col9 = currentRow.find("td:eq(8)").text();
             var obj = {};
             var objAct = {};
             obj.id = col1;
@@ -339,21 +372,21 @@ $(document).ready(function () {
                             document.getElementById("alertMagWait").style.display = "block";
                             document.getElementById("alertMag").style.display = "none";
                             document.getElementById("showBtnn").style.display = "none";
-                            // cook();
+                            cook();
                             const sleep = async (milliseconds) => {
                                 await new Promise(resolve => {
                                     return setTimeout(resolve, milliseconds);
                                 });
-                                // totalData();
+                                totalData();
                                 const sleep = async (milliseconds) => {
                                     await new Promise(resolve => {
                                         return setTimeout(resolve, milliseconds);
                                     });
-                                    // window.location.reload();
+                                    window.location.reload();
                                 };
-                                sleep(5000);
+                                sleep(1000);
                             };
-                            sleep(3000);
+                            sleep(1000);
 
                         }
                         if (checkBoxatt.checked == false && checkBoxatt.id == idattu) {
@@ -361,28 +394,28 @@ $(document).ready(function () {
                             document.getElementById("alertMagWait").style.display = "block";
                             document.getElementById("alertMag").style.display = "none";
                             document.getElementById("showBtnn").style.display = "none";
-                            // cook();
+                            cook();
                             const sleep = async (milliseconds) => {
                                 await new Promise(resolve => {
                                     return setTimeout(resolve, milliseconds);
                                 });
-                                // totalData();
+                                totalData();
                                 const sleep = async (milliseconds) => {
                                     await new Promise(resolve => {
                                         return setTimeout(resolve, milliseconds);
                                     });
-                                    // window.location.reload();
+                                    window.location.reload();
                                 };
-                                sleep(5000);
+                                sleep(1000);
                             };
-                            sleep(3000);
+                            sleep(1000);
 
                         }
 
                     }
 
                 };
-                sleep(1500);
+                sleep(1000);
             }
         });
     });
@@ -392,20 +425,69 @@ $(document).ready(function () {
 function dataS() {
     //S checked for checkbook
     for (i = 0; i < stdList.length; i++) {
-        var a = 1;
-        var att = -1;
+        //Sum for All score
+        var allTotal = stdList[i][10]; // for s
+        //get name from array
+        var getS = stdList[i][11];
+        var getW = stdList[i][12];
+        var getA = stdList[i][13];
+        var getAtt = stdList[i][14];
+        var getAtt = stdList[i][14];
+        //remove space from name for class
+        var noSpcS = getS.replace(/\s+/g, '');
+        var noSpcW = getW.replace(/\s+/g, '');
+        var noSpcA = getA.replace(/\s+/g, '');
+        var noSpcAtt = getAtt.replace(/\s+/g, '');
+        document.getElementById('sumUpScore').addEventListener('click',function() {
+            var sumS = 0;
+            var sumW = 0;
+            var sumA = 0;
+            var sumAtt = 0;
+            $(`.${noSpcS}`).each(function () {
+                sumS += parseFloat($(this).text()); // 
+            });
+            $(`.${noSpcW}`).each(function () {
+                sumW += parseFloat($(this).text()); // 
+            });
+            $(`.${noSpcA}`).each(function () {
+                sumA += parseFloat($(this).text()); // 
+            });
+            $(`.${noSpcAtt}`).each(function () {
+                sumAtt += parseFloat($(this).text()); // 
+            });
+            var getSum = parseFloat(sumS) + parseFloat(sumW) + parseFloat(sumA) + parseFloat(sumAtt);
+            document.getElementById(`${allTotal}`).innerText = parseFloat(getSum);
+        })
+
+        //get id for checkbox
         var idget1 = stdList[i][2]; // for s
         var idget2 = stdList[i][3]; // for w
+        var idget3 = stdList[i][4]; // for a
+        var idget4 = stdList[i][5]; // for a
+        //get name for checkbox id
         var nameSS = stdList[i][6]; //for name s
+        var nameWW = stdList[i][7]; //for name w
+        var nameAA = stdList[i][8]; //for name a
+        var nameAtt = stdList[i][9]; //for name att
+        //Checkbox varible
         var checkBoxs = document.getElementById(`${idget1}`);
         var checkBoxw = document.getElementById(`${idget2}`);
-        document.getElementById(`${nameSS}`).innerHTML = 0;
+        var checkBoxa = document.getElementById(`${idget3}`);
+        var checkBoxatt = document.getElementById(`${idget4}`);
+        //show cell in 0 value
+        // document.getElementById(`${nameSS}`).innerHTML = 0;
+        // document.getElementById(`${nameWW}`).innerHTML = 0;
+        // document.getElementById(`${nameAA}`).innerHTML = 0;
+        // document.getElementById(`${nameAtt}`).innerHTML = 0;
+        // document.getElementById(`${allTotal}`).innerText = 0;
+        //Checkbox for S
         checkBoxs.addEventListener('click', function () {
             if (checkBoxs.checked == true) {
                 var s = 3;
                 checkBoxs.checked = true;
                 document.getElementById(`${nameSS}`).innerHTML = s;
-
+                
+                
             }
             if (checkBoxs.checked == false) {
                 var s = 0;
@@ -414,26 +496,47 @@ function dataS() {
 
             }
         })
-
+        //Checkbox for W
         checkBoxw.addEventListener('click', function () {
             if (checkBoxw.checked == true) {
                 var w = 1;
                 checkBoxw.checked = true;
-                document.getElementById(`${nameTo}`).innerHTML = w;
+                document.getElementById(`${nameWW}`).innerHTML = w;
             }
             if (checkBoxw.checked == false) {
                 var w = 0;
                 checkBoxw.checked = false;
-                document.getElementById(`${nameTo}`).innerHTML = w;
+                document.getElementById(`${nameWW}`).innerHTML = w;
             }
-            // else {
-            //     checkBoxw.checked = false;
-            //     document.getElementById(`${nameTo}`).innerHTML = '0';
-            // }
+        })
+        //Checkbox for A
+        checkBoxa.addEventListener('click', function () {
+            if (checkBoxa.checked == true) {
+                var a = 1;
+                checkBoxa.checked = true;
+                document.getElementById(`${nameAA}`).innerHTML = a;
+            }
+            if (checkBoxa.checked == false) {
+                var a = 0;
+                checkBoxa.checked = false;
+                document.getElementById(`${nameAA}`).innerHTML = a;
+            }
+        })
+        //Checkbox for Att
+        checkBoxatt.addEventListener('click', function () {
+            if (checkBoxatt.checked == true) {
+                var att = -1;
+                checkBoxatt.checked = true;
+                document.getElementById(`${nameAtt}`).innerHTML = att;
+            }
+            if (checkBoxatt.checked == false) {
+                var att = 0;
+                checkBoxatt.checked = false;
+                document.getElementById(`${nameAtt}`).innerHTML = att;
+            }
         })
 
     }
-
 }
 //Auto Checkbox
 function autoCheck() {
@@ -441,31 +544,20 @@ function autoCheck() {
     for (i = 0; i < stdList.length; i++) {
         var idget1 = stdList[i][2];
         da1 = '3';
-        var get1 = stdList[i][8];
+        var get1 = stdList[i][17];
         var checkBoxs = document.getElementById(`${idget1}`);
         if (get1 == da1) {
             checkBoxs.checked = true;
         } else {
             checkBoxs.checked = false;
         }
-        // checkBoxs.addEventListener('click',function(){
-        //     console.log("click");
-        //     if (checkBoxs.checked = !checkBoxs.checked){
-        //         total = parseInt(da1);
-        //         document.getElementById('myTotal').innerHTML = total;
-
-        //     } else{
-        //         total -= parseInt(da1);
-
-        //     }
-        // })
 
     }
     //W checked for checkbook
     for (i = 0; i < stdList.length; i++) {
         var idget2 = stdList[i][3];
         da2 = '1';
-        var get2 = stdList[i][9];
+        var get2 = stdList[i][18];
         var checkBoxs = document.getElementById(`${idget2}`);
         if (get2 == da2) {
             checkBoxs.checked = true;
@@ -478,7 +570,7 @@ function autoCheck() {
     for (i = 0; i < stdList.length; i++) {
         var idget3 = stdList[i][4];
         da3 = '1';
-        var get3 = stdList[i][10];
+        var get3 = stdList[i][19];
         var checkBoxs = document.getElementById(`${idget3}`);
         if (get3 == da3) {
             checkBoxs.checked = true;
@@ -491,7 +583,7 @@ function autoCheck() {
     for (i = 0; i < stdList.length; i++) {
         var idget4 = stdList[i][5];
         da4 = '-1';
-        var get4 = stdList[i][11];
+        var get4 = stdList[i][20];
         var checkBoxs = document.getElementById(`${idget4}`);
         if (get4 == da4) {
             checkBoxs.checked = true;
@@ -550,7 +642,7 @@ function cook() {
         var attitude = activityData[i].attitude;
         var note = activityData[i].note;
         var total = activityData[i].total;
-        firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).set(
+        firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).update(
             {
                 name: name,
                 id: idM,

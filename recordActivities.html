@@ -150,14 +150,6 @@
                     </div>
                 </div>
             </div> -->
-            <div>
-                <input type="Checkbox" value="1" />1</td>
-                <td><input type="Checkbox" value="2" />2
-                <td>
-                
-                    <input type="text" id="last" name="last" /></tr>
-                    <input type="checkbox" id="selall" onClick="selectAll()" />Select All
-            </div>
             <div class="container-fluid pt-2 px-4 Div1">
                 <div class="row bg-secondary rounded align-items-center justify-content-center ">
                     <div class="bg-secondary rounded h-100 p-4" style="overflow-x: auto;">
@@ -200,6 +192,10 @@
                                         <button type="button" class="btn btn-success rounded-pill"
                                             data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             <i class="bi bi-box-arrow-in-up me-2"></i>Upgrade
+                                        </button>
+                                        <button type="button" class="btn btn-success rounded-pill"
+                                            id="sumUpScore">
+                                            <i class="bi bi-box-arrow-in-up me-2"></i>Sum
                                         </button>
                                     </td>
                                 </tr>
@@ -267,8 +263,8 @@
                         </div>
 
                         <div class="modal-body text-center myWaa">
-                            <span id="alertMag">⚠️ Are you sure that you want to upgrade? ⚠️</span>
-                            <span id="alertMagWait">Please wait!! ⚠️ <br> <img src="./img/clock.gif" width="50px"
+                            <span id="alertMag" style="color: black;">⚠️ Are you sure that you want to update? ⚠️</span>
+                            <span id="alertMagWait" style="color: black;">Please wait!! ⚠️ <br> <img src="./img/wait4Colors.gif" width="150px"
                                     alt=""></span>
                         </div>
                         <div class="modal-footer" id="showBtnn">
