@@ -16,7 +16,7 @@ const getElementVal = (id) => {
 function selectAllData() {
     document.getElementById('myActivities').innerHTML = "";
     studentN0 = 0;
-    firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/`).once('value',
+    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/`).once('value',
         function (AllRecords) {
             AllRecords.forEach(
                 function (CurrentRecord) {
