@@ -14,6 +14,8 @@ var db3 = localStorage.getItem("myData12");  //Year
 firebase.initializeApp(firebaseConfig);
 // var db = document.getElementById("dataBase").innerText;
 document.getElementById('year1').innerHTML = db3;
+document.getElementById('year2').innerHTML = db3;
+document.getElementById('year3').innerHTML = db3;
 function myPrintNov() {
   document.getElementById('tbody3').innerHTML = "";
   document.getElementById('tbodySave').innerHTML = "";
@@ -272,7 +274,6 @@ $(document).ready(function () {
     pass.innerHTML = sum;
     tfail.innerHTML = sumFs;
     showw.innerHTML = m2;
-    console.log(sum);
 
     var noOfOccurance = 0;
 

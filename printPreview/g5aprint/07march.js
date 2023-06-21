@@ -10,6 +10,9 @@ const firebaseConfig = {
 var db = localStorage.getItem("myData10"); //Grade
 var db2 = localStorage.getItem("myData11"); //Month
 var db3 = localStorage.getItem("myData12");  //Year
+document.getElementById('year1').innerHTML = db3;
+document.getElementById('year2').innerHTML = db3;
+document.getElementById('year3').innerHTML = db3;
 
 firebase.initializeApp(firebaseConfig);
 // var db = document.getElementById("dataBase").innerText;
