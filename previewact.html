@@ -174,6 +174,59 @@
                                         </div>
                                     </td>
                                     <td>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="myGrade"
+                                                aria-label="Floating label select example">
+                                                <option selected>Grade</option>
+                                                <option value="K2">មត្តេយ្យកម្រិតទាប</option>
+                                                <option value="K3">មត្តេយ្យកម្រិតខ្ពស់</option>
+                                                <option value="1A">1A</option>
+                                                <option value="1B">1B</option>
+                                                <option value="2A">2A</option>
+                                                <option value="2B">2B</option>
+                                                <option value="3A">3A</option>
+                                                <option value="3B">3B</option>
+                                                <option value="4A">4A</option>
+                                                <option value="4B">4B</option>
+                                                <option value="5A">5A</option>
+                                                <option value="5B">5B</option>
+                                                <option value="6A">6A</option>
+                                                <option value="6B">6B</option>
+                                                <option value="7A">7A</option>
+                                                <option value="7B">7B</option>
+                                                <option value="8A">8A</option>
+                                                <option value="8B">8B</option>
+                                                <option value="9A">9A</option>
+                                                <option value="9B">9B</option>
+                                                <option value="10A">10A</option>
+                                                <option value="10B">10B</option>
+                                                <option value="11A">11A</option>
+                                                <option value="11B">11B</option>
+                                                <option value="12A">12A</option>
+                                                <option value="12B">12B</option>
+
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="academicYear"
+                                                aria-label="Floating label select example">
+                                                <option selected>Old year</option>
+                                                <option value="2022-2023">2022-2023</option>
+                                                <option value="2023-2024">2023-2024</option>
+                                                <option value="2024-2025">2024-2025</option>
+                                                <option value="2025-2026">2025-2026</option>
+                                                <option value="2026-2027">2026-2027</option>
+                                                <option value="2027-2028">2027-2028</option>
+                                                <option value="2028-2029">2028-2029</option>
+                                                <option value="2029-2030">2029-2030</option>
+                                                <option value="2030-2031">2030-2031</option>
+                                            </select>
+                                        </div>
+                                    </td>
+
+                                    <td>
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="myTimesAct" placeholder="Times">
                                             <label for="myTimesAct">Times</label>
@@ -193,6 +246,9 @@
                                             data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             <i class="bi bi-box-arrow-in-up me-2"></i>Upgrade
                                         </button>
+                                        <button type="button" class="btn btn-success rounded-pill" id="sumUpScore">
+                                            <i class="bi bi-box-arrow-in-up me-2"></i>Sum
+                                        </button>
                                     </td>
                                 </tr>
                             </table>
@@ -208,13 +264,37 @@
                     <div class="bg-secondary rounded h-100 p-4" style="overflow-x: auto;">
                         <div class="bg-secondary rounded ">
                             <div class="tg-wrap">
-                                <table class="table table-bordered whiteBack" id="myTbaleActivity">
-                                    <thead>
+                                <table class="table table-bordered whiteBack kh" id="myTbaleActivity">
+                                    <thead style="text-align: center;font-weight: bold;">
                                         <tr>
                                             <td>#</td>
                                             <td>Full Name</td>
                                             <td>Sex</td>
-                                            <td>Score 1</td>
+                                            <td>Book</td>
+                                            <td>PT</td>
+                                            <td>S1</td>
+                                            <td>S2</td>
+                                            <td>S3</td>
+                                            <td>S4</td>
+                                            <td>S5</td>
+                                            <td>S6</td>
+                                            <td>S7</td>
+                                            <td>S8</td>
+                                            <td>S9</td>
+                                            <td>S10</td>
+                                            <td>S11</td>
+                                            <td>S12</td>
+                                            <td>S13</td>
+                                            <td>S14</td>
+                                            <td>S15</td>
+                                            <td>S16</td>
+                                            <td>S17</td>
+                                            <td>S18</td>
+                                            <td>S19</td>
+                                            <td>S20</td>
+                                            <td>Total</td>
+                                            <td>Check<br><input type="checkbox" name="chckAA" onClick="toggleGet(this)"
+                                                    checked></td>
                                         </tr>
                                     </thead>
                                     <tbody id="myActivities" style="text-align: center;" contenteditable>

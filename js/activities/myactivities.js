@@ -722,8 +722,214 @@ function totalData() {
             )
 
         }
+        if (dbtimesAct == 5) {
+            var total5 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total5: total5,
+                },
+            )
 
+        }
+        if (dbtimesAct == 6) {
+            var total6 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total6: total6,
+                },
+            )
+
+        }
+        if (dbtimesAct == 7) {
+            var total7 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total7: total7,
+                },
+            )
+
+        }
+        if (dbtimesAct == 8) {
+            var total8 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total8: total8,
+                },
+            )
+
+        }
+        if (dbtimesAct == 9) {
+            var total9 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total9: total9,
+                },
+            )
+
+        }
+        if (dbtimesAct == 10) {
+            var total10 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total10: total10,
+                },
+            )
+
+        }
+        if (dbtimesAct == 11) {
+            var total11 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total11: total11,
+                },
+            )
+
+        }
+        if (dbtimesAct == 12) {
+            var total12 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total12: total12,
+                },
+            )
+
+        }
+        if (dbtimesAct == 13) {
+            var total13 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total13: total13,
+                },
+            )
+
+        }
+        if (dbtimesAct == 14) {
+            var total14 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total14: total14,
+                },
+            )
+
+        }
+        if (dbtimesAct == 15) {
+            var total15 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total15: total15,
+                },
+            )
+
+        }
+        if (dbtimesAct == 16) {
+            var total16 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total16: total16,
+                },
+            )
+
+        }
+        if (dbtimesAct == 17) {
+            var total17 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total17: total17,
+                },
+            )
+
+        }
+        if (dbtimesAct == 18) {
+            var total18 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total18: total18,
+                },
+            )
+
+        }
+        if (dbtimesAct == 19) {
+            var total19 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total19: total19,
+                },
+            )
+
+        }
+        if (dbtimesAct == 20) {
+            var total20 = activityDataAct[i].total;
+            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    total20: total20,
+                },
+            )
+
+        }
 
     }
 }
