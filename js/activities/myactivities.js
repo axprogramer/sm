@@ -16,7 +16,7 @@ const getElementVal = (id) => {
 function selectAllData() {
     document.getElementById('myActivities').innerHTML = "";
     studentN0 = 0;
-    firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `${dbmonthAct}/` + `${dbtimesAct}/`).once('value',
+    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/`).once('value',
         function (AllRecords) {
             AllRecords.forEach(
                 function (CurrentRecord) {
@@ -151,11 +151,41 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nam
     td1.innerHTML = id;
     td2.innerHTML = sex;
     ddd.value = date;
-    span.innerText = s;
-    span1.innerText = w;
-    span2.innerText = a;
-    span3.innerText = attitude;
-    span4.innerText = total;
+    if(span == undefined){
+        span.innerText = 0;
+
+    }else{
+        span.innerText = s;
+
+    }
+    if(span1 == undefined){
+        span1.innerText = 0;
+
+    }else{
+        span1.innerText = w;
+
+    }
+    if(span2 == undefined){
+        span2.innerText = 0;
+
+    }else{
+        span2.innerText = a;
+
+    }
+    if(span3 == undefined){
+        span3.innerText = 0;
+
+    }else{
+        span3.innerText = attitude;
+
+    }
+    if(span4 == undefined){
+        span4.innerText = 0;
+
+    }else{
+        span4.innerText = total;
+
+    }
     td7.innerHTML = note;
     // td8.innerText = parseFloat(s) + parseFloat(w) + parseFloat(a) + parseFloat(attitude);
 
@@ -598,8 +628,6 @@ function autoCheck() {
 //Get All data to array
 var activityData = [];
 var activityDataAct = [];
-console.log(activityData);
-console.log(activityDataAct);
 //Month and Times for Activity
 document.getElementById('myMonthAct').addEventListener('change', function () {
     var monthact = document.getElementById('myMonthAct').value;
@@ -619,12 +647,28 @@ document.getElementById('myDate').addEventListener('change', function () {
     window.location.reload();
 
 })
+document.getElementById('myGradeAct').addEventListener('change', function () {
+    var gradeact = document.getElementById('myGradeAct').value;
+    localStorage.setItem('owngradeAct', gradeact);
+    window.location.reload();
+
+})
+document.getElementById('myYearAct').addEventListener('change', function () {
+    var yeareact = document.getElementById('myYearAct').value;
+    localStorage.setItem('ownyeareAct', yeareact);
+    window.location.reload();
+
+})
 var dbmonthAct = localStorage.getItem('ownmonthAct'); //month activity
 var dbtimesAct = localStorage.getItem('owntimesAct'); // times activity
 var dbdateAct = localStorage.getItem('owndateAct'); // date activity
+var dbgradeAct = localStorage.getItem('owngradeAct'); // grade activity
+var dbyearAct = localStorage.getItem('ownyeareAct'); // year activity
 document.getElementById('myMonthAct').value = dbmonthAct;
 document.getElementById('myTimesAct').value = dbtimesAct;
 document.getElementById('myDate').value = dbdateAct;
+document.getElementById('myGradeAct').value = dbgradeAct;
+document.getElementById('myYearAct').value = dbyearAct;
 
 // Push data to firebase
 function cook() {
@@ -642,7 +686,7 @@ function cook() {
         var attitude = activityData[i].attitude;
         var note = activityData[i].note;
         var total = activityData[i].total;
-        firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).update(
+        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).update(
             {
                 name: name,
                 id: idM,
@@ -672,7 +716,7 @@ function totalData() {
 
         if (dbtimesAct == 1) {
             var total1 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -685,7 +729,7 @@ function totalData() {
         }
         if (dbtimesAct == 2) {
             var total2 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -698,7 +742,7 @@ function totalData() {
         }
         if (dbtimesAct == 3) {
             var total3 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -711,7 +755,7 @@ function totalData() {
         }
         if (dbtimesAct == 4) {
             var total4 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -724,7 +768,7 @@ function totalData() {
         }
         if (dbtimesAct == 5) {
             var total5 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -737,7 +781,7 @@ function totalData() {
         }
         if (dbtimesAct == 6) {
             var total6 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -750,7 +794,7 @@ function totalData() {
         }
         if (dbtimesAct == 7) {
             var total7 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -763,7 +807,7 @@ function totalData() {
         }
         if (dbtimesAct == 8) {
             var total8 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -776,7 +820,7 @@ function totalData() {
         }
         if (dbtimesAct == 9) {
             var total9 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -789,7 +833,7 @@ function totalData() {
         }
         if (dbtimesAct == 10) {
             var total10 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -802,7 +846,7 @@ function totalData() {
         }
         if (dbtimesAct == 11) {
             var total11 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -815,7 +859,7 @@ function totalData() {
         }
         if (dbtimesAct == 12) {
             var total12 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -828,7 +872,7 @@ function totalData() {
         }
         if (dbtimesAct == 13) {
             var total13 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -841,7 +885,7 @@ function totalData() {
         }
         if (dbtimesAct == 14) {
             var total14 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -854,7 +898,7 @@ function totalData() {
         }
         if (dbtimesAct == 15) {
             var total15 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -867,7 +911,7 @@ function totalData() {
         }
         if (dbtimesAct == 16) {
             var total16 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -880,7 +924,7 @@ function totalData() {
         }
         if (dbtimesAct == 17) {
             var total17 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -893,7 +937,7 @@ function totalData() {
         }
         if (dbtimesAct == 18) {
             var total18 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -906,7 +950,7 @@ function totalData() {
         }
         if (dbtimesAct == 19) {
             var total19 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,
@@ -919,7 +963,7 @@ function totalData() {
         }
         if (dbtimesAct == 20) {
             var total20 = activityDataAct[i].total;
-            firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `Total/` + `${dbmonthAct}/` + idM).update(
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
                     name: name,

@@ -152,109 +152,141 @@ function addItemsToTable(name, id, sex,
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
     tdsex.innerHTML = sex;
-    tdbook.innerHTML = 0;
-    tdPT.innerHTML = 0;
+    if(book == undefined){
+        tdbook.innerHTML = 0;
+
+    }else{
+        tdbook.innerHTML = book;
+        tdbook.style.backgroundColor = '#FFF366';
+    }
+    if(pt == undefined){
+        tdPT.innerHTML = 0;
+
+    }else{
+        tdPT.innerHTML = pt;
+        tdPT.style.backgroundColor = '#FFF366';
+    }
     if(s1 == undefined){
         tdS1.innerHTML = 0;
     }else{
         tdS1.innerHTML = s1;
+        tdS1.style.backgroundColor = '#FFF366';
     }
     if (s2 == undefined){
         tdS2.innerHTML = 0;
         
     }else{
         tdS2.innerHTML = s2;
+        tdS2.style.backgroundColor = '#FFF366';
     }
     if (s3 == undefined){
         tdS3.innerHTML = 0;
     }else{
         tdS3.innerHTML = s3;
+        tdS3.style.backgroundColor = '#FFF366';
     }
     if (s4 == undefined){
         tdS4.innerHTML = 0;
     }else{
         tdS4.innerHTML = s4;
+        tdS4.style.backgroundColor = '#FFF366';
     }
     if (s5 == undefined){
         tdS5.innerHTML = 0;
 
     }else{
         tdS5.innerHTML = s5;
+        tdS5.style.backgroundColor = '#FFF366';
     }
     if (s6 == undefined){
         tdS6.innerHTML = 0;
     }else{
         tdS6.innerHTML = s6;
+        tdS6.style.backgroundColor = '#FFF366';
     }
     if(s7 == undefined){
         tdS7.innerHTML = 0;
     }else{
         tdS7.innerHTML = s7;
+        tdS7.style.backgroundColor = '#FFF366';
     }
     if(s8 == undefined){
         tdS8.innerHTML = 0;
     }else{
         tdS8.innerHTML = s8;
+        tdS8.style.backgroundColor = '#FFF366';
     }
     if(s9 == undefined){
         tdS9.innerHTML = 0;
     }else{
         tdS9.innerHTML = s9;
+        tdS9.style.backgroundColor = '#FFF366';
     }
     if(s10 == undefined){
         tdS10.innerHTML = 0;
     }else{
         tdS10.innerHTML = s10;
+        tdS10.style.backgroundColor = '#FFF366';
     }
     if(s11 == undefined){
         tdS11.innerHTML = 0;
     }else{
         tdS11.innerHTML = s11;
+        tdS11.style.backgroundColor = '#FFF366';
     }
     if(s12 == undefined){
         tdS12.innerHTML = 0;
     }else{
         tdS12.innerHTML = s12;
+        tdS12.style.backgroundColor = '#FFF366';
     }
     if(s13 == undefined){
         tdS13.innerHTML = 0;
     }else{
         tdS13.innerHTML = s13;
+        tdS13.style.backgroundColor = '#FFF366';
     }
     if(s14 == undefined){
         tdS14.innerHTML = 0;
     }else{
         tdS14.innerHTML = s14;
+        tdS14.style.backgroundColor = '#FFF366';
     }
     if(s15 == undefined){
         tdS15.innerHTML = 0;
     }else{
         tdS15.innerHTML = s15;
+        tdS15.style.backgroundColor = '#FFF366';
     }
     if(s16 == undefined){
         tdS16.innerHTML = 0;
     }else{
         tdS16.innerHTML = s16;
+        tdS16.style.backgroundColor = '#FFF366';
     }
     if(s17 == undefined){
         tdS17.innerHTML = 0;
     }else{
         tdS17.innerHTML = s17;
+        tdS17.style.backgroundColor = '#FFF366';
     }
     if(s18 == undefined){
         tdS18.innerHTML = 0;
     }else{
         tdS18.innerHTML = s18;
+        tdS18.style.backgroundColor = '#FFF366';
     }
     if(s19 == undefined){
         tdS19.innerHTML = 0;
     }else{
         tdS19.innerHTML = s19;
+        tdS19.style.backgroundColor = '#FFF366';
     }
     if(s20 == undefined){
         tdS20.innerHTML = 0;
     }else{
         tdS20.innerHTML = s20;
+        tdS20.style.backgroundColor = '#FFF366';
     }
 
     tdS21.innerHTML = 0;
@@ -439,8 +471,9 @@ function dataS() {
              parseFloat(gs18) + 
              parseFloat(gs19) + 
              parseFloat(gs20);
-            var di = actSum / 20 / 2;
+            var di = actSum / `${ dbdiviAct }` / 2;
             var sumAll = bookPt + di;
+            sumAll = parseFloat(sumAll).toFixed(2);
             document.getElementById(`${getTotal}`).innerHTML = sumAll;
         })
 
@@ -670,18 +703,35 @@ document.getElementById('myTimesAct').addEventListener('change', function () {
     window.location.reload();
 
 })
-// document.getElementById('myDate').addEventListener('change', function () {
-//     var datesact = document.getElementById('myDate').value;
-//     localStorage.setItem('owndateAct', datesact);
-//     window.location.reload();
+document.getElementById('myGradeAct').addEventListener('change', function () {
+    var gradeact = document.getElementById('myGradeAct').value;
+    localStorage.setItem('owngradeAct', gradeact);
+    window.location.reload();
 
-// })
+})
+document.getElementById('myYearAct').addEventListener('change', function () {
+    var yeareact = document.getElementById('myYearAct').value;
+    localStorage.setItem('ownyeareAct', yeareact);
+    window.location.reload();
+
+})
+document.getElementById('myDivide').addEventListener('change', function () {
+    var diviact = document.getElementById('myDivide').value;
+    localStorage.setItem('owndiviAct', diviact);
+    window.location.reload();
+
+})
 var dbmonthAct = localStorage.getItem('ownmonthAct'); //month activity
 var dbtimesAct = localStorage.getItem('owntimesAct'); // times activity
-// var dbdateAct = localStorage.getItem('owndateAct'); // date activity
+var dbgradeAct = localStorage.getItem('owngradeAct'); // grade activity
+var dbyearAct = localStorage.getItem('ownyeareAct'); // year activity
+var dbdiviAct = localStorage.getItem('owndiviAct'); // divide activity
+
 document.getElementById('myMonthAct').value = dbmonthAct;
 document.getElementById('myTimesAct').value = dbtimesAct;
-// document.getElementById('myDate').value = dbdateAct;
+document.getElementById('myGradeAct').value = dbgradeAct;
+document.getElementById('myYearAct').value = dbyearAct;
+document.getElementById('myDivide').value = dbdiviAct;
 
 // Push data to firebase
 function cook() {
@@ -699,7 +749,7 @@ function cook() {
         var attitude = activityData[i].attitude;
         var note = activityData[i].note;
         var total = activityData[i].total;
-        firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).set(
+        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).set(
             {
                 name: name,
                 id: idM,

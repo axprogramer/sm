@@ -303,7 +303,7 @@ function dbAcadamic() {
 
 }
 dbAcadamic();
-//Month, Times, and date for Activity
+//Month, Year, Times, and date for Activity
 document.getElementById('myMonthAct').addEventListener('change',function(){
   var monthact = document.getElementById('myMonthAct').value;
   localStorage.setItem('monthAct',monthact);
@@ -322,12 +322,28 @@ document.getElementById('myDate').addEventListener('change',function(){
   window.location.reload();
 
 })
+document.getElementById('myYearAct').addEventListener('change',function(){
+  var dateact = document.getElementById('myYearAct').value;
+  localStorage.setItem('yearAct', dateact);
+  window.location.reload();
+
+})
+document.getElementById('myGradeAct').addEventListener('change',function(){
+  var dateact = document.getElementById('myGradeAct').value;
+  localStorage.setItem('gradeAct', dateact);
+  window.location.reload();
+
+})
 var dbmonthAct = localStorage.getItem('monthAct'); //month activity
 var dbtimesAct = localStorage.getItem('timesAct'); // times activity
 var dateAact = localStorage.getItem('dateAct'); // date activity
+var yearAact = localStorage.getItem('yearAct'); // year activity
+var gradeAact = localStorage.getItem('gradeAct'); // grade activity
 document.getElementById('myMonthAct').value = dbmonthAct;
 document.getElementById('myTimesAct').value = dbtimesAct;
 document.getElementById('myDate').value = dateAact;
+document.getElementById('myYearAct').value = yearAact;
+document.getElementById('myGradeAct').value = gradeAact;
 
 //Firebase Store
 
@@ -475,14 +491,13 @@ function cook2() {
     var spanTotalW = idM+'TotalW';
     var spanTotalA = idM+'TotalA';
     var spanTotalAtt = idM+'TotalAtt';
-    var s = '';
-    var w = '';
-    var a = '';
-    var a = '';
-    var attitude = '';
+    var s = 0;
+    var w = 0;
+    var a = 0;
+    var attitude = 0;
     var note = '';
-    var total = '';
-    firebase.database().ref(`4A/` + `recordActivity/` + `2022-2023/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).set(
+    var total = 0;
+    firebase.database().ref(`${gradeAact}/` + `recordActivity/` + `${yearAact}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).set(
       {
         name: enname,
         id: idM,
