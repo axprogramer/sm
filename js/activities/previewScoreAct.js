@@ -18,6 +18,7 @@ function selectAllData() {
     studentN0 = 0;
     firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/`).once('value',
         function (AllRecords) {
+
             AllRecords.forEach(
                 function (CurrentRecord) {
                     var name = CurrentRecord.val().name;
@@ -48,9 +49,8 @@ function selectAllData() {
                     addItemsToTable(name, id, sex,
                         book, pt, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13,
                         s14, s15, s16, s17, s18, s19, s20);
-                    dataS();
                     document.getElementById("alertMagWait").style.display = "none";
-
+                    dataS();
                 }
             );
         });
@@ -92,6 +92,9 @@ function addItemsToTable(name, id, sex,
     var tdS21 = document.createElement('td');
     var tdS22 = document.createElement('td');
     var br = document.createElement('br');
+    var br1 = document.createElement('br');
+    var spanBook = document.createElement('span');
+    var spanPT = document.createElement('span');
     tdS21.style.color = 'red';
     //Name no space
     var noSpname = id.replace(/\s+/g, '');
@@ -119,32 +122,26 @@ function addItemsToTable(name, id, sex,
     tdS19.className = `${noSpname}s19`;
     tdS20.className = `${noSpname}s20`;
     tdS21.id = `${noSpname}s21`;
+    // tdbook.id = `${noSpname}book`;
+    spanBook.id = `${noSpname}bookSpa`;
+    spanPT.id = `${noSpname}ptSpa`;
 
     //checkbox
-    var chkS = document.createElement('input');
-    chkS.type = "checkbox";
-    chkS.setAttribute('name', 'myS');
-    // chkS.setAttribute('id', `${ids}`);
+    var chbook = document.createElement('input');
+    chbook.type = "checkbox";
+    chbook.setAttribute('name', 'myBook');
+    chbook.id = `${noSpname}chBook`;
 
-    var chkW = document.createElement('input');
-    chkW.type = "checkbox";
-    chkW.setAttribute('name', 'myW');
-    // chkW.setAttribute('id', `${idw}`);
+    var chPt = document.createElement('input');
+    chPt.type = "checkbox";
+    chPt.setAttribute('name', 'myPT');
+    chPt.id = `${noSpname}chPt`;
 
-    var chkA = document.createElement('input');
-    chkA.type = "checkbox";
-    chkA.setAttribute('name', 'myA');
-    // chkA.setAttribute('id', `${ida}`);
-    var chkAtt = document.createElement('input');
-    chkAtt.type = "checkbox";
-    chkAtt.setAttribute('name', 'myAtt');
-    // chkAtt.setAttribute('id', `${idatt}`);
     var chkGet = document.createElement('input');
     chkGet.type = "checkbox";
     chkGet.setAttribute('name', 'myGet');
     chkGet.setAttribute('class', 'chk');
     chkGet.checked = true;
-    var ddd = document.getElementById('myDate');
 
     stdList.push([name, id, sex,
         book, pt, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13,
@@ -152,139 +149,139 @@ function addItemsToTable(name, id, sex,
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
     tdsex.innerHTML = sex;
-    if(book == undefined){
-        tdbook.innerHTML = 0;
+    if (book == undefined) {
+        spanBook.innerHTML = 0;
 
-    }else{
-        tdbook.innerHTML = book;
-        tdbook.style.backgroundColor = '#FFF366';
+    } else {
+        spanBook.innerHTML = book;
+        spanBook.style.backgroundColor = '#FFF366';
     }
-    if(pt == undefined){
-        tdPT.innerHTML = 0;
+    if (pt == undefined) {
+        spanPT.innerHTML = 0;
 
-    }else{
-        tdPT.innerHTML = pt;
-        tdPT.style.backgroundColor = '#FFF366';
+    } else {
+        spanPT.innerHTML = pt;
+        spanPT.style.backgroundColor = '#FFF366';
     }
-    if(s1 == undefined){
+    if (s1 == undefined) {
         tdS1.innerHTML = 0;
-    }else{
+    } else {
         tdS1.innerHTML = s1;
         tdS1.style.backgroundColor = '#FFF366';
     }
-    if (s2 == undefined){
+    if (s2 == undefined) {
         tdS2.innerHTML = 0;
-        
-    }else{
+
+    } else {
         tdS2.innerHTML = s2;
         tdS2.style.backgroundColor = '#FFF366';
     }
-    if (s3 == undefined){
+    if (s3 == undefined) {
         tdS3.innerHTML = 0;
-    }else{
+    } else {
         tdS3.innerHTML = s3;
         tdS3.style.backgroundColor = '#FFF366';
     }
-    if (s4 == undefined){
+    if (s4 == undefined) {
         tdS4.innerHTML = 0;
-    }else{
+    } else {
         tdS4.innerHTML = s4;
         tdS4.style.backgroundColor = '#FFF366';
     }
-    if (s5 == undefined){
+    if (s5 == undefined) {
         tdS5.innerHTML = 0;
 
-    }else{
+    } else {
         tdS5.innerHTML = s5;
         tdS5.style.backgroundColor = '#FFF366';
     }
-    if (s6 == undefined){
+    if (s6 == undefined) {
         tdS6.innerHTML = 0;
-    }else{
+    } else {
         tdS6.innerHTML = s6;
         tdS6.style.backgroundColor = '#FFF366';
     }
-    if(s7 == undefined){
+    if (s7 == undefined) {
         tdS7.innerHTML = 0;
-    }else{
+    } else {
         tdS7.innerHTML = s7;
         tdS7.style.backgroundColor = '#FFF366';
     }
-    if(s8 == undefined){
+    if (s8 == undefined) {
         tdS8.innerHTML = 0;
-    }else{
+    } else {
         tdS8.innerHTML = s8;
         tdS8.style.backgroundColor = '#FFF366';
     }
-    if(s9 == undefined){
+    if (s9 == undefined) {
         tdS9.innerHTML = 0;
-    }else{
+    } else {
         tdS9.innerHTML = s9;
         tdS9.style.backgroundColor = '#FFF366';
     }
-    if(s10 == undefined){
+    if (s10 == undefined) {
         tdS10.innerHTML = 0;
-    }else{
+    } else {
         tdS10.innerHTML = s10;
         tdS10.style.backgroundColor = '#FFF366';
     }
-    if(s11 == undefined){
+    if (s11 == undefined) {
         tdS11.innerHTML = 0;
-    }else{
+    } else {
         tdS11.innerHTML = s11;
         tdS11.style.backgroundColor = '#FFF366';
     }
-    if(s12 == undefined){
+    if (s12 == undefined) {
         tdS12.innerHTML = 0;
-    }else{
+    } else {
         tdS12.innerHTML = s12;
         tdS12.style.backgroundColor = '#FFF366';
     }
-    if(s13 == undefined){
+    if (s13 == undefined) {
         tdS13.innerHTML = 0;
-    }else{
+    } else {
         tdS13.innerHTML = s13;
         tdS13.style.backgroundColor = '#FFF366';
     }
-    if(s14 == undefined){
+    if (s14 == undefined) {
         tdS14.innerHTML = 0;
-    }else{
+    } else {
         tdS14.innerHTML = s14;
         tdS14.style.backgroundColor = '#FFF366';
     }
-    if(s15 == undefined){
+    if (s15 == undefined) {
         tdS15.innerHTML = 0;
-    }else{
+    } else {
         tdS15.innerHTML = s15;
         tdS15.style.backgroundColor = '#FFF366';
     }
-    if(s16 == undefined){
+    if (s16 == undefined) {
         tdS16.innerHTML = 0;
-    }else{
+    } else {
         tdS16.innerHTML = s16;
         tdS16.style.backgroundColor = '#FFF366';
     }
-    if(s17 == undefined){
+    if (s17 == undefined) {
         tdS17.innerHTML = 0;
-    }else{
+    } else {
         tdS17.innerHTML = s17;
         tdS17.style.backgroundColor = '#FFF366';
     }
-    if(s18 == undefined){
+    if (s18 == undefined) {
         tdS18.innerHTML = 0;
-    }else{
+    } else {
         tdS18.innerHTML = s18;
         tdS18.style.backgroundColor = '#FFF366';
     }
-    if(s19 == undefined){
+    if (s19 == undefined) {
         tdS19.innerHTML = 0;
-    }else{
+    } else {
         tdS19.innerHTML = s19;
         tdS19.style.backgroundColor = '#FFF366';
     }
-    if(s20 == undefined){
+    if (s20 == undefined) {
         tdS20.innerHTML = 0;
-    }else{
+    } else {
         tdS20.innerHTML = s20;
         tdS20.style.backgroundColor = '#FFF366';
     }
@@ -321,6 +318,12 @@ function addItemsToTable(name, id, sex,
     trow.appendChild(tdS21);
     trow.appendChild(tdS22);
     tdS22.appendChild(chkGet);
+    tdbook.appendChild(spanBook);
+    tdbook.appendChild(br);
+    tdbook.appendChild(chbook);
+    tdPT.appendChild(spanPT);
+    tdPT.appendChild(br1);
+    tdPT.appendChild(chPt);
 
     // tdbook.appendChild(chkS);
     // tdPT.appendChild(chkW);
@@ -329,6 +332,8 @@ function addItemsToTable(name, id, sex,
 
     // td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
     tbody.appendChild(trow);
+    toggleBook(this);
+    togglePT(this);
 }
 //Sum the table score
 function dataS() {
@@ -361,6 +366,8 @@ function dataS() {
         var s19 = `${noSp}s19`;
         var s20 = `${noSp}s20`;
         document.getElementById('sumUpScore').addEventListener('click', function () {
+        })
+        setInterval(function () {
             var gbook = 0;
             var gpt = 0;
             var gs1 = 0;
@@ -451,63 +458,118 @@ function dataS() {
             });
             var bookPt = parseFloat(gbook) + parseFloat(gpt);
             var actSum =
-             parseFloat(gs1) + 
-             parseFloat(gs2) + 
-             parseFloat(gs3) + 
-             parseFloat(gs4) + 
-             parseFloat(gs5) + 
-             parseFloat(gs6) + 
-             parseFloat(gs7) + 
-             parseFloat(gs8) + 
-             parseFloat(gs9) + 
-             parseFloat(gs10) + 
-             parseFloat(gs11) + 
-             parseFloat(gs12) + 
-             parseFloat(gs13) + 
-             parseFloat(gs14) + 
-             parseFloat(gs15) + 
-             parseFloat(gs16) + 
-             parseFloat(gs17) + 
-             parseFloat(gs18) + 
-             parseFloat(gs19) + 
-             parseFloat(gs20);
-            var di = actSum / `${ dbdiviAct }` / 2;
+                parseFloat(gs1) +
+                parseFloat(gs2) +
+                parseFloat(gs3) +
+                parseFloat(gs4) +
+                parseFloat(gs5) +
+                parseFloat(gs6) +
+                parseFloat(gs7) +
+                parseFloat(gs8) +
+                parseFloat(gs9) +
+                parseFloat(gs10) +
+                parseFloat(gs11) +
+                parseFloat(gs12) +
+                parseFloat(gs13) +
+                parseFloat(gs14) +
+                parseFloat(gs15) +
+                parseFloat(gs16) +
+                parseFloat(gs17) +
+                parseFloat(gs18) +
+                parseFloat(gs19) +
+                parseFloat(gs20);
+            var di = actSum / `${dbdiviAct}` / 2;
             var sumAll = bookPt + di;
             sumAll = parseFloat(sumAll).toFixed(2);
             document.getElementById(`${getTotal}`).innerHTML = sumAll;
+
+
+
+        }, 1000);
+
+    }
+}
+//Check to give value
+function toggleBook(source) {
+    checkboxes = document.getElementsByName('myBook');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1];
+        var noSp = name.replace(/\s+/g, '');
+        var getNameTd = `${noSp}bookSpa`;
+        var getNameput = `${noSp}chBook`;
+
+        var checkboxBook = document.getElementById(`${getNameput}`);
+        if (checkboxBook.checked == true) {
+            checkboxBook.checked = true;
+            document.getElementById(`${getNameTd}`).innerText = 2.5;
+
+        }
+        if (checkboxBook.checked == false) {
+            checkboxBook.checked = false;
+            document.getElementById(`${getNameTd}`).innerText = 0;
+
+        }
+
+        //when click
+        checkboxBook.addEventListener('click', function () {
+            if (checkboxBook.checked == true) {
+                checkboxBook.checked = true;
+                document.getElementById(`${getNameTd}`).innerText = 2.5;
+
+            }
+            if (checkboxBook.checked == false) {
+                checkboxBook.checked = false;
+                document.getElementById(`${getNameTd}`).innerText = 0;
+
+            }
         })
 
-
     }
+
 }
-
-
-
-//Check all box
-function toggleS(source) {
-    checkboxes = document.getElementsByName('myS');
+function togglePT(source) {
+    var checkboxes = document.getElementsByName('myPT');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
         checkboxes[i].checked = source.checked;
     }
-}
-function toggleW(source) {
-    checkboxes = document.getElementsByName('myW');
-    for (var i = 0, n = checkboxes.length; i < n; i++) {
-        checkboxes[i].checked = source.checked;
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1];
+        var noSp = name.replace(/\s+/g, '');
+        var getNameTd = `${noSp}ptSpa`; //id for span
+        var getNameput = `${noSp}chPt`; //id for checkbox
+
+        var checkboxPT = document.getElementById(`${getNameput}`);
+        if (checkboxPT.checked == true) {
+            checkboxPT.checked = true;
+            document.getElementById(`${getNameTd}`).innerText = 5;
+
+        }
+        if (checkboxPT.checked == false) {
+            checkboxPT.checked = false;
+            document.getElementById(`${getNameTd}`).innerText = 0;
+
+        }
+        //when click
+        checkboxPT.addEventListener('click', function () {
+            if (checkboxPT.checked == true) {
+                checkboxPT.checked = true;
+                document.getElementById(`${getNameTd}`).innerText = 5;
+
+            }
+            if (checkboxPT.checked == false) {
+                checkboxPT.checked = false;
+                document.getElementById(`${getNameTd}`).innerText = 0;
+
+            }
+        })
+
     }
+
 }
-function toggleA(source) {
-    checkboxes = document.getElementsByName('myA');
-    for (var i = 0, n = checkboxes.length; i < n; i++) {
-        checkboxes[i].checked = source.checked;
-    }
-}
-function toggleAtt(source) {
-    checkboxes = document.getElementsByName('myAtt');
-    for (var i = 0, n = checkboxes.length; i < n; i++) {
-        checkboxes[i].checked = source.checked;
-    }
-}
+
 function toggleGet(source) {
     checkboxes = document.getElementsByName('myGet');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
@@ -516,123 +578,9 @@ function toggleGet(source) {
 }
 toggleGet(this);
 
-$(document).ready(function () {
-
-    $("#btnRows").on('click', function () {
-
-        $("#myTbaleActivity tbody tr").each(function () {
-            var currentRow = $(this);
-            var col1 = currentRow.find("td:eq(1)").html();
-            var col2 = currentRow.find("td:eq(1)").html();
-            var col3 = currentRow.find("td:eq(2)").html();
-            var col4 = currentRow.find("td:eq(3)").text();
-            var col5 = currentRow.find("td:eq(4)").text();
-            var col6 = currentRow.find("td:eq(5)").text();
-            var col7 = currentRow.find("td:eq(6)").text();
-            var col8 = currentRow.find("td:eq(7)").html();
-            var col9 = currentRow.find("td:eq(8)").html();
-            var obj = {};
-            obj.id = col1;
-            obj.ids = col1 + 's';
-            obj.idw = col1 + 'w';
-            obj.ida = col1 + 'a';
-            obj.idatt = col1 + 'att';
-            obj.name = col2;
-            obj.sex = col3;
-            obj.s = col4;
-            obj.w = col5;
-            obj.a = col6;
-            obj.attitude = col7;
-            obj.note = col8;
-            obj.total = col9;
-            if (currentRow.find(".chk").is(":checked")) {
-                activityData.push(obj);
-                const sleep = async (milliseconds) => {
-                    await new Promise(resolve => {
-                        return setTimeout(resolve, milliseconds);
-                    });
-
-                    // Check for All
-                    for (i = 0; i < activityData.length; i++) {
-                        var idss = activityData[i].ids;
-                        var idww = activityData[i].idw;
-                        var idaa = activityData[i].ida;
-                        var idattu = activityData[i].idatt;
-
-                        var checkBoxss = document.getElementById(`${idss}`);
-                        var checkBoxww = document.getElementById(`${idww}`);
-                        var checkBoxaa = document.getElementById(`${idaa}`);
-                        var checkBoxatt = document.getElementById(`${idattu}`);
-                        if (checkBoxss.checked == true
-                            && checkBoxss.id == idss) {
-                            obj.s = '3';
-                            cook();
-
-                        }
-                        if (checkBoxss.checked == false
-                            && checkBoxss.id == idss) {
-                            obj.s = '0';
-                            cook();
-                        }
-                        if (checkBoxww.checked == true && checkBoxww.id == idww) {
-                            obj.w = '1';
-                            cook();
-                        }
-                        if (checkBoxww.checked == false && checkBoxww.id == idww) {
-                            obj.w = '0';
-                            cook();
-                        }
-                        if (checkBoxaa.checked == true && checkBoxaa.id == idaa) {
-                            obj.a = '1';
-                            cook();
-                        }
-                        if (checkBoxaa.checked == false && checkBoxaa.id == idaa) {
-                            obj.a = '0';
-                            cook();
-                        }
-                        if (checkBoxatt.checked == true && checkBoxatt.id == idattu) {
-                            obj.attitude = '-1';
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
-                            cook();
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                window.location.reload();
-                            };
-                            sleep(3000);
-
-                        }
-                        if (checkBoxatt.checked == false && checkBoxatt.id == idattu) {
-                            obj.attitude = '0';
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
-                            cook();
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                window.location.reload();
-                            };
-                            sleep(3000);
-
-                        }
-
-                    }
-
-                };
-                sleep(1500);
-            }
-        });
-    });
-
-});
-
 //Auto Checkbox
 function autoCheck() {
+
     //S checked for checkbook
     for (i = 0; i < stdList.length; i++) {
         var idget1 = stdList[i][2];
@@ -689,7 +637,6 @@ function autoCheck() {
 };
 
 //Get All data to array
-var activityData = [];
 //Month and Times for Activity
 document.getElementById('myMonthAct').addEventListener('change', function () {
     var monthact = document.getElementById('myMonthAct').value;
@@ -734,37 +681,58 @@ document.getElementById('myYearAct').value = dbyearAct;
 document.getElementById('myDivide').value = dbdiviAct;
 
 // Push data to firebase
+var activityData = [];
+setInterval(
+    function () {
+        $("#myTbaleActivity tbody tr").each(function () {
+            var currentRow = $(this);
+            var name = currentRow.find("td:eq(1)").html();
+            var sex = currentRow.find("td:eq(2)").html();
+            var book = currentRow.find("td:eq(3)").text();
+            var pt = currentRow.find("td:eq(4)").text();
+            var total = currentRow.find("td:eq(25)").text();
+            var obj = {};
+            obj.id = name;
+            obj.name = name;
+            obj.sex = sex;
+            obj.book = book;
+            obj.pt = pt;
+            obj.total = total;
+            if (currentRow.find(".chk").is(":checked")) {
+                activityData.push(obj);
+            }
+        });
+
+    }
+    , 1000);
+
+document.getElementById('btnRows').addEventListener('click', function () {
+    cook();
+    const sleep = async (milliseconds) => {
+        await new Promise(resolve => {
+            return setTimeout(resolve, milliseconds);
+        });
+        window.location.reload();
+    };
+    sleep(100);
+})
 function cook() {
     for (i = 0; i < activityData.length; i++) {
         var name = activityData[i].name;
         var idM = activityData[i].id;
         var sex = activityData[i].sex;
-        var s = activityData[i].s;
-        var w = activityData[i].w;
-        var a = activityData[i].a;
-        var ids = activityData[i].ids;
-        var idw = activityData[i].idw;
-        var ida = activityData[i].ida;
-        var idatt = activityData[i].idatt;
-        var attitude = activityData[i].attitude;
-        var note = activityData[i].note;
+        var book = activityData[i].book;
+        var pt = activityData[i].pt;
         var total = activityData[i].total;
-        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).set(
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
             {
                 name: name,
                 id: idM,
                 sex: sex,
-                s: s,
-                w: w,
-                a: a,
-                ids, ids,
-                idw: idw,
-                ida: ida,
-                idatt: idatt,
-                attitude: attitude,
-                note: note,
+                book: book,
+                pt: pt,
                 total: total,
-                date: dbdateAct,
             },
         )
 
