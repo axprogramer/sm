@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 @font-face {
     font-family: khmerCN;
-    src: url(../fonts/KhmerCNPhnomSampao.ttf);
+    src: url(../fonts/Fasthand-Regular.ttf);
 }
 
 :root {
@@ -784,10 +784,11 @@ label {
     border-style: solid;
     border-width: 1px;
     font-family: khmerCN;
-    font-size: 14px;
+    font-size: 12px;
     overflow: hidden;
     padding: 10px 5px;
     word-break: normal;
+    color: #000000;
 }
 
 .tg th {
@@ -795,7 +796,7 @@ label {
     border-style: solid;
     border-width: 1px;
     font-family: khmerCN;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
     overflow: hidden;
     padding: 10px 5px;
@@ -888,7 +889,7 @@ label {
     border-style: solid;
     border-width: 1px;
     font-family: khmerCN;
-    font-size: 14px;
+    font-size: 12px;
     overflow: hidden;
     padding: 10px 5px;
     word-break: normal;
@@ -899,7 +900,7 @@ label {
     border-style: solid;
     border-width: 1px;
     font-family: khmerCN;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: normal;
     overflow: hidden;
     padding: 10px 5px;
