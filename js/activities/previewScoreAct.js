@@ -18,7 +18,6 @@ function selectAllData() {
     studentN0 = 0;
     firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/`).once('value',
         function (AllRecords) {
-
             AllRecords.forEach(
                 function (CurrentRecord) {
                     var name = CurrentRecord.val().name;
@@ -50,9 +49,8 @@ function selectAllData() {
                         book, pt, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13,
                         s14, s15, s16, s17, s18, s19, s20);
                     document.getElementById("alertMagWait").style.display = "none";
-                    dataS();
-                }
-            );
+
+                });
         });
 }
 window.onload = selectAllData;
@@ -153,11 +151,11 @@ function addItemsToTable(name, id, sex,
         spanBook.innerHTML = 0;
 
     } else {
-        spanBook.innerHTML = book;
+        spanBook.innerText = book;
         spanBook.style.backgroundColor = '#FFF366';
     }
     if (pt == undefined) {
-        spanPT.innerHTML = 0;
+        spanPT.innerText = 0;
 
     } else {
         spanPT.innerHTML = pt;
@@ -287,7 +285,6 @@ function addItemsToTable(name, id, sex,
     }
 
     tdS21.innerHTML = 0;
-    // tdS4.innerText = parseFloat(s) + parseFloat(w) + parseFloat(a) + parseFloat(attitude);
 
 
     trow.appendChild(td0);
@@ -324,16 +321,10 @@ function addItemsToTable(name, id, sex,
     tdPT.appendChild(spanPT);
     tdPT.appendChild(br1);
     tdPT.appendChild(chPt);
-
-    // tdbook.appendChild(chkS);
-    // tdPT.appendChild(chkW);
-    // tdS1.appendChild(chkA);
-    // tdS2.appendChild(chkAtt);
-
-    // td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
     tbody.appendChild(trow);
-    toggleBook(this);
-    togglePT(this);
+    clickBook();
+    clickPT();
+    dataS();
 }
 //Sum the table score
 function dataS() {
@@ -365,8 +356,6 @@ function dataS() {
         var s18 = `${noSp}s18`;
         var s19 = `${noSp}s19`;
         var s20 = `${noSp}s20`;
-        document.getElementById('sumUpScore').addEventListener('click', function () {
-        })
         setInterval(function () {
             var gbook = 0;
             var gpt = 0;
@@ -513,6 +502,24 @@ function toggleBook(source) {
 
         }
 
+    }
+
+}
+//Click book to give score
+function clickBook() {
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1];
+        var noSp = name.replace(/\s+/g, '');
+        var getNameTd = `${noSp}bookSpa`;
+        var getNameput = `${noSp}chBook`;
+
+        var checkboxBook = document.getElementById(`${getNameput}`);
+        var SpaVal = document.getElementById(`${getNameTd}`).innerText;
+        if (SpaVal == 2.5) {
+            checkboxBook.checked = true;
+        } else {
+            checkboxBook.checked = false;
+        }
         //when click
         checkboxBook.addEventListener('click', function () {
             if (checkboxBook.checked == true) {
@@ -569,7 +576,37 @@ function togglePT(source) {
     }
 
 }
+//Click PT to give score
+function clickPT() {
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1];
+        var noSp = name.replace(/\s+/g, '');
+        var getNameTd = `${noSp}ptSpa`; //id for span
+        var getNameput = `${noSp}chPt`; //id for checkbox
 
+        var checkboxPT = document.getElementById(`${getNameput}`);
+        var SpaVal = document.getElementById(`${getNameTd}`).innerText;
+        if (SpaVal == 5) {
+            checkboxPT.checked = true;
+        } else {
+            checkboxPT.checked = false;
+        }
+        //when click
+        checkboxPT.addEventListener('click', function () {
+            if (checkboxPT.checked == true) {
+                checkboxPT.checked = true;
+                document.getElementById(`${getNameTd}`).innerText = 5;
+
+            }
+            if (checkboxPT.checked == false) {
+                checkboxPT.checked = false;
+                document.getElementById(`${getNameTd}`).innerText = 0;
+
+            }
+        })
+
+    }
+}
 function toggleGet(source) {
     checkboxes = document.getElementsByName('myGet');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
@@ -577,64 +614,6 @@ function toggleGet(source) {
     }
 }
 toggleGet(this);
-
-//Auto Checkbox
-function autoCheck() {
-
-    //S checked for checkbook
-    for (i = 0; i < stdList.length; i++) {
-        var idget1 = stdList[i][2];
-        da1 = '3';
-        var get1 = stdList[i][8];
-        var checkBoxs = document.getElementById(`${idget1}`);
-        if (get1 == da1) {
-            checkBoxs.checked = true;
-        } else {
-            checkBoxs.checked = false;
-
-        }
-    }
-    //W checked for checkbook
-    for (i = 0; i < stdList.length; i++) {
-        var idget2 = stdList[i][3];
-        da2 = '1';
-        var get2 = stdList[i][9];
-        var checkBoxs = document.getElementById(`${idget2}`);
-        if (get2 == da2) {
-            checkBoxs.checked = true;
-        } else {
-            checkBoxs.checked = false;
-
-        }
-    }
-    //A checked for checkbook
-    for (i = 0; i < stdList.length; i++) {
-        var idget3 = stdList[i][4];
-        da3 = '1';
-        var get3 = stdList[i][10];
-        var checkBoxs = document.getElementById(`${idget3}`);
-        if (get3 == da3) {
-            checkBoxs.checked = true;
-        } else {
-            checkBoxs.checked = false;
-
-        }
-    }
-    //Attitude checked for checkbook
-    for (i = 0; i < stdList.length; i++) {
-        var idget4 = stdList[i][5];
-        da4 = '-1';
-        var get4 = stdList[i][11];
-        var checkBoxs = document.getElementById(`${idget4}`);
-        if (get4 == da4) {
-            checkBoxs.checked = true;
-        } else {
-            checkBoxs.checked = false;
-
-        }
-    }
-
-};
 
 //Get All data to array
 //Month and Times for Activity
@@ -708,13 +687,17 @@ setInterval(
 
 document.getElementById('btnRows').addEventListener('click', function () {
     cook();
+    saveToStock();
+    document.getElementById("alertMag").style.display = "none";
+    document.getElementById("alertMagWait").style.display = "block";
+
     const sleep = async (milliseconds) => {
         await new Promise(resolve => {
             return setTimeout(resolve, milliseconds);
         });
         window.location.reload();
     };
-    sleep(100);
+    sleep(200);
 })
 function cook() {
     for (i = 0; i < activityData.length; i++) {
@@ -735,6 +718,105 @@ function cook() {
                 total: total,
             },
         )
+
+    }
+}
+function saveToStock() {
+    for (i = 0; i < activityData.length; i++) {
+        var name = activityData[i].name;
+        var idM = activityData[i].id;
+        var sex = activityData[i].sex;
+        var total = activityData[i].total;
+        if (dbmonthAct == 'October') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    speakingNov: total,
+                },
+            )
+        }
+        if (dbmonthAct == 'November') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    speakingDec: total,
+                },
+            )
+        }
+        if (dbmonthAct == 'December') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    speakingJan: total,
+                },
+            )
+        }
+        if (dbmonthAct == 'January') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    speakingfeb: total,
+                },
+            )
+        }
+        if (dbmonthAct == 'February') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    speakingmar: total,
+                },
+            )
+        }
+        if (dbmonthAct == 'March') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    speakingma: total,
+                },
+            )
+        }
+        if (dbmonthAct == 'April-May') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    speakingjun: total,
+                },
+            )
+        }
+        if (dbmonthAct == 'June') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    speakingjuly: total,
+                },
+            )
+        }
+        if (dbmonthAct == 'July') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    name: name,
+                    id: idM,
+                    sex: sex,
+                    listeningfinal: total,
+                },
+            )
+        }
 
     }
 }
