@@ -14,6 +14,7 @@ const getElementVal = (id) => {
     return document.getElementById(id).value;
 };
 function selectAllData() {
+
     document.getElementById('myActivities').innerHTML = "";
     studentN0 = 0;
     firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/`).once('value',
@@ -44,16 +45,12 @@ function selectAllData() {
                     var note = CurrentRecord.val().note;
                     var total = CurrentRecord.val().total;
                     addItemsToTable(name, id, ids, idw, ida, idatt,
-                         nameRowS, nameRowW, nameRowA, nameRowAtt,
+                        nameRowS, nameRowW, nameRowA, nameRowAtt,
                         nameRowTotal, spanTotalS, spanTotalW, spanTotalA,
-                         spanTotalAtt,
-                          sex, date, s, w, a, attitude, note,
+                        spanTotalAtt,
+                        sex, date, s, w, a, attitude, note,
                         total);
-                    autoCheck();
-                    dataS();
-                    // toggleS(this);
-                    // toggleW(this);
-                    document.getElementById("alertMagWait").style.display = "none";
+
                 }
             );
         });
@@ -62,7 +59,6 @@ window.onload = selectAllData;
 var studentN0;
 
 var stdList = [];
-console.log(stdList);
 function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nameRowA, nameRowAtt, nameRowTotal,
     spanTotalS, spanTotalW, spanTotalA,
     spanTotalAtt, sex, date, s, w, a, attitude, note,
@@ -143,51 +139,50 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nam
     chkGet.checked = true;
     var ddd = document.getElementById('myDate');
 
-    stdList.push([name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nameRowA, nameRowAtt, nameRowTotal, 
+    stdList.push([name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nameRowA, nameRowAtt, nameRowTotal,
         spanTotalS, spanTotalW, spanTotalA,
-        spanTotalAtt,sex, date, s, w, a, attitude, note,
+        spanTotalAtt, sex, date, s, w, a, attitude, note,
         total]);
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
     td2.innerHTML = sex;
     ddd.value = date;
-    if(span == undefined){
+    if (span == undefined) {
         span.innerText = 0;
 
-    }else{
+    } else {
         span.innerText = s;
 
     }
-    if(span1 == undefined){
+    if (span1 == undefined) {
         span1.innerText = 0;
 
-    }else{
+    } else {
         span1.innerText = w;
 
     }
-    if(span2 == undefined){
+    if (span2 == undefined) {
         span2.innerText = 0;
 
-    }else{
+    } else {
         span2.innerText = a;
 
     }
-    if(span3 == undefined){
+    if (span3 == undefined) {
         span3.innerText = 0;
 
-    }else{
+    } else {
         span3.innerText = attitude;
 
     }
-    if(span4 == undefined){
+    if (span4 == undefined) {
         span4.innerText = 0;
 
-    }else{
+    } else {
         span4.innerText = total;
 
     }
     td7.innerHTML = note;
-    // td8.innerText = parseFloat(s) + parseFloat(w) + parseFloat(a) + parseFloat(attitude);
 
 
     trow.appendChild(td0);
@@ -222,14 +217,20 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nam
     td6.appendChild(chkAtt);
 
 
-    // td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
     tbody.appendChild(trow);
+    autoCheck();
+    dataS();
+    getTotalVal();
+
+    document.getElementById("alertMagWait").style.display = "none";
+
 }
 
 //Check all box
 function toggleS(source) {
     checkboxes = document.getElementsByName('myS');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
+
         var idget1 = stdList[i][2]; // for s
         var nameSS = stdList[i][6]; //for name S
         var checkBoxs = document.getElementById(`${idget1}`);
@@ -238,7 +239,6 @@ function toggleS(source) {
             var s = 3;
             checkBoxs.checked = true;
             document.getElementById(`${nameSS}`).innerHTML = 3;
-            // document.getElementById(`${sumS}`).innerText = s;
 
         }
         if (checkBoxs.checked == false) {
@@ -315,146 +315,52 @@ function toggleGet(source) {
 }
 toggleGet(this);
 
-$(document).ready(function () {
+setInterval(function () {
+    $("#myTbaleActivity tbody tr").each(function () {
 
-    $("#btnRows").on('click', function () {
+        var currentRow = $(this);
+        var col1 = currentRow.find("td:eq(1)").html();
+        var col2 = currentRow.find("td:eq(1)").html();
+        var col3 = currentRow.find("td:eq(2)").html();
+        var col4 = currentRow.find("td:eq(3)").text();
+        var col5 = currentRow.find("td:eq(4)").text();
+        var col6 = currentRow.find("td:eq(5)").text();
+        var col7 = currentRow.find("td:eq(6)").text();
+        var col8 = currentRow.find("td:eq(7)").html();
+        var col9 = currentRow.find("td:eq(8)").text();
+        var obj = {};
+        var objAct = {};
+        obj.id = col1;
+        obj.ids = col1 + 's';
+        obj.idw = col1 + 'w';
+        obj.ida = col1 + 'a';
+        obj.idatt = col1 + 'att';
+        obj.name = col2;
+        obj.sex = col3;
+        obj.s = col4;
+        obj.w = col5;
+        obj.a = col6;
+        obj.attitude = col7;
+        obj.note = col8;
+        obj.total = col9;
 
-        $("#myTbaleActivity tbody tr").each(function () {
-            var currentRow = $(this);
-            var col1 = currentRow.find("td:eq(1)").html();
-            var col2 = currentRow.find("td:eq(1)").html();
-            var col3 = currentRow.find("td:eq(2)").html();
-            var col4 = currentRow.find("td:eq(3)").text();
-            var col5 = currentRow.find("td:eq(4)").text();
-            var col6 = currentRow.find("td:eq(5)").text();
-            var col7 = currentRow.find("td:eq(6)").text();
-            var col8 = currentRow.find("td:eq(7)").html();
-            var col9 = currentRow.find("td:eq(8)").text();
-            var obj = {};
-            var objAct = {};
-            obj.id = col1;
-            obj.ids = col1 + 's';
-            obj.idw = col1 + 'w';
-            obj.ida = col1 + 'a';
-            obj.idatt = col1 + 'att';
-            obj.name = col2;
-            obj.sex = col3;
-            obj.s = col4;
-            obj.w = col5;
-            obj.a = col6;
-            obj.attitude = col7;
-            obj.note = col8;
-            obj.total = col9;
+        objAct.id = col1;
+        objAct.name = col2;
+        objAct.sex = col3;
+        objAct.total = parseFloat(col4) + parseFloat(col5) + parseFloat(col6) + parseFloat(col7);
 
-            objAct.id = col1;
-            objAct.name = col2;
-            objAct.sex = col3;
-            objAct.total = parseFloat(col4) + parseFloat(col5) + parseFloat(col6) + parseFloat(col7);
-
-            if (currentRow.find(".chk").is(":checked")) {
-                activityData.push(obj);
-                activityDataAct.push(objAct);
-                const sleep = async (milliseconds) => {
-                    await new Promise(resolve => {
-                        return setTimeout(resolve, milliseconds);
-                    });
-
-                    // Check for All
-                    for (i = 0; i < activityData.length; i++) {
-                        var idss = activityData[i].ids;
-                        var idww = activityData[i].idw;
-                        var idaa = activityData[i].ida;
-                        var idattu = activityData[i].idatt;
-
-                        var checkBoxss = document.getElementById(`${idss}`);
-                        var checkBoxww = document.getElementById(`${idww}`);
-                        var checkBoxaa = document.getElementById(`${idaa}`);
-                        var checkBoxatt = document.getElementById(`${idattu}`);
-                        if (checkBoxss.checked == true
-                            && checkBoxss.id == idss) {
-                            obj.s = '3';
-                            // cook();
-
-                        }
-                        if (checkBoxss.checked == false
-                            && checkBoxss.id == idss) {
-                            obj.s = '0';
-                            // cook();
-                        }
-                        if (checkBoxww.checked == true && checkBoxww.id == idww) {
-                            obj.w = '1';
-                            // cook();
-                        }
-                        if (checkBoxww.checked == false && checkBoxww.id == idww) {
-                            obj.w = '0';
-                            // cook();
-                        }
-                        if (checkBoxaa.checked == true && checkBoxaa.id == idaa) {
-                            obj.a = '1';
-                            // cook();
-                        }
-                        if (checkBoxaa.checked == false && checkBoxaa.id == idaa) {
-                            obj.a = '0';
-                            // cook();
-                        }
-                        if (checkBoxatt.checked == true && checkBoxatt.id == idattu) {
-                            obj.attitude = '-1';
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
-                            cook();
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                totalData();
-                                const sleep = async (milliseconds) => {
-                                    await new Promise(resolve => {
-                                        return setTimeout(resolve, milliseconds);
-                                    });
-                                    window.location.reload();
-                                };
-                                sleep(1000);
-                            };
-                            sleep(1000);
-
-                        }
-                        if (checkBoxatt.checked == false && checkBoxatt.id == idattu) {
-                            obj.attitude = '0';
-                            document.getElementById("alertMagWait").style.display = "block";
-                            document.getElementById("alertMag").style.display = "none";
-                            document.getElementById("showBtnn").style.display = "none";
-                            cook();
-                            const sleep = async (milliseconds) => {
-                                await new Promise(resolve => {
-                                    return setTimeout(resolve, milliseconds);
-                                });
-                                totalData();
-                                const sleep = async (milliseconds) => {
-                                    await new Promise(resolve => {
-                                        return setTimeout(resolve, milliseconds);
-                                    });
-                                    window.location.reload();
-                                };
-                                sleep(1000);
-                            };
-                            sleep(1000);
-
-                        }
-
-                    }
-
-                };
-                sleep(1000);
-            }
-        });
+        if (currentRow.find(".chk").is(":checked")) {
+            activityData.push(obj);
+            // activityDataAct.push(objAct);
+        }
     });
 
-});
 
-function dataS() {
-    //S checked for checkbook
+}, 200);
+
+function getTotalVal() {
     for (i = 0; i < stdList.length; i++) {
+
         //Sum for All score
         var allTotal = stdList[i][10]; // for s
         //get name from array
@@ -468,7 +374,7 @@ function dataS() {
         var noSpcW = getW.replace(/\s+/g, '');
         var noSpcA = getA.replace(/\s+/g, '');
         var noSpcAtt = getAtt.replace(/\s+/g, '');
-        document.getElementById('sumUpScore').addEventListener('click',function() {
+        setInterval(function () {
             var sumS = 0;
             var sumW = 0;
             var sumA = 0;
@@ -487,7 +393,13 @@ function dataS() {
             });
             var getSum = parseFloat(sumS) + parseFloat(sumW) + parseFloat(sumA) + parseFloat(sumAtt);
             document.getElementById(`${allTotal}`).innerText = parseFloat(getSum);
-        })
+
+        }, 100);
+    }
+}
+function dataS() {
+    //S checked for checkbook
+    for (i = 0; i < stdList.length; i++) {
 
         //get id for checkbox
         var idget1 = stdList[i][2]; // for s
@@ -504,20 +416,14 @@ function dataS() {
         var checkBoxw = document.getElementById(`${idget2}`);
         var checkBoxa = document.getElementById(`${idget3}`);
         var checkBoxatt = document.getElementById(`${idget4}`);
-        //show cell in 0 value
-        // document.getElementById(`${nameSS}`).innerHTML = 0;
-        // document.getElementById(`${nameWW}`).innerHTML = 0;
-        // document.getElementById(`${nameAA}`).innerHTML = 0;
-        // document.getElementById(`${nameAtt}`).innerHTML = 0;
-        // document.getElementById(`${allTotal}`).innerText = 0;
         //Checkbox for S
         checkBoxs.addEventListener('click', function () {
             if (checkBoxs.checked == true) {
                 var s = 3;
                 checkBoxs.checked = true;
                 document.getElementById(`${nameSS}`).innerHTML = s;
-                
-                
+
+
             }
             if (checkBoxs.checked == false) {
                 var s = 0;
@@ -570,11 +476,22 @@ function dataS() {
 }
 //Auto Checkbox
 function autoCheck() {
-    //S checked for checkbook
+    // checked for S W A ATT
     for (i = 0; i < stdList.length; i++) {
+
         var idget1 = stdList[i][2];
+        var idget2 = stdList[i][3];
+        var idget3 = stdList[i][4];
+        var idget4 = stdList[i][5];
         da1 = '3';
+        da2 = '1';
+        da3 = '1';
+        da4 = '-1';
         var get1 = stdList[i][17];
+        var get2 = stdList[i][18];
+        var get3 = stdList[i][19];
+        var get4 = stdList[i][20];
+
         var checkBoxs = document.getElementById(`${idget1}`);
         if (get1 == da1) {
             checkBoxs.checked = true;
@@ -582,43 +499,27 @@ function autoCheck() {
             checkBoxs.checked = false;
         }
 
-    }
-    //W checked for checkbook
-    for (i = 0; i < stdList.length; i++) {
-        var idget2 = stdList[i][3];
-        da2 = '1';
-        var get2 = stdList[i][18];
-        var checkBoxs = document.getElementById(`${idget2}`);
+        var checkBoxW = document.getElementById(`${idget2}`);
         if (get2 == da2) {
-            checkBoxs.checked = true;
+            checkBoxW.checked = true;
         } else {
-            checkBoxs.checked = false;
+            checkBoxW.checked = false;
 
         }
-    }
-    //A checked for checkbook
-    for (i = 0; i < stdList.length; i++) {
-        var idget3 = stdList[i][4];
-        da3 = '1';
-        var get3 = stdList[i][19];
-        var checkBoxs = document.getElementById(`${idget3}`);
+
+        var checkBoxA = document.getElementById(`${idget3}`);
         if (get3 == da3) {
-            checkBoxs.checked = true;
+            checkBoxA.checked = true;
         } else {
-            checkBoxs.checked = false;
+            checkBoxA.checked = false;
 
         }
-    }
-    //Attitude checked for checkbook
-    for (i = 0; i < stdList.length; i++) {
-        var idget4 = stdList[i][5];
-        da4 = '-1';
-        var get4 = stdList[i][20];
-        var checkBoxs = document.getElementById(`${idget4}`);
+
+        var checkBoxAtt = document.getElementById(`${idget4}`);
         if (get4 == da4) {
-            checkBoxs.checked = true;
+            checkBoxAtt.checked = true;
         } else {
-            checkBoxs.checked = false;
+            checkBoxAtt.checked = false;
 
         }
     }
@@ -626,8 +527,6 @@ function autoCheck() {
 };
 
 //Get All data to array
-var activityData = [];
-var activityDataAct = [];
 //Month and Times for Activity
 document.getElementById('myMonthAct').addEventListener('change', function () {
     var monthact = document.getElementById('myMonthAct').value;
@@ -659,6 +558,7 @@ document.getElementById('myYearAct').addEventListener('change', function () {
     window.location.reload();
 
 })
+
 var dbmonthAct = localStorage.getItem('ownmonthAct'); //month activity
 var dbtimesAct = localStorage.getItem('owntimesAct'); // times activity
 var dbdateAct = localStorage.getItem('owndateAct'); // date activity
@@ -669,7 +569,17 @@ document.getElementById('myTimesAct').value = dbtimesAct;
 document.getElementById('myDate').value = dbdateAct;
 document.getElementById('myGradeAct').value = dbgradeAct;
 document.getElementById('myYearAct').value = dbyearAct;
-
+//Save data to firebase
+var activityData = [];
+document.getElementById('btnRows').addEventListener('click', function () {
+    cook();
+    totalData();
+    document.getElementById("alertMag").style.display = "none";
+    document.getElementById("alertMagWait").style.display = "block";
+    setTimeout(function () {
+        window.location.reload();
+    }, 3500)
+})
 // Push data to firebase
 function cook() {
     for (i = 0; i < activityData.length; i++) {
@@ -709,13 +619,13 @@ function cook() {
 }
 // Push total data to firebase
 function totalData() {
-    for (i = 0; i < activityDataAct.length; i++) {
-        var name = activityDataAct[i].name;
-        var idM = activityDataAct[i].id;
-        var sex = activityDataAct[i].sex;
+    for (i = 0; i < activityData.length; i++) {
+        var name = activityData[i].name;
+        var idM = activityData[i].id;
+        var sex = activityData[i].sex;
 
         if (dbtimesAct == 1) {
-            var total1 = activityDataAct[i].total;
+            var total1 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -728,7 +638,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 2) {
-            var total2 = activityDataAct[i].total;
+            var total2 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -741,7 +651,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 3) {
-            var total3 = activityDataAct[i].total;
+            var total3 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -754,7 +664,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 4) {
-            var total4 = activityDataAct[i].total;
+            var total4 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -767,7 +677,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 5) {
-            var total5 = activityDataAct[i].total;
+            var total5 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -780,7 +690,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 6) {
-            var total6 = activityDataAct[i].total;
+            var total6 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -793,7 +703,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 7) {
-            var total7 = activityDataAct[i].total;
+            var total7 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -806,7 +716,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 8) {
-            var total8 = activityDataAct[i].total;
+            var total8 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -819,7 +729,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 9) {
-            var total9 = activityDataAct[i].total;
+            var total9 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -832,7 +742,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 10) {
-            var total10 = activityDataAct[i].total;
+            var total10 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -845,7 +755,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 11) {
-            var total11 = activityDataAct[i].total;
+            var total11 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -858,7 +768,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 12) {
-            var total12 = activityDataAct[i].total;
+            var total12 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -871,7 +781,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 13) {
-            var total13 = activityDataAct[i].total;
+            var total13 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -884,7 +794,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 14) {
-            var total14 = activityDataAct[i].total;
+            var total14 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -897,7 +807,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 15) {
-            var total15 = activityDataAct[i].total;
+            var total15 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -910,7 +820,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 16) {
-            var total16 = activityDataAct[i].total;
+            var total16 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -923,7 +833,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 17) {
-            var total17 = activityDataAct[i].total;
+            var total17 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -936,7 +846,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 18) {
-            var total18 = activityDataAct[i].total;
+            var total18 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -949,7 +859,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 19) {
-            var total19 = activityDataAct[i].total;
+            var total19 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
@@ -962,7 +872,7 @@ function totalData() {
 
         }
         if (dbtimesAct == 20) {
-            var total20 = activityDataAct[i].total;
+            var total20 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {

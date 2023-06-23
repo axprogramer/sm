@@ -690,14 +690,10 @@ document.getElementById('btnRows').addEventListener('click', function () {
     saveToStock();
     document.getElementById("alertMag").style.display = "none";
     document.getElementById("alertMagWait").style.display = "block";
-
-    const sleep = async (milliseconds) => {
-        await new Promise(resolve => {
-            return setTimeout(resolve, milliseconds);
-        });
+    setTimeout(function () {
         window.location.reload();
-    };
-    sleep(200);
+    }, 3500)
+
 })
 function cook() {
     for (i = 0; i < activityData.length; i++) {
@@ -710,7 +706,7 @@ function cook() {
 
         firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
             {
-                name: name,
+                
                 id: idM,
                 sex: sex,
                 book: book,
@@ -730,7 +726,7 @@ function saveToStock() {
         if (dbmonthAct == 'October') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    name: name,
+                    
                     id: idM,
                     sex: sex,
                     speakingNov: total,
@@ -740,7 +736,7 @@ function saveToStock() {
         if (dbmonthAct == 'November') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    name: name,
+                    
                     id: idM,
                     sex: sex,
                     speakingDec: total,
@@ -750,7 +746,7 @@ function saveToStock() {
         if (dbmonthAct == 'December') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    name: name,
+                    
                     id: idM,
                     sex: sex,
                     speakingJan: total,
@@ -760,7 +756,7 @@ function saveToStock() {
         if (dbmonthAct == 'January') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    name: name,
+                    
                     id: idM,
                     sex: sex,
                     speakingfeb: total,
@@ -770,7 +766,7 @@ function saveToStock() {
         if (dbmonthAct == 'February') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    name: name,
+                    
                     id: idM,
                     sex: sex,
                     speakingmar: total,
@@ -780,7 +776,7 @@ function saveToStock() {
         if (dbmonthAct == 'March') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    name: name,
+                    
                     id: idM,
                     sex: sex,
                     speakingma: total,
@@ -790,7 +786,7 @@ function saveToStock() {
         if (dbmonthAct == 'April-May') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    name: name,
+                    
                     id: idM,
                     sex: sex,
                     speakingjun: total,
@@ -800,7 +796,7 @@ function saveToStock() {
         if (dbmonthAct == 'June') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    name: name,
+                    
                     id: idM,
                     sex: sex,
                     speakingjuly: total,
@@ -810,7 +806,7 @@ function saveToStock() {
         if (dbmonthAct == 'July') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    name: name,
+                    
                     id: idM,
                     sex: sex,
                     listeningfinal: total,
