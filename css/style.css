@@ -916,3 +916,13 @@ label {
     height: 100%;
     text-align: center;
 }
+
+#mySportAct {
+    text-align: center;
+    vertical-align: middle;
+    text-align: center;
+    table-layout: fixed;
+}
+.mycheckbox{
+    padding: 5px;
+}

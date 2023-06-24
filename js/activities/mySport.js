@@ -72,6 +72,7 @@ function selectAllData() {
 window.onload = selectAllData;
 var studentN0;
 
+// let r = (Math.random() + 1).toString(36).substring(7);
 var stdList = [];
 function addItemsToTable(
     name, id, sex, khname, date1, date2,
@@ -113,14 +114,26 @@ function addItemsToTable(
     var br3 = document.createElement('br');
     var br4 = document.createElement('br');
     var br5 = document.createElement('br');
+
     var div1 = document.createElement('div');
-    var span = document.createElement('span');
+
     var span1 = document.createElement('span');
     var span2 = document.createElement('span');
     var span3 = document.createElement('span');
     var span4 = document.createElement('span');
+    var span5 = document.createElement('span');
 
-    var noSpp = name.replace(/\s+/g, '');
+
+
+    var input1 = document.createElement('input');
+    var input2 = document.createElement('input');
+    var input3 = document.createElement('input');
+    var input4 = document.createElement('input');
+    var input5 = document.createElement('input');
+
+    //Set ID for ech td
+    var noSpp = name.replace(/\s+/g, ''); //no name space
+
     // var noSpSS = spanTotalS.replace(/\s+/g, '');
     // var noSpWW = spanTotalW.replace(/\s+/g, '');
     // var noSpAA = spanTotalS.replace(/\s+/g, '');
@@ -187,32 +200,62 @@ function addItemsToTable(
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
     td2.innerHTML = sex;
+    //week 1
+    //setup ID
+    var p1 = `${noSpp}p1`;
+    var u1 = `${noSpp}u1`;
+    var sh1 = `${noSpp}sh1`;
+    var to1 = `${noSpp}to1`;
+    span1.id = p1;
+    span2.id = u1;
+    span3.id = sh1;
+    span4.id = to1;
+
+    //setup checkbox
+    input1.type = 'checkbox';
+    input1.id = `${noSpp}chP1`;
+    input1.name = 'chP1';
+    input1.value = 5;
+
+    input2.type = 'checkbox';
+    input2.id = `${noSpp}chU1`;
+    input2.name = 'chU1';
+    input2.value = 3;
+
+    input3.type = 'checkbox';
+    input3.id = `${noSpp}chSH1`;
+    input3.name = 'chSH1';
+    input3.value = 2;
+
+    //setup css
+    span4.style.color = 'red';
+    span4.style.fontWeight = 'bold';
     if (prac1 == undefined) {
-        td3.innerHTML = 0;
+        span1.innerHTML = 0;
     } else {
-        td3.innerHTML = prac1;
+        span1.innerHTML = prac1;
     }
     if (uniform1 == undefined) {
-        td4.innerHTML = 0;
+        span2.innerHTML = 0;
     } else {
-        td4.innerHTML = uniform1;
+        span2.innerHTML = uniform1;
     }
     if (shoe1 == undefined) {
-        td5.innerHTML = 0;
+        span3.innerHTML = 0;
     } else {
-        td5.innerHTML = shoe1;
+        span3.innerHTML = shoe1;
     }
     if (total1 == undefined) {
-        td6.innerHTML = 0;
+        span4.innerHTML = 0;
     } else {
-        td6.innerHTML = total1;
+        span4.innerHTML = total1;
     }
 
 
-    td7.innerHTML = prac2;
-    td8.innerHTML = uniform2;
-    td9.innerHTML = shoe2;
-    td10.innerHTML = total2;
+    // td7.innerHTML = prac2;
+    // td8.innerHTML = uniform2;
+    // td9.innerHTML = shoe2;
+    // td10.innerHTML = total2;
     // if (span == undefined) {
     //     span.innerText = 0;
 
@@ -274,6 +317,19 @@ function addItemsToTable(
     trow.appendChild(td21);
     trow.appendChild(td22);
     trow.appendChild(td23);
+
+    td3.appendChild(span1);
+    td3.appendChild(br1);
+    td3.appendChild(input1);
+
+    td4.appendChild(span2);
+    td4.appendChild(br2);
+    td4.appendChild(input2);
+
+    td5.appendChild(span3);
+    td5.appendChild(br3);
+    td5.appendChild(input3);
+    td6.appendChild(span4);
     // td9.appendChild(chkGet);
 
     // td3.appendChild(span);
@@ -304,25 +360,29 @@ function addItemsToTable(
     document.getElementById("alertMagWait").style.display = "none";
 
 }
-
+console.log(stdList);
 //Check all box
-function toggleS(source) {
-    var checkboxes = document.getElementsByName('myS');
+function checkP1(source) {
+    var checkboxes = document.getElementsByName('chP1');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
 
-        var idget1 = stdList[i][2]; // for s
-        var nameSS = stdList[i][6]; //for name S
-        var checkBoxs = document.getElementById(`${idget1}`);
+        var idget1 = stdList[i][0]; // for s
+        var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp1}chP1`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}p1`;
+        var checkBoxs = document.getElementById(`${chID}`);
         checkboxes[i].checked = source.checked;
         if (checkBoxs.checked == true) {
-            var s = 3;
             checkBoxs.checked = true;
-            document.getElementById(`${nameSS}`).innerHTML = 3;
+            
+            document.getElementById(`${chSPid}`).innerHTML = 5;
 
         }
         if (checkBoxs.checked == false) {
             checkBoxs.checked = false;
-            document.getElementById(`${nameSS}`).innerHTML = 0;
+            document.getElementById(`${chSPid}`).innerHTML = 0;
 
         }
     }
