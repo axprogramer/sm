@@ -357,6 +357,7 @@ function addItemsToTable(
     // dataS();
     // getTotalVal();
     // setData();
+    checkP1(this);
     document.getElementById("alertMagWait").style.display = "none";
 
 }
@@ -365,7 +366,6 @@ console.log(stdList);
 function checkP1(source) {
     var checkboxes = document.getElementsByName('chP1');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
-
         var idget1 = stdList[i][0]; // for s
         var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp1}chP1`;
@@ -385,6 +385,20 @@ function checkP1(source) {
             document.getElementById(`${chSPid}`).innerHTML = 0;
 
         }
+
+        checkBoxs.addEventListener('click', function () {
+            if (checkBoxs.checked == true) {
+                checkBoxs.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 5;
+
+            }
+            if (checkBoxs.checked == false) {
+                checkBoxs.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
     }
 
 }
