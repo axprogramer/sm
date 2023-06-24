@@ -398,6 +398,7 @@ function selectAllData() {
           cccSS();
           document.getElementById("alertMagWait").style.display = "none";
           document.getElementById("alertMagWait2").style.display = "none";
+          document.getElementById("alertMagWait3").style.display = "none";
         }
       );
     });
@@ -531,6 +532,90 @@ function cook2() {
 
   selectAllData();
 }
+function sportAct() {
+  // e.preventDefault();
+  for (i = 0; i < aData3.length; i++) {
+    var enname = aData3[i].myenname;
+    var khname = aData3[i].mykhname;
+    var idM = aData3[i].id;
+    var sex = aData3[i].mySex;
+    var date1 = '';
+    var date2 = '';
+    var date3 = '';
+    var date4 = '';
+    var date5 = '';
+    var topic1 = '';
+    var topic2 = '';
+    var topic3 = '';
+    var topic4 = '';
+    var topic5 = '';
+    var prac1 = '';
+    var prac2 = '';
+    var prac3 = '';
+    var prac4 = '';
+    var prac5 = '';
+    var uniform1 = '';
+    var uniform2 = '';
+    var uniform3 = '';
+    var uniform4 = '';
+    var uniform5 = '';
+    var shoe1 = '';
+    var shoe2 = '';
+    var shoe3 = '';
+    var shoe4 = '';
+    var shoe5 = '';
+    var total1 = '';
+    var total2 = '';
+    var total3 = '';
+    var total4 = '';
+    var total5 = '';
+    var subTotal = '';
+    firebase.database().ref(`${gradeAact}/` + `recordSport/` + `${yearAact}/` + `${dbmonthAct}/` + idM).set(
+      {
+        name: enname,
+        id: idM,
+        sex: sex,
+        khname: khname,
+        date1: date1,
+        date2: date2,
+        date3: date3,
+        date4: date4,
+        date5: date5,
+        topic1: topic1,
+        topic2: topic2,
+        topic3: topic3,
+        topic4: topic4,
+        topic5: topic5,
+        prac1: prac1,
+        prac2: prac2,
+        prac3: prac3,
+        prac4: prac4,
+        prac5: prac5,
+        uniform1: uniform1,
+        uniform2: uniform2,
+        uniform3: uniform3,
+        uniform4: uniform4,
+        uniform5: uniform5,
+        shoe1: shoe1,
+        shoe2: shoe2,
+        shoe3: shoe3,
+        shoe4: shoe4,
+        shoe5: shoe5,
+        total1: total1,
+        total2: total2,
+        total3: total3,
+        total4: total4,
+        total5: total5,
+        subTotal: subTotal,
+
+      },
+    )
+
+  }
+
+
+  selectAllData();
+}
 //Checkbox all check function
 function toggle(source) {
   checkboxes = document.getElementsByName('mCheck');
@@ -538,6 +623,7 @@ function toggle(source) {
     checkboxes[i].checked = source.checked;
   }
 }
+//Upload for Upgrade class
 var aData = [];
 $(document).ready(function () {
 
@@ -585,6 +671,7 @@ $(document).ready(function () {
   });
 
 });
+//Upload for Activities
 var aData2 = [];
 $(document).ready(function () {
 
@@ -621,6 +708,50 @@ $(document).ready(function () {
             window.location.reload();
           };
           sleep(2000);
+
+        };
+        sleep(1000);
+
+      }
+    });
+
+
+  });
+
+});
+//Upload for Sport
+var aData3 = [];
+$(document).ready(function () {
+
+  $("#btnSport").on('click', function () {
+
+    $("#myTable tbody tr").each(function () {
+      var currentRow = $(this);
+      var col1 = currentRow.find("td:eq(3)").html();
+      var col2 = currentRow.find("td:eq(2)").html();
+      var col3 = currentRow.find("td:eq(3)").html();
+      var col4 = currentRow.find("td:eq(4)").html();
+      var col5 = currentRow.find("td:eq(5)").html();
+      var obj = {};
+      obj.id = col1;
+      obj.myenname = col2;
+      obj.mykhname = col3;
+      obj.mySex = col4;
+      obj.mygrade = db2;
+      if (currentRow.find(".chk").is(":checked")) {
+        aData3.push(obj);
+        const sleep = async (milliseconds) => {
+          await new Promise(resolve => {
+            return setTimeout(resolve, milliseconds);
+          });
+          sportAct();
+          document.getElementById("alertMagWait3").style.display = "block";
+          document.getElementById("alertMag3").style.display = "none";
+          document.getElementById("showBtnn2").style.display = "none";
+          setTimeout(function(){
+            window.location.reload();
+
+          },2000)
 
         };
         sleep(1000);
@@ -787,5 +918,4 @@ function DelStdAll() {
   // window.location.reload();
 }
 document.getElementById("showAlert").style.display = "none";
-document.getElementById("showAlert2").style.display = "none";
 

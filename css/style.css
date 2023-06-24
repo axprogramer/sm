@@ -472,6 +472,7 @@
     padding: 10px;
     height: 35em;
 }
+
 .Div11 {
     background-color: transparent;
     padding: 10px;
@@ -777,6 +778,8 @@ label {
     border-collapse: collapse;
     border-spacing: 0;
     margin: 0px auto;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .tg td {
@@ -803,48 +806,9 @@ label {
     word-break: normal;
 }
 
-.tg .tg-4wxp {
-    border-color: inherit;
+.tg .tg-9epp {
+    color: #fe0000;
     font-family: khmerCN !important;
-    font-size: 12px;
-    font-weight: bold;
-    position: -webkit-sticky;
-    position: sticky;
-    text-align: left;
-    top: -1px;
-    vertical-align: top;
-    will-change: transform
-}
-
-.tg .tg-2efg {
-    border-color: inherit;
-    font-family: khmerCN !important;
-    font-size: 12px;
-    position: -webkit-sticky;
-    position: sticky;
-    text-align: left;
-    top: -1px;
-    vertical-align: top;
-    will-change: transform
-}
-
-.tg .tg-6zdp {
-    border-color: inherit;
-    font-family: khmerCN !important;
-    font-size: 12px;
-    font-weight: bold;
-    position: -webkit-sticky;
-    position: sticky;
-    text-align: left;
-    top: -1px;
-    vertical-align: middle;
-    will-change: transform
-}
-
-.tg .tg-5ihh {
-    border-color: inherit;
-    font-family: khmerCN !important;
-    font-size: 12px;
     font-weight: bold;
     position: -webkit-sticky;
     position: sticky;
@@ -854,101 +818,78 @@ label {
     will-change: transform
 }
 
-.tg .tg-go0h {
-    border-color: inherit;
+.tg .tg-42x8 {
     font-family: khmerCN !important;
-    font-size: 12px;
-    text-align: left;
-    vertical-align: top
+    text-align: center;
+    vertical-align: middle
 }
 
-@media screen and (max-width: 767px) {
-    .tg {
-        width: auto !important;
-    }
-
-    .tg col {
-        width: auto !important;
-    }
-
-    .tg-wrap {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin: auto 0px;
-    }
-}
-
-.tg {
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin: 0px auto;
-}
-
-.tg td {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    font-family: khmerCN;
-    font-size: 12px;
-    overflow: hidden;
-    padding: 10px 5px;
-    word-break: normal;
-}
-
-.tg th {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    font-family: khmerCN;
-    font-size: 12px;
-    font-weight: normal;
-    overflow: hidden;
-    padding: 10px 5px;
-    word-break: normal;
-}
-
-.tg .tg-6i5q {
-    border-color: inherit;
+.tg .tg-bg2u {
     font-family: khmerCN !important;
-    font-size: 12px;
-    position: -webkit-sticky;
-    position: sticky;
-    text-align: left;
-    top: -1px;
-    vertical-align: middle;
-    will-change: transform;
-}
-
-.tg .tg-6zdp {
-    border-color: inherit;
-    font-family: khmerCN !important;
-    font-size: 12px;
-    font-weight: bold;
-    position: -webkit-sticky;
-    position: sticky;
-    text-align: left;
-    top: -1px;
-    vertical-align: middle;
-    will-change: transform;
-}
-
-.tg .tg-5ihh {
-    border-color: inherit;
-    font-family: khmerCN !important;
-    font-size: 12px;
     font-weight: bold;
     position: -webkit-sticky;
     position: sticky;
     text-align: center;
     top: -1px;
     vertical-align: middle;
-    will-change: transform;
+    will-change: transform
 }
 
-.tg .tg-go0h {
-    border-color: inherit;
+.tg .tg-sx1p {
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: middle;
+    will-change: transform
+}
+
+.tg .tg-1xeo {
     font-family: khmerCN !important;
-    font-size: 12px;
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: top;
+    will-change: transform
+}
+
+.tg .tg-6t95 {
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: top;
+    will-change: transform
+}
+
+.tg .tg-flgj {
+    color: #fe0000;
+    font-family: khmerCN !important;
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: top;
+    will-change: transform
+}
+
+.tg .tg-izq4 {
+    color: #fe0000;
+    font-weight: bold;
+    position: -webkit-sticky;
+    position: sticky;
+    text-align: center;
+    top: -1px;
+    vertical-align: top;
+    will-change: transform
+}
+
+.tg .tg-0lax {
     text-align: left;
     vertical-align: top
 }

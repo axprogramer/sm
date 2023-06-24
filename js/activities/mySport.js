@@ -15,41 +15,55 @@ const getElementVal = (id) => {
 };
 function selectAllData() {
 
-    document.getElementById('myActivities').innerHTML = "";
+    document.getElementById('mySportAct').innerHTML = "";
     studentN0 = 0;
-    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/`).once('value',
+    firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/`).once('value',
         function (AllRecords) {
             AllRecords.forEach(
-                function (CurrentRecord) {
-                    var name = CurrentRecord.val().name;
-                    var id = CurrentRecord.val().id;
-                    var ids = CurrentRecord.val().ids;
-                    var idw = CurrentRecord.val().idw;
-                    var ida = CurrentRecord.val().ida;
-                    var idatt = CurrentRecord.val().idatt;
-                    var nameRowS = CurrentRecord.val().nameRowS;
-                    var nameRowW = CurrentRecord.val().nameRowW;
-                    var nameRowA = CurrentRecord.val().nameRowA;
-                    var nameRowAtt = CurrentRecord.val().nameRowAtt;
-                    var nameRowTotal = CurrentRecord.val().nameRowTotal;
-                    var spanTotalS = CurrentRecord.val().spanTotalS;
-                    var spanTotalW = CurrentRecord.val().spanTotalW;
-                    var spanTotalA = CurrentRecord.val().spanTotalA;
-                    var spanTotalAtt = CurrentRecord.val().spanTotalAtt;
-                    var sex = CurrentRecord.val().sex;
-                    var date = CurrentRecord.val().date;
-                    var s = CurrentRecord.val().s;
-                    var w = CurrentRecord.val().w;
-                    var a = CurrentRecord.val().a;
-                    var attitude = CurrentRecord.val().attitude;
-                    var note = CurrentRecord.val().note;
-                    var total = CurrentRecord.val().total;
-                    addItemsToTable(name, id, ids, idw, ida, idatt,
-                        nameRowS, nameRowW, nameRowA, nameRowAtt,
-                        nameRowTotal, spanTotalS, spanTotalW, spanTotalA,
-                        spanTotalAtt,
-                        sex, date, s, w, a, attitude, note,
-                        total);
+                function (sportData) {
+                    var name = sportData.val().name;
+                    var id = sportData.val().id;
+                    var sex = sportData.val().sex;
+                    var khname = sportData.val().khname;
+                    var date1 = sportData.val().date1;
+                    var date2 = sportData.val().date2;
+                    var date3 = sportData.val().date3;
+                    var date4 = sportData.val().date4;
+                    var date5 = sportData.val().date5;
+                    var topic1 = sportData.val().topic1;
+                    var topic2 = sportData.val().topic2;
+                    var topic3 = sportData.val().topic3;
+                    var topic4 = sportData.val().topic4;
+                    var topic5 = sportData.val().topic5;
+                    var prac1 = sportData.val().prac1;
+                    var prac2 = sportData.val().prac2;
+                    var prac3 = sportData.val().prac3;
+                    var prac4 = sportData.val().prac4;
+                    var prac5 = sportData.val().prac5;
+                    var uniform1 = sportData.val().uniform1;
+                    var uniform2 = sportData.val().uniform2;
+                    var uniform3 = sportData.val().uniform3;
+                    var uniform4 = sportData.val().uniform4;
+                    var uniform5 = sportData.val().uniform5;
+                    var shoe1 = sportData.val().shoe1;
+                    var shoe2 = sportData.val().shoe2;
+                    var shoe3 = sportData.val().shoe3;
+                    var shoe4 = sportData.val().shoe4;
+                    var shoe5 = sportData.val().shoe5;
+                    var total1 = sportData.val().total1;
+                    var total2 = sportData.val().total2;
+                    var total3 = sportData.val().total3;
+                    var total4 = sportData.val().total4;
+                    var total5 = sportData.val().total5;
+                    var subTotal = sportData.val().subTotal;
+                    addItemsToTable(
+                        name, id, sex, khname, date1, date2,
+                        date3, date4, date5, topic1, topic2, topic3,
+                        topic4, topic5, prac1, prac2, prac3, prac4,
+                        prac5, uniform1, uniform2, uniform3, uniform4, uniform5,
+                        shoe1, shoe2, shoe3, shoe4, shoe5, total1,
+                        total2, total3, total4, total5, subTotal,
+                    );
 
                 }
             );
@@ -59,11 +73,15 @@ window.onload = selectAllData;
 var studentN0;
 
 var stdList = [];
-function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nameRowA, nameRowAtt, nameRowTotal,
-    spanTotalS, spanTotalW, spanTotalA,
-    spanTotalAtt, sex, date, s, w, a, attitude, note,
-    total) {
-    var tbody = document.getElementById('myActivities');
+function addItemsToTable(
+    name, id, sex, khname, date1, date2,
+    date3, date4, date5, topic1, topic2, topic3,
+    topic4, topic5, prac1, prac2, prac3, prac4,
+    prac5, uniform1, uniform2, uniform3, uniform4, uniform5,
+    shoe1, shoe2, shoe3, shoe4, shoe5, total1,
+    total2, total3, total4, total5, subTotal,
+) {
+    var tbody = document.getElementById('mySportAct');
     var trow = document.createElement('tr');
     var td0 = document.createElement('td');
     var td1 = document.createElement('td');
@@ -75,11 +93,26 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nam
     var td7 = document.createElement('td');
     var td8 = document.createElement('td');
     var td9 = document.createElement('td');
-    var td10 = document.createElement('br');
-    var td11 = document.createElement('br');
-    var td12 = document.createElement('br');
-    var td13 = document.createElement('br');
-    var td14 = document.createElement('br');
+    var td10 = document.createElement('td');
+    var td11 = document.createElement('td');
+    var td12 = document.createElement('td');
+    var td13 = document.createElement('td');
+    var td14 = document.createElement('td');
+    var td15 = document.createElement('td');
+    var td16 = document.createElement('td');
+    var td17 = document.createElement('td');
+    var td18 = document.createElement('td');
+    var td19 = document.createElement('td');
+    var td20 = document.createElement('td');
+    var td21 = document.createElement('td');
+    var td22 = document.createElement('td');
+    var td23 = document.createElement('td');
+
+    var br1 = document.createElement('br');
+    var br2 = document.createElement('br');
+    var br3 = document.createElement('br');
+    var br4 = document.createElement('br');
+    var br5 = document.createElement('br');
     var div1 = document.createElement('div');
     var span = document.createElement('span');
     var span1 = document.createElement('span');
@@ -87,102 +120,134 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nam
     var span3 = document.createElement('span');
     var span4 = document.createElement('span');
 
+    var noSpp = name.replace(/\s+/g, '');
+    // var noSpSS = spanTotalS.replace(/\s+/g, '');
+    // var noSpWW = spanTotalW.replace(/\s+/g, '');
+    // var noSpAA = spanTotalS.replace(/\s+/g, '');
+    // var noSpAtt = spanTotalAtt.replace(/\s+/g, '');
+    // span.id = `${nameRowS}`;
+    // span.className = `${noSpSS}`;
+    // span1.id = `${nameRowW}`;
+    // span1.className = `${noSpWW}`;
+    // span2.id = `${nameRowA}`;
+    // span2.className = `${noSpAA}`;
+    // span3.id = `${nameRowAtt}`;
+    // span3.className = `${noSpAtt}`;
+    // span4.id = `${nameRowTotal}`;
+    //date value
+    document.getElementById('mySpDate1').value = date1;
+    document.getElementById('mySpDate2').value = date2;
+    document.getElementById('mySpDate3').value = date3;
+    document.getElementById('mySpDate4').value = date4;
+    document.getElementById('mySpDate5').value = date5;
+    // td3.style.color = 'green';
+    // td4.style.color = 'green';
+    // td5.style.color = 'green';
+    // td6.style.color = 'red';
+    // td8.style.color = 'red';
+    // trow.setAttribute('class', 'item table');
+    // //checkbox
+    // var chkS = document.createElement('input');
+    // chkS.type = "checkbox";
+    // chkS.value = "3";
+    // chkS.setAttribute('name', 'myS');
+    // chkS.setAttribute('class', 'myS');
+    // chkS.setAttribute('id', `${ids}`);
 
-    var noSpSS = spanTotalS.replace(/\s+/g, '');
-    var noSpWW = spanTotalW.replace(/\s+/g, '');
-    var noSpAA = spanTotalS.replace(/\s+/g, '');
-    var noSpAtt = spanTotalAtt.replace(/\s+/g, '');
-    span.id = `${nameRowS}`;
-    span.className = `${noSpSS}`;
-    span1.id = `${nameRowW}`;
-    span1.className = `${noSpWW}`;
-    span2.id = `${nameRowA}`;
-    span2.className = `${noSpAA}`;
-    span3.id = `${nameRowAtt}`;
-    span3.className = `${noSpAtt}`;
-    span4.id = `${nameRowTotal}`;
+    // var chkW = document.createElement('input');
+    // chkW.type = "checkbox";
+    // chkW.value = "1";
+    // chkW.setAttribute('name', 'myW');
+    // chkW.setAttribute('id', `${idw}`);
 
-    td3.style.color = 'green';
-    td4.style.color = 'green';
-    td5.style.color = 'green';
-    td6.style.color = 'red';
-    td8.style.color = 'red';
-    trow.setAttribute('class', 'item table');
-    //checkbox
-    var chkS = document.createElement('input');
-    chkS.type = "checkbox";
-    chkS.value = "3";
-    chkS.setAttribute('name', 'myS');
-    chkS.setAttribute('class', 'myS');
-    chkS.setAttribute('id', `${ids}`);
+    // var chkA = document.createElement('input');
+    // chkA.type = "checkbox";
+    // chkA.value = "1";
+    // chkA.setAttribute('name', 'myA');
+    // chkA.setAttribute('id', `${ida}`);
+    // var chkAtt = document.createElement('input');
+    // chkAtt.type = "checkbox";
+    // chkAtt.value = "-1";
+    // chkAtt.setAttribute('name', 'myAtt');
+    // chkAtt.setAttribute('id', `${idatt}`);
+    // var chkGet = document.createElement('input');
+    // chkGet.type = "checkbox";
+    // chkGet.setAttribute('name', 'myGet');
+    // chkGet.setAttribute('class', 'chk');
+    // chkGet.checked = true;
 
-    var chkW = document.createElement('input');
-    chkW.type = "checkbox";
-    chkW.value = "1";
-    chkW.setAttribute('name', 'myW');
-    chkW.setAttribute('id', `${idw}`);
-
-    var chkA = document.createElement('input');
-    chkA.type = "checkbox";
-    chkA.value = "1";
-    chkA.setAttribute('name', 'myA');
-    chkA.setAttribute('id', `${ida}`);
-    var chkAtt = document.createElement('input');
-    chkAtt.type = "checkbox";
-    chkAtt.value = "-1";
-    chkAtt.setAttribute('name', 'myAtt');
-    chkAtt.setAttribute('id', `${idatt}`);
-    var chkGet = document.createElement('input');
-    chkGet.type = "checkbox";
-    chkGet.setAttribute('name', 'myGet');
-    chkGet.setAttribute('class', 'chk');
-    chkGet.checked = true;
-    var ddd = document.getElementById('myDate');
-
-    stdList.push([name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nameRowA, nameRowAtt, nameRowTotal,
-        spanTotalS, spanTotalW, spanTotalA,
-        spanTotalAtt, sex, date, s, w, a, attitude, note,
-        total]);
+    stdList.push([
+        name, id, sex, khname, date1, date2,
+        date3, date4, date5, topic1, topic2, topic3,
+        topic4, topic5, prac1, prac2, prac3, prac4,
+        prac5, uniform1, uniform2, uniform3, uniform4, uniform5,
+        shoe1, shoe2, shoe3, shoe4, shoe5, total1,
+        total2, total3, total4, total5, subTotal,
+    ]);
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
     td2.innerHTML = sex;
-    ddd.value = date;
-    if (span == undefined) {
-        span.innerText = 0;
-
+    if (prac1 == undefined) {
+        td3.innerHTML = 0;
     } else {
-        span.innerText = s;
-
+        td3.innerHTML = prac1;
     }
-    if (span1 == undefined) {
-        span1.innerText = 0;
-
+    if (uniform1 == undefined) {
+        td4.innerHTML = 0;
     } else {
-        span1.innerText = w;
-
+        td4.innerHTML = uniform1;
     }
-    if (span2 == undefined) {
-        span2.innerText = 0;
-
+    if (shoe1 == undefined) {
+        td5.innerHTML = 0;
     } else {
-        span2.innerText = a;
-
+        td5.innerHTML = shoe1;
     }
-    if (span3 == undefined) {
-        span3.innerText = 0;
-
+    if (total1 == undefined) {
+        td6.innerHTML = 0;
     } else {
-        span3.innerText = attitude;
-
+        td6.innerHTML = total1;
     }
-    if (span4 == undefined) {
-        span4.innerText = 0;
 
-    } else {
-        span4.innerText = total;
 
-    }
-    td7.innerHTML = note;
+    td7.innerHTML = prac2;
+    td8.innerHTML = uniform2;
+    td9.innerHTML = shoe2;
+    td10.innerHTML = total2;
+    // if (span == undefined) {
+    //     span.innerText = 0;
+
+    // } else {
+    //     span.innerText = s;
+
+    // }
+    // if (span1 == undefined) {
+    //     span1.innerText = 0;
+
+    // } else {
+    //     span1.innerText = w;
+
+    // }
+    // if (span2 == undefined) {
+    //     span2.innerText = 0;
+
+    // } else {
+    //     span2.innerText = a;
+
+    // }
+    // if (span3 == undefined) {
+    //     span3.innerText = 0;
+
+    // } else {
+    //     span3.innerText = attitude;
+
+    // }
+    // if (span4 == undefined) {
+    //     span4.innerText = 0;
+
+    // } else {
+    //     span4.innerText = total;
+
+    // }
 
 
     trow.appendChild(td0);
@@ -195,32 +260,46 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nam
     trow.appendChild(td7);
     trow.appendChild(td8);
     trow.appendChild(td9);
-    td9.appendChild(chkGet);
+    trow.appendChild(td10);
+    trow.appendChild(td11);
+    trow.appendChild(td12);
+    trow.appendChild(td13);
+    trow.appendChild(td14);
+    trow.appendChild(td15);
+    trow.appendChild(td16);
+    trow.appendChild(td17);
+    trow.appendChild(td18);
+    trow.appendChild(td19);
+    trow.appendChild(td20);
+    trow.appendChild(td21);
+    trow.appendChild(td22);
+    trow.appendChild(td23);
+    // td9.appendChild(chkGet);
 
-    td3.appendChild(span);
-    td3.appendChild(td10);
+    // td3.appendChild(span);
+    // td3.appendChild(td10);
 
-    td4.appendChild(span1);
-    td4.appendChild(td11);
+    // td4.appendChild(span1);
+    // td4.appendChild(td11);
 
-    td5.appendChild(span2);
-    td5.appendChild(td12);
+    // td5.appendChild(span2);
+    // td5.appendChild(td12);
 
-    td6.appendChild(span3);
-    td6.appendChild(td13);
+    // td6.appendChild(span3);
+    // td6.appendChild(td13);
 
-    td8.appendChild(span4);
+    // td8.appendChild(span4);
 
-    td3.appendChild(chkS);
-    td4.appendChild(chkW);
-    td5.appendChild(chkA);
-    td6.appendChild(chkAtt);
+    // td3.appendChild(chkS);
+    // td4.appendChild(chkW);
+    // td5.appendChild(chkA);
+    // td6.appendChild(chkAtt);
 
 
     tbody.appendChild(trow);
-    autoCheck();
-    dataS();
-    getTotalVal();
+    // autoCheck();
+    // dataS();
+    // getTotalVal();
     // setData();
     document.getElementById("alertMagWait").style.display = "none";
 
@@ -250,7 +329,7 @@ function toggleS(source) {
 
 }
 function toggleW(source) {
-   var checkboxes = document.getElementsByName('myW');
+    var checkboxes = document.getElementsByName('myW');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
         checkboxes[i].checked = source.checked;
         var idget2 = stdList[i][3]; // for w
@@ -540,12 +619,6 @@ document.getElementById('myTimesAct').addEventListener('change', function () {
     window.location.reload();
 
 })
-document.getElementById('myDate').addEventListener('change', function () {
-    var datesact = document.getElementById('myDate').value;
-    localStorage.setItem('owndateAct', datesact);
-    window.location.reload();
-
-})
 document.getElementById('myGradeAct').addEventListener('change', function () {
     var gradeact = document.getElementById('myGradeAct').value;
     localStorage.setItem('owngradeAct', gradeact);
@@ -561,12 +634,10 @@ document.getElementById('myYearAct').addEventListener('change', function () {
 
 var dbmonthAct = localStorage.getItem('ownmonthAct'); //month activity
 var dbtimesAct = localStorage.getItem('owntimesAct'); // times activity
-var dbdateAct = localStorage.getItem('owndateAct'); // date activity
 var dbgradeAct = localStorage.getItem('owngradeAct'); // grade activity
 var dbyearAct = localStorage.getItem('ownyeareAct'); // year activity
 document.getElementById('myMonthAct').value = dbmonthAct;
 document.getElementById('myTimesAct').value = dbtimesAct;
-document.getElementById('myDate').value = dbdateAct;
 document.getElementById('myGradeAct').value = dbgradeAct;
 document.getElementById('myYearAct').value = dbyearAct;
 //Save data to firebase
