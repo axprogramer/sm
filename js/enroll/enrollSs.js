@@ -539,74 +539,74 @@ function sportAct() {
     var khname = aData3[i].mykhname;
     var idM = aData3[i].id;
     var sex = aData3[i].mySex;
-    var date1 = '';
-    var date2 = '';
-    var date3 = '';
-    var date4 = '';
-    var date5 = '';
-    var topic1 = '';
-    var topic2 = '';
-    var topic3 = '';
-    var topic4 = '';
-    var topic5 = '';
-    var prac1 = '';
-    var prac2 = '';
-    var prac3 = '';
-    var prac4 = '';
-    var prac5 = '';
-    var uniform1 = '';
-    var uniform2 = '';
-    var uniform3 = '';
-    var uniform4 = '';
-    var uniform5 = '';
-    var shoe1 = '';
-    var shoe2 = '';
-    var shoe3 = '';
-    var shoe4 = '';
-    var shoe5 = '';
-    var total1 = '';
-    var total2 = '';
-    var total3 = '';
-    var total4 = '';
-    var total5 = '';
-    var subTotal = '';
+    // var date1 = '';
+    // var date2 = '';
+    // var date3 = '';
+    // var date4 = '';
+    // var date5 = '';
+    // var topic1 = '';
+    // var topic2 = '';
+    // var topic3 = '';
+    // var topic4 = '';
+    // var topic5 = '';
+    // var prac1 = '';
+    // var prac2 = '';
+    // var prac3 = '';
+    // var prac4 = '';
+    // var prac5 = '';
+    // var uniform1 = '';
+    // var uniform2 = '';
+    // var uniform3 = '';
+    // var uniform4 = '';
+    // var uniform5 = '';
+    // var shoe1 = '';
+    // var shoe2 = '';
+    // var shoe3 = '';
+    // var shoe4 = '';
+    // var shoe5 = '';
+    // var total1 = '';
+    // var total2 = '';
+    // var total3 = '';
+    // var total4 = '';
+    // var total5 = '';
+    // var subTotal = '';
     firebase.database().ref(`${gradeAact}/` + `recordSport/` + `${yearAact}/` + `${dbmonthAct}/` + idM).set(
       {
         name: enname,
         id: idM,
         sex: sex,
         khname: khname,
-        date1: date1,
-        date2: date2,
-        date3: date3,
-        date4: date4,
-        date5: date5,
-        topic1: topic1,
-        topic2: topic2,
-        topic3: topic3,
-        topic4: topic4,
-        topic5: topic5,
-        prac1: prac1,
-        prac2: prac2,
-        prac3: prac3,
-        prac4: prac4,
-        prac5: prac5,
-        uniform1: uniform1,
-        uniform2: uniform2,
-        uniform3: uniform3,
-        uniform4: uniform4,
-        uniform5: uniform5,
-        shoe1: shoe1,
-        shoe2: shoe2,
-        shoe3: shoe3,
-        shoe4: shoe4,
-        shoe5: shoe5,
-        total1: total1,
-        total2: total2,
-        total3: total3,
-        total4: total4,
-        total5: total5,
-        subTotal: subTotal,
+        // date1: date1,
+        // date2: date2,
+        // date3: date3,
+        // date4: date4,
+        // date5: date5,
+        // topic1: topic1,
+        // topic2: topic2,
+        // topic3: topic3,
+        // topic4: topic4,
+        // topic5: topic5,
+        // prac1: prac1,
+        // prac2: prac2,
+        // prac3: prac3,
+        // prac4: prac4,
+        // prac5: prac5,
+        // uniform1: uniform1,
+        // uniform2: uniform2,
+        // uniform3: uniform3,
+        // uniform4: uniform4,
+        // uniform5: uniform5,
+        // shoe1: shoe1,
+        // shoe2: shoe2,
+        // shoe3: shoe3,
+        // shoe4: shoe4,
+        // shoe5: shoe5,
+        // total1: total1,
+        // total2: total2,
+        // total3: total3,
+        // total4: total4,
+        // total5: total5,
+        // subTotal: subTotal,
 
       },
     )

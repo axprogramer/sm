@@ -72,7 +72,7 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 210px;
+    width: 240px;
     height: 100vh;
     overflow-y: auto;
     background: var(--secondary);
@@ -81,7 +81,7 @@
 }
 
 .content {
-    margin-left: 210px;
+    margin-left: 240px;
     min-height: 100vh;
     background: var(--dark);
     transition: 0.5s;
@@ -130,6 +130,7 @@
     border-left: 3px solid var(--secondary);
     border-radius: 0 30px 30px 0;
     outline: none;
+    font-size: 12px;
 }
 
 .sidebar .navbar .navbar-nav .nav-link:hover,
@@ -147,6 +148,7 @@
     justify-content: center;
     background: var(--dark);
     border-radius: 40px;
+    font-size: 12px;
 }
 
 .sidebar .navbar .navbar-nav .nav-link:hover i,
@@ -205,6 +207,7 @@
 
 .content .navbar .dropdown-item {
     color: var(--light);
+
 }
 
 .content .navbar .dropdown-item:hover,
@@ -220,6 +223,7 @@
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     transition: .5s;
+
 }
 
 .content .navbar .dropdown-toggle[aria-expanded=true]::after {
@@ -923,6 +927,7 @@ label {
     text-align: center;
     table-layout: fixed;
 }
-.mycheckbox{
+
+.mycheckbox {
     padding: 5px;
 }

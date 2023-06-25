@@ -108,86 +108,136 @@ function addItemsToTable(
     var td21 = document.createElement('td');
     var td22 = document.createElement('td');
     var td23 = document.createElement('td');
+    var td24 = document.createElement('td');
 
+    //Week 1
     var br1 = document.createElement('br');
     var br2 = document.createElement('br');
     var br3 = document.createElement('br');
+    //Week 2
     var br4 = document.createElement('br');
     var br5 = document.createElement('br');
+    var br6 = document.createElement('br');
+    //Week 3
+    var br7 = document.createElement('br');
+    var br8 = document.createElement('br');
+    var br9 = document.createElement('br');
+    //Week 4
+    var br10 = document.createElement('br');
+    var br11 = document.createElement('br');
+    var br12 = document.createElement('br');
+    //Week 5
+    var br13 = document.createElement('br');
+    var br14 = document.createElement('br');
+    var br15 = document.createElement('br');
 
     var div1 = document.createElement('div');
-
+    //Week1
     var span1 = document.createElement('span');
     var span2 = document.createElement('span');
     var span3 = document.createElement('span');
     var span4 = document.createElement('span');
+    //Week 2
     var span5 = document.createElement('span');
+    var span6 = document.createElement('span');
+    var span7 = document.createElement('span');
+    var span8 = document.createElement('span');
+    //Week 3
+    var span9 = document.createElement('span');
+    var span10 = document.createElement('span');
+    var span11 = document.createElement('span');
+    var span12 = document.createElement('span');
+    //Week 4
+    var span13 = document.createElement('span');
+    var span14 = document.createElement('span');
+    var span15 = document.createElement('span');
+    var span16 = document.createElement('span');
+    //Week 5
+    var span17 = document.createElement('span');
+    var span18 = document.createElement('span');
+    var span19 = document.createElement('span');
+    var span20 = document.createElement('span');
+    //Sub total
+    var span21 = document.createElement('span');
+    
 
-
-
+    //Week 1
     var input1 = document.createElement('input');
     var input2 = document.createElement('input');
     var input3 = document.createElement('input');
     var input4 = document.createElement('input');
+    //Week 2
     var input5 = document.createElement('input');
+    var input6 = document.createElement('input');
+    var input7 = document.createElement('input');
+    //Week 3
+    var input8 = document.createElement('input');
+    var input9 = document.createElement('input');
+    var input10 = document.createElement('input');
+    //Week 4
+    var input11 = document.createElement('input');
+    var input12 = document.createElement('input');
+    var input13 = document.createElement('input');
+    //Week 5
+    var input14 = document.createElement('input');
+    var input15 = document.createElement('input');
+    var input16 = document.createElement('input');
 
     //Set ID for ech td
     var noSpp = name.replace(/\s+/g, ''); //no name space
 
-    // var noSpSS = spanTotalS.replace(/\s+/g, '');
-    // var noSpWW = spanTotalW.replace(/\s+/g, '');
-    // var noSpAA = spanTotalS.replace(/\s+/g, '');
-    // var noSpAtt = spanTotalAtt.replace(/\s+/g, '');
-    // span.id = `${nameRowS}`;
-    // span.className = `${noSpSS}`;
-    // span1.id = `${nameRowW}`;
-    // span1.className = `${noSpWW}`;
-    // span2.id = `${nameRowA}`;
-    // span2.className = `${noSpAA}`;
-    // span3.id = `${nameRowAtt}`;
-    // span3.className = `${noSpAtt}`;
-    // span4.id = `${nameRowTotal}`;
-    //date value
-    document.getElementById('mySpDate1').value = date1;
-    document.getElementById('mySpDate2').value = date2;
-    document.getElementById('mySpDate3').value = date3;
-    document.getElementById('mySpDate4').value = date4;
-    document.getElementById('mySpDate5').value = date5;
-    // td3.style.color = 'green';
-    // td4.style.color = 'green';
-    // td5.style.color = 'green';
-    // td6.style.color = 'red';
-    // td8.style.color = 'red';
-    // trow.setAttribute('class', 'item table');
-    // //checkbox
-    // var chkS = document.createElement('input');
-    // chkS.type = "checkbox";
-    // chkS.value = "3";
-    // chkS.setAttribute('name', 'myS');
-    // chkS.setAttribute('class', 'myS');
-    // chkS.setAttribute('id', `${ids}`);
-
-    // var chkW = document.createElement('input');
-    // chkW.type = "checkbox";
-    // chkW.value = "1";
-    // chkW.setAttribute('name', 'myW');
-    // chkW.setAttribute('id', `${idw}`);
-
-    // var chkA = document.createElement('input');
-    // chkA.type = "checkbox";
-    // chkA.value = "1";
-    // chkA.setAttribute('name', 'myA');
-    // chkA.setAttribute('id', `${ida}`);
-    // var chkAtt = document.createElement('input');
-    // chkAtt.type = "checkbox";
-    // chkAtt.value = "-1";
-    // chkAtt.setAttribute('name', 'myAtt');
-    // chkAtt.setAttribute('id', `${idatt}`);
-    // var chkGet = document.createElement('input');
-    // chkGet.type = "checkbox";
-    // chkGet.setAttribute('name', 'myGet');
-    // chkGet.setAttribute('class', 'chk');
-    // chkGet.checked = true;
+    //date values
+    if (date1 == undefined) {
+        document.getElementById('mySpDate1').value = '';
+    } else {
+        document.getElementById('mySpDate1').value = date1;
+    }
+    if (date2 == undefined) {
+        document.getElementById('mySpDate2').value = '';
+    } else {
+        document.getElementById('mySpDate2').value = date2;
+    }
+    if (date3 == undefined) {
+        document.getElementById('mySpDate3').value = '';
+    } else {
+        document.getElementById('mySpDate3').value = date3;
+    }
+    if (date4 == undefined) {
+        document.getElementById('mySpDate4').value = '';
+    } else {
+        document.getElementById('mySpDate4').value = date4;
+    }
+    if (date5 == undefined) {
+        document.getElementById('mySpDate5').value = '';
+    } else {
+        document.getElementById('mySpDate5').value = date5;
+    }
+    //Topic Values
+    if (topic1 == undefined) {
+        document.getElementById('myTopic1').value = '';
+    } else {
+        document.getElementById('myTopic1').value = topic1;
+    }
+    if (topic2 == undefined) {
+        document.getElementById('myTopic2').value = '';
+    } else {
+        document.getElementById('myTopic2').value = topic2;
+    }
+    if (topic3 == undefined) {
+        document.getElementById('myTopic3').value = '';
+    } else {
+        document.getElementById('myTopic3').value = topic3;
+    }
+    if (topic4 == undefined) {
+        document.getElementById('myTopic4').value = '';
+    } else {
+        document.getElementById('myTopic4').value = topic4;
+    }
+    if (topic5 == undefined) {
+        document.getElementById('myTopic5').value = '';
+    } else {
+        document.getElementById('myTopic5').value = topic5;
+    }
 
     stdList.push([
         name, id, sex, khname, date1, date2,
@@ -200,36 +250,199 @@ function addItemsToTable(
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
     td2.innerHTML = sex;
-    //week 1
     //setup ID
+    //week 1
     var p1 = `${noSpp}p1`;
     var u1 = `${noSpp}u1`;
     var sh1 = `${noSpp}sh1`;
     var to1 = `${noSpp}to1`;
+
+    var sp1 = `${noSpp}sp1`;
+    var su1 = `${noSpp}su1`;
+    var ssh1 = `${noSpp}ssh1`;
+    var sto1 = `${noSpp}sto1`;
+    //Week 2
+    var p2 = `${noSpp}p2`;
+    var u2 = `${noSpp}u2`;
+    var sh2 = `${noSpp}sh2`;
+    var to2 = `${noSpp}to2`;
+
+    var sp2 = `${noSpp}sp2`;
+    var su2 = `${noSpp}su2`;
+    var ssh2 = `${noSpp}ssh2`;
+    var sto2 = `${noSpp}sto2`;
+    //Week 3
+    var p3 = `${noSpp}p3`;
+    var u3 = `${noSpp}u3`;
+    var sh3 = `${noSpp}sh3`;
+    var to3 = `${noSpp}to3`;
+
+    var sp3 = `${noSpp}sp3`;
+    var su3 = `${noSpp}su3`;
+    var ssh3 = `${noSpp}ssh3`;
+    var sto3 = `${noSpp}sto3`;
+    //Week 4
+    var p4 = `${noSpp}p4`;
+    var u4 = `${noSpp}u4`;
+    var sh4 = `${noSpp}sh4`;
+    var to4 = `${noSpp}to4`;
+
+    var sp4 = `${noSpp}sp4`;
+    var su4 = `${noSpp}su4`;
+    var ssh4 = `${noSpp}ssh4`;
+    var sto4 = `${noSpp}sto4`;
+    //Week 5
+    var p5 = `${noSpp}p5`;
+    var u5 = `${noSpp}u5`;
+    var sh5 = `${noSpp}sh5`;
+    var to5 = `${noSpp}to5`;
+
+    var sp5 = `${noSpp}sp5`;
+    var su5 = `${noSpp}su5`;
+    var ssh5 = `${noSpp}ssh5`;
+    var sto5 = `${noSpp}sto5`;
+    var subTotalall = `${noSpp}totalAll`;
+    //Week 1
     span1.id = p1;
     span2.id = u1;
     span3.id = sh1;
     span4.id = to1;
 
+    span1.className = sp1;
+    span2.className = su1;
+    span3.className = ssh1;
+    span4.className = sto1;
+    //Week 2
+    span5.id = p2;
+    span6.id = u2;
+    span7.id = sh2;
+    span8.id = to2;
+
+    span5.className = sp2;
+    span6.className = su2;
+    span7.className = ssh2;
+    span8.className = sto2;
+    //Week 3
+    span9.id = p3;
+    span10.id = u3;
+    span11.id = sh3;
+    span12.id = to3;
+
+    span9.className = sp3;
+    span10.className = su3;
+    span11.className = ssh3;
+    span12.className = sto3;
+    //Week 4
+    span13.id = p4;
+    span14.id = u4;
+    span15.id = sh4;
+    span16.id = to4;
+
+    span13.className = sp4;
+    span14.className = su4;
+    span15.className = ssh4;
+    span16.className = sto4;
+    //Week 5
+    span17.id = p5;
+    span18.id = u5;
+    span19.id = sh5;
+    span20.id = to5;
+    span21.id = subTotalall;
+
+    span17.className = sp5;
+    span18.className = su5;
+    span19.className = ssh5;
+    span20.className = sto5;
+    span21.className = subTotalall;
+
     //setup checkbox
+    //Week 1
     input1.type = 'checkbox';
     input1.id = `${noSpp}chP1`;
     input1.name = 'chP1';
-    input1.value = 5;
 
     input2.type = 'checkbox';
     input2.id = `${noSpp}chU1`;
     input2.name = 'chU1';
-    input2.value = 3;
 
     input3.type = 'checkbox';
     input3.id = `${noSpp}chSH1`;
     input3.name = 'chSH1';
-    input3.value = 2;
+    //Week 2
+    input5.type = 'checkbox';
+    input5.id = `${noSpp}chP2`;
+    input5.name = 'chP2';
+
+    input6.type = 'checkbox';
+    input6.id = `${noSpp}chU2`;
+    input6.name = 'chU2';
+
+    input7.type = 'checkbox';
+    input7.id = `${noSpp}chSH2`;
+    input7.name = 'chSH2';
+    //Week 3
+    input8.type = 'checkbox';
+    input8.id = `${noSpp}chP3`;
+    input8.name = 'chP3';
+
+    input9.type = 'checkbox';
+    input9.id = `${noSpp}chU3`;
+    input9.name = 'chU3';
+
+    input10.type = 'checkbox';
+    input10.id = `${noSpp}chSH3`;
+    input10.name = 'chSH3';
+    //Week 4
+    input11.type = 'checkbox';
+    input11.id = `${noSpp}chP4`;
+    input11.name = 'chP4';
+
+    input12.type = 'checkbox';
+    input12.id = `${noSpp}chU4`;
+    input12.name = 'chU4';
+
+    input13.type = 'checkbox';
+    input13.id = `${noSpp}chSH4`;
+    input13.name = 'chSH4';
+    //Week 5
+    input14.type = 'checkbox';
+    input14.id = `${noSpp}chP5`;
+    input14.name = 'chP5';
+
+    input15.type = 'checkbox';
+    input15.id = `${noSpp}chU5`;
+    input15.name = 'chU5';
+
+    input16.type = 'checkbox';
+    input16.id = `${noSpp}chSH5`;
+    input16.name = 'chSH5';
+
+    //Get checkbox for all
+    input4.type = 'checkbox';
+    input4.name = 'myGet';
+    input4.checked = true;
+    input4.className = "chSport";
 
     //setup css
+    //Week 1
     span4.style.color = 'red';
     span4.style.fontWeight = 'bold';
+    //week 2
+    span8.style.color = 'red';
+    span8.style.fontWeight = 'bold';
+    //week 3
+    span12.style.color = 'red';
+    span12.style.fontWeight = 'bold';
+    //week 4
+    span16.style.color = 'red';
+    span16.style.fontWeight = 'bold';
+    //week 5
+    span20.style.color = 'red';
+    span20.style.fontWeight = 'bold';
+    //Sub total
+    span21.style.color = 'red';
+    span21.style.fontWeight = 'bold';
+    //Week 1
     if (prac1 == undefined) {
         span1.innerHTML = 0;
     } else {
@@ -250,49 +463,95 @@ function addItemsToTable(
     } else {
         span4.innerHTML = total1;
     }
-
-
-    // td7.innerHTML = prac2;
-    // td8.innerHTML = uniform2;
-    // td9.innerHTML = shoe2;
-    // td10.innerHTML = total2;
-    // if (span == undefined) {
-    //     span.innerText = 0;
-
-    // } else {
-    //     span.innerText = s;
-
-    // }
-    // if (span1 == undefined) {
-    //     span1.innerText = 0;
-
-    // } else {
-    //     span1.innerText = w;
-
-    // }
-    // if (span2 == undefined) {
-    //     span2.innerText = 0;
-
-    // } else {
-    //     span2.innerText = a;
-
-    // }
-    // if (span3 == undefined) {
-    //     span3.innerText = 0;
-
-    // } else {
-    //     span3.innerText = attitude;
-
-    // }
-    // if (span4 == undefined) {
-    //     span4.innerText = 0;
-
-    // } else {
-    //     span4.innerText = total;
-
-    // }
-
-
+    //week 2
+    if (prac2 == undefined) {
+        span5.innerHTML = 0;
+    } else {
+        span5.innerHTML = prac2;
+    }
+    if (uniform2 == undefined) {
+        span6.innerHTML = 0;
+    } else {
+        span6.innerHTML = uniform2;
+    }
+    if (shoe2 == undefined) {
+        span7.innerHTML = 0;
+    } else {
+        span7.innerHTML = shoe2;
+    }
+    if (total2 == undefined) {
+        span8.innerHTML = 0;
+    } else {
+        span8.innerHTML = total2;
+    }
+    //week 3
+    if (prac3 == undefined) {
+        span9.innerHTML = 0;
+    } else {
+        span9.innerHTML = prac3;
+    }
+    if (uniform3 == undefined) {
+        span10.innerHTML = 0;
+    } else {
+        span10.innerHTML = uniform3;
+    }
+    if (shoe3 == undefined) {
+        span11.innerHTML = 0;
+    } else {
+        span11.innerHTML = shoe3;
+    }
+    if (total3 == undefined) {
+        span12.innerHTML = 0;
+    } else {
+        span12.innerHTML = total3;
+    }
+    //week 4
+    if (prac4 == undefined) {
+        span13.innerHTML = 0;
+    } else {
+        span13.innerHTML = prac4;
+    }
+    if (uniform4 == undefined) {
+        span14.innerHTML = 0;
+    } else {
+        span14.innerHTML = uniform4;
+    }
+    if (shoe4 == undefined) {
+        span15.innerHTML = 0;
+    } else {
+        span15.innerHTML = shoe4;
+    }
+    if (total4 == undefined) {
+        span16.innerHTML = 0;
+    } else {
+        span16.innerHTML = total4;
+    }
+    //week 5
+    if (prac5 == undefined) {
+        span17.innerHTML = 0;
+    } else {
+        span17.innerHTML = prac5;
+    }
+    if (uniform5 == undefined) {
+        span18.innerHTML = 0;
+    } else {
+        span18.innerHTML = uniform5;
+    }
+    if (shoe5 == undefined) {
+        span19.innerHTML = 0;
+    } else {
+        span19.innerHTML = shoe5;
+    }
+    if (total5 == undefined) {
+        span20.innerHTML = 0;
+    } else {
+        span20.innerHTML = total5;
+    }
+    if (subTotal == undefined) {
+        span21.innerHTML = 0;
+    } else {
+        span21.innerHTML = subTotal;
+    }
     trow.appendChild(td0);
     trow.appendChild(td1);
     trow.appendChild(td2);
@@ -317,7 +576,10 @@ function addItemsToTable(
     trow.appendChild(td21);
     trow.appendChild(td22);
     trow.appendChild(td23);
+    trow.appendChild(td24);
 
+    td24.appendChild(input4);
+    //Week 1
     td3.appendChild(span1);
     td3.appendChild(br1);
     td3.appendChild(input1);
@@ -330,135 +592,972 @@ function addItemsToTable(
     td5.appendChild(br3);
     td5.appendChild(input3);
     td6.appendChild(span4);
-    // td9.appendChild(chkGet);
+    //Week 2
+    td7.appendChild(span5);
+    td7.appendChild(br4);
+    td7.appendChild(input5);
 
-    // td3.appendChild(span);
-    // td3.appendChild(td10);
+    td8.appendChild(span6);
+    td8.appendChild(br5);
+    td8.appendChild(input6);
 
-    // td4.appendChild(span1);
-    // td4.appendChild(td11);
+    td9.appendChild(span7);
+    td9.appendChild(br6);
+    td9.appendChild(input7);
+    td10.appendChild(span8);
+    //Week 3
+    td11.appendChild(span9);
+    td11.appendChild(br7);
+    td11.appendChild(input8);
 
-    // td5.appendChild(span2);
-    // td5.appendChild(td12);
+    td12.appendChild(span10);
+    td12.appendChild(br8);
+    td12.appendChild(input9);
 
-    // td6.appendChild(span3);
-    // td6.appendChild(td13);
+    td13.appendChild(span11);
+    td13.appendChild(br9);
+    td13.appendChild(input10);
+    td14.appendChild(span12);
+    //Week 4
+    td15.appendChild(span13);
+    td15.appendChild(br10);
+    td15.appendChild(input11);
 
-    // td8.appendChild(span4);
+    td16.appendChild(span14);
+    td16.appendChild(br11);
+    td16.appendChild(input12);
 
-    // td3.appendChild(chkS);
-    // td4.appendChild(chkW);
-    // td5.appendChild(chkA);
-    // td6.appendChild(chkAtt);
+    td17.appendChild(span15);
+    td17.appendChild(br12);
+    td17.appendChild(input13);
+    td18.appendChild(span16);
+    //Week 5
+    td19.appendChild(span17);
+    td19.appendChild(br13);
+    td19.appendChild(input14);
 
+    td20.appendChild(span18);
+    td20.appendChild(br14);
+    td20.appendChild(input15);
+
+    td21.appendChild(span19);
+    td21.appendChild(br15);
+    td21.appendChild(input16);
+    td22.appendChild(span20);
+    td23.appendChild(span21);
 
     tbody.appendChild(trow);
-    // autoCheck();
-    // dataS();
-    // getTotalVal();
-    // setData();
-    checkP1(this);
+    getTotalVal();
+    //week 1
+    forcheckP1();
+    forcheckU1();
+    forcheckSH1();
+    //week 2
+    forcheckP2();
+    forcheckU2();
+    forcheckSH2();
+    //week 3
+    forcheckP3();
+    forcheckU3();
+    forcheckSH3();
+    //week 4
+    forcheckP4();
+    forcheckU4();
+    forcheckSH4();
+    //week 5
+    forcheckP5();
+    forcheckU5();
+    forcheckSH5();
     document.getElementById("alertMagWait").style.display = "none";
+    document.getElementById("alertMagWait1").style.display = "none";
+    document.getElementById("alertMagWait2").style.display = "none";
+    document.getElementById("alertMagWait3").style.display = "none";
+    document.getElementById("alertMagWait4").style.display = "none";
+    document.getElementById("alertMagWait5").style.display = "none";
 
 }
-console.log(stdList);
 //Check all box
+//Week 1
 function checkP1(source) {
     var checkboxes = document.getElementsByName('chP1');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
         var idget1 = stdList[i][0]; // for s
         var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp1}chP1`;
         var nameSS = stdList[i][0]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}p1`;
-        var checkBoxs = document.getElementById(`${chID}`);
-        checkboxes[i].checked = source.checked;
-        if (checkBoxs.checked == true) {
-            checkBoxs.checked = true;
-            
+        var checkBoxp1 = document.getElementById(`${chID}`);
+        if (checkBoxp1.checked == true) {
+            checkBoxp1.checked = true;
+
             document.getElementById(`${chSPid}`).innerHTML = 5;
 
-        }
-        if (checkBoxs.checked == false) {
-            checkBoxs.checked = false;
+        } else {
+
             document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+    }
 
+}
+function forcheckP1() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget1 = stdList[i][0]; // for s
+        var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp1}chP1`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}p1`;
+        var checkBoxp1 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 5) {
+            checkBoxp1.checked = true;
+        } else {
+            checkBoxp1.checked = false;
         }
 
-        checkBoxs.addEventListener('click', function () {
-            if (checkBoxs.checked == true) {
-                checkBoxs.checked = true;
+        checkBoxp1.addEventListener('click', function () {
+            if (checkBoxp1.checked == true) {
+                checkBoxp1.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 5;
 
             }
-            if (checkBoxs.checked == false) {
-                checkBoxs.checked = false;
+            if (checkBoxp1.checked == false) {
+                checkBoxp1.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
 
             }
         })
+
     }
 
 }
-function toggleW(source) {
-    var checkboxes = document.getElementsByName('myW');
+function checkU1(source) {
+    var checkboxes = document.getElementsByName('chU1');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
         checkboxes[i].checked = source.checked;
-        var idget2 = stdList[i][3]; // for w
-        var nameWW = stdList[i][7]; //for name s
-        var checkBoxw = document.getElementById(`${idget2}`);
-        if (checkBoxw.checked == true) {
-            var w = 1;
-            checkBoxw.checked = true;
-            document.getElementById(`${nameWW}`).innerHTML = w;
-        }
-        if (checkBoxw.checked == false) {
-            var w = 0;
-            checkBoxw.checked = false;
-            document.getElementById(`${nameWW}`).innerHTML = w;
-        }
     }
+    for (i = 0; i < stdList.length; i++) {
+        var idget1 = stdList[i][0]; // for s
+        var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp1}chU1`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}u1`;
+        var checkBoxU1 = document.getElementById(`${chID}`);
+        if (checkBoxU1.checked == true) {
+            checkBoxU1.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 3;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+
+
+    }
+
 }
-function toggleA(source) {
-    var checkboxes = document.getElementsByName('myA');
+function forcheckU1() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget1 = stdList[i][0]; // for s
+        var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp1}chU1`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}u1`;
+        var checkBoxU1 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 3) {
+            checkBoxU1.checked = true;
+
+        } else {
+            checkBoxU1.checked = false;
+        }
+
+        checkBoxU1.addEventListener('click', function () {
+            if (checkBoxU1.checked == true) {
+                checkBoxU1.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 3;
+
+            }
+            if (checkBoxU1.checked == false) {
+                checkBoxU1.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+function checkSH1(source) {
+    var checkboxes = document.getElementsByName('chSH1');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
-        var idget3 = stdList[i][4]; // for a
-        var nameAA = stdList[i][8]; //for name a
-        var checkBoxa = document.getElementById(`${idget3}`);
         checkboxes[i].checked = source.checked;
-        if (checkBoxa.checked == true) {
-            var a = 1;
-            checkBoxa.checked = true;
-            document.getElementById(`${nameAA}`).innerHTML = a;
-        }
-        if (checkBoxa.checked == false) {
-            var a = 0;
-            checkBoxa.checked = false;
-            document.getElementById(`${nameAA}`).innerHTML = a;
-        }
     }
+    for (i = 0; i < stdList.length; i++) {
+        var idget1 = stdList[i][0]; // for s
+        var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp1}chSH1`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}sh1`;
+        var checkBoxU1 = document.getElementById(`${chID}`);
+        if (checkBoxU1.checked == true) {
+            checkBoxU1.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 2;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+
+    }
+
 }
-function toggleAtt(source) {
-    var checkboxes = document.getElementsByName('myAtt');
+function forcheckSH1(source) {
+    for (i = 0; i < stdList.length; i++) {
+        var idget1 = stdList[i][0]; // for s
+        var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp1}chSH1`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}sh1`;
+        var checkBoxU1 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 2) {
+            checkBoxU1.checked = true;
+
+        } else {
+            checkBoxU1.checked = false;
+        }
+        checkBoxU1.addEventListener('click', function () {
+            if (checkBoxU1.checked == true) {
+                checkBoxU1.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 2;
+
+            }
+            if (checkBoxU1.checked == false) {
+                checkBoxU1.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+//Week 2
+function checkP2(source) {
+    var checkboxes = document.getElementsByName('chP2');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
-        var idget4 = stdList[i][5]; // for a
-        var nameAtt = stdList[i][9]; //for name att
-        var checkBoxatt = document.getElementById(`${idget4}`);
         checkboxes[i].checked = source.checked;
-        if (checkBoxatt.checked == true) {
-            var att = -1;
-            checkBoxatt.checked = true;
-            document.getElementById(`${nameAtt}`).innerHTML = att;
-        }
-        if (checkBoxatt.checked == false) {
-            var att = 0;
-            checkBoxatt.checked = false;
-            document.getElementById(`${nameAtt}`).innerHTML = att;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget2 = stdList[i][0]; // for s
+        var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp2}chP2`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}p2`;
+        var checkBoxp2 = document.getElementById(`${chID}`);
+        if (checkBoxp2.checked == true) {
+            checkBoxp2.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 5;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
         }
     }
+
 }
+function forcheckP2() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget2 = stdList[i][0]; // for s
+        var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp2}chP2`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}p2`;
+        var checkBoxp2 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 5) {
+            checkBoxp2.checked = true;
+        } else {
+            checkBoxp2.checked = false;
+        }
+
+        checkBoxp2.addEventListener('click', function () {
+            if (checkBoxp2.checked == true) {
+                checkBoxp2.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 5;
+
+            }
+            if (checkBoxp2.checked == false) {
+                checkBoxp2.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+function checkU2(source) {
+    var checkboxes = document.getElementsByName('chU2');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget2 = stdList[i][0]; // for s
+        var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp2}chU2`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}u2`;
+        var checkBoxU2 = document.getElementById(`${chID}`);
+        if (checkBoxU2.checked == true) {
+            checkBoxU2.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 3;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+
+
+    }
+
+}
+function forcheckU2() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget2 = stdList[i][0]; // for s
+        var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp2}chU2`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}u2`;
+        var checkBoxU2 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 3) {
+            checkBoxU2.checked = true;
+
+        } else {
+            checkBoxU2.checked = false;
+        }
+
+        checkBoxU2.addEventListener('click', function () {
+            if (checkBoxU2.checked == true) {
+                checkBoxU2.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 3;
+
+            }
+            if (checkBoxU2.checked == false) {
+                checkBoxU2.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+function checkSH2(source) {
+    var checkboxes = document.getElementsByName('chSH2');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget2 = stdList[i][0]; // for s
+        var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp2}chSH2`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}sh2`;
+        var checkBoxU2 = document.getElementById(`${chID}`);
+        if (checkBoxU2.checked == true) {
+            checkBoxU2.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 2;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+
+    }
+
+}
+function forcheckSH2(source) {
+    for (i = 0; i < stdList.length; i++) {
+        var idget2 = stdList[i][0]; // for s
+        var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp2}chSH2`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp2}sh2`;
+        var checkBoxU2 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 2) {
+            checkBoxU2.checked = true;
+
+        } else {
+            checkBoxU2.checked = false;
+        }
+        checkBoxU2.addEventListener('click', function () {
+            if (checkBoxU2.checked == true) {
+                checkBoxU2.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 2;
+
+            }
+            if (checkBoxU2.checked == false) {
+                checkBoxU2.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+//Week 3
+function checkP3(source) {
+    var checkboxes = document.getElementsByName('chP3');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget3 = stdList[i][0]; // for s
+        var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp3}chP3`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp3}p3`;
+        var checkBoxp3 = document.getElementById(`${chID}`);
+        if (checkBoxp3.checked == true) {
+            checkBoxp3.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 5;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+    }
+
+}
+function forcheckP3() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget3 = stdList[i][0]; // for s
+        var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp3}chP3`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp3}p3`;
+        var checkBoxp3 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 5) {
+            checkBoxp3.checked = true;
+        } else {
+            checkBoxp3.checked = false;
+        }
+
+        checkBoxp3.addEventListener('click', function () {
+            if (checkBoxp3.checked == true) {
+                checkBoxp3.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 5;
+
+            }
+            if (checkBoxp3.checked == false) {
+                checkBoxp3.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+function checkU3(source) {
+    var checkboxes = document.getElementsByName('chU3');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget3 = stdList[i][0]; // for s
+        var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp3}chU3`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp3}u3`;
+        var checkBoxU3 = document.getElementById(`${chID}`);
+        if (checkBoxU3.checked == true) {
+            checkBoxU3.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 3;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+
+
+    }
+
+}
+function forcheckU3() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget3 = stdList[i][0]; // for s
+        var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp3}chU3`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp3}u3`;
+        var checkBoxU3 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 3) {
+            checkBoxU3.checked = true;
+
+        } else {
+            checkBoxU3.checked = false;
+        }
+
+        checkBoxU3.addEventListener('click', function () {
+            if (checkBoxU3.checked == true) {
+                checkBoxU3.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 3;
+
+            }
+            if (checkBoxU3.checked == false) {
+                checkBoxU3.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+function checkSH3(source) {
+    var checkboxes = document.getElementsByName('chSH3');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget3 = stdList[i][0]; // for s
+        var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp3}chSH3`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp3}sh3`;
+        var checkBoxU3 = document.getElementById(`${chID}`);
+        if (checkBoxU3.checked == true) {
+            checkBoxU3.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 2;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+
+    }
+
+}
+function forcheckSH3() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget3 = stdList[i][0]; // for s
+        var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp3}chSH3`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp3}sh3`;
+        var checkBoxU3 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 2) {
+            checkBoxU3.checked = true;
+
+        } else {
+            checkBoxU3.checked = false;
+        }
+        checkBoxU3.addEventListener('click', function () {
+            if (checkBoxU3.checked == true) {
+                checkBoxU3.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 2;
+
+            }
+            if (checkBoxU3.checked == false) {
+                checkBoxU3.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+//Week 4
+function checkP4(source) {
+    var checkboxes = document.getElementsByName('chP4');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget4 = stdList[i][0]; // for s
+        var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp4}chP4`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp4}p4`;
+        var checkBoxp4 = document.getElementById(`${chID}`);
+        if (checkBoxp4.checked == true) {
+            checkBoxp4.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 5;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+    }
+
+}
+function forcheckP4() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget4 = stdList[i][0]; // for s
+        var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp4}chP4`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp4}p4`;
+        var checkBoxp4 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 5) {
+            checkBoxp4.checked = true;
+        } else {
+            checkBoxp4.checked = false;
+        }
+
+        checkBoxp4.addEventListener('click', function () {
+            if (checkBoxp4.checked == true) {
+                checkBoxp4.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 5;
+
+            }
+            if (checkBoxp4.checked == false) {
+                checkBoxp4.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+function checkU4(source) {
+    var checkboxes = document.getElementsByName('chU4');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget4 = stdList[i][0]; // for s
+        var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp4}chU4`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp4}u4`;
+        var checkBoxU4 = document.getElementById(`${chID}`);
+        if (checkBoxU4.checked == true) {
+            checkBoxU4.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 3;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+
+
+    }
+
+}
+function forcheckU4() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget4 = stdList[i][0]; // for s
+        var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp4}chU4`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp4}u4`;
+        var checkBoxU4 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 3) {
+            checkBoxU4.checked = true;
+
+        } else {
+            checkBoxU4.checked = false;
+        }
+
+        checkBoxU4.addEventListener('click', function () {
+            if (checkBoxU4.checked == true) {
+                checkBoxU4.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 3;
+
+            }
+            if (checkBoxU4.checked == false) {
+                checkBoxU4.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+function checkSH4(source) {
+    var checkboxes = document.getElementsByName('chSH4');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget4 = stdList[i][0]; // for s
+        var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp4}chSH4`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp4}sh4`;
+        var checkBoxU4 = document.getElementById(`${chID}`);
+        if (checkBoxU4.checked == true) {
+            checkBoxU4.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 2;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+
+    }
+
+}
+function forcheckSH4() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget4 = stdList[i][0]; // for s
+        var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp4}chSH4`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp4}sh4`;
+        var checkBoxU4 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 2) {
+            checkBoxU4.checked = true;
+
+        } else {
+            checkBoxU4.checked = false;
+        }
+        checkBoxU4.addEventListener('click', function () {
+            if (checkBoxU4.checked == true) {
+                checkBoxU4.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 2;
+
+            }
+            if (checkBoxU4.checked == false) {
+                checkBoxU4.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+//Week 5
+function checkP5(source) {
+    var checkboxes = document.getElementsByName('chP5');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget5 = stdList[i][0]; // for s
+        var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp5}chP5`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp5}p5`;
+        var checkBoxp5 = document.getElementById(`${chID}`);
+        if (checkBoxp5.checked == true) {
+            checkBoxp5.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 5;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+    }
+
+}
+function forcheckP5() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget5 = stdList[i][0]; // for s
+        var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp5}chP5`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp5}p5`;
+        var checkBoxp5 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 5) {
+            checkBoxp5.checked = true;
+        } else {
+            checkBoxp5.checked = false;
+        }
+
+        checkBoxp5.addEventListener('click', function () {
+            if (checkBoxp5.checked == true) {
+                checkBoxp5.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 5;
+
+            }
+            if (checkBoxp5.checked == false) {
+                checkBoxp5.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+function checkU5(source) {
+    var checkboxes = document.getElementsByName('chU5');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget5 = stdList[i][0]; // for s
+        var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp5}chU5`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp5}u5`;
+        var checkBoxU5 = document.getElementById(`${chID}`);
+        if (checkBoxU5.checked == true) {
+            checkBoxU5.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 3;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+
+
+    }
+
+}
+function forcheckU5() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget5 = stdList[i][0]; // for s
+        var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp5}chU5`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp5}u5`;
+        var checkBoxU5 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 3) {
+            checkBoxU5.checked = true;
+
+        } else {
+            checkBoxU5.checked = false;
+        }
+
+        checkBoxU5.addEventListener('click', function () {
+            if (checkBoxU5.checked == true) {
+                checkBoxU5.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 3;
+
+            }
+            if (checkBoxU5.checked == false) {
+                checkBoxU5.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+function checkSH5(source) {
+    var checkboxes = document.getElementsByName('chSH5');
+    for (var i = 0, n = checkboxes.length; i < n; i++) {
+        checkboxes[i].checked = source.checked;
+    }
+    for (i = 0; i < stdList.length; i++) {
+        var idget5 = stdList[i][0]; // for s
+        var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp5}chSH5`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp5}sh5`;
+        var checkBoxU5 = document.getElementById(`${chID}`);
+        if (checkBoxU5.checked == true) {
+            checkBoxU5.checked = true;
+
+            document.getElementById(`${chSPid}`).innerHTML = 2;
+
+        } else {
+
+            document.getElementById(`${chSPid}`).innerHTML = 0;
+        }
+
+    }
+
+}
+function forcheckSH5() {
+    for (i = 0; i < stdList.length; i++) {
+        var idget5 = stdList[i][0]; // for s
+        var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
+        var chID = `${noSpp5}chSH5`;
+        var nameSS = stdList[i][0]; //for name S
+        var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
+        var chSPid = `${noSpp5}sh5`;
+        var checkBoxU5 = document.getElementById(`${chID}`);
+        if (document.getElementById(`${chSPid}`).innerHTML == 2) {
+            checkBoxU5.checked = true;
+
+        } else {
+            checkBoxU5.checked = false;
+        }
+        checkBoxU5.addEventListener('click', function () {
+            if (checkBoxU5.checked == true) {
+                checkBoxU5.checked = true;
+
+                document.getElementById(`${chSPid}`).innerHTML = 2;
+
+            }
+            if (checkBoxU5.checked == false) {
+                checkBoxU5.checked = false;
+                document.getElementById(`${chSPid}`).innerHTML = 0;
+
+            }
+        })
+
+    }
+
+}
+
 //Check all row data in table
 function toggleGet(source) {
     var checkboxes = document.getElementsByName('myGet');
@@ -469,227 +1568,202 @@ function toggleGet(source) {
 toggleGet(this);
 
 setInterval(function () {
-    $("#myTbaleActivity tbody tr").each(function () {
-
+    $("#mySportRecord tbody tr").each(function () {
         var currentRow = $(this);
         var col1 = currentRow.find("td:eq(1)").html();
-        var col2 = currentRow.find("td:eq(1)").html();
-        var col3 = currentRow.find("td:eq(2)").html();
-        var col4 = currentRow.find("td:eq(3)").text();
-        var col5 = currentRow.find("td:eq(4)").text();
-        var col6 = currentRow.find("td:eq(5)").text();
-        var col7 = currentRow.find("td:eq(6)").text();
-        var col8 = currentRow.find("td:eq(7)").html();
-        var col9 = currentRow.find("td:eq(8)").text();
+        var col2 = currentRow.find("td:eq(2)").html();
+        //Week 1
+        var col3 = currentRow.find("td:eq(3)").text();
+        var col4 = currentRow.find("td:eq(4)").text();
+        var col5 = currentRow.find("td:eq(5)").text();
+        var col6 = currentRow.find("td:eq(6)").text();
+        //Week 2
+        var p2 = currentRow.find("td:eq(7)").text();
+        var u2 = currentRow.find("td:eq(8)").text();
+        var sh2 = currentRow.find("td:eq(9)").text();
+        var total2 = currentRow.find("td:eq(10)").text();
+        //Week 3
+        var p3 = currentRow.find("td:eq(11)").text();
+        var u3 = currentRow.find("td:eq(12)").text();
+        var sh3 = currentRow.find("td:eq(13)").text();
+        var total3 = currentRow.find("td:eq(14)").text();
+        //Week 4
+        var p4 = currentRow.find("td:eq(15)").text();
+        var u4 = currentRow.find("td:eq(16)").text();
+        var sh4 = currentRow.find("td:eq(17)").text();
+        var total4 = currentRow.find("td:eq(18)").text();
+        //Week 5
+        var p5 = currentRow.find("td:eq(19)").text();
+        var u5 = currentRow.find("td:eq(20)").text();
+        var sh5 = currentRow.find("td:eq(21)").text();
+        var total5 = currentRow.find("td:eq(22)").text();
+        var totalAll = currentRow.find("td:eq(23)").text();
         var obj = {};
-        var objAct = {};
         obj.id = col1;
-        obj.ids = col1 + 's';
-        obj.idw = col1 + 'w';
-        obj.ida = col1 + 'a';
-        obj.idatt = col1 + 'att';
-        obj.name = col2;
-        obj.sex = col3;
-        obj.s = col4;
-        obj.w = col5;
-        obj.a = col6;
-        obj.attitude = col7;
-        obj.note = col8;
-        obj.total = col9;
-
-        objAct.id = col1;
-        objAct.name = col2;
-        objAct.sex = col3;
-        objAct.total = parseFloat(col4) + parseFloat(col5) + parseFloat(col6) + parseFloat(col7);
-
-        if (currentRow.find(".chk").is(":checked")) {
-            activityData.push(obj);
-            // activityDataAct.push(objAct);
+        obj.sex = col2;
+        //week 1
+        obj.p1 = col3;
+        obj.u1 = col4;
+        obj.sh1 = col5;
+        obj.total1 = col6;
+        //week 2
+        obj.p2 = p2;
+        obj.u2 = u2;
+        obj.sh2 = sh2;
+        obj.total2 = total2;
+        //week 3
+        obj.p3 = p3;
+        obj.u3 = u3;
+        obj.sh3 = sh3;
+        obj.total3 = total3;
+        //week 4
+        obj.p4 = p4;
+        obj.u4 = u4;
+        obj.sh4 = sh4;
+        obj.total4 = total4;
+        //week 5
+        obj.p5 = p5;
+        obj.u5 = u5;
+        obj.sh5 = sh5;
+        obj.total5 = total5;
+        obj.totalAll = totalAll;
+        if (currentRow.find(".chSport").is(":checked")) {
+            sportData.push(obj);
         }
     });
 
 
 }, 200);
-
 function getTotalVal() {
     for (i = 0; i < stdList.length; i++) {
-
-        //Sum for All score
-        var allTotal = stdList[i][10]; // for s
-        //get name from array
-        var getS = stdList[i][11];
-        var getW = stdList[i][12];
-        var getA = stdList[i][13];
-        var getAtt = stdList[i][14];
-        var getAtt = stdList[i][14];
-        //remove space from name for class
-        var noSpcS = getS.replace(/\s+/g, '');
-        var noSpcW = getW.replace(/\s+/g, '');
-        var noSpcA = getA.replace(/\s+/g, '');
-        var noSpcAtt = getAtt.replace(/\s+/g, '');
+        var name = stdList[i][0]; // for s
+        var noSpc = name.replace(/\s+/g, '');
+        //Week 1
+        var namep1 = `${noSpc}sp1`;
+        var nameu1 = `${noSpc}su1`;
+        var nameah1 = `${noSpc}ssh1`;
+        var nametol1 = `${noSpc}to1`;
+        //Week 2
+        var namep2 = `${noSpc}sp2`;
+        var nameu2 = `${noSpc}su2`;
+        var nameah2 = `${noSpc}ssh2`;
+        var nametol2 = `${noSpc}to2`;
+        //Week 3
+        var namep3 = `${noSpc}sp3`;
+        var nameu3 = `${noSpc}su3`;
+        var nameah3 = `${noSpc}ssh3`;
+        var nametol3 = `${noSpc}to3`;
+        //Week 4
+        var namep4 = `${noSpc}sp4`;
+        var nameu4 = `${noSpc}su4`;
+        var nameah4 = `${noSpc}ssh4`;
+        var nametol4 = `${noSpc}to4`;
+        //Week 5
+        var namep5 = `${noSpc}sp5`;
+        var nameu5 = `${noSpc}su5`;
+        var nameah5 = `${noSpc}ssh5`;
+        var nametol5 = `${noSpc}to5`;
+        var nametolAll = `${noSpc}totalAll`;
         setInterval(function () {
-            var sumS = 0;
-            var sumW = 0;
-            var sumA = 0;
-            var sumAtt = 0;
-            $(`.${noSpcS}`).each(function () {
-                sumS += parseFloat($(this).text()); // 
+            //Week 1
+            var sp1 = 0;
+            var su1 = 0;
+            var ssh1 = 0;
+            //Week 2
+            var sp2 = 0;
+            var su2 = 0;
+            var ssh2 = 0;
+            //Week 3
+            var sp3 = 0;
+            var su3 = 0;
+            var ssh3 = 0;
+            //Week 4
+            var sp4 = 0;
+            var su4 = 0;
+            var ssh4 = 0;
+            //Week 5
+            var sp5 = 0;
+            var su5 = 0;
+            var ssh5 = 0;
+            var allTotal = 0;
+            //Week 1
+            $(`.${namep1}`).each(function () {
+                sp1 += parseFloat($(this).text()); // 
             });
-            $(`.${noSpcW}`).each(function () {
-                sumW += parseFloat($(this).text()); // 
+            $(`.${nameu1}`).each(function () {
+                su1 += parseFloat($(this).text()); // 
             });
-            $(`.${noSpcA}`).each(function () {
-                sumA += parseFloat($(this).text()); // 
+            $(`.${nameah1}`).each(function () {
+                ssh1 += parseFloat($(this).text()); // 
             });
-            $(`.${noSpcAtt}`).each(function () {
-                sumAtt += parseFloat($(this).text()); // 
+            //Week 2
+            $(`.${namep2}`).each(function () {
+                sp2 += parseFloat($(this).text()); // 
             });
-            var getSum = parseFloat(sumS) + parseFloat(sumW) + parseFloat(sumA) + parseFloat(sumAtt);
-            document.getElementById(`${allTotal}`).innerText = parseFloat(getSum);
+            $(`.${nameu2}`).each(function () {
+                su2 += parseFloat($(this).text()); // 
+            });
+            $(`.${nameah2}`).each(function () {
+                ssh2 += parseFloat($(this).text()); // 
+            });
+            //Week 3
+            $(`.${namep3}`).each(function () {
+                sp3 += parseFloat($(this).text()); // 
+            });
+            $(`.${nameu3}`).each(function () {
+                su3 += parseFloat($(this).text()); // 
+            });
+            $(`.${nameah3}`).each(function () {
+                ssh3 += parseFloat($(this).text()); // 
+            });
+            //Week 4
+            $(`.${namep4}`).each(function () {
+                sp4 += parseFloat($(this).text()); // 
+            });
+            $(`.${nameu4}`).each(function () {
+                su4 += parseFloat($(this).text()); // 
+            });
+            $(`.${nameah4}`).each(function () {
+                ssh4 += parseFloat($(this).text()); // 
+            });
+            //Week 5
+            $(`.${namep5}`).each(function () {
+                sp5 += parseFloat($(this).text()); // 
+            });
+            $(`.${nameu5}`).each(function () {
+                su5 += parseFloat($(this).text()); // 
+            });
+            $(`.${nameah5}`).each(function () {
+                ssh5 += parseFloat($(this).text()); // 
+            });
+            var getSum1 = parseFloat(sp1) + parseFloat(su1) + parseFloat(ssh1);
+            var getSum2 = parseFloat(sp2) + parseFloat(su2) + parseFloat(ssh2);
+            var getSum3 = parseFloat(sp3) + parseFloat(su3) + parseFloat(ssh3);
+            var getSum4 = parseFloat(sp4) + parseFloat(su4) + parseFloat(ssh4);
+            var getSum5 = parseFloat(sp5) + parseFloat(su5) + parseFloat(ssh5);
+            document.getElementById(`${nametol1}`).innerText = parseFloat(getSum1);
+            document.getElementById(`${nametol2}`).innerText = parseFloat(getSum2);
+            document.getElementById(`${nametol3}`).innerText = parseFloat(getSum3);
+            document.getElementById(`${nametol4}`).innerText = parseFloat(getSum4);
+            document.getElementById(`${nametol5}`).innerText = parseFloat(getSum5);
+            var allGetTotal = parseFloat(getSum1) + parseFloat(getSum2) + parseFloat(getSum3) + parseFloat(getSum4) + parseFloat(getSum5);
+            var totalDivid = parseFloat(allGetTotal) / `${dbgetDivide}`;
+            totalDivid = parseFloat(totalDivid).toFixed(2);
+            document.getElementById(`${nametolAll}`).innerText = parseFloat(totalDivid);
 
         }, 100);
     }
 }
-function dataS() {
-    //S checked for checkbook
-    for (i = 0; i < stdList.length; i++) {
 
-        //get id for checkbox
-        var idget1 = stdList[i][2]; // for s
-        var idget2 = stdList[i][3]; // for w
-        var idget3 = stdList[i][4]; // for a
-        var idget4 = stdList[i][5]; // for a
-        //get name for checkbox id
-        var nameSS = stdList[i][6]; //for name s
-        var nameWW = stdList[i][7]; //for name w
-        var nameAA = stdList[i][8]; //for name a
-        var nameAtt = stdList[i][9]; //for name att
-        //Checkbox varible
-        var checkBoxs = document.getElementById(`${idget1}`);
-        var checkBoxw = document.getElementById(`${idget2}`);
-        var checkBoxa = document.getElementById(`${idget3}`);
-        var checkBoxatt = document.getElementById(`${idget4}`);
-        //Checkbox for S
-        checkBoxs.addEventListener('click', function () {
-            if (checkBoxs.checked == true) {
-                var s = 3;
-                checkBoxs.checked = true;
-                document.getElementById(`${nameSS}`).innerHTML = s;
-
-
-            }
-            if (checkBoxs.checked == false) {
-                var s = 0;
-                checkBoxs.checked = false;
-                document.getElementById(`${nameSS}`).innerHTML = s;
-
-            }
-        })
-        //Checkbox for W
-        checkBoxw.addEventListener('click', function () {
-            if (checkBoxw.checked == true) {
-                var w = 1;
-                checkBoxw.checked = true;
-                document.getElementById(`${nameWW}`).innerHTML = w;
-            }
-            if (checkBoxw.checked == false) {
-                var w = 0;
-                checkBoxw.checked = false;
-                document.getElementById(`${nameWW}`).innerHTML = w;
-            }
-        })
-        //Checkbox for A
-        checkBoxa.addEventListener('click', function () {
-            if (checkBoxa.checked == true) {
-                var a = 1;
-                checkBoxa.checked = true;
-                document.getElementById(`${nameAA}`).innerHTML = a;
-            }
-            if (checkBoxa.checked == false) {
-                var a = 0;
-                checkBoxa.checked = false;
-                document.getElementById(`${nameAA}`).innerHTML = a;
-            }
-        })
-        //Checkbox for Att
-        checkBoxatt.addEventListener('click', function () {
-            if (checkBoxatt.checked == true) {
-                var att = -1;
-                checkBoxatt.checked = true;
-                document.getElementById(`${nameAtt}`).innerHTML = att;
-            }
-            if (checkBoxatt.checked == false) {
-                var att = 0;
-                checkBoxatt.checked = false;
-                document.getElementById(`${nameAtt}`).innerHTML = att;
-            }
-        })
-
-    }
-}
-//Auto Checkbox
-function autoCheck() {
-    // checked for S W A ATT
-    for (i = 0; i < stdList.length; i++) {
-
-        var idget1 = stdList[i][2];
-        var idget2 = stdList[i][3];
-        var idget3 = stdList[i][4];
-        var idget4 = stdList[i][5];
-        da1 = '3';
-        da2 = '1';
-        da3 = '1';
-        da4 = '-1';
-        var get1 = stdList[i][17];
-        var get2 = stdList[i][18];
-        var get3 = stdList[i][19];
-        var get4 = stdList[i][20];
-
-        var checkBoxs = document.getElementById(`${idget1}`);
-        if (get1 == da1) {
-            checkBoxs.checked = true;
-        } else {
-            checkBoxs.checked = false;
-        }
-
-        var checkBoxW = document.getElementById(`${idget2}`);
-        if (get2 == da2) {
-            checkBoxW.checked = true;
-        } else {
-            checkBoxW.checked = false;
-
-        }
-
-        var checkBoxA = document.getElementById(`${idget3}`);
-        if (get3 == da3) {
-            checkBoxA.checked = true;
-        } else {
-            checkBoxA.checked = false;
-
-        }
-
-        var checkBoxAtt = document.getElementById(`${idget4}`);
-        if (get4 == da4) {
-            checkBoxAtt.checked = true;
-        } else {
-            checkBoxAtt.checked = false;
-
-        }
-    }
-
-};
-
-//Get All data to array
-//Month and Times for Activity
 document.getElementById('myMonthAct').addEventListener('change', function () {
     var monthact = document.getElementById('myMonthAct').value;
     localStorage.setItem('ownmonthAct', monthact);
     window.location.reload();
 
 })
-document.getElementById('myTimesAct').addEventListener('change', function () {
-    var timesact = document.getElementById('myTimesAct').value;
-    localStorage.setItem('owntimesAct', timesact);
+document.getElementById('myDivide').addEventListener('change', function () {
+    var getDivide = document.getElementById('myDivide').value;
+    localStorage.setItem('getDivide', getDivide);
     window.location.reload();
 
 })
@@ -705,58 +1779,347 @@ document.getElementById('myYearAct').addEventListener('change', function () {
     window.location.reload();
 
 })
+//Get Date value
+document.getElementById('mySpDate1').addEventListener('change', function () {
+    var dateWeek1 = document.getElementById('mySpDate1').value;
+    localStorage.setItem('dateWeek1', dateWeek1);
+    window.location.reload();
+
+})
+document.getElementById('mySpDate2').addEventListener('change', function () {
+    var dateWeek2 = document.getElementById('mySpDate2').value;
+    localStorage.setItem('dateWeek2', dateWeek2);
+    window.location.reload();
+
+})
+document.getElementById('mySpDate3').addEventListener('change', function () {
+    var dateWeek3 = document.getElementById('mySpDate3').value;
+    localStorage.setItem('dateWeek3', dateWeek3);
+    window.location.reload();
+
+})
+document.getElementById('mySpDate4').addEventListener('change', function () {
+    var dateWeek4 = document.getElementById('mySpDate4').value;
+    localStorage.setItem('dateWeek4', dateWeek4);
+    window.location.reload();
+
+})
+document.getElementById('mySpDate5').addEventListener('change', function () {
+    var dateWeek5 = document.getElementById('mySpDate5').value;
+    localStorage.setItem('dateWeek5', dateWeek5);
+    window.location.reload();
+
+})
 
 var dbmonthAct = localStorage.getItem('ownmonthAct'); //month activity
-var dbtimesAct = localStorage.getItem('owntimesAct'); // times activity
+var dbgetDivide = localStorage.getItem('getDivide'); // times activity
 var dbgradeAct = localStorage.getItem('owngradeAct'); // grade activity
 var dbyearAct = localStorage.getItem('ownyeareAct'); // year activity
+var dateWeek1 = localStorage.getItem('dateWeek1'); // Date in week 1
+var dateWeek2 = localStorage.getItem('dateWeek2'); // Date in week 2
+var dateWeek3 = localStorage.getItem('dateWeek3'); // Date in week 3
+var dateWeek4 = localStorage.getItem('dateWeek4'); // Date in week 4
+var dateWeek5 = localStorage.getItem('dateWeek5'); // Date in week 5
 document.getElementById('myMonthAct').value = dbmonthAct;
-document.getElementById('myTimesAct').value = dbtimesAct;
+document.getElementById('myDivide').value = dbgetDivide;
 document.getElementById('myGradeAct').value = dbgradeAct;
 document.getElementById('myYearAct').value = dbyearAct;
+
+//Get topic value
+document.getElementById('myTopic1').addEventListener('change', function () {
+    var getTopic1 = document.getElementById('myTopic1').value;
+    localStorage.setItem('myTopicget1', getTopic1);
+    window.location.reload();
+
+})
+document.getElementById('myTopic2').addEventListener('change', function () {
+    var getTopic2 = document.getElementById('myTopic2').value;
+    localStorage.setItem('myTopicget2', getTopic2);
+    window.location.reload();
+
+})
+document.getElementById('myTopic3').addEventListener('change', function () {
+    var getTopic3 = document.getElementById('myTopic3').value;
+    localStorage.setItem('myTopicget3', getTopic3);
+    window.location.reload();
+
+})
+document.getElementById('myTopic4').addEventListener('change', function () {
+    var getTopic4 = document.getElementById('myTopic4').value;
+    localStorage.setItem('myTopicget4', getTopic4);
+    window.location.reload();
+
+})
+document.getElementById('myTopic5').addEventListener('change', function () {
+    var getTopic5 = document.getElementById('myTopic5').value;
+    localStorage.setItem('myTopicget5', getTopic5);
+    window.location.reload();
+
+})
+var dbgetTopic1 = localStorage.getItem('myTopicget1'); //get value of topic 1
+document.getElementById('myTopic1').value = dbgetTopic1;
+var dbgetTopic2 = localStorage.getItem('myTopicget2'); //get value of topic 2
+document.getElementById('myTopic2').value = dbgetTopic2;
+var dbgetTopic3 = localStorage.getItem('myTopicget3'); //get value of topic 3
+document.getElementById('myTopic3').value = dbgetTopic3;
+var dbgetTopic4 = localStorage.getItem('myTopicget4'); //get value of topic 4
+document.getElementById('myTopic4').value = dbgetTopic4;
+var dbgetTopic5 = localStorage.getItem('myTopicget5'); //get value of topic 5
+document.getElementById('myTopic5').value = dbgetTopic5;
+
 //Save data to firebase
-var activityData = [];
+var sportData = [];
 document.getElementById('btnRows').addEventListener('click', function () {
-    cook();
-    totalData();
+    updateScore();
     document.getElementById("alertMag").style.display = "none";
     document.getElementById("alertMagWait").style.display = "block";
     setTimeout(function () {
         window.location.reload();
     }, 200)
 })
+document.getElementById('btnSave1').addEventListener('click', function () {
+    saveData1();
+    document.getElementById("alertMag1").style.display = "none";
+    document.getElementById("alertMagWait1").style.display = "block";
+    setTimeout(function () {
+        window.location.reload();
+    }, 200)
+})
+document.getElementById('btnSave2').addEventListener('click', function () {
+    saveData2();
+    document.getElementById("alertMag2").style.display = "none";
+    document.getElementById("alertMagWait2").style.display = "block";
+    setTimeout(function () {
+        window.location.reload();
+    }, 200)
+})
+document.getElementById('btnSave3').addEventListener('click', function () {
+    saveData3();
+    document.getElementById("alertMag3").style.display = "none";
+    document.getElementById("alertMagWait3").style.display = "block";
+    setTimeout(function () {
+        window.location.reload();
+    }, 200)
+})
+document.getElementById('btnSave4').addEventListener('click', function () {
+    saveData4();
+    document.getElementById("alertMag4").style.display = "none";
+    document.getElementById("alertMagWait4").style.display = "block";
+    setTimeout(function () {
+        window.location.reload();
+    }, 200)
+})
+document.getElementById('btnSave5').addEventListener('click', function () {
+    saveData5();
+    document.getElementById("alertMag5").style.display = "none";
+    document.getElementById("alertMagWait5").style.display = "block";
+    setTimeout(function () {
+        window.location.reload();
+    }, 200)
+})
 // Push data to firebase
-function cook() {
-    for (i = 0; i < activityData.length; i++) {
-        var name = activityData[i].name;
-        var idM = activityData[i].id;
-        var sex = activityData[i].sex;
-        var s = activityData[i].s;
-        var w = activityData[i].w;
-        var a = activityData[i].a;
-        var ids = activityData[i].ids;
-        var idw = activityData[i].idw;
-        var ida = activityData[i].ida;
-        var idatt = activityData[i].idatt;
-        var attitude = activityData[i].attitude;
-        var note = activityData[i].note;
-        var total = activityData[i].total;
-        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).update(
+function updateScore() {
+    for (i = 0; i < sportData.length; i++) {
+        var idM = sportData[i].id;
+        var sex = sportData[i].sex;
+        //Week 1
+        var p1 = sportData[i].p1;
+        var u1 = sportData[i].u1;
+        var sh1 = sportData[i].sh1;
+        var total1 = sportData[i].total1;
+        //Week 2
+        var p2 = sportData[i].p2;
+        var u2 = sportData[i].u2;
+        var sh2 = sportData[i].sh2;
+        var total2 = sportData[i].total2;
+        //Week 3
+        var p3 = sportData[i].p3;
+        var u3 = sportData[i].u3;
+        var sh3 = sportData[i].sh3;
+        var total3 = sportData[i].total3;
+        //Week 4
+        var p4 = sportData[i].p4;
+        var u4 = sportData[i].u4;
+        var sh4 = sportData[i].sh4;
+        var total4 = sportData[i].total4;
+        //Week 5
+        var p5 = sportData[i].p5;
+        var u5 = sportData[i].u5;
+        var sh5 = sportData[i].sh5;
+        var total5 = sportData[i].total5;
+        var totalAll = sportData[i].totalAll;
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
             {
-                name: name,
                 id: idM,
                 sex: sex,
-                s: s,
-                w: w,
-                a: a,
-                ids, ids,
-                idw: idw,
-                ida: ida,
-                idatt: idatt,
-                attitude: attitude,
-                note: note,
-                total: total,
-                date: dbdateAct,
+                prac1: p1,
+                uniform1: u1,
+                shoe1: sh1,
+                total1: total1,
+                date1: dateWeek1,
+                topic1: dbgetTopic1,
+                prac2: p2,
+                uniform2: u2,
+                shoe2: sh2,
+                total2: total2,
+                date2: dateWeek2,
+                topic2: dbgetTopic2,
+                prac3: p3,
+                uniform3: u3,
+                shoe3: sh3,
+                total3: total3,
+                date3: dateWeek3,
+                topic3: dbgetTopic3,
+                prac4: p4,
+                uniform4: u4,
+                shoe4: sh4,
+                total4: total4,
+                date4: dateWeek4,
+                topic4: dbgetTopic4,
+                prac5: p5,
+                uniform5: u5,
+                shoe5: sh5,
+                total5: total5,
+                date5: dateWeek5,
+                topic5: dbgetTopic5,
+                subTotal: totalAll,
+            },
+        )
+
+    }
+}
+function saveData5() {
+    for (i = 0; i < sportData.length; i++) {
+        var idM = sportData[i].id;
+        var sex = sportData[i].sex;
+        //Week 5
+        var p5 = sportData[i].p5;
+        var u5 = sportData[i].u5;
+        var sh5 = sportData[i].sh5;
+        var total5 = sportData[i].total5;
+        var totalAll = sportData[i].totalAll;
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
+            {
+                id: idM,
+                sex: sex,
+                prac5: p5,
+                uniform5: u5,
+                shoe5: sh5,
+                total5: total5,
+                date5: dateWeek5,
+                topic5: dbgetTopic5,
+                subTotal: totalAll,
+            },
+        )
+
+    }
+}
+function saveData4() {
+    for (i = 0; i < sportData.length; i++) {
+        var idM = sportData[i].id;
+        var sex = sportData[i].sex;
+        //Week 4
+        var p4 = sportData[i].p4;
+        var u4 = sportData[i].u4;
+        var sh4 = sportData[i].sh4;
+        var total4 = sportData[i].total4;
+        var totalAll = sportData[i].totalAll;
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
+            {
+                id: idM,
+                sex: sex,
+                prac4: p4,
+                uniform4: u4,
+                shoe4: sh4,
+                total4: total4,
+                date4: dateWeek4,
+                topic4: dbgetTopic4,
+                subTotal: totalAll,
+            },
+        )
+
+    }
+}
+function saveData3() {
+    for (i = 0; i < sportData.length; i++) {
+        var idM = sportData[i].id;
+        var sex = sportData[i].sex;
+        //Week 3
+        var p3 = sportData[i].p3;
+        var u3 = sportData[i].u3;
+        var sh3 = sportData[i].sh3;
+        var total3 = sportData[i].total3;
+        var totalAll = sportData[i].totalAll;
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
+            {
+                id: idM,
+                sex: sex,
+                prac3: p3,
+                uniform3: u3,
+                shoe3: sh3,
+                total3: total3,
+                date3: dateWeek3,
+                topic3: dbgetTopic3,
+                subTotal: totalAll,
+            },
+        )
+
+    }
+}
+function saveData2() {
+    for (i = 0; i < sportData.length; i++) {
+        var idM = sportData[i].id;
+        var sex = sportData[i].sex;
+        //Week 2
+        var p2 = sportData[i].p2;
+        var u2 = sportData[i].u2;
+        var sh2 = sportData[i].sh2;
+        var total2 = sportData[i].total2;
+        var totalAll = sportData[i].totalAll;
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
+            {
+                id: idM,
+                sex: sex,
+                prac2: p2,
+                uniform2: u2,
+                shoe2: sh2,
+                total2: total2,
+                date2: dateWeek2,
+                topic2: dbgetTopic2,
+                subTotal: totalAll,
+            },
+        )
+
+    }
+}
+function saveData1() {
+    for (i = 0; i < sportData.length; i++) {
+        var idM = sportData[i].id;
+        var sex = sportData[i].sex;
+        //Week 1
+        var p1 = sportData[i].p1;
+        var u1 = sportData[i].u1;
+        var sh1 = sportData[i].sh1;
+        var total1 = sportData[i].total1;
+
+        var totalAll = sportData[i].totalAll;
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
+            {
+                id: idM,
+                sex: sex,
+                prac1: p1,
+                uniform1: u1,
+                shoe1: sh1,
+                total1: total1,
+                date1: dateWeek1,
+                topic1: dbgetTopic1,
+                subTotal: totalAll,
             },
         )
 
