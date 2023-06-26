@@ -660,7 +660,7 @@ document.getElementById('myYearAct').value = dbyearAct;
 document.getElementById('myDivide').value = dbdiviAct;
 
 // Push data to firebase
-var activityData = [];
+var actDataPreview = [];
 setInterval(
     function () {
         $("#myTbaleActivity tbody tr").each(function () {
@@ -678,7 +678,7 @@ setInterval(
             obj.pt = pt;
             obj.total = total;
             if (currentRow.find(".chk").is(":checked")) {
-                activityData.push(obj);
+                actDataPreview.push(obj);
             }
         });
 
@@ -696,13 +696,13 @@ document.getElementById('btnRows').addEventListener('click', function () {
 
 })
 function cook() {
-    for (i = 0; i < activityData.length; i++) {
-        var name = activityData[i].name;
-        var idM = activityData[i].id;
-        var sex = activityData[i].sex;
-        var book = activityData[i].book;
-        var pt = activityData[i].pt;
-        var total = activityData[i].total;
+    for (i = 0; i < actDataPreview.length; i++) {
+        var name = actDataPreview[i].name;
+        var idM = actDataPreview[i].id;
+        var sex = actDataPreview[i].sex;
+        var book = actDataPreview[i].book;
+        var pt = actDataPreview[i].pt;
+        var total = actDataPreview[i].total;
 
         firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
             {
@@ -718,11 +718,11 @@ function cook() {
     }
 }
 function saveToStock() {
-    for (i = 0; i < activityData.length; i++) {
-        var name = activityData[i].name;
-        var idM = activityData[i].id;
-        var sex = activityData[i].sex;
-        var total = activityData[i].total;
+    for (i = 0; i < actDataPreview.length; i++) {
+        var name = actDataPreview[i].name;
+        var idM = actDataPreview[i].id;
+        var sex = actDataPreview[i].sex;
+        var total = actDataPreview[i].total;
         if (dbmonthAct == 'October') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {

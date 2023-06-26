@@ -1875,7 +1875,7 @@ document.getElementById('btnRows').addEventListener('click', function () {
     document.getElementById("alertMagWait").style.display = "block";
     setTimeout(function () {
         window.location.reload();
-    }, 200)
+    }, 3000)
 })
 document.getElementById('btnSave1').addEventListener('click', function () {
     saveData1();
@@ -1883,7 +1883,7 @@ document.getElementById('btnSave1').addEventListener('click', function () {
     document.getElementById("alertMagWait1").style.display = "block";
     setTimeout(function () {
         window.location.reload();
-    }, 200)
+    }, 3000)
 })
 document.getElementById('btnSave2').addEventListener('click', function () {
     saveData2();
@@ -1891,7 +1891,7 @@ document.getElementById('btnSave2').addEventListener('click', function () {
     document.getElementById("alertMagWait2").style.display = "block";
     setTimeout(function () {
         window.location.reload();
-    }, 200)
+    }, 3000)
 })
 document.getElementById('btnSave3').addEventListener('click', function () {
     saveData3();
@@ -1899,7 +1899,7 @@ document.getElementById('btnSave3').addEventListener('click', function () {
     document.getElementById("alertMagWait3").style.display = "block";
     setTimeout(function () {
         window.location.reload();
-    }, 200)
+    }, 3000)
 })
 document.getElementById('btnSave4').addEventListener('click', function () {
     saveData4();
@@ -1907,7 +1907,7 @@ document.getElementById('btnSave4').addEventListener('click', function () {
     document.getElementById("alertMagWait4").style.display = "block";
     setTimeout(function () {
         window.location.reload();
-    }, 200)
+    }, 3000)
 })
 document.getElementById('btnSave5').addEventListener('click', function () {
     saveData5();
@@ -1915,7 +1915,7 @@ document.getElementById('btnSave5').addEventListener('click', function () {
     document.getElementById("alertMagWait5").style.display = "block";
     setTimeout(function () {
         window.location.reload();
-    }, 200)
+    }, 3000)
 })
 // Push data to firebase
 function updateScore() {

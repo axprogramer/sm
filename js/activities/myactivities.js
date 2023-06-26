@@ -351,7 +351,6 @@ setInterval(function () {
 
         if (currentRow.find(".chk").is(":checked")) {
             activityData.push(obj);
-            // activityDataAct.push(objAct);
         }
     });
 
@@ -578,14 +577,14 @@ document.getElementById('btnRows').addEventListener('click', function () {
     document.getElementById("alertMagWait").style.display = "block";
     setTimeout(function () {
         window.location.reload();
-    }, 200)
+    }, 3000)
 })
 // Push data to firebase
 function cook() {
     for (i = 0; i < activityData.length; i++) {
-        var name = activityData[i].name;
+        // var name = activityData[i].name;
         var idM = activityData[i].id;
-        var sex = activityData[i].sex;
+        // var sex = activityData[i].sex;
         var s = activityData[i].s;
         var w = activityData[i].w;
         var a = activityData[i].a;
@@ -598,9 +597,7 @@ function cook() {
         var total = activityData[i].total;
         firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).update(
             {
-                name: name,
                 id: idM,
-                sex: sex,
                 s: s,
                 w: w,
                 a: a,
@@ -620,18 +617,18 @@ function cook() {
 // Push total data to firebase
 function totalData() {
     for (i = 0; i < activityData.length; i++) {
-        var name = activityData[i].name;
+        // var name = activityData[i].name;
         var idM = activityData[i].id;
-        var sex = activityData[i].sex;
+        // var sex = activityData[i].sex;
 
         if (dbtimesAct == 1) {
             var total1 = activityData[i].total;
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total1: total1,
                 },
             )
@@ -642,9 +639,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total2: total2,
                 },
             )
@@ -655,9 +652,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total3: total3,
                 },
             )
@@ -668,9 +665,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total4: total4,
                 },
             )
@@ -681,9 +678,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total5: total5,
                 },
             )
@@ -694,9 +691,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total6: total6,
                 },
             )
@@ -707,9 +704,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total7: total7,
                 },
             )
@@ -720,9 +717,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total8: total8,
                 },
             )
@@ -733,9 +730,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total9: total9,
                 },
             )
@@ -746,9 +743,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total10: total10,
                 },
             )
@@ -759,9 +756,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total11: total11,
                 },
             )
@@ -772,9 +769,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total12: total12,
                 },
             )
@@ -785,9 +782,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total13: total13,
                 },
             )
@@ -798,9 +795,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total14: total14,
                 },
             )
@@ -811,9 +808,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total15: total15,
                 },
             )
@@ -824,9 +821,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total16: total16,
                 },
             )
@@ -837,9 +834,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total17: total17,
                 },
             )
@@ -850,9 +847,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total18: total18,
                 },
             )
@@ -863,9 +860,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total19: total19,
                 },
             )
@@ -876,9 +873,9 @@ function totalData() {
             firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
 
                 {
-                    name: name,
+                    // name: name,
                     id: idM,
-                    sex: sex,
+                    // sex: sex,
                     total20: total20,
                 },
             )
