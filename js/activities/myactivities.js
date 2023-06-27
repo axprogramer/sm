@@ -166,7 +166,7 @@ function addItemsToTable(name, id,
         td7.innerHTML = note;
     }
 
-
+    td7.contentEditable = true;
 
     trow.appendChild(td0);
     trow.appendChild(td1);

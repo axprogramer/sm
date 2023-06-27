@@ -686,13 +686,15 @@ setInterval(
     , 1000);
 
 document.getElementById('btnRows').addEventListener('click', function () {
-    cook();
-    saveToStock();
     document.getElementById("alertMag").style.display = "none";
     document.getElementById("alertMagWait").style.display = "block";
     setTimeout(function () {
-        window.location.reload();
-    }, 3500)
+        cook();
+        saveToStock();
+        setTimeout(function () {
+            window.location.reload();
+        }, 1500)
+    }, 1500)
 
 })
 function cook() {

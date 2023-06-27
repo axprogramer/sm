@@ -15,8 +15,8 @@ function user(){
     document.getElementById("myImg2").src = img;
     document.getElementById("myTitle").innerHTML = title;
     document.getElementById('companyName').innerHTML = name;
-    document.getElementById('year').innerHTML = year;
-    document.getElementById('mydataBase').innerHTML = db;
+    // document.getElementById('year').innerHTML = year;
+    // document.getElementById('mydataBase').innerHTML = db;
 
     
 }

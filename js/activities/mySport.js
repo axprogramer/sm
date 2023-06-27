@@ -184,7 +184,7 @@ function addItemsToTable(
     var input16 = document.createElement('input');
 
     //Set ID for ech td
-    var noSpp = name.replace(/\s+/g, ''); //no name space
+    var noSpp = id.replace(/\s+/g, ''); //no name space
 
     //date values
     if (date1 == undefined) {
@@ -552,6 +552,27 @@ function addItemsToTable(
     } else {
         span21.innerHTML = subTotal;
     }
+    span1.contentEditable = true;
+    span2.contentEditable = true;
+    span3.contentEditable = true;
+
+    span5.contentEditable = true;
+    span6.contentEditable = true;
+    span7.contentEditable = true;
+
+    span9.contentEditable = true;
+    span10.contentEditable = true;
+    span11.contentEditable = true;
+
+    span13.contentEditable = true;
+    span14.contentEditable = true;
+    span15.contentEditable = true;
+
+    span17.contentEditable = true;
+    span18.contentEditable = true;
+    span19.contentEditable = true;
+
+
     trow.appendChild(td0);
     trow.appendChild(td1);
     trow.appendChild(td2);
@@ -684,10 +705,10 @@ function checkP1(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget1 = stdList[i][0]; // for s
+        var idget1 = stdList[i][1]; // for s
         var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp1}chP1`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}p1`;
         var checkBoxp1 = document.getElementById(`${chID}`);
@@ -705,10 +726,10 @@ function checkP1(source) {
 }
 function forcheckP1() {
     for (i = 0; i < stdList.length; i++) {
-        var idget1 = stdList[i][0]; // for s
+        var idget1 = stdList[i][1]; // for s
         var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp1}chP1`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}p1`;
         var checkBoxp1 = document.getElementById(`${chID}`);
@@ -741,10 +762,10 @@ function checkU1(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget1 = stdList[i][0]; // for s
+        var idget1 = stdList[i][1]; // for s
         var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp1}chU1`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}u1`;
         var checkBoxU1 = document.getElementById(`${chID}`);
@@ -764,10 +785,10 @@ function checkU1(source) {
 }
 function forcheckU1() {
     for (i = 0; i < stdList.length; i++) {
-        var idget1 = stdList[i][0]; // for s
+        var idget1 = stdList[i][1]; // for s
         var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp1}chU1`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}u1`;
         var checkBoxU1 = document.getElementById(`${chID}`);
@@ -801,10 +822,10 @@ function checkSH1(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget1 = stdList[i][0]; // for s
+        var idget1 = stdList[i][1]; // for s
         var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp1}chSH1`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}sh1`;
         var checkBoxU1 = document.getElementById(`${chID}`);
@@ -823,10 +844,10 @@ function checkSH1(source) {
 }
 function forcheckSH1(source) {
     for (i = 0; i < stdList.length; i++) {
-        var idget1 = stdList[i][0]; // for s
+        var idget1 = stdList[i][1]; // for s
         var noSpp1 = idget1.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp1}chSH1`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}sh1`;
         var checkBoxU1 = document.getElementById(`${chID}`);
@@ -860,10 +881,10 @@ function checkP2(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget2 = stdList[i][0]; // for s
+        var idget2 = stdList[i][1]; // for s
         var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp2}chP2`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}p2`;
         var checkBoxp2 = document.getElementById(`${chID}`);
@@ -881,10 +902,10 @@ function checkP2(source) {
 }
 function forcheckP2() {
     for (i = 0; i < stdList.length; i++) {
-        var idget2 = stdList[i][0]; // for s
+        var idget2 = stdList[i][1]; // for s
         var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp2}chP2`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}p2`;
         var checkBoxp2 = document.getElementById(`${chID}`);
@@ -917,10 +938,10 @@ function checkU2(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget2 = stdList[i][0]; // for s
+        var idget2 = stdList[i][1]; // for s
         var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp2}chU2`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}u2`;
         var checkBoxU2 = document.getElementById(`${chID}`);
@@ -940,10 +961,10 @@ function checkU2(source) {
 }
 function forcheckU2() {
     for (i = 0; i < stdList.length; i++) {
-        var idget2 = stdList[i][0]; // for s
+        var idget2 = stdList[i][1]; // for s
         var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp2}chU2`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}u2`;
         var checkBoxU2 = document.getElementById(`${chID}`);
@@ -977,10 +998,10 @@ function checkSH2(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget2 = stdList[i][0]; // for s
+        var idget2 = stdList[i][1]; // for s
         var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp2}chSH2`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}sh2`;
         var checkBoxU2 = document.getElementById(`${chID}`);
@@ -999,10 +1020,10 @@ function checkSH2(source) {
 }
 function forcheckSH2(source) {
     for (i = 0; i < stdList.length; i++) {
-        var idget2 = stdList[i][0]; // for s
+        var idget2 = stdList[i][1]; // for s
         var noSpp2 = idget2.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp2}chSH2`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}sh2`;
         var checkBoxU2 = document.getElementById(`${chID}`);
@@ -1036,10 +1057,10 @@ function checkP3(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget3 = stdList[i][0]; // for s
+        var idget3 = stdList[i][1]; // for s
         var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp3}chP3`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp3}p3`;
         var checkBoxp3 = document.getElementById(`${chID}`);
@@ -1057,10 +1078,10 @@ function checkP3(source) {
 }
 function forcheckP3() {
     for (i = 0; i < stdList.length; i++) {
-        var idget3 = stdList[i][0]; // for s
+        var idget3 = stdList[i][1]; // for s
         var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp3}chP3`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp3}p3`;
         var checkBoxp3 = document.getElementById(`${chID}`);
@@ -1093,10 +1114,10 @@ function checkU3(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget3 = stdList[i][0]; // for s
+        var idget3 = stdList[i][1]; // for s
         var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp3}chU3`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp3}u3`;
         var checkBoxU3 = document.getElementById(`${chID}`);
@@ -1116,10 +1137,10 @@ function checkU3(source) {
 }
 function forcheckU3() {
     for (i = 0; i < stdList.length; i++) {
-        var idget3 = stdList[i][0]; // for s
+        var idget3 = stdList[i][1]; // for s
         var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp3}chU3`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp3}u3`;
         var checkBoxU3 = document.getElementById(`${chID}`);
@@ -1153,10 +1174,10 @@ function checkSH3(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget3 = stdList[i][0]; // for s
+        var idget3 = stdList[i][1]; // for s
         var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp3}chSH3`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp3}sh3`;
         var checkBoxU3 = document.getElementById(`${chID}`);
@@ -1175,10 +1196,10 @@ function checkSH3(source) {
 }
 function forcheckSH3() {
     for (i = 0; i < stdList.length; i++) {
-        var idget3 = stdList[i][0]; // for s
+        var idget3 = stdList[i][1]; // for s
         var noSpp3 = idget3.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp3}chSH3`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp3}sh3`;
         var checkBoxU3 = document.getElementById(`${chID}`);
@@ -1212,10 +1233,10 @@ function checkP4(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget4 = stdList[i][0]; // for s
+        var idget4 = stdList[i][1]; // for s
         var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp4}chP4`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp4}p4`;
         var checkBoxp4 = document.getElementById(`${chID}`);
@@ -1233,10 +1254,10 @@ function checkP4(source) {
 }
 function forcheckP4() {
     for (i = 0; i < stdList.length; i++) {
-        var idget4 = stdList[i][0]; // for s
+        var idget4 = stdList[i][1]; // for s
         var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp4}chP4`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp4}p4`;
         var checkBoxp4 = document.getElementById(`${chID}`);
@@ -1269,10 +1290,10 @@ function checkU4(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget4 = stdList[i][0]; // for s
+        var idget4 = stdList[i][1]; // for s
         var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp4}chU4`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp4}u4`;
         var checkBoxU4 = document.getElementById(`${chID}`);
@@ -1292,10 +1313,10 @@ function checkU4(source) {
 }
 function forcheckU4() {
     for (i = 0; i < stdList.length; i++) {
-        var idget4 = stdList[i][0]; // for s
+        var idget4 = stdList[i][1]; // for s
         var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp4}chU4`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp4}u4`;
         var checkBoxU4 = document.getElementById(`${chID}`);
@@ -1329,10 +1350,10 @@ function checkSH4(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget4 = stdList[i][0]; // for s
+        var idget4 = stdList[i][1]; // for s
         var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp4}chSH4`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp4}sh4`;
         var checkBoxU4 = document.getElementById(`${chID}`);
@@ -1351,10 +1372,10 @@ function checkSH4(source) {
 }
 function forcheckSH4() {
     for (i = 0; i < stdList.length; i++) {
-        var idget4 = stdList[i][0]; // for s
+        var idget4 = stdList[i][1]; // for s
         var noSpp4 = idget4.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp4}chSH4`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp4}sh4`;
         var checkBoxU4 = document.getElementById(`${chID}`);
@@ -1388,10 +1409,10 @@ function checkP5(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget5 = stdList[i][0]; // for s
+        var idget5 = stdList[i][1]; // for s
         var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp5}chP5`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp5}p5`;
         var checkBoxp5 = document.getElementById(`${chID}`);
@@ -1409,10 +1430,10 @@ function checkP5(source) {
 }
 function forcheckP5() {
     for (i = 0; i < stdList.length; i++) {
-        var idget5 = stdList[i][0]; // for s
+        var idget5 = stdList[i][1]; // for s
         var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp5}chP5`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp5}p5`;
         var checkBoxp5 = document.getElementById(`${chID}`);
@@ -1445,10 +1466,10 @@ function checkU5(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget5 = stdList[i][0]; // for s
+        var idget5 = stdList[i][1]; // for s
         var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp5}chU5`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp5}u5`;
         var checkBoxU5 = document.getElementById(`${chID}`);
@@ -1468,10 +1489,10 @@ function checkU5(source) {
 }
 function forcheckU5() {
     for (i = 0; i < stdList.length; i++) {
-        var idget5 = stdList[i][0]; // for s
+        var idget5 = stdList[i][1]; // for s
         var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp5}chU5`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp5}u5`;
         var checkBoxU5 = document.getElementById(`${chID}`);
@@ -1505,10 +1526,10 @@ function checkSH5(source) {
         checkboxes[i].checked = source.checked;
     }
     for (i = 0; i < stdList.length; i++) {
-        var idget5 = stdList[i][0]; // for s
+        var idget5 = stdList[i][1]; // for s
         var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp5}chSH5`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp5}sh5`;
         var checkBoxU5 = document.getElementById(`${chID}`);
@@ -1527,10 +1548,10 @@ function checkSH5(source) {
 }
 function forcheckSH5() {
     for (i = 0; i < stdList.length; i++) {
-        var idget5 = stdList[i][0]; // for s
+        var idget5 = stdList[i][1]; // for s
         var noSpp5 = idget5.replace(/\s+/g, ''); //no name space
         var chID = `${noSpp5}chSH5`;
-        var nameSS = stdList[i][0]; //for name S
+        var nameSS = stdList[i][1]; //for name S
         var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp5}sh5`;
         var checkBoxU5 = document.getElementById(`${chID}`);
@@ -1636,7 +1657,7 @@ setInterval(function () {
 }, 200);
 function getTotalVal() {
     for (i = 0; i < stdList.length; i++) {
-        var name = stdList[i][0]; // for s
+        var name = stdList[i][1]; // for s
         var noSpc = name.replace(/\s+/g, '');
         //Week 1
         var namep1 = `${noSpc}sp1`;
@@ -1870,52 +1891,64 @@ document.getElementById('myTopic5').value = dbgetTopic5;
 //Save data to firebase
 var sportData = [];
 document.getElementById('btnRows').addEventListener('click', function () {
-    updateScore();
     document.getElementById("alertMag").style.display = "none";
     document.getElementById("alertMagWait").style.display = "block";
     setTimeout(function () {
-        window.location.reload();
-    }, 3000)
+        updateScore();
+        setTimeout(function () {
+            window.location.reload();
+        }, 1500)
+    }, 1500)
 })
 document.getElementById('btnSave1').addEventListener('click', function () {
-    saveData1();
     document.getElementById("alertMag1").style.display = "none";
     document.getElementById("alertMagWait1").style.display = "block";
     setTimeout(function () {
-        window.location.reload();
-    }, 3000)
+        saveData1();
+        setTimeout(function () {
+            window.location.reload();
+        }, 1500)
+    }, 1500)
 })
 document.getElementById('btnSave2').addEventListener('click', function () {
-    saveData2();
     document.getElementById("alertMag2").style.display = "none";
     document.getElementById("alertMagWait2").style.display = "block";
     setTimeout(function () {
-        window.location.reload();
-    }, 3000)
+        saveData2();
+        setTimeout(function () {
+            window.location.reload();
+        }, 1500)
+    }, 1500)
 })
 document.getElementById('btnSave3').addEventListener('click', function () {
-    saveData3();
     document.getElementById("alertMag3").style.display = "none";
     document.getElementById("alertMagWait3").style.display = "block";
     setTimeout(function () {
-        window.location.reload();
-    }, 3000)
+        saveData3();
+        setTimeout(function () {
+            window.location.reload();
+        }, 1500)
+    }, 1500)
 })
 document.getElementById('btnSave4').addEventListener('click', function () {
-    saveData4();
     document.getElementById("alertMag4").style.display = "none";
     document.getElementById("alertMagWait4").style.display = "block";
     setTimeout(function () {
-        window.location.reload();
-    }, 3000)
+        saveData4();
+        setTimeout(function () {
+            window.location.reload();
+        }, 1500)
+    }, 1500)
 })
 document.getElementById('btnSave5').addEventListener('click', function () {
-    saveData5();
     document.getElementById("alertMag5").style.display = "none";
     document.getElementById("alertMagWait5").style.display = "block";
     setTimeout(function () {
-        window.location.reload();
-    }, 3000)
+        saveData5();
+        setTimeout(function () {
+            window.location.reload();
+        }, 1500)
+    }, 1500)
 })
 // Push data to firebase
 function updateScore() {
@@ -1949,8 +1982,9 @@ function updateScore() {
         var total5 = sportData[i].total5;
         var totalAll = sportData[i].totalAll;
 
-        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).set(
             {
+                name: idM,
                 id: idM,
                 sex: sex,
                 prac1: p1,
@@ -2002,6 +2036,7 @@ function saveData5() {
 
         firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
             {
+                name: idM,
                 id: idM,
                 sex: sex,
                 prac5: p5,
@@ -2029,6 +2064,7 @@ function saveData4() {
 
         firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
             {
+                name: idM,
                 id: idM,
                 sex: sex,
                 prac4: p4,
@@ -2056,6 +2092,7 @@ function saveData3() {
 
         firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
             {
+                name: idM,
                 id: idM,
                 sex: sex,
                 prac3: p3,
@@ -2083,6 +2120,7 @@ function saveData2() {
 
         firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
             {
+                name: idM,
                 id: idM,
                 sex: sex,
                 prac2: p2,
@@ -2111,6 +2149,7 @@ function saveData1() {
 
         firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idM).update(
             {
+                name: idM,
                 id: idM,
                 sex: sex,
                 prac1: p1,
@@ -2122,276 +2161,6 @@ function saveData1() {
                 subTotal: totalAll,
             },
         )
-
-    }
-}
-// Push total data to firebase
-function totalData() {
-    for (i = 0; i < activityData.length; i++) {
-        var name = activityData[i].name;
-        var idM = activityData[i].id;
-        var sex = activityData[i].sex;
-
-        if (dbtimesAct == 1) {
-            var total1 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total1: total1,
-                },
-            )
-
-        }
-        if (dbtimesAct == 2) {
-            var total2 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total2: total2,
-                },
-            )
-
-        }
-        if (dbtimesAct == 3) {
-            var total3 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total3: total3,
-                },
-            )
-
-        }
-        if (dbtimesAct == 4) {
-            var total4 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total4: total4,
-                },
-            )
-
-        }
-        if (dbtimesAct == 5) {
-            var total5 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total5: total5,
-                },
-            )
-
-        }
-        if (dbtimesAct == 6) {
-            var total6 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total6: total6,
-                },
-            )
-
-        }
-        if (dbtimesAct == 7) {
-            var total7 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total7: total7,
-                },
-            )
-
-        }
-        if (dbtimesAct == 8) {
-            var total8 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total8: total8,
-                },
-            )
-
-        }
-        if (dbtimesAct == 9) {
-            var total9 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total9: total9,
-                },
-            )
-
-        }
-        if (dbtimesAct == 10) {
-            var total10 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total10: total10,
-                },
-            )
-
-        }
-        if (dbtimesAct == 11) {
-            var total11 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total11: total11,
-                },
-            )
-
-        }
-        if (dbtimesAct == 12) {
-            var total12 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total12: total12,
-                },
-            )
-
-        }
-        if (dbtimesAct == 13) {
-            var total13 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total13: total13,
-                },
-            )
-
-        }
-        if (dbtimesAct == 14) {
-            var total14 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total14: total14,
-                },
-            )
-
-        }
-        if (dbtimesAct == 15) {
-            var total15 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total15: total15,
-                },
-            )
-
-        }
-        if (dbtimesAct == 16) {
-            var total16 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total16: total16,
-                },
-            )
-
-        }
-        if (dbtimesAct == 17) {
-            var total17 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total17: total17,
-                },
-            )
-
-        }
-        if (dbtimesAct == 18) {
-            var total18 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total18: total18,
-                },
-            )
-
-        }
-        if (dbtimesAct == 19) {
-            var total19 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total19: total19,
-                },
-            )
-
-        }
-        if (dbtimesAct == 20) {
-            var total20 = activityData[i].total;
-            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
-
-                {
-                    name: name,
-                    id: idM,
-                    sex: sex,
-                    total20: total20,
-                },
-            )
-
-        }
 
     }
 }
