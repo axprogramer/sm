@@ -479,49 +479,11 @@ function cook2() {
     var enname = aData2[i].myenname;
     var idM = aData2[i].id;
     var sex = aData2[i].mySex;
-    var nameS = idM+'s';
-    var nameW = idM+'w';
-    var nameA = idM+'a';
-    var nameAtt = idM+'att';
-    var nameRowS = idM+'rowS';
-    var nameRowW = idM+'rowW';
-    var nameRowA = idM+'rowA';
-    var nameRowAtt = idM+'rowAtt';
-    var nameRowTotal = idM+'rowTotal';
-    var spanTotalS = idM+'TotalS';
-    var spanTotalW = idM+'TotalW';
-    var spanTotalA = idM+'TotalA';
-    var spanTotalAtt = idM+'TotalAtt';
-    var s = 0;
-    var w = 0;
-    var a = 0;
-    var attitude = 0;
-    var note = '';
-    var total = 0;
     firebase.database().ref(`${gradeAact}/` + `recordActivity/` + `${yearAact}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).set(
       {
         name: enname,
         id: idM,
         sex: sex,
-        ids: nameS,
-        idw: nameW,
-        ida: nameA,
-        idatt: nameAtt,
-        nameRowS: nameRowS,
-        nameRowW: nameRowW,
-        nameRowA: nameRowA,
-        nameRowAtt: nameRowAtt,
-        nameRowTotal: nameRowTotal,
-        spanTotalS: spanTotalS,
-        spanTotalW: spanTotalW,
-        spanTotalA: spanTotalA,
-        spanTotalAtt: spanTotalAtt,
-        s:s,
-        w:w,
-        a:a,
-        attitude:attitude,
-        note:note,
-        total:total,
         date: dateAact,
 
       },

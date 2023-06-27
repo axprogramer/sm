@@ -23,19 +23,6 @@ function selectAllData() {
                 function (CurrentRecord) {
                     var name = CurrentRecord.val().name;
                     var id = CurrentRecord.val().id;
-                    var ids = CurrentRecord.val().ids;
-                    var idw = CurrentRecord.val().idw;
-                    var ida = CurrentRecord.val().ida;
-                    var idatt = CurrentRecord.val().idatt;
-                    var nameRowS = CurrentRecord.val().nameRowS;
-                    var nameRowW = CurrentRecord.val().nameRowW;
-                    var nameRowA = CurrentRecord.val().nameRowA;
-                    var nameRowAtt = CurrentRecord.val().nameRowAtt;
-                    var nameRowTotal = CurrentRecord.val().nameRowTotal;
-                    var spanTotalS = CurrentRecord.val().spanTotalS;
-                    var spanTotalW = CurrentRecord.val().spanTotalW;
-                    var spanTotalA = CurrentRecord.val().spanTotalA;
-                    var spanTotalAtt = CurrentRecord.val().spanTotalAtt;
                     var sex = CurrentRecord.val().sex;
                     var date = CurrentRecord.val().date;
                     var s = CurrentRecord.val().s;
@@ -44,10 +31,7 @@ function selectAllData() {
                     var attitude = CurrentRecord.val().attitude;
                     var note = CurrentRecord.val().note;
                     var total = CurrentRecord.val().total;
-                    addItemsToTable(name, id, ids, idw, ida, idatt,
-                        nameRowS, nameRowW, nameRowA, nameRowAtt,
-                        nameRowTotal, spanTotalS, spanTotalW, spanTotalA,
-                        spanTotalAtt,
+                    addItemsToTable(name, id, 
                         sex, date, s, w, a, attitude, note,
                         total);
 
@@ -59,9 +43,8 @@ window.onload = selectAllData;
 var studentN0;
 
 var stdList = [];
-function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nameRowA, nameRowAtt, nameRowTotal,
-    spanTotalS, spanTotalW, spanTotalA,
-    spanTotalAtt, sex, date, s, w, a, attitude, note,
+function addItemsToTable(name, id,
+    sex, date, s, w, a, attitude, note,
     total) {
     var tbody = document.getElementById('myActivities');
     var trow = document.createElement('tr');
@@ -87,20 +70,16 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nam
     var span3 = document.createElement('span');
     var span4 = document.createElement('span');
 
-
-    var noSpSS = spanTotalS.replace(/\s+/g, '');
-    var noSpWW = spanTotalW.replace(/\s+/g, '');
-    var noSpAA = spanTotalS.replace(/\s+/g, '');
-    var noSpAtt = spanTotalAtt.replace(/\s+/g, '');
-    span.id = `${nameRowS}`;
-    span.className = `${noSpSS}`;
-    span1.id = `${nameRowW}`;
-    span1.className = `${noSpWW}`;
-    span2.id = `${nameRowA}`;
-    span2.className = `${noSpAA}`;
-    span3.id = `${nameRowAtt}`;
-    span3.className = `${noSpAtt}`;
-    span4.id = `${nameRowTotal}`;
+    var noSpSS = id.replace(/\s+/g, '');
+    span.id = `${id}rowS`;
+    span.className = `${noSpSS}rowS`;
+    span1.id = `${id}rowW`;
+    span1.className = `${noSpSS}rowW`;
+    span2.id = `${id}rowA`;
+    span2.className = `${noSpSS}rowA`;
+    span3.id = `${id}rowAtt`;
+    span3.className = `${noSpSS}rowAtt`;
+    span4.id = `${id}rowTotal`;
 
     td3.style.color = 'green';
     td4.style.color = 'green';
@@ -114,24 +93,24 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nam
     chkS.value = "3";
     chkS.setAttribute('name', 'myS');
     chkS.setAttribute('class', 'myS');
-    chkS.setAttribute('id', `${ids}`);
+    chkS.setAttribute('id', `${id}s`);
 
     var chkW = document.createElement('input');
     chkW.type = "checkbox";
     chkW.value = "1";
     chkW.setAttribute('name', 'myW');
-    chkW.setAttribute('id', `${idw}`);
+    chkW.setAttribute('id', `${id}w`);
 
     var chkA = document.createElement('input');
     chkA.type = "checkbox";
     chkA.value = "1";
     chkA.setAttribute('name', 'myA');
-    chkA.setAttribute('id', `${ida}`);
+    chkA.setAttribute('id', `${id}a`);
     var chkAtt = document.createElement('input');
     chkAtt.type = "checkbox";
     chkAtt.value = "-1";
     chkAtt.setAttribute('name', 'myAtt');
-    chkAtt.setAttribute('id', `${idatt}`);
+    chkAtt.setAttribute('id', `${id}att`);
     var chkGet = document.createElement('input');
     chkGet.type = "checkbox";
     chkGet.setAttribute('name', 'myGet');
@@ -139,50 +118,54 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nam
     chkGet.checked = true;
     var ddd = document.getElementById('myDate');
 
-    stdList.push([name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nameRowA, nameRowAtt, nameRowTotal,
-        spanTotalS, spanTotalW, spanTotalA,
-        spanTotalAtt, sex, date, s, w, a, attitude, note,
+    stdList.push([name, id,
+        sex, date, s, w, a, attitude, note,
         total]);
     td0.innerHTML = ++studentN0;
     td1.innerHTML = id;
     td2.innerHTML = sex;
     ddd.value = date;
-    if (span == undefined) {
+    if (s == undefined) {
         span.innerText = 0;
 
     } else {
         span.innerText = s;
 
     }
-    if (span1 == undefined) {
+    if (w == undefined) {
         span1.innerText = 0;
 
     } else {
         span1.innerText = w;
 
     }
-    if (span2 == undefined) {
+    if (a == undefined) {
         span2.innerText = 0;
 
     } else {
         span2.innerText = a;
 
     }
-    if (span3 == undefined) {
+    if (attitude == undefined) {
         span3.innerText = 0;
 
     } else {
         span3.innerText = attitude;
 
     }
-    if (span4 == undefined) {
+    if (total == undefined) {
         span4.innerText = 0;
 
     } else {
         span4.innerText = total;
 
     }
-    td7.innerHTML = note;
+    if (note == undefined) {
+        td7.innerHTML = '';
+    } else {
+        td7.innerHTML = note;
+    }
+
 
 
     trow.appendChild(td0);
@@ -225,84 +208,87 @@ function addItemsToTable(name, id, ids, idw, ida, idatt, nameRowS, nameRowW, nam
     document.getElementById("alertMagWait").style.display = "none";
 
 }
-
+console.log(stdList);
 //Check all box
 function toggleS(source) {
     var checkboxes = document.getElementsByName('myS');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
-
-        var idget1 = stdList[i][2]; // for s
-        var nameSS = stdList[i][6]; //for name S
-        var checkBoxs = document.getElementById(`${idget1}`);
+        var idget1 = stdList[i][1]; // name
+        var nameSS = `${idget1}s`; //for name S
+        var namerowS = `${idget1}rowS`; //for name S
+        var checkBoxs = document.getElementById(`${nameSS}`);
         checkboxes[i].checked = source.checked;
         if (checkBoxs.checked == true) {
             var s = 3;
             checkBoxs.checked = true;
-            document.getElementById(`${nameSS}`).innerHTML = 3;
+            document.getElementById(`${namerowS}`).innerHTML = 3;
 
         }
         if (checkBoxs.checked == false) {
             checkBoxs.checked = false;
-            document.getElementById(`${nameSS}`).innerHTML = 0;
+            document.getElementById(`${namerowS}`).innerHTML = 0;
 
         }
     }
 
 }
 function toggleW(source) {
-   var checkboxes = document.getElementsByName('myW');
+    var checkboxes = document.getElementsByName('myW');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
         checkboxes[i].checked = source.checked;
-        var idget2 = stdList[i][3]; // for w
-        var nameWW = stdList[i][7]; //for name s
-        var checkBoxw = document.getElementById(`${idget2}`);
+        var idget2 = stdList[i][1]; // for w
+        var nameWW = `${idget2}w`; //for name w
+        var namerowW = `${idget2}rowW`; //for name w
+        var checkBoxw = document.getElementById(`${nameWW}`);
         if (checkBoxw.checked == true) {
             var w = 1;
             checkBoxw.checked = true;
-            document.getElementById(`${nameWW}`).innerHTML = w;
+            document.getElementById(`${namerowW}`).innerHTML = w;
         }
         if (checkBoxw.checked == false) {
             var w = 0;
             checkBoxw.checked = false;
-            document.getElementById(`${nameWW}`).innerHTML = w;
+            document.getElementById(`${namerowW}`).innerHTML = w;
         }
     }
 }
 function toggleA(source) {
     var checkboxes = document.getElementsByName('myA');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
-        var idget3 = stdList[i][4]; // for a
-        var nameAA = stdList[i][8]; //for name a
-        var checkBoxa = document.getElementById(`${idget3}`);
+        var idget3 = stdList[i][1]; // for a
+        var nameAA = `${idget3}a`; //for name a
+        var namerowA = `${idget3}rowA`; //for name a
+        var checkBoxa = document.getElementById(`${nameAA}`);
         checkboxes[i].checked = source.checked;
         if (checkBoxa.checked == true) {
             var a = 1;
             checkBoxa.checked = true;
-            document.getElementById(`${nameAA}`).innerHTML = a;
+            document.getElementById(`${namerowA}`).innerHTML = a;
         }
         if (checkBoxa.checked == false) {
             var a = 0;
             checkBoxa.checked = false;
-            document.getElementById(`${nameAA}`).innerHTML = a;
+            document.getElementById(`${namerowA}`).innerHTML = a;
         }
     }
 }
 function toggleAtt(source) {
     var checkboxes = document.getElementsByName('myAtt');
     for (var i = 0, n = checkboxes.length; i < n; i++) {
-        var idget4 = stdList[i][5]; // for a
-        var nameAtt = stdList[i][9]; //for name att
-        var checkBoxatt = document.getElementById(`${idget4}`);
+        var idget4 = stdList[i][1]; // for a
+        var nameAtt = `${idget4}att`; //for name att
+        var namerowAtt = `${idget4}rowAtt`; //for name att
+        var checkBoxatt = document.getElementById(`${nameAtt}`);
         checkboxes[i].checked = source.checked;
         if (checkBoxatt.checked == true) {
             var att = -1;
             checkBoxatt.checked = true;
-            document.getElementById(`${nameAtt}`).innerHTML = att;
+            document.getElementById(`${namerowAtt}`).innerHTML = att;
         }
         if (checkBoxatt.checked == false) {
             var att = 0;
             checkBoxatt.checked = false;
-            document.getElementById(`${nameAtt}`).innerHTML = att;
+            document.getElementById(`${namerowAtt}`).innerHTML = att;
         }
     }
 }
@@ -329,12 +315,7 @@ setInterval(function () {
         var col8 = currentRow.find("td:eq(7)").html();
         var col9 = currentRow.find("td:eq(8)").text();
         var obj = {};
-        var objAct = {};
         obj.id = col1;
-        obj.ids = col1 + 's';
-        obj.idw = col1 + 'w';
-        obj.ida = col1 + 'a';
-        obj.idatt = col1 + 'att';
         obj.name = col2;
         obj.sex = col3;
         obj.s = col4;
@@ -343,11 +324,6 @@ setInterval(function () {
         obj.attitude = col7;
         obj.note = col8;
         obj.total = col9;
-
-        objAct.id = col1;
-        objAct.name = col2;
-        objAct.sex = col3;
-        objAct.total = parseFloat(col4) + parseFloat(col5) + parseFloat(col6) + parseFloat(col7);
 
         if (currentRow.find(".chk").is(":checked")) {
             activityData.push(obj);
@@ -361,18 +337,14 @@ function getTotalVal() {
     for (i = 0; i < stdList.length; i++) {
 
         //Sum for All score
-        var allTotal = stdList[i][10]; // for s
-        //get name from array
-        var getS = stdList[i][11];
-        var getW = stdList[i][12];
-        var getA = stdList[i][13];
-        var getAtt = stdList[i][14];
-        var getAtt = stdList[i][14];
+        var name = stdList[i][1]; // khmer name
+        var noSp = name.replace(/\s+/g, '');; // remove space
+        var allTotal = `${name}rowTotal`;
         //remove space from name for class
-        var noSpcS = getS.replace(/\s+/g, '');
-        var noSpcW = getW.replace(/\s+/g, '');
-        var noSpcA = getA.replace(/\s+/g, '');
-        var noSpcAtt = getAtt.replace(/\s+/g, '');
+        var noSpcS = `${noSp}rowS`;
+        var noSpcW = `${noSp}rowW`;
+        var noSpcA = `${noSp}rowA`;
+        var noSpcAtt = `${noSp}rowAtt`;
         setInterval(function () {
             var sumS = 0;
             var sumW = 0;
@@ -401,15 +373,16 @@ function dataS() {
     for (i = 0; i < stdList.length; i++) {
 
         //get id for checkbox
-        var idget1 = stdList[i][2]; // for s
-        var idget2 = stdList[i][3]; // for w
-        var idget3 = stdList[i][4]; // for a
-        var idget4 = stdList[i][5]; // for a
+        var name = stdList[i][1]; // for s
+        var idget1 = `${name}s`; // for s
+        var idget2 = `${name}w`; // for w
+        var idget3 = `${name}a`; // for a
+        var idget4 = `${name}att`; // for a
         //get name for checkbox id
-        var nameSS = stdList[i][6]; //for name s
-        var nameWW = stdList[i][7]; //for name w
-        var nameAA = stdList[i][8]; //for name a
-        var nameAtt = stdList[i][9]; //for name att
+        var nameSS = `${name}rowS`; //for name s
+        var nameWW = `${name}rowW`; //for name w
+        var nameAA = `${name}rowA`; //for name a
+        var nameAtt = `${name}rowAtt`; //for name att
         //Checkbox varible
         var checkBoxs = document.getElementById(`${idget1}`);
         var checkBoxw = document.getElementById(`${idget2}`);
@@ -478,18 +451,19 @@ function autoCheck() {
     // checked for S W A ATT
     for (i = 0; i < stdList.length; i++) {
 
-        var idget1 = stdList[i][2];
-        var idget2 = stdList[i][3];
-        var idget3 = stdList[i][4];
-        var idget4 = stdList[i][5];
+        var name = stdList[i][1]; // for s
+        var idget1 = `${name}s`; // for s
+        var idget2 = `${name}w`; // for w
+        var idget3 = `${name}a`; // for a
+        var idget4 = `${name}att`; // for a
         da1 = '3';
         da2 = '1';
         da3 = '1';
         da4 = '-1';
-        var get1 = stdList[i][17];
-        var get2 = stdList[i][18];
-        var get3 = stdList[i][19];
-        var get4 = stdList[i][20];
+        var get1 = stdList[i][4];
+        var get2 = stdList[i][5];
+        var get3 = stdList[i][6];
+        var get4 = stdList[i][7];
 
         var checkBoxs = document.getElementById(`${idget1}`);
         if (get1 == da1) {
@@ -571,40 +545,36 @@ document.getElementById('myYearAct').value = dbyearAct;
 //Save data to firebase
 var activityData = [];
 document.getElementById('btnRows').addEventListener('click', function () {
-    cook();
-    totalData();
     document.getElementById("alertMag").style.display = "none";
     document.getElementById("alertMagWait").style.display = "block";
     setTimeout(function () {
-        window.location.reload();
-    }, 3000)
+        cook();
+        totalData();
+        setTimeout(function () {
+            window.location.reload();
+        }, 1500)
+    }, 1500)
 })
 // Push data to firebase
 function cook() {
     for (i = 0; i < activityData.length; i++) {
-        // var name = activityData[i].name;
+        var name = activityData[i].name;
         var idM = activityData[i].id;
-        // var sex = activityData[i].sex;
+        var sex = activityData[i].sex;
         var s = activityData[i].s;
         var w = activityData[i].w;
         var a = activityData[i].a;
-        var ids = activityData[i].ids;
-        var idw = activityData[i].idw;
-        var ida = activityData[i].ida;
-        var idatt = activityData[i].idatt;
         var attitude = activityData[i].attitude;
         var note = activityData[i].note;
         var total = activityData[i].total;
-        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).update(
+        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).set(
             {
+                name:name,
+                sex:sex,
                 id: idM,
                 s: s,
                 w: w,
                 a: a,
-                ids, ids,
-                idw: idw,
-                ida: ida,
-                idatt: idatt,
                 attitude: attitude,
                 note: note,
                 total: total,
