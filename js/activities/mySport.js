@@ -1778,7 +1778,7 @@ function getTotalVal() {
 
 document.getElementById('myMonthAct').addEventListener('change', function () {
     var monthact = document.getElementById('myMonthAct').value;
-    localStorage.setItem('ownmonthAct', monthact);
+    localStorage.setItem('sportmonthAct', monthact);
     window.location.reload();
 
 })
@@ -1790,13 +1790,13 @@ document.getElementById('myDivide').addEventListener('change', function () {
 })
 document.getElementById('myGradeAct').addEventListener('change', function () {
     var gradeact = document.getElementById('myGradeAct').value;
-    localStorage.setItem('owngradeAct', gradeact);
+    localStorage.setItem('sportgradeAct', gradeact);
     window.location.reload();
 
 })
 document.getElementById('myYearAct').addEventListener('change', function () {
     var yeareact = document.getElementById('myYearAct').value;
-    localStorage.setItem('ownyeareAct', yeareact);
+    localStorage.setItem('sportyeareAct', yeareact);
     window.location.reload();
 
 })
@@ -1832,10 +1832,10 @@ document.getElementById('mySpDate5').addEventListener('change', function () {
 
 })
 
-var dbmonthAct = localStorage.getItem('ownmonthAct'); //month activity
+var dbmonthAct = localStorage.getItem('sportmonthAct'); //month activity
 var dbgetDivide = localStorage.getItem('getDivide'); // times activity
-var dbgradeAct = localStorage.getItem('owngradeAct'); // grade activity
-var dbyearAct = localStorage.getItem('ownyeareAct'); // year activity
+var dbgradeAct = localStorage.getItem('sportgradeAct'); // grade activity
+var dbyearAct = localStorage.getItem('sportyeareAct'); // year activity
 var dateWeek1 = localStorage.getItem('dateWeek1'); // Date in week 1
 var dateWeek2 = localStorage.getItem('dateWeek2'); // Date in week 2
 var dateWeek3 = localStorage.getItem('dateWeek3'); // Date in week 3

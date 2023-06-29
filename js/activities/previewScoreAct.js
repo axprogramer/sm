@@ -619,39 +619,39 @@ toggleGet(this);
 //Month and Times for Activity
 document.getElementById('myMonthAct').addEventListener('change', function () {
     var monthact = document.getElementById('myMonthAct').value;
-    localStorage.setItem('ownmonthAct', monthact);
+    localStorage.setItem('previewmonthAct', monthact);
     window.location.reload();
 
 })
 document.getElementById('myTimesAct').addEventListener('change', function () {
     var timesact = document.getElementById('myTimesAct').value;
-    localStorage.setItem('owntimesAct', timesact);
+    localStorage.setItem('previewtimesAct', timesact);
     window.location.reload();
 
 })
 document.getElementById('myGradeAct').addEventListener('change', function () {
     var gradeact = document.getElementById('myGradeAct').value;
-    localStorage.setItem('owngradeAct', gradeact);
+    localStorage.setItem('previewgradeAct', gradeact);
     window.location.reload();
 
 })
 document.getElementById('myYearAct').addEventListener('change', function () {
     var yeareact = document.getElementById('myYearAct').value;
-    localStorage.setItem('ownyeareAct', yeareact);
+    localStorage.setItem('previewyeareAct', yeareact);
     window.location.reload();
 
 })
 document.getElementById('myDivide').addEventListener('change', function () {
     var diviact = document.getElementById('myDivide').value;
-    localStorage.setItem('owndiviAct', diviact);
+    localStorage.setItem('previewdiviAct', diviact);
     window.location.reload();
 
 })
-var dbmonthAct = localStorage.getItem('ownmonthAct'); //month activity
-var dbtimesAct = localStorage.getItem('owntimesAct'); // times activity
-var dbgradeAct = localStorage.getItem('owngradeAct'); // grade activity
-var dbyearAct = localStorage.getItem('ownyeareAct'); // year activity
-var dbdiviAct = localStorage.getItem('owndiviAct'); // divide activity
+var dbmonthAct = localStorage.getItem('previewmonthAct'); //month activity
+var dbtimesAct = localStorage.getItem('previewtimesAct'); // times activity
+var dbgradeAct = localStorage.getItem('previewgradeAct'); // grade activity
+var dbyearAct = localStorage.getItem('previewyeareAct'); // year activity
+var dbdiviAct = localStorage.getItem('previewdiviAct'); // divide activity
 
 document.getElementById('myMonthAct').value = dbmonthAct;
 document.getElementById('myTimesAct').value = dbtimesAct;
