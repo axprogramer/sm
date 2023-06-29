@@ -137,11 +137,11 @@ var MwritingNov = document.getElementById('myWnov');
 var MlisteningNov = document.getElementById('myLnov');
 var MreadingNov = document.getElementById('myRnov');
 var MaverageNov = document.getElementById('myAnov');
+var span = document.getElementById('span1');
 
 var submit = document.getElementById("mySubmit");
 var update = document.getElementById("myUpdate");
 var dele = document.getElementById("myDelete");
-
 //Show data input auto
 function showAuto() {
   Mname.value = stdList[0][0];
