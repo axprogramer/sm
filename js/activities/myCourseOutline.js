@@ -1138,6 +1138,14 @@ $("textarea").each(function () {
     this.style.height = 0;
     this.style.height = (this.scrollHeight) + "px";
 });
+document.getElementById('goPrint').addEventListener('click',function(){
+    var newstr = document.getElementById("myPrintA4").innerHTML;
+        var oldstr = document.body.innerHTML;
+        document.body.innerHTML = newstr;
+        window.print();
+        document.body.innerHTML = oldstr;
+        return false;
+})
 //push data to JOSON
 
 // function setData(){
