@@ -23,7 +23,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.3.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.3.min.js"></script>
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -260,7 +260,22 @@
                                     </td>
                                 </tr>
                             </table>
+                            <table class="allCenter mb-3">
+                                <tr>
+                                    <td>
+                                        <button id="week1" type="button" class="btn btn-success rounded-pill">
+                                            Week 5
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button id="week2" type="button" class="btn btn-success rounded-pill">
+                                            Week 6
+                                        </button>
 
+                                    </td>
+                                </tr>
+
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -272,13 +287,16 @@
                     <div class="bg-secondary rounded h-100 p-4 " style="overflow-x: auto;">
                         <div class="bg-secondary rounded ">
                             <div style="padding: 20px;" size="A4" id="myPrintA4" class="myPrintA4">
-                            
+
                                 <div class="tg-wrap">
                                     <div class="tg-wrap">
                                         <table class="table table-borderless blackText">
                                             <thead>
                                                 <tr>
-                                                    <th class="tg-5n2h" colspan="3">Course Outline In <span id="showMonth" style="color: rgb(255, 0, 0);font-weight: bold;"></span></th>
+                                                    <th class="tg-5n2h" colspan="3">Course Outline In <span
+                                                            id="showMonth"
+                                                            style="color: rgb(255, 0, 0);font-weight: bold;"></span>
+                                                    </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -291,6 +309,32 @@
                                                     <td class="tg-axmw" id="mainTitle" contenteditable> </td>
                                                 </tr>
                                             </tbody>
+                                        </table>
+                                        <table class="table table-bordered" style="color: black;font-size: 1.4vw;">
+                                            <tr style="background: orange;font-weight: bold;text-align: center;">
+                                                <td>Grade</td>
+                                                <td>Monday</td>
+                                                <td>Tuesday</td>
+                                                <td>Wednesday</td>
+                                                <td>Thursday</td>
+                                                <td>Friday</td>
+                                            </tr>
+                                            <tr style="text-align: center;">
+                                                <td>5A</td>
+                                                <td contenteditable id="time1"></td>
+                                                <td contenteditable id="time2"></td>
+                                                <td contenteditable id="time3"></td>
+                                                <td contenteditable id="time4"></td>
+                                                <td contenteditable id="time5"></td>
+                                            </tr>
+                                            <tr style="text-align: center;">
+                                                <td>5B</td>
+                                                <td contenteditable id="time6"></td>
+                                                <td contenteditable id="time7"></td>
+                                                <td contenteditable id="time8"></td>
+                                                <td contenteditable id="time9"></td>
+                                                <td contenteditable id="time10"></td>
+                                            </tr>
                                         </table>
                                     </div>
                                     <table class="tg table" id="myScedual">
@@ -313,149 +357,209 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr >
+                                            <tr>
                                                 <td class="tg-etzd">Date</td>
                                                 <td class="tg-etzd" id="day1" contenteditable> </td>
                                                 <td class="tg-etzd" id="day2" contenteditable> </td>
-                                                <td class="tg-etzd" id="day3"contenteditable> </td>
-                                                <td class="tg-etzd" id="day4"contenteditable> </td>
-                                                <td class="tg-etzd" id="day5"contenteditable> </td>
+                                                <td class="tg-etzd" id="day3" contenteditable> </td>
+                                                <td class="tg-etzd" id="day4" contenteditable> </td>
+                                                <td class="tg-etzd" id="day5" contenteditable> </td>
                                             </tr>
                                             <tr>
                                                 <td class="tg-i6ci" rowspan="2">Week 1</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title1" id="title1"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title2" id="title2"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title3" id="title3"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title4" id="title4"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title5" id="title5"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title1"
+                                                        id="title1"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title2"
+                                                        id="title2"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title3"
+                                                        id="title3"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title4"
+                                                        id="title4"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title5"
+                                                        id="title5"></textarea></td>
                                             </tr>
                                             <tr>
-                                                <td class="tg-nrix"> <textarea name="point1" id="point1"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point2" id="point2"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point3" id="point3"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point4" id="point4"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point5" id="point5"></textarea></td>
+                                                <td class="tg-nrix"> <textarea name="point1" id="point1"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point2" id="point2"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point3" id="point3"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point4" id="point4"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point5" id="point5"></textarea>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td class="tg-etzd">Date</td>
-                                                <td class="tg-etzd" id="day6"contenteditable> </td>
-                                                <td class="tg-etzd" id="day7"contenteditable> </td>
-                                                <td class="tg-etzd" id="day8"contenteditable> </td>
-                                                <td class="tg-etzd" id="day9"contenteditable> </td>
-                                                <td class="tg-etzd" id="day10"contenteditable> </td>
+                                                <td class="tg-etzd" id="day6" contenteditable> </td>
+                                                <td class="tg-etzd" id="day7" contenteditable> </td>
+                                                <td class="tg-etzd" id="day8" contenteditable> </td>
+                                                <td class="tg-etzd" id="day9" contenteditable> </td>
+                                                <td class="tg-etzd" id="day10" contenteditable> </td>
                                             </tr>
                                             <tr>
                                                 <td class="tg-i6ci" rowspan="2">Week 2</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title6" id="title6"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title7" id="title7"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title8" id="title8"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title9" id="title9"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title10" id="title10"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title6"
+                                                        id="title6"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title7"
+                                                        id="title7"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title8"
+                                                        id="title8"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title9"
+                                                        id="title9"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title10"
+                                                        id="title10"></textarea></td>
                                             </tr>
                                             <tr>
-                                                <td class="tg-nrix"> <textarea name="point6" id="point6"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point7" id="point7"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point8" id="point8"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point9" id="point9"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point10" id="point10"></textarea></td>
+                                                <td class="tg-nrix"> <textarea name="point6" id="point6"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point7" id="point7"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point8" id="point8"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point9" id="point9"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point10" id="point10"></textarea>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td class="tg-etzd">Date</td>
-                                                <td class="tg-etzd" id="day11"contenteditable> </td>
-                                                <td class="tg-etzd" id="day12"contenteditable> </td>
-                                                <td class="tg-etzd" id="day13"contenteditable> </td>
-                                                <td class="tg-etzd" id="day14"contenteditable> </td>
-                                                <td class="tg-etzd" id="day15"contenteditable> </td>
+                                                <td class="tg-etzd" id="day11" contenteditable> </td>
+                                                <td class="tg-etzd" id="day12" contenteditable> </td>
+                                                <td class="tg-etzd" id="day13" contenteditable> </td>
+                                                <td class="tg-etzd" id="day14" contenteditable> </td>
+                                                <td class="tg-etzd" id="day15" contenteditable> </td>
                                             </tr>
                                             <tr>
                                                 <td class="tg-i6ci" rowspan="2">Week 3</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title11" id="title11"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title12" id="title12"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title13" id="title13"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title14" id="title14"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title15" id="title15"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title11"
+                                                        id="title11"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title12"
+                                                        id="title12"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title13"
+                                                        id="title13"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title14"
+                                                        id="title14"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title15"
+                                                        id="title15"></textarea></td>
                                             </tr>
                                             <tr>
-                                                <td class="tg-nrix"> <textarea name="point11" id="point11"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point12" id="point12"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point13" id="point13"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point14" id="point14"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point15" id="point15"></textarea></td>
+                                                <td class="tg-nrix"> <textarea name="point11" id="point11"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point12" id="point12"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point13" id="point13"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point14" id="point14"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point15" id="point15"></textarea>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td class="tg-etzd">Date</td>
-                                                <td class="tg-etzd" id="day16"contenteditable> </td>
-                                                <td class="tg-etzd" id="day17"contenteditable> </td>
-                                                <td class="tg-etzd" id="day18"contenteditable> </td>
-                                                <td class="tg-etzd" id="day19"contenteditable> </td>
-                                                <td class="tg-etzd" id="day20"contenteditable> </td>
+                                                <td class="tg-etzd" id="day16" contenteditable> </td>
+                                                <td class="tg-etzd" id="day17" contenteditable> </td>
+                                                <td class="tg-etzd" id="day18" contenteditable> </td>
+                                                <td class="tg-etzd" id="day19" contenteditable> </td>
+                                                <td class="tg-etzd" id="day20" contenteditable> </td>
                                             </tr>
                                             <tr>
                                                 <td class="tg-i6ci" rowspan="2">Week 4</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title16" id="title16"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title17" id="title17"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title18" id="title18"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title19" id="title19"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title20" id="title20"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title16"
+                                                        id="title16"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title17"
+                                                        id="title17"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title18"
+                                                        id="title18"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title19"
+                                                        id="title19"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title20"
+                                                        id="title20"></textarea></td>
                                             </tr>
                                             <tr>
-                                                <td class="tg-nrix"> <textarea name="point16" id="point16"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point17" id="point17"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point18" id="point18"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point19" id="point19"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point20" id="point20"></textarea></td>
+                                                <td class="tg-nrix"> <textarea name="point16" id="point16"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point17" id="point17"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point18" id="point18"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point19" id="point19"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point20" id="point20"></textarea>
+                                                </td>
                                             </tr>
-                                            <tr>
+                                            <tr id="dis1">
                                                 <td class="tg-etzd">Date</td>
-                                                <td class="tg-etzd" id="day21"contenteditable> </td>
-                                                <td class="tg-etzd" id="day22"contenteditable> </td>
-                                                <td class="tg-etzd" id="day23"contenteditable> </td>
-                                                <td class="tg-etzd" id="day24"contenteditable> </td>
-                                                <td class="tg-etzd" id="day25"contenteditable> </td>
+                                                <td class="tg-etzd" id="day21" contenteditable> </td>
+                                                <td class="tg-etzd" id="day22" contenteditable> </td>
+                                                <td class="tg-etzd" id="day23" contenteditable> </td>
+                                                <td class="tg-etzd" id="day24" contenteditable> </td>
+                                                <td class="tg-etzd" id="day25" contenteditable> </td>
                                             </tr>
-                                            <tr>
+                                            <tr id="dis2">
                                                 <td class="tg-i6ci" rowspan="2">Week 5</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title21" id="title21"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title22" id="title22"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title23" id="title23"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title24" id="title24"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title25" id="title25"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title21"
+                                                        id="title21"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title22"
+                                                        id="title22"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title23"
+                                                        id="title23"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title24"
+                                                        id="title24"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title25"
+                                                        id="title25"></textarea></td>
                                             </tr>
-                                            <tr>
-                                                <td class="tg-nrix"> <textarea name="point21" id="point21"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point22" id="point22"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point23" id="point23"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point24" id="point24"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point25" id="point25"></textarea></td>
+                                            <tr id="dis3">
+                                                <td class="tg-nrix"> <textarea name="point21" id="point21"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point22" id="point22"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point23" id="point23"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point24" id="point24"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point25" id="point25"></textarea>
+                                                </td>
                                             </tr>
-                                            <tr>
+                                            <tr id="dis4">
                                                 <td class="tg-etzd">Date</td>
-                                                <td class="tg-etzd" id="day26"contenteditable> </td>
-                                                <td class="tg-etzd" id="day27"contenteditable> </td>
-                                                <td class="tg-etzd" id="day28"contenteditable> </td>
-                                                <td class="tg-etzd" id="day29"contenteditable> </td>
-                                                <td class="tg-etzd" id="day30"contenteditable> </td>
+                                                <td class="tg-etzd" id="day26" contenteditable> </td>
+                                                <td class="tg-etzd" id="day27" contenteditable> </td>
+                                                <td class="tg-etzd" id="day28" contenteditable> </td>
+                                                <td class="tg-etzd" id="day29" contenteditable> </td>
+                                                <td class="tg-etzd" id="day30" contenteditable> </td>
                                             </tr>
-                                            <tr>
+                                            <tr id="dis5">
                                                 <td class="tg-i6ci" rowspan="2">Week 6</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title26" id="title26"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title27" id="title27"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title28" id="title28"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title29" id="title29"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle"name="title30" id="title30"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title26"
+                                                        id="title26"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title27"
+                                                        id="title27"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title28"
+                                                        id="title28"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title29"
+                                                        id="title29"></textarea></td>
+                                                <td class="tg-nrix"> <textarea class="redTitle" name="title30"
+                                                        id="title30"></textarea></td>
                                             </tr>
-                                            <tr>
-                                                <td class="tg-nrix"> <textarea name="point26" id="point26"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point27" id="point27"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point28" id="point28"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point29" id="point29"></textarea></td>
-                                                <td class="tg-nrix"> <textarea name="point30" id="point30"></textarea></td>
+                                            <tr id="dis6">
+                                                <td class="tg-nrix"> <textarea name="point26" id="point26"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point27" id="point27"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point28" id="point28"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point29" id="point29"></textarea>
+                                                </td>
+                                                <td class="tg-nrix"> <textarea name="point30" id="point30"></textarea>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                            
-                            
+
+
                             </div>
                         </div>
                     </div>

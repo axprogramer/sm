@@ -111,6 +111,17 @@ function selectAllData() {
                     var point28 = outlineData.val().point28;
                     var point29 = outlineData.val().point29;
                     var point30 = outlineData.val().point30;
+
+                    var time1 = outlineData.val().time1;
+                    var time2 = outlineData.val().time2;
+                    var time3 = outlineData.val().time3;
+                    var time4 = outlineData.val().time4;
+                    var time5 = outlineData.val().time5;
+                    var time6 = outlineData.val().time6;
+                    var time7 = outlineData.val().time7;
+                    var time8 = outlineData.val().time8;
+                    var time9 = outlineData.val().time9;
+                    var time10 = outlineData.val().time10;
                     addItemsToTable(
                         Vmonth,
                         VmainTitle,
@@ -204,6 +215,16 @@ function selectAllData() {
                         point28,
                         point29,
                         point30,
+                        time1,
+                        time2,
+                        time3,
+                        time4,
+                        time5,
+                        time6,
+                        time7,
+                        time8,
+                        time9,
+                        time10,
                     );
                 }
             );
@@ -305,6 +326,16 @@ function addItemsToTable(
     point28,
     point29,
     point30,
+    time1,
+    time2,
+    time3,
+    time4,
+    time5,
+    time6,
+    time7,
+    time8,
+    time9,
+    time10,
 
 ) {
     var GmainTitle = document.getElementById('mainTitle');
@@ -401,6 +432,17 @@ function addItemsToTable(
     var Gpoint29 = document.getElementById('point29');
     var Gpoint30 = document.getElementById('point30');
     var GshowMonth = document.getElementById('showMonth');
+    var Gtime1 = document.getElementById('time1');
+    var Gtime2 = document.getElementById('time2');
+    var Gtime3 = document.getElementById('time3');
+    var Gtime4 = document.getElementById('time4');
+    var Gtime5 = document.getElementById('time5');
+    var Gtime6 = document.getElementById('time6');
+    var Gtime7 = document.getElementById('time7');
+    var Gtime8 = document.getElementById('time8');
+    var Gtime9 = document.getElementById('time9');
+    var Gtime10 = document.getElementById('time10');
+
     if (Vmonth == undefined) {
         GshowMonth.innerText = '';
     } else {
@@ -894,6 +936,57 @@ function addItemsToTable(
     } else {
         Gpoint30.innerHTML = point30;
     }
+
+    if (time1 == undefined) {
+        Gtime1.innerHTML = '';
+    } else {
+        Gtime1.innerHTML = time1;
+    }
+    if (time2 == undefined) {
+        Gtime2.innerHTML = '';
+    } else {
+        Gtime2.innerHTML = time2;
+    }
+    if (time3 == undefined) {
+        Gtime3.innerHTML = '';
+    } else {
+        Gtime3.innerHTML = time3;
+    }
+    if (time4 == undefined) {
+        Gtime4.innerHTML = '';
+    } else {
+        Gtime4.innerHTML = time4;
+    }
+    if (time5 == undefined) {
+        Gtime5.innerHTML = '';
+    } else {
+        Gtime5.innerHTML = time5;
+    }
+    if (time6 == undefined) {
+        Gtime6.innerHTML = '';
+    } else {
+        Gtime6.innerHTML = time6;
+    }
+    if (time7 == undefined) {
+        Gtime7.innerHTML = '';
+    } else {
+        Gtime7.innerHTML = time7;
+    }
+    if (time8 == undefined) {
+        Gtime8.innerHTML = '';
+    } else {
+        Gtime8.innerHTML = time8;
+    }
+    if (time9 == undefined) {
+        Gtime9.innerHTML = '';
+    } else {
+        Gtime9.innerHTML = time9;
+    }
+    if (time10 == undefined) {
+        Gtime10.innerHTML = '';
+    } else {
+        Gtime10.innerHTML = time10;
+    }
 }
 
 document.getElementById('myMonthAct').addEventListener('change', function () {
@@ -1030,6 +1123,16 @@ function setData() {
     var Gpoint28 = document.getElementById('point28').value;
     var Gpoint29 = document.getElementById('point29').value;
     var Gpoint30 = document.getElementById('point30').value;
+    var Gtime1 = document.getElementById('time1').innerHTML;
+    var Gtime2 = document.getElementById('time2').innerHTML;
+    var Gtime3 = document.getElementById('time3').innerHTML;
+    var Gtime4 = document.getElementById('time4').innerHTML;
+    var Gtime5 = document.getElementById('time5').innerHTML;
+    var Gtime6 = document.getElementById('time6').innerHTML;
+    var Gtime7 = document.getElementById('time7').innerHTML;
+    var Gtime8 = document.getElementById('time8').innerHTML;
+    var Gtime9 = document.getElementById('time9').innerHTML;
+    var Gtime10 = document.getElementById('time10').innerHTML;
 
     firebase.database().ref(`courseOutline/` + `${dbgradeAct}/` + `${dbyearAct}/` + dbmonthAct).set(
         {
@@ -1126,6 +1229,16 @@ function setData() {
             point29: Gpoint29,
             point30: Gpoint30,
             mainTitle: GmainTitle,
+            time1: Gtime1,
+            time2: Gtime2,
+            time3: Gtime3,
+            time4: Gtime4,
+            time5: Gtime5,
+            time6: Gtime6,
+            time7: Gtime7,
+            time8: Gtime8,
+            time9: Gtime9,
+            time10: Gtime10,
         },
     )
 
@@ -1146,6 +1259,20 @@ document.getElementById('goPrint').addEventListener('click',function(){
         document.body.innerHTML = oldstr;
         return false;
 })
+
+document.getElementById('week1').addEventListener('click',function(){
+    document.getElementById('dis1').style.display = 'none';
+    document.getElementById('dis2').style.display = 'none';
+    document.getElementById('dis3').style.display = 'none';
+
+})
+document.getElementById('week2').addEventListener('click',function(){
+    document.getElementById('dis4').style.display = 'none';
+    document.getElementById('dis5').style.display = 'none';
+    document.getElementById('dis6').style.display = 'none';
+
+})
+
 //push data to JOSON
 
 // function setData(){
