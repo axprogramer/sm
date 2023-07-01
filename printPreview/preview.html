@@ -329,7 +329,7 @@
                     <div class="row bg-secondary rounded align-items-center justify-content-center mx-2">
                         <div style="overflow-x: auto;font-family:Times New Roman,serif" id="myNovemberSaveT">
                             <table class="myTable table table-bordered gen table-hover" id="myTableVivew">
-                                <thead style="font-size: 12px;" class="table-warning bordered">
+                                <thead style="font-size: 12px;" class="table-warning bordered ">
                                     <th>N0</th>
                                     <th>Full Name</th>
                                     <th>Sex</th>
@@ -529,14 +529,14 @@
                         <div style="overflow-x: auto;font-family:Times New Roman,serif" id="myNovemberSaveT">
                             <table class="myTable table table-bordered table-hover" id="myTableVivew1">
                                 <thead style="font-size: 12px;" class="table-warning bordered">
-                                    <th>N0</th>
-                                    <th>FULL NAME</th>
-                                    <th>SEX</th>
-                                    <th>GRADE</th>
-                                    <th>SEMESTER EXAM</th>
-                                    <th>SEMESTER AVERAGE</th>
-                                    <th>RANK</th>
-                                    <th>MENTION</th>
+                                    <th class="middle">N0</th>
+                                    <th class="middle">FULL NAME</th>
+                                    <th class="middle">SEX</th>
+                                    <th class="middle">GRADE</th>
+                                    <th class="middle">SEMESTER EXAM</th>
+                                    <th class="middle">SEMESTER AVERAGE</th>
+                                    <th class="middle">RANK</th>
+                                    <th class="middle">MENTION</th>
 
                                 </thead>
                                 <tbody id="tbodyView1" contenteditable>
@@ -606,14 +606,14 @@
                                         id="myNovemberSaveT">
                                         <table class="myTable table table-bordered">
                                             <thead>
-                                                <th>N0</th>
-                                                <th>FULL NAME</th>
-                                                <th>SEX</th>
-                                                <th>GRADE</th>
-                                                <th>SEMESTER EXAM</th>
-                                                <th>SEMESTER AVERAGE</th>
-                                                <th>RANK</th>
-                                                <th>MENTION</th>
+                                                <th class="middle">N0</th>
+                                                <th class="middle">FULL NAME</th>
+                                                <th class="middle">SEX</th>
+                                                <th class="middle">GRADE</th>
+                                                <th class="middle">SEMESTER EXAM</th>
+                                                <th class="middle">SEMESTER AVERAGE</th>
+                                                <th class="middle">RANK</th>
+                                                <th class="middle">MENTION</th>
 
                                             </thead>
                                             <tbody id="tbody4" contenteditable>
@@ -723,15 +723,15 @@
                         <div style="overflow-x: auto;font-family:Times New Roman,serif" id="myfirstSemeRSaveT2">
                             <table class="myTable table table-bordered table-hover" id="myTableVivew2">
                                 <thead style="font-size: 12px;" class="table-warning bordered">
-                                    <th>N0</th>
-                                    <th>FULL NAME</th>
-                                    <th>SEX</th>
-                                    <th>GRADE</th>
-                                    <th id="in1">SEMESTER EXAM AVERAGE</th>
-                                    <th id="in2">MONTHLY AVERAGE IN SEMESTER</th>
-                                    <th id="in3">SEMESTER AVERAGE</th>
-                                    <th>RANK</th>
-                                    <th>MENTION</th>
+                                    <th class="middle">N0</th>
+                                    <th class="middle">FULL NAME</th>
+                                    <th class="middle">SEX</th>
+                                    <th class="middle">GRADE</th>
+                                    <th class="middle" id="in1">SEMESTER EXAM AVERAGE</th>
+                                    <th class="middle" id="in2">MONTHLY AVERAGE IN SEMESTER</th>
+                                    <th class="middle" id="in3">SEMESTER AVERAGE</th>
+                                    <th class="middle">RANK</th>
+                                    <th class="middle">MENTION</th>
 
                                 </thead>
                                 <tbody id="tbodyView2" contenteditable>
@@ -803,16 +803,16 @@
                                     <div style="overflow-x: auto;font-family:Times New Roman,serif"
                                         id="myNovemberSaveT">
                                         <table class="myTable3 table table-bordered">
-                                            <thead>
-                                                <th>N0</th>
-                                                <th>FULL NAME</th>
-                                                <th>SEX</th>
-                                                <th>GRADE</th>
-                                                <th id="in4">SEMESTER EXAM AVERAGE</th>
-                                                <th id="in5">MONTHLY AVERAGE IN SEMESTER</th>
-                                                <th id="in6">SEMESTER AVERAGE</th>
-                                                <th>RANK</th>
-                                                <th>MENTION</th>
+                                            <thead class="middle">
+                                                <th class="middle">N0</th>
+                                                <th class="middle">FULL NAME</th>
+                                                <th class="middle">SEX</th>
+                                                <th class="middle">GRADE</th>
+                                                <th class="middle" id="in4">SEMESTER EXAM AVERAGE</th>
+                                                <th class="middle" id="in5">MONTHLY AVERAGE IN SEMESTER</th>
+                                                <th class="middle" id="in6">SEMESTER AVERAGE</th>
+                                                <th class="middle">RANK</th>
+                                                <th class="middle">MENTION</th>
 
                                             </thead>
                                             <tbody id="tbody5" contenteditable>
@@ -961,6 +961,33 @@
     <script src="./g5aprint/connectionpreview.js"></script>
     <script src="../js/user.js"></script>
     <script src="../js/connectionPrint.js"></script>
+    <script>
+        document.getElementById('enrolGrade').addEventListener('change', function () {
+            var preGrade = document.getElementById('enrolGrade').value;
+            localStorage.setItem('preGrade', preGrade);
+            window.location.reload();
+
+        })
+        document.getElementById('academicYear').addEventListener('change', function () {
+            var preYear = document.getElementById('academicYear').value;
+            localStorage.setItem('preYear', preYear);
+            window.location.reload();
+
+        })
+        document.getElementById('myMonth').addEventListener('change', function () {
+            var preMonth = document.getElementById('myMonth').value;
+            localStorage.setItem('preMonth', preMonth);
+            window.location.reload();
+
+        })
+        var db = localStorage.getItem("preGrade"); //Grade
+        var db2 = localStorage.getItem("preMonth"); //Month
+        var db3 = localStorage.getItem("preYear");  //Year
+        document.getElementById('enrolGrade').value = db;
+        document.getElementById('academicYear').value = db3;
+        document.getElementById('myMonth').value = db2;
+        document.getElementById('inGrade').innerText = db;
+    </script>
     <!-- <script type="module" src="./js/firebaseInput.js"></script> -->
 </body>
 

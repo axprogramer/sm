@@ -7,9 +7,9 @@ const firebaseConfig = {
   messagingSenderId: "1097574891233",
   appId: "1:1097574891233:web:d69ed85c4f4b83daad41a0"
 };
-var db = localStorage.getItem("myData10"); //Grade
-var db2 = localStorage.getItem("myData11"); //Month
-var db3 = localStorage.getItem("myData12");  //Year
+var db = localStorage.getItem("preGrade"); //Grade
+var db2 = localStorage.getItem("preMonth"); //Month
+var db3 = localStorage.getItem("preYear");  //Year
 
 firebase.initializeApp(firebaseConfig);
 // var db = document.getElementById("dataBase").innerText;

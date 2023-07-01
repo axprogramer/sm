@@ -1,122 +1,122 @@
-// Input 1 Grade
-function passFromValue() {
-    var eid = document.getElementById("enrolGrade");
-    var put = document.getElementById("mydataBase2");
-    var show = eid.options[eid.selectedIndex].value;
-    put.innerText = show;
-    return show;
-}
-// Input 2 Month
-function passFromValue2() {
-    var eid2 = document.getElementById("myMonth");
-    var put2 = document.getElementById("mydataBase3");
-    var show2 = eid2.options[eid2.selectedIndex].value;
-    put2.innerText = show;
-    return show2;
-}
-//Input 3 Year
-function passFromValue3() {
-    var eid2 = document.getElementById("academicYear");
-    var put2 = document.getElementById("mydataBase4");
-    var show3 = eid2.options[eid2.selectedIndex].value;
-    put2.innerText = show;
-    return show3;
-}
-// Get Value 1 Grade
-function passToValue() {
-    var y = passFromValue();
-    var db = document.getElementById("dataBase2").innerText;
-    var last = db = y;
-    return last;
-}
-//Get Value 2 Month
-function passToValue2() {
-    var y = passFromValue2();
-    var db2 = document.getElementById("dataBase3").innerText;
-    var last2 = db2 = y;
-    return last2;
-}
-//Get Value 3 Year
-function passToValue3() {
-    var y = passFromValue3();
-    var db2 = document.getElementById("dataBase4").innerText;
-    var last3 = db2 = y;
-    return last3;
-}
-passToValue(); //Grade
-passToValue2(); //Month
-passToValue3(); //Year
+// // Input 1 Grade
+// function passFromValue() {
+//     var eid = document.getElementById("enrolGrade");
+//     var put = document.getElementById("mydataBase2");
+//     var show = eid.options[eid.selectedIndex].value;
+//     put.innerText = show;
+//     return show;
+// }
+// // Input 2 Month
+// function passFromValue2() {
+//     var eid2 = document.getElementById("myMonth");
+//     var put2 = document.getElementById("mydataBase3");
+//     var show2 = eid2.options[eid2.selectedIndex].value;
+//     put2.innerText = show;
+//     return show2;
+// }
+// //Input 3 Year
+// function passFromValue3() {
+//     var eid2 = document.getElementById("academicYear");
+//     var put2 = document.getElementById("mydataBase4");
+//     var show3 = eid2.options[eid2.selectedIndex].value;
+//     put2.innerText = show;
+//     return show3;
+// }
+// // Get Value 1 Grade
+// function passToValue() {
+//     var y = passFromValue();
+//     var db = document.getElementById("dataBase2").innerText;
+//     var last = db = y;
+//     return last;
+// }
+// //Get Value 2 Month
+// function passToValue2() {
+//     var y = passFromValue2();
+//     var db2 = document.getElementById("dataBase3").innerText;
+//     var last2 = db2 = y;
+//     return last2;
+// }
+// //Get Value 3 Year
+// function passToValue3() {
+//     var y = passFromValue3();
+//     var db2 = document.getElementById("dataBase4").innerText;
+//     var last3 = db2 = y;
+//     return last3;
+// }
+// passToValue(); //Grade
+// passToValue2(); //Month
+// passToValue3(); //Year
 
-//Show value to HTML page
-var myDb = document.getElementById("enrolGrade");
-var myDb2 = document.getElementById("myMonth");
-var myDb3 = document.getElementById("academicYear");
-var eid = document.getElementById("enrolGrade");
-var eid2 = document.getElementById("myMonth");
-var eid3 = document.getElementById("academicYear");
-var put = document.getElementById("mydataBase2");
-var put2 = document.getElementById("mydataBase3");
-var put3 = document.getElementById("mydataBase4");
-var show = eid.options[eid.selectedIndex].value;
-var show2 = eid2.options[eid2.selectedIndex].value;
-var show3 = eid3.options[eid3.selectedIndex].value;
-put.innerText = show;
-put2.innerText = show2;
-put3.innerText = show3;
-// Get data form HTML page and store to localStorage
-myDb.onchange = function () {
-    localStorage.setItem("myData10", show);
-    var eid = document.getElementById("enrolGrade");
-    var put = document.getElementById("mydataBase2");
-    var show = eid.options[eid.selectedIndex].value;
-    put.innerText = show;
+// //Show value to HTML page
+// var myDb = document.getElementById("enrolGrade");
+// var myDb2 = document.getElementById("myMonth");
+// var myDb3 = document.getElementById("academicYear");
+// var eid = document.getElementById("enrolGrade");
+// var eid2 = document.getElementById("myMonth");
+// var eid3 = document.getElementById("academicYear");
+// var put = document.getElementById("mydataBase2");
+// var put2 = document.getElementById("mydataBase3");
+// var put3 = document.getElementById("mydataBase4");
+// var show = eid.options[eid.selectedIndex].value;
+// var show2 = eid2.options[eid2.selectedIndex].value;
+// var show3 = eid3.options[eid3.selectedIndex].value;
+// put.innerText = show;
+// put2.innerText = show2;
+// put3.innerText = show3;
+// // Get data form HTML page and store to localStorage
+// myDb.onchange = function () {
+//     localStorage.setItem("myData10", show);
+//     var eid = document.getElementById("enrolGrade");
+//     var put = document.getElementById("mydataBase2");
+//     var show = eid.options[eid.selectedIndex].value;
+//     put.innerText = show;
 
-}
-myDb2.onchange = function () {
-    localStorage.setItem("myData11", show);
-    var eid = document.getElementById("myMonth");
-    var put = document.getElementById("mydataBase3");
-    var show = eid.options[eid.selectedIndex].value;
-    put.innerText = show;
+// }
+// myDb2.onchange = function () {
+//     localStorage.setItem("myData11", show);
+//     var eid = document.getElementById("myMonth");
+//     var put = document.getElementById("mydataBase3");
+//     var show = eid.options[eid.selectedIndex].value;
+//     put.innerText = show;
 
-}
-myDb3.onchange = function () {
-    localStorage.setItem("myData12", show);
-    var eid = document.getElementById("academicYear");
-    var put = document.getElementById("mydataBase4");
-    var show = eid.options[eid.selectedIndex].value;
-    put.innerText = show;
+// }
+// myDb3.onchange = function () {
+//     localStorage.setItem("myData12", show);
+//     var eid = document.getElementById("academicYear");
+//     var put = document.getElementById("mydataBase4");
+//     var show = eid.options[eid.selectedIndex].value;
+//     put.innerText = show;
 
-}
-//Process the data selected
-function setData() {
-    var storedb = passToValue();
-    var storedb2 = passToValue2();
-    var storedb3 = passToValue3();
-    localStorage.setItem("myData10", storedb); //Grade
-    localStorage.setItem("myData11", storedb2); //Month
-    localStorage.setItem("myData12", storedb3); //Year
-    window.location.reload();
+// }
+// //Process the data selected
+// function setData() {
+//     var storedb = passToValue();
+//     var storedb2 = passToValue2();
+//     var storedb3 = passToValue3();
+//     localStorage.setItem("myData10", storedb); //Grade
+//     localStorage.setItem("myData11", storedb2); //Month
+//     localStorage.setItem("myData12", storedb3); //Year
+//     window.location.reload();
 
-}
-// Database Stores
-// var text1 = document.getElementById("showEnroll");
-var text4 = document.getElementById("inMonth");
-// var text3 = document.getElementById("myNewGrade");
-var text5 = document.getElementById("inGrade");
-var storedb = passToValue();
-var storedb2 = passToValue2();
-var storedb3 = passToValue3();
-var db = localStorage.getItem("myData10"); //Grade
-var db2 = localStorage.getItem("myData11"); //Month
-var db3 = localStorage.getItem("myData12"); //Year
+// }
+// // Database Stores
+// // var text1 = document.getElementById("showEnroll");
+// var text4 = document.getElementById("inMonth");
+// // var text3 = document.getElementById("myNewGrade");
+// var text5 = document.getElementById("inGrade");
+// var storedb = passToValue();
+// var storedb2 = passToValue2();
+// var storedb3 = passToValue3();
+var db = localStorage.getItem("preGrade"); //Grade
+var db2 = localStorage.getItem("preMonth"); //Month
+var db3 = localStorage.getItem("preYear");  //Year
 
 function showGrade() {
     var text4 = document.getElementById("inGrade");
     var text5 = document.getElementById("gradeName2");
     var text6 = document.getElementById("gradeName4");
     var text7 = document.getElementById("gradeName8");
-    var getdb = localStorage.getItem("myData10");
+    var getdb = localStorage.getItem("preGrade");
     var gg1 = "K2";
     var gg2 = "K3";
     var gg3 = "1A";
@@ -383,10 +383,10 @@ function showMonth() {
     }
 }
 showMonth();
-var db = localStorage.getItem("myData10"); //Grade
-var db2 = localStorage.getItem("myData11"); //Month
-var db3 = localStorage.getItem("myData12");  //Year
-// console.log(db);
+// var db = localStorage.getItem("preGrade"); //Grade
+// var db2 = localStorage.getItem("preMonth"); //Month
+// var db3 = localStorage.getItem("preYear");  //Year
+// // console.log(db);
 // console.log(db2);
 // console.log(db3);
 function dbAcadamic() {

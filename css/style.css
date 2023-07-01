@@ -305,7 +305,7 @@
 
 .myTable {
     background-color: #ffffff;
-    font-size: 1.3vw;
+    font-size: 1.6vw;
     text-align: center;
 }
 
@@ -315,15 +315,19 @@
 }
 
 .myTable4 {
-    font-size: 1.3vw;
+    font-size: 1.6vw;
     text-align: center;
 }
 
 .myTable3 {
-    font-size: 1.3vw;
     text-align: center;
+    font-size: 1.6vw;
 }
+.middle{
+    text-align: center;
+    vertical-align: middle;
 
+}
 .myTable3 td:nth-child(5) {
     width: 10em;
 }
@@ -354,7 +358,13 @@
     border-collapse: collapse;
     width: 100%;
     padding: 15px;
-    font-size: 2.1vw;
+    font-size: 2.6vw;
+}
+
+.khmerTakteng {
+    font-size: 2.6vw;
+    font-family: takteng;
+
 }
 
 #tbody3 td:nth-child(9) {
@@ -362,7 +372,7 @@
 }
 
 #tbody4 {
-    font-size: 1.3vw;
+    font-size: 1.6vw;
 }
 
 #tbody4 td:nth-child(7) {
@@ -389,6 +399,14 @@
 #tbody5 td:nth-child(2) {
     text-align: left;
     padding-left: 1em;
+}
+
+#tbody5 {
+    font-size: 1.6vw;
+}
+
+#tbodySave2 {
+    font-size: 1.6vw;
 }
 
 #tbody3 td:nth-child(2) {
@@ -570,7 +588,7 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     overflow-x: auto;
-    font-size: 1.5vw;
+    font-size: 1.8vw;
 }
 
 .newtable1 {
@@ -578,7 +596,7 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     overflow-x: auto;
-    font-size: 1.5vw;
+    font-size: 1.8vw;
 
 }
 
@@ -587,7 +605,7 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     overflow-x: auto;
-    font-size: 1.5vw;
+    font-size: 1.8vw;
 }
 
 .newtable4 {
@@ -599,12 +617,12 @@
     margin-top: 5px;
     margin-left: 10px;
     color: rgb(247, 27, 27);
-    font-size: 1.5vw;
+    font-size: 1.8vw;
 }
 
 .newtable td:nth-child(2) {
     text-align: center;
-    width: 35em;
+    width: 25em;
 
 }
 
@@ -673,11 +691,6 @@ label {
     color: rgb(203, 0, 0);
 }
 
-.khmerTakteng {
-    font-size: 3.3vw;
-    font-family: takteng;
-
-}
 
 #showAlert {
     align-items: center;

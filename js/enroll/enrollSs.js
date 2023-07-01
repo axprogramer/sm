@@ -7,302 +7,42 @@ const firebaseConfig = {
   messagingSenderId: "1097574891233",
   appId: "1:1097574891233:web:d69ed85c4f4b83daad41a0"
 };
-//Input 1
-function passFromValue() {
-  var eid = document.getElementById("enrolGrade");
-  var put = document.getElementById("mydataBase2");
-  var show = eid.options[eid.selectedIndex].value;
-  put.innerText = show;
-  return show;
-}
-//Input 2
-function passFromValue2() {
-  var eid2 = document.getElementById("enrolGradeTo");
-  var put2 = document.getElementById("mydataBase3");
-  var show2 = eid2.options[eid2.selectedIndex].value;
-  put2.innerText = show;
-  return show2;
-}
-//Input 3
-function passFromValue3() {
-  var eid2 = document.getElementById("academicYear");
-  var put2 = document.getElementById("mydataBase4");
-  var show3 = eid2.options[eid2.selectedIndex].value;
-  put2.innerText = show;
-  return show3;
-}
-//Input 4
-function passFromValue4() {
-  var eid2 = document.getElementById("academicYearTo");
-  var put2 = document.getElementById("mydataBase4");
-  var show4 = eid2.options[eid2.selectedIndex].value;
-  put2.innerText = show;
-  return show4;
-}
-//Get Value 1
-function passToValue() {
-  var y = passFromValue();
-  var db = document.getElementById("dataBase2").innerText;
-  var last = db = y;
-  return last;
-}
-//Get Value 2
-function passToValue2() {
-  var y = passFromValue2();
-  var db2 = document.getElementById("dataBase3").innerText;
-  var last2 = db2 = y;
-  return last2;
-}
-//Get Value 3
-function passToValue3() {
-  var y = passFromValue3();
-  var db2 = document.getElementById("dataBase4").innerText;
-  var last3 = db2 = y;
-  return last3;
-}
-//Get Value 4
-function passToValue4() {
-  var y = passFromValue4();
-  var db2 = document.getElementById("dataBase5").innerText;
-  var last4 = db2 = y;
-  return last4;
-}
-passToValue();
-passToValue2();
-passToValue3();
-passToValue4();
 
-//Show value to HTML page
-var myDb = document.getElementById("enrolGrade");
-var myDb2 = document.getElementById("enrolGradeTo");
-var myDb3 = document.getElementById("academicYear");
-var myDb4 = document.getElementById("academicYearTo");
-var eid = document.getElementById("enrolGrade");
-var eid2 = document.getElementById("enrolGradeTo");
-var eid3 = document.getElementById("academicYear");
-var eid4 = document.getElementById("academicYearTo");
-var put = document.getElementById("mydataBase2");
-var put2 = document.getElementById("mydataBase3");
-var put3 = document.getElementById("mydataBase4");
-var put4 = document.getElementById("mydataBase5");
-var show = eid.options[eid.selectedIndex].value;
-var show2 = eid2.options[eid2.selectedIndex].value;
-var show3 = eid3.options[eid3.selectedIndex].value;
-var show4 = eid4.options[eid4.selectedIndex].value;
-put.innerText = show;
-put2.innerText = show2;
-put3.innerText = show3;
-put4.innerText = show4;
-//Get data form HTML page and store to localStorage
-myDb.onchange = function () {
-  localStorage.setItem("myData", show);
-  var eid = document.getElementById("enrolGrade");
-  var put = document.getElementById("mydataBase2");
-  var show = eid.options[eid.selectedIndex].value;
-  put.innerText = show;
-
-}
-myDb2.onchange = function () {
-  localStorage.setItem("myData2", show);
-  var eid = document.getElementById("enrolGradeTo");
-  var put = document.getElementById("mydataBase3");
-  var show = eid.options[eid.selectedIndex].value;
-  put.innerText = show;
-
-}
-myDb3.onchange = function () {
-  localStorage.setItem("myData3", show);
-  var eid = document.getElementById("academicYear");
-  var put = document.getElementById("mydataBase4");
-  var show = eid.options[eid.selectedIndex].value;
-  put.innerText = show;
-
-}
-myDb4.onchange = function () {
-  localStorage.setItem("myData9", show);
-  var eid = document.getElementById("academicYearTo");
-  var put = document.getElementById("mydataBase5");
-  var show = eid.options[eid.selectedIndex].value;
-  put.innerText = show;
-
-}
-//Process the data selected
-function setData() {
-  var storedb = passToValue();
-  var storedb2 = passToValue2();
-  var storedb3 = passToValue3();
-  var storedb4 = passToValue4();
-  localStorage.setItem("myData", storedb);
-  localStorage.setItem("myData2", storedb2);
-  localStorage.setItem("myData3", storedb3);
-  localStorage.setItem("myData9", storedb4);
+//Class Upgrade localstorage
+document.getElementById('enrolGrade').addEventListener('change', function () {
+  var oldGrade = document.getElementById('enrolGrade').value;
+  localStorage.setItem('oldGrade', oldGrade);
   window.location.reload();
-
-}
-// Database Stores
-var text1 = document.getElementById("showEnroll");
-var text2 = document.getElementById("showEnrollTo");
-var text3 = document.getElementById("myNewGrade");
-var storedb = passToValue();
-var storedb2 = passToValue2();
-var storedb3 = passToValue3();
-var storedb4 = passToValue4();
-var db = localStorage.getItem("myData");
-var db2 = localStorage.getItem("myData2");
-var db3 = localStorage.getItem("myData3");
-var db4 = localStorage.getItem("myData9");
-function showGrade() {
-  var getdb = localStorage.getItem("myData2");
-  var gg1 = "K2";
-  var gg2 = "K3";
-  var gg3 = "1A";
-  var gg4 = "1B";
-  var gg5 = "2A";
-  var gg6 = "2B";
-  var gg7 = "3A";
-  var gg8 = "3B";
-  var gg9 = "4A";
-  var gg10 = "4B";
-  var gg11 = "5A";
-  var gg12 = "5B";
-  var gg13 = "6A";
-  var gg14 = "6B";
-  var gg15 = "7A";
-  var gg16 = "7B";
-  var gg17 = "8A";
-  var gg18 = "8B";
-  var gg19 = "9A";
-  var gg20 = "9B";
-  var gg21 = "10A";
-  var gg22 = "10B";
-  var gg23 = "11A";
-  var gg24 = "11B";
-  var gg25 = "12A";
-  var gg26 = "12B";
-
-  if (getdb == gg1) {
-    text3.value = "K2";
-  } else if (getdb == gg2) {
-    text3.value = "K3";
-  } else if (getdb == gg3) {
-    text3.value = "1A";
-  } else if (getdb == gg4) {
-    text3.value = "1B";
-  } else if (getdb == gg5) {
-    text3.value = "2A";
-  } else if (getdb == gg6) {
-    text3.value = "2B";
-  } else if (getdb == gg7) {
-    text3.value = "3A";
-  } else if (getdb == gg8) {
-    text3.value = "3B";
-  } else if (getdb == gg9) {
-    text3.value = "4A";
-  } else if (getdb == gg10) {
-    text3.value = "4B";
-  } else if (getdb == gg11) {
-    text3.value = "5A";
-  } else if (getdb == gg12) {
-    text3.value = "5B";
-  } else if (getdb == gg13) {
-    text3.value = "6A";
-  } else if (getdb == gg14) {
-    text3.value = "6B";
-  } else if (getdb == gg15) {
-    text3.value = "7A";
-  } else if (getdb == gg16) {
-    text3.value = "7B";
-  } else if (getdb == gg17) {
-    text3.value = "8A";
-  } else if (getdb == gg18) {
-    text3.value = "8B";
-  } else if (getdb == gg19) {
-    text3.value = "9A";
-  } else if (getdb == gg20) {
-    text3.value = "9B";
-  } else if (getdb == gg21) {
-    text3.value = "10A";
-  } else if (getdb == gg22) {
-    text3.value = "10B";
-  } else if (getdb == gg23) {
-    text3.value = "11A";
-  } else if (getdb == gg24) {
-    text3.value = "11B";
-  } else if (getdb == gg25) {
-    text3.value = "12A";
-  } else if (getdb == gg26) {
-    text3.value = "12B";
-  }
-}
-showGrade();
-//Acadamic Year to input data
-// function showYear(){
-//   var text4 = document.getElementById("myNewYear");
-//   var kk1 = "2023";
-//   var kk2 = "2024";
-//   var kk3 = "2025";
-//   var kk4 = "2026";
-//   var kk5 = "2027";
-//   var kk6 = "2028";
-//   var kk7 = "2029";
-//   var kk8 = "2030";
-//   const today = new Date();
-//   const [month, day, year] = [
-//     today.getMonth(),
-//     today.getDate(),
-//     today.getFullYear(),
-//   ];
-//   if(year == kk1){
-//     text4.value = "2023-2024"
-//   } else if (year == kk2) {
-//     text4.value = "2024-2025"
-//   } else if (year == kk3) {
-//     text4.value = "2025-2026"
-//   } else if (year == kk4) {
-//     text4.value = "2026-2027"
-//   } else if (year == kk5) {
-//     text4.value = "2027-2028"
-//   } else if (year == kk6) {
-//     text4.value = "2028-2029"
-//   } else if (year == kk7) {
-//     text4.value = "2029-2030"
-//   } else if (year == kk8) {
-//     text4.value = "2030-2031"
-//   }
-//   return year;
-// }
-// showYear();
-//Database acadamic year
-function dbAcadamic() {
-  var yyy = document.getElementById("myNewYear");
-  var kk1 = "2023-2024";
-  var kk2 = "2024-2025";
-  var kk3 = "2025-2026";
-  var kk4 = "2026-2027";
-  var kk5 = "2027-2028";
-  var kk6 = "2028-2029";
-  var kk7 = "2029-2030";
-  var kk8 = "2030-2031";
-  if (db4 == kk1) {
-    yyy.value = "2023-2024"
-  } else if (db4 == kk2) {
-    yyy.value = "2024-2025"
-  } else if (db4 == kk3) {
-    yyy.value = "2025-2026"
-  } else if (db4 == kk4) {
-    yyy.value = "2026-2027"
-  } else if (db4 == kk5) {
-    yyy.value = "2027-2028"
-  } else if (db4 == kk6) {
-    yyy.value = "2028-2029"
-  } else if (db4 == kk7) {
-    yyy.value = "2029-2030"
-  } else if (db4 == kk8) {
-    yyy.value = "2030-2031"
-  }
-
-}
-dbAcadamic();
+  
+})
+document.getElementById('enrolGradeTo').addEventListener('change', function () {
+  var newGrade = document.getElementById('enrolGradeTo').value;
+  localStorage.setItem('newGrade', newGrade);
+  window.location.reload();
+  
+})
+document.getElementById('academicYear').addEventListener('change', function () {
+  var myOldYear = document.getElementById('academicYear').value;
+  localStorage.setItem('myOldYear', myOldYear);
+  window.location.reload();
+  
+})
+document.getElementById('academicYearTo').addEventListener('change', function () {
+  var myNewYear = document.getElementById('academicYearTo').value;
+  localStorage.setItem('myNewYear', myNewYear);
+  window.location.reload();
+  
+})
+var db = localStorage.getItem("oldGrade"); //old grade
+var db2 = localStorage.getItem("newGrade"); //new Grade
+var db3 = localStorage.getItem("myOldYear"); //old year
+var db4 = localStorage.getItem("myNewYear"); //new Year
+document.getElementById('enrolGrade').value = db;
+document.getElementById('enrolGradeTo').value = db2; //new
+document.getElementById('myNewGrade').value = db2; //new
+document.getElementById('academicYear').value = db3;
+document.getElementById('academicYearTo').value = db4; //new
+document.getElementById('myNewYear').value = db4; //new
 //Month, Year, Times, and date for Activity
 document.getElementById('myMonthAct').addEventListener('change',function(){
   var monthact = document.getElementById('myMonthAct').value;

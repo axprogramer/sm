@@ -999,7 +999,6 @@ document.getElementById('myGradeAct').addEventListener('change', function () {
     var gradeact = document.getElementById('myGradeAct').value;
     localStorage.setItem('outlinegradeAct', gradeact);
     window.location.reload();
-
 })
 document.getElementById('myYearAct').addEventListener('change', function () {
     var yeareact = document.getElementById('myYearAct').value;
@@ -1245,6 +1244,8 @@ function setData() {
 }
 
 document.getElementById("showAlert").style.display = "none";
+document.getElementById("alertMagWait").style.display = "none";
+
 $("textarea").each(function () {
     this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
 }).on("input", function () {
