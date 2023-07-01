@@ -1251,22 +1251,23 @@ $("textarea").each(function () {
     this.style.height = 0;
     this.style.height = (this.scrollHeight) + "px";
 });
-document.getElementById('goPrint').addEventListener('click',function(){
-    var newstr = document.getElementById("myPrintA4").innerHTML;
-        var oldstr = document.body.innerHTML;
-        document.body.innerHTML = newstr;
-        window.print();
-        document.body.innerHTML = oldstr;
-        return false;
+document.getElementById('goPrint').addEventListener('click', function () {
+    var printContents = document.getElementById('myPrintA4').innerHTML;
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = "<html><head><title></title></head><body>" + printContents + "</body>";
+    window.print();
+    document.body.innerHTML = originalContents;
+    window.location.reload();
+    return true;
 })
 
-document.getElementById('week1').addEventListener('click',function(){
+document.getElementById('week1').addEventListener('click', function () {
     document.getElementById('dis1').style.display = 'none';
     document.getElementById('dis2').style.display = 'none';
     document.getElementById('dis3').style.display = 'none';
 
 })
-document.getElementById('week2').addEventListener('click',function(){
+document.getElementById('week2').addEventListener('click', function () {
     document.getElementById('dis4').style.display = 'none';
     document.getElementById('dis5').style.display = 'none';
     document.getElementById('dis6').style.display = 'none';

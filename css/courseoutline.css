@@ -1,6 +1,7 @@
 .tg {
     border-collapse: collapse;
     border-spacing: 0;
+    border: black;
     margin: 0px auto;
 }
 
@@ -55,8 +56,8 @@
 .tg .tg-nrix {
     text-align: center;
     vertical-align: middle;
-    
-    
+
+
 }
 
 @media screen and (max-width: 767px) {
@@ -120,21 +121,22 @@ textarea {
         margin: auto 0px;
     }
 }
-.redTitle{
+
+.redTitle {
     color: red;
 }
-textarea{
+
+textarea {
     font-family: 'Times New Roman', Times, serif;
 }
-#myScedual{
+
+#myScedual {
     font-family: 'Times New Roman', Times, serif;
 }
+
 .myPrintA4 {
-    background: white;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 0.5cm;
-    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+    background-color: white;
+    padding: 20px;
 }
 
 /* .myPrintA4[size="A4"] {
@@ -156,6 +158,18 @@ textarea{
         box-shadow: 0;
     }
 } */
-.blackText{
+.blackText {
     color: black;
+}
+
+.border {
+    border: #000000;
+    border: 1px solid black;
+}
+
+.timeStyle {
+    background-color: orange !important;
+    font-weight: bold;
+    text-align: center;
+    border: 1px;
 }

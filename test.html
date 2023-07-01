@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <title>click row</title>
+    <style>
+        table, tr, td{
+            background-color: brown;
+        }
+    </style>
 </head>
 
 <body>
@@ -283,11 +288,21 @@
                 return { name, age, roll };
             };
 
+    function letPrint(){
+        var printContents = document.getElementById('myPrint').innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = "<html><head><title></title></head><body>" + printContents + "</body>";
+        window.print();
+        document.body.innerHTML = originalContents;
+        window.location.reload();
+        return true;
+        
+       } 
     </script>
 
 
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="myPrint">
         <div class="panel-heading"><b> Demo </b> </div>
 
         <div class="panel-body">
@@ -310,6 +325,7 @@
 
         </div>
         <button class="stdBtn">Go</button>
+        <button id="getPrint" onclick="letPrint()">Print</button>
     </div>
 </body>
 
