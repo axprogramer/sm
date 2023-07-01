@@ -314,6 +314,7 @@ function myNov() {
   document.body.innerHTML = newstr;
   window.print();
   document.body.innerHTML = oldstr;
+  window.location.reload();
   return false;
 }
 function addClassNov() {
