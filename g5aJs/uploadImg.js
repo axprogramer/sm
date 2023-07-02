@@ -21,6 +21,7 @@ var extlab = document.getElementById('extlab');
 var proglab = document.getElementById('showPercent');
 var UpBtn = document.getElementById('uploadBtn');
 var showURL = document.getElementById('showURL');
+var showCheck = document.getElementById('showCheck');
 
 var input = document.createElement('input');
 input.type = 'file';
@@ -58,12 +59,13 @@ async function UploadProcess() {
         contenType: ImgToUpload.type
     }
     const storage = getStorage();
-    const stroageRef = sRef(storage, 'Images/' + ImgName);
+    const stroageRef = sRef(storage, 'StdImages/' + `${dbYear}/` + `${dbGrade}/` + ImgName);
     const UploadTask = uploadBytesResumable(stroageRef, ImgToUpload, metaData);
 
     UploadTask.on('state-changed', (snapshot) => {
         var progess = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        proglab.innerHTML = "Upload" + progess + "%";
+        progess = parseFloat(progess).toFixed(0);
+        proglab.innerHTML = "Upload: " + progess + " %";
     },
     (error) => {
         alert("error: image not uploaded!");
@@ -72,8 +74,14 @@ async function UploadProcess() {
         getDownloadURL(UploadTask.snapshot.ref).then((getDownloadURL) => {
             console.log(getDownloadURL);
             showURL.value = getDownloadURL;
+            proglab.innerHTML = `Upload completed!<img style="width: 75px;" src="./img/completedPer.gif">`;
+            setTimeout(function(){
+                proglab.innerHTML = '';
+            },5000)
         });
     }
     );
 }
 UpBtn.onclick = UploadProcess;
+var dbGrade = localStorage.getItem("newGrade");
+var dbYear = localStorage.getItem("newYear");
