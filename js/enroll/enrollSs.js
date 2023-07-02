@@ -579,7 +579,6 @@ function AddStd(e) {
       sex: Msex.value,
       grade: newgrade.value,
       myKh: Mkhname.value,
-      year: newYear.value,
     },
   )
   selectAllData();
@@ -596,7 +595,6 @@ function UpStdgade(e) {
       sex: Msex.value,
       grade: newgrade.value,
       myKh: Mkhname.value,
-      year: newYear.value,
     },
   )
 

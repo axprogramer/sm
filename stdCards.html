@@ -23,6 +23,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.3.min.js"></script>
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +45,7 @@
 
     <!-- Template Stylesheet -->
     <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/courseoutline.css" rel="stylesheet">
 </head>
 
 <body>
@@ -62,11 +64,13 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="bi bi-archive-fill me-2"></i></i>SMSys</h3>
+                    <h3 class="text-primary"><i class="bi bi-archive-fill me-2"></i>SMSys</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="" id="myImg2" alt="" style="width: 40px; height: 40px;">
+                        <img class="rounded-circle"
+                            src="https://jobboom.asia/media/imagemodule/8c07e28fab10abc458e373f3d20c75f9.png"
+                            id="myImg2" alt="" style="width: 40px; height: 40px;">
                         <div
                             class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
                         </div>
@@ -96,13 +100,13 @@
                         </a>
                     </div>
                     <div class="dropdown">
-                        <a href="./classEnroll.html" class="nav-link  " type="button">
+                        <a href="./classEnroll.html" class="nav-link" type="button">
                             <i class="bi bi-arrow-down-up me-2"></i>Upgrade Class
                             <span id="gradeName"></span>
                         </a>
                     </div>
                     <div class="dropdown">
-                        <a href="./recordActivities.html" class="nav-link active" type="button">
+                        <a href="./recordActivities.html" class="nav-link " type="button">
                             <i class="bi bi-person-lines-fill me-2"></i>Actitvities
                             <span id="gradeName"></span>
                         </a>
@@ -123,7 +127,6 @@
                             <i class="bi bi-stack me-2"></i>Course Outline
                         </a>
                     </div>
-
                     <div class="dropdown">
                         <a href="./importData.html" class="nav-link" type="button">
                             <i class="bi bi-box-arrow-in-down me-2"></i>Import Data
@@ -183,31 +186,15 @@
                 <div class="row bg-secondary rounded align-items-center justify-content-center ">
                     <div class="bg-secondary rounded h-100 p-4" style="overflow-x: auto;">
                         <div class="bg-secondary rounded ">
-                            <h6 class="text-center">Record for Actitvities</h6>
+                            <h6 class="text-center">Record for Course Outline</h6>
 
                             <table class="table-borderless table">
                                 <tr>
                                     <td>
-                                        <div class="form-floating">
-                                            <select class="form-select" id="myMonthAct"
-                                                aria-label="Floating label select example">
-                                                <option selected>Month</option>
-                                                <option value="October">October</option>
-                                                <option value="November">November</option>
-                                                <option value="December">December</option>
-                                                <option value="January">January</option>
-                                                <option value="February">February</option>
-                                                <option value="March">March</option>
-                                                <option value="April-May">April-May</option>
-                                                <option value="June">June</option>
-                                                <option value="July">July</option>
-                                            </select>
-                                        </div>
-                                    </td>
-                                    <td>
                                         <div class="form-floating mb-3">
                                             <select class="form-select" id="myGradeAct"
                                                 aria-label="Floating label select example">
+                                                <option selected>- Grade -</option>
                                                 <option selected>- Grade -</option>
                                                 <option value="1A">1A</option>
                                                 <option value="1B">1B</option>
@@ -241,12 +228,6 @@
                                             </select>
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="myTimesAct" placeholder="Times">
-                                            <label for="myTimesAct">Times</label>
-                                        </div>
-                                    </td>
                                 </tr>
 
 
@@ -257,17 +238,16 @@
                                         <!-- <button type="button" class="btn btn-info rounded-pill" id="goAct">
                                             <i class="bi bi-box-arrow-in-up me-2"></i>Go
                                         </button> -->
-                                        <button type="button" class="btn btn-success rounded-pill"
+                                        <!-- <button type="button" class="btn btn-success rounded-pill"
                                             data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            <i class="bi bi-box-arrow-in-up me-2"></i>Upgrade
-                                        </button>
-                                        <!-- <button type="button" class="btn btn-warning rounded-pill" id="sumUpScore">
-                                            <i class="bi bi-calendar-plus me-2"></i>Sum
+                                            <i class="bi bi-box-arrow-in-up me-2"></i>Save
                                         </button> -->
+                                        <button type="button" class="btn btn-warning rounded-pill" id="goPrint">
+                                            <i class="bi bi-calendar-plus me-2"></i>Print
+                                        </button>
                                     </td>
                                 </tr>
                             </table>
-
                         </div>
                     </div>
                 </div>
@@ -275,43 +255,11 @@
             <div class="Div11">
             </div>
             <div class="container-fluid pt-4 px-4 ">
-                <div class="row bg-secondary rounded align-items-center justify-content-center ">
-                    <div class="bg-secondary rounded h-100 p-4 " style="overflow-x: auto;">
-                        <div class="bg-secondary rounded ">
-                            <div class="tg-wrap ">
-                                <table class="tg table table-hover whiteBack" id="myTbaleActivity"
-                                    style="color: black;">
-                                    <thead
-                                        style="background-color: rgb(66, 80, 113); color: aliceblue;font-weight: bold;">
-                                        <tr>
-                                            <th class="tg-5ihh" rowspan="3">#</th>
-                                            <th class="tg-5ihh" rowspan="3">Full Name</th>
-                                            <th class="tg-5ihh" rowspan="3">Sex</th>
-                                            <th class="tg-5ihh" colspan="5"><input type="date" name="myGetDate"
-                                                    style="text-align: center; color: rgb(0, 0, 0);font-weight: bold;"
-                                                    class="form-control" id="myDate"></th>
-                                            <th class="tg-5ihh" rowspan="3">Total</th>
-                                            <th class="tg-5ihh" rowspan="3">Check<br><input type="checkbox"
-                                                    name="chckAA" onClick="toggleGet(this)" checked></th>
-                                        </tr>
-                                        <tr>
-                                            <th class="tg-4wxp" colspan="3">Activities</th>
-                                            <th class="tg-6zdp" rowspan="2">Attitude<br><input type="checkbox"
-                                                    name="chckAA" id="myChkAttu" onClick="toggleAtt(this)"></th>
-                                            <th class="tg-6zdp" rowspan="2">Note</th>
-                                        </tr>
-                                        <tr>
-                                            <th class="tg-2efg">S<br><input type="checkbox" name="chckSS" id="myChkss"
-                                                    onClick="toggleS(this)"></th>
-                                            <th class="tg-2efg">W<br><input type="checkbox" name="chckWW" id="myChkww"
-                                                    onClick="toggleW(this)"></th>
-                                            <th class="tg-2efg">A<br><input type="checkbox" name="chckAA"
-                                                    onClick="toggleA(this)"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="myActivities" style="text-align: center;">
-                                    </tbody>
-                                </table>
+                <div class=" rounded backGG">
+                    <div class="" style="overflow-x: auto;">
+                        <div id="myPrint" class="backGG">
+                            <div id="viewCard" class="myCard">
+
                             </div>
                         </div>
                     </div>
@@ -332,7 +280,8 @@
                         </div>
 
                         <div class="modal-body text-center myWaa">
-                            <span id="alertMag" style="color: black;">⚠️ Are you sure that you want to update? ⚠️</span>
+                            <span id="alertMag" style="color: black;">⚠️ Are you sure that you want to save all?
+                                ⚠️</span>
                             <span id="alertMagWait" style="color: black;">Please wait!! ⚠️ <br> <img
                                     src="./img/wait4Colors.gif" width="150px" alt=""></span>
                         </div>
@@ -381,9 +330,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/user.js"></script>
-
     <script src="./js/caculate.js"></script>
-    <script src="./js/activities/myactivities.js"></script>
+    <script src="./js/activities/stdCards.js"></script>
 </body>
 
 </html>

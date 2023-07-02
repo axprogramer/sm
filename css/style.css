@@ -323,11 +323,13 @@
     text-align: center;
     font-size: 1.6vw;
 }
-.middle{
+
+.middle {
     text-align: center;
     vertical-align: middle;
 
 }
+
 .myTable3 td:nth-child(5) {
     width: 10em;
 }
@@ -943,4 +945,69 @@ label {
 
 .mycheckbox {
     padding: 5px;
+}
+
+.myCard {
+    height: 20%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    
+}
+
+.picStd{
+    margin-top: 10px;
+    height: 15vh;
+
+}
+.border-card {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.card-title {
+    color: #000000;
+}
+
+.black{
+    color: #000000;
+    background-color: rgb(243, 243, 203);
+    font-size: 1.3vw;
+}
+.black2{
+    color: #000000;
+    font-size: 1.6vw;
+    font-weight: bold;
+}
+
+.tgTable {
+    width: 100%;
+    font-size: 1.6vw;
+}
+.newFont{
+    text-align: left;
+    color: #000000;
+
+}
+.schoolBrand{
+    color: darkblue;
+    text-align: center;
+}
+.logSchool{
+    width: 6vh;
+    height: 6vh;
+}
+.getCenter{
+    padding: 10px;
+    text-align: center;
+}
+.letCard{
+    padding: 25px;
+    border: 1px solid black;
+    background-color: lightyellow;
+}
+.backGG{
+    background-color: #ffffff;
 }
