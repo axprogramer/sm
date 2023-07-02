@@ -75,7 +75,8 @@ function selectAllData() {
           var grade = CurrentRecord.val().grade;
           var year = CurrentRecord.val().year;
           var myKh = CurrentRecord.val().myKh;
-          addItemsToTable(name, id, sex, grade, year, myKh);
+          var url = CurrentRecord.val().urlImg;
+          addItemsToTable(name, id, sex, grade, year, myKh,url);
         }
       );
     });
@@ -85,7 +86,7 @@ var studentN0;
 
 var stdList = [];
 var stdListPop = [];
-function addItemsToTable(name, id, sex, grade, year, myKh) {
+function addItemsToTable(name, id, sex, grade, year, myKh,url) {
   var tbody = document.getElementById('showInput5a');
   var trow = document.createElement('tr');
   var td0 = document.createElement('td');
@@ -99,7 +100,7 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
 
 
 
-  stdList.push([name, id, sex, grade, year, myKh]);
+  stdList.push([name, id, sex, grade, year, myKh,url]);
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
   td2.innerHTML = name;
@@ -116,7 +117,6 @@ function addItemsToTable(name, id, sex, grade, year, myKh) {
   trow.appendChild(td4);
   trow.appendChild(td5);
   trow.appendChild(td6);
-
   td1.innerHTML = `<button type="button" class="button-6" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
 }
@@ -128,12 +128,12 @@ var Mid = document.getElementById('myID');
 var Msex = document.getElementById('mySex');
 var Mgrade = document.getElementById('myGrade');
 var Myear = document.getElementById('myNewYear');
+var url = document.getElementById('showURL');
 
 var go = document.getElementById("myGo");
 var submit = document.getElementById("mySubmit");
 var update = document.getElementById("myUpdate");
 var dele = document.getElementById("myDelete");
-
 
 function Fillbox(index) {
   if (index == null) {
@@ -149,7 +149,9 @@ function Fillbox(index) {
     Mgrade.value = stdList[index][3];
     Myear.value = stdList[index][4];
     Mkhname.value = stdList[index][5];
-
+    url.value = stdList[index][6];
+    document.getElementById('showImgUpload').src = url.value;
+    
     submit.style.display = 'none';
     update.style.display = 'inline-block';
     dele.style.display = 'inline-block';
@@ -183,7 +185,7 @@ function AddStd(e) {
       sex: Msex.value,
       grade: Mgrade.value,
       myKh: Mkhname.value,
-      year: Myear.value,
+      urlImg: url.value,
     },
   )
   document.getElementById("showAlert").style.display = "block";
@@ -212,7 +214,7 @@ function UpStd(e) {
       sex: Msex.value,
       grade: Mgrade.value,
       myKh: Mkhname.value,
-      year: Myear.value,
+      urlImg: url.value,
     },
   )
   document.getElementById("showAlert").style.display = "block";
@@ -260,4 +262,3 @@ function DelStdAll() {
   // window.location.reload();
 }
 document.getElementById("showAlert").style.display = "none";
-
