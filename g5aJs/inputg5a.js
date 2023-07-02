@@ -107,7 +107,6 @@ function addItemsToTable(name, id, sex, grade, year, myKh,url) {
   td3.innerHTML = myKh;
   td4.innerHTML = sex;
   td5.innerHTML = grade;
-  td6.innerHTML = year;
 
 
   trow.appendChild(td0);
@@ -116,7 +115,6 @@ function addItemsToTable(name, id, sex, grade, year, myKh,url) {
   trow.appendChild(td3);
   trow.appendChild(td4);
   trow.appendChild(td5);
-  trow.appendChild(td6);
   td1.innerHTML = `<button type="button" class="button-6" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
 }
