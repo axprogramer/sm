@@ -1274,6 +1274,10 @@ document.getElementById('week2').addEventListener('click', function () {
     document.getElementById('dis6').style.display = 'none';
 
 })
+document.getElementById('timeShow').addEventListener('click', function () {
+    document.getElementById('myshowTable').style.display = 'none';
+
+})
 
 //push data to JOSON
 
