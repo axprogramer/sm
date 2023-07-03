@@ -3,7 +3,15 @@
     font-family: khmerCN;
     src: url(../fonts/Fasthand-Regular.ttf);
 }
+@font-face {
+    font-family: takteng;
+    src: url(../fonts/Tacteing.ttf);
+}
 
+/* .newFont {
+    font-family: takteng;
+    text-align: center;
+} */
 :root {
     --primary: #EB1616;
     --secondary: #191C24;
