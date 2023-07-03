@@ -15,7 +15,7 @@ const getElementVal = (id) => {
 };
 function selectAllData() {
     // document.getElementById('myScedual').innerHTML = "";
-    firebase.database().ref(`courseOutline/` + `${dbgradeAct}/` + `${dbyearAct}/`).once('value',
+    firebase.database().ref(`courseOutline/` + `${dbmonthAct}/` + `${dbgradeAct}/` + `${dbyearAct}/`).once('value',
         function (AllRecords) {
             AllRecords.forEach(
                 function (outlineData) {
@@ -1133,7 +1133,7 @@ function setData() {
     var Gtime9 = document.getElementById('time9').innerHTML;
     var Gtime10 = document.getElementById('time10').innerHTML;
 
-    firebase.database().ref(`courseOutline/` + `${dbgradeAct}/` + `${dbyearAct}/` + dbmonthAct).set(
+    firebase.database().ref(`courseOutline/` + `${dbmonthAct}/` + `${dbgradeAct}/` + `${dbyearAct}/` + dbmonthAct).set(
         {
             month: dbmonthAct,
             id: dbmonthAct,
