@@ -45,7 +45,7 @@
 
     <!-- Template Stylesheet -->
     <link href="./css/style.css" rel="stylesheet">
-    <link href="./css/courseoutline.css" rel="stylesheet">
+    <link href="./css/random.css" rel="stylesheet">
 </head>
 
 <body>
@@ -133,12 +133,12 @@
                         </a>
                     </div>
                     <div class="dropdown">
-                        <a href="./stdCards.html" class="nav-link " type="button">
+                        <a href="./stdCards.html" class="nav-link" type="button">
                             <i class="bi bi-card-image me-2"></i>Student's Card
                         </a>
                     </div>
                     <div class="dropdown">
-                        <a href="./random.html" class="nav-link" type="button">
+                        <a href="./random.html" class="nav-link active" type="button">
                             <i class="bi bi-arrow-repeat me-2"></i>Generator
                         </a>
                     </div>
@@ -262,9 +262,37 @@
             <div class="container-fluid pt-4 px-4 ">
                 <div class=" rounded backGG">
                     <div class="" style="overflow-x: auto;">
-                        <div id="myPrint" class="backGG">
-                            <div id="viewCard" class="myCard">
-
+                        <div>
+                            <div class="layout-main">
+                                <main>
+                                    <article>
+                                        <div>
+                                            <aside class="RandOptions">
+                                                <h6 style="color: rgb(255, 77, 0);"id="numberOfStd"></h6>
+                                                <form action="#" id="rand_options">
+                                                    <p class="RandOptions-row">
+                                                        <textarea name="items" id="rand_options_items"
+                                                            spellcheck="false"></textarea>
+                                                    </p>
+                                                    <p class="RandOptions-row">
+                                                        <label for="rand_options_grp">Groups</label>
+                                                        <input id="rand_options_grp" type="number" name="grp" value="">
+                                                    </p>
+                                                </form>
+                                                <p>
+                                                    <button data-action="rerun" class="button">Rerun</button>
+                                                </p>
+                                            </aside>
+                        
+                                        </div>
+                                        <div class="myheadLine">
+                                            <h1 class="Rand-headline">Result of Generation</h1>
+                                        </div>
+                                        <div class="Rand-stage">
+                                            <div class="Rand-stage-loading">Loading &hellip;</div>
+                                        </div>
+                                    </article>
+                                </main>
                             </div>
                         </div>
                     </div>
@@ -336,7 +364,8 @@
     <script src="./js/main.js"></script>
     <script src="./js/user.js"></script>
     <script src="./js/caculate.js"></script>
-    <script src="./js/activities/stdCards.js"></script>
+    <script src="./js/generatorRandom.js"></script>
+    <script src="./js/activities/random.js"></script>
 </body>
 
 </html>

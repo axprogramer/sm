@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random Team Generator</title>
+    <link rel="stylesheet" href="./css/random.css">
+</head>
+
+<body>
+    <div class="layout section_wide">
+        <div class="layout-main">
+            <div class="layout-top">
+                <ins class="adsbygoogle adsbygoogle--top" style="display:inline-block"
+                    data-ad-client="ca-pub-5711305288167877" data-ad-slot="3781211666"></ins>
+            </div>
+            <main class="layout-part3 section_gutter">
+                <article>
+                    <div>
+                        <aside class="RandOptions">
+                            <h2>Edit Settings</h2>
+                            <form action="#" id="rand_options">
+                                <p class="RandOptions-row">
+                                    <textarea name="items" id="rand_options_items"
+                                        spellcheck="false">Brock &#13;&#10;Gale &#13;&#10;Gustavo &#13;&#10;Hank &#13;&#10;Hector &#13;&#10;Holly &#13;&#10;Jane &#13;&#10;Jesse &#13;&#10;Lydia &#13;&#10;Marie &#13;&#10;Mike &#13;&#10;Pete &#13;&#10;Saul &#13;&#10;Skyler &#13;&#10;Todd &#13;&#10;Walter</textarea>
+                                </p>
+                                <p class="RandOptions-row">
+                                    <label for="rand_options_grp">Groups</label>
+                                    <input id="rand_options_grp" type="number" name="grp" value="4">
+                                </p>
+                            </form>
+                            <p>
+                                <button data-action="rerun" class="button">Rerun</button>
+                            </p>
+                        </aside>
+
+                    </div>
+                    <div class="Rand-header">
+                        <h1 class="Rand-headline">Random Team Generator:</h1>
+                        <aside class="Rand-tools1">
+                            <button data-action="rerun" class="button">Rerun</button>
+                            <button data-action="options" class="button button--edit">Edit</button>
+                        </aside>
+                    </div>
+                    <div class="Rand-stage">
+                        <div class="Rand-stage-loading">Loading &hellip;</div>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+    <script src="./js/generatorRandom.js"></script>
+</body>
+</html>
