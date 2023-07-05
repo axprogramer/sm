@@ -8,15 +8,12 @@
     src: url(../fonts/Tacteing.ttf);
 }
 
-/* .newFont {
-    font-family: takteng;
-    text-align: center;
-} */
 :root {
     --primary: #EB1616;
     --secondary: #191C24;
     --light: rgb(108, 114, 147);
     --dark: #000000;
+    --white: #ffffff;
 }
 
 .back-to-top {
@@ -91,7 +88,7 @@
 .content {
     margin-left: 240px;
     min-height: 100vh;
-    background: var(--dark);
+    background: var(--white);
     transition: 0.5s;
 }
 
@@ -274,14 +271,14 @@
 
 
 /*** Testimonial ***/
-.progress .progress-bar {
+/* .progress .progress-bar {
     width: 0px;
     transition: 2s;
-}
+} */
 
 
 /*** Testimonial ***/
-.testimonial-carousel .owl-dots {
+/* .testimonial-carousel .owl-dots {
     margin-top: 24px;
     display: flex;
     align-items: flex-end;
@@ -302,7 +299,7 @@
 .testimonial-carousel .owl-dot.active {
     background: var(--dark);
     border-color: var(--primary);
-}
+} */
 
 .img1 {
     width: 15%;
@@ -732,8 +729,8 @@ label {
 
 /* Class for Enroll Students */
 .heighBtnN2 {
-    position: fixed;
-    margin-right: 2vh;
+    position: absolute;
+    /* margin-right: 0.5vh; */
     color: #ffffff;
     right: 0;
     height: 37rem;
