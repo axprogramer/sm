@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Input</title>
+</head>
+<body>
+    <div>
+        <select name="Grade" id="myGrade">
+            <option selected> - Grade - </option>
+        </select>
+        <p id="showText"></p>
+    </div>
+
+    <script>
+        var sele = document.getElementById('myGrade');
+        var op1 = document.createElement('option');
+        var op2 = document.createElement('option');
+        op1.value = '5A';
+        op1.innerHTML = '5A';
+        op2.value = '5B';
+        op2.innerHTML = '5B';
+        sele.appendChild(op1);
+        sele.appendChild(op2);
+
+        sele.addEventListener('change',function(){
+            if(op1.value == '5A'){
+                document.getElementById('showText').innerHTML = op1.value;
+                
+            }else if(op2.value == '5B'){
+                document.getElementById('showText').innerHTML = op2.value;
+
+            }
+        })
+    </script>
+</body>
+</html>
