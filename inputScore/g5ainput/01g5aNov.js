@@ -75,9 +75,7 @@ function actPuch(name,date,total){
 }
 function totalCount(){
   var count = actArr.length;
-  console.log(count);
   if (actArr == count) {
-    console.log('4');
   }
 }
 totalCount();
@@ -341,65 +339,8 @@ function DelStdAll() {
 }
 
 //Divid score tables
-//Novmber
-function adder1() {
-  var num5 = parseFloat(document.getElementById('mySnov').value);
-  var num6 = parseFloat(document.getElementById('myWnov').value);
-  var num7 = parseFloat(document.getElementById('myLnov').value);
-  var num8 = parseFloat(document.getElementById('myRnov').value);
 
-  var get2 = num5 + num6 + num7 + num8;
-  var total1 = get2 / 4;
-  total1 = parseFloat(total1).toFixed(2);
-  document.getElementById("myAnov").value = total1;
-  // divid1();
-}
-function divid1() {
-  var num5 = parseFloat(document.getElementById('mySnov').value);
-  var num6 = parseFloat(document.getElementById('myWnov').value);
-  var num7 = parseFloat(document.getElementById('myLnov').value);
-  var num8 = parseFloat(document.getElementById('myRnov').value);
-
-  var get2 = num5 + num6 + num7 + num8;
-  var total1 = get2 / 4;
-  total1 = parseFloat(total1).toFixed(2);
-  document.getElementById("myAnov").value = total1;
-
-
-  var num9 = parseFloat(document.getElementById('myScorenov').value);
-  var score1 = num9;
-  var get4 = score1 / 3;
-  get4 = parseFloat(get4).toFixed(2);
-  document.getElementById("myWnov").value = get4;
-  document.getElementById("myLnov").value = get4;
-  document.getElementById("myRnov").value = get4;
-  adder1();
-}
-function adder2() {
-  var num5 = parseFloat(document.getElementById('mySnov').value);
-  var num6 = parseFloat(document.getElementById('myWnov').value);
-  var num7 = parseFloat(document.getElementById('myLnov').value);
-  var num8 = parseFloat(document.getElementById('myRnov').value);
-
-  var get2 = num5 + num6 + num7 + num8;
-  var total1 = get2 / 4;
-  total1 = parseFloat(total1).toFixed(2);
-  document.getElementById("myAnov").value = total1;
-  // divid1();
-}
 function divid2() {
-  var num5 = parseFloat(document.getElementById('mySnov').value);
-  var num6 = parseFloat(document.getElementById('myWnov').value);
-  var num7 = parseFloat(document.getElementById('myLnov').value);
-  var num8 = parseFloat(document.getElementById('myRnov').value);
-
-  var get2 = num5 + num6 + num7 + num8;
-  var total1 = get2 / 4;
-  total1 = parseFloat(total1).toFixed(2);
-  document.getElementById("myAnov").value = total1;
-
-  // console.log(num5);
-  // console.log(get4);
   var num9 = parseFloat(document.getElementById('myScorenov').value);
   var score1 = num9;
   var get4 = score1 / 4;
@@ -408,21 +349,18 @@ function divid2() {
   document.getElementById("myLnov").value = get4;
   document.getElementById("myRnov").value = get4;
   document.getElementById("mySnov").value = get4;
-  
-  divid2();
+  document.getElementById("myAnov").value = get4;
+
 }
 function scoreFun() {
-  var put = document.getElementById("myScorenov");
-  var put2 = document.getElementById("mySnov");
   var check = document.getElementById("myCheck");
   var ll = "simple";
   var lll = "unsimple";
   if (db4 == ll) {
-    put.addEventListener('input', divid2, false);
+    document.getElementById('getDi').innerText = ' (/4)'
     check.checked = true;
   } else if (db4 == lll) {
-    put.addEventListener('input', divid1, false);
-    put2.addEventListener('input', adder1, false);
+    document.getElementById('getDi').innerText = ' (/3)'
     check.checked = false;
   }
 }
@@ -431,28 +369,49 @@ var table1 = document.getElementById("my1stsemetable");
 var table2 = document.getElementById("myTable2");
 table1.style.display = "none";
 table2.style.display = "none";
-//Alert Function
-// $(function () {
-//   $.bootstrapGrowl("This is a test.");
 
-//   setTimeout(function () {
-//     $.bootstrapGrowl("This is another test.", { type: 'success' });
-//   }, 1000);
+function newScore() {
+  var num5 = parseFloat(document.getElementById('mySnov').value);
+  var num6 = parseFloat(document.getElementById('myWnov').value);
+  var num7 = parseFloat(document.getElementById('myLnov').value);
+  var num8 = parseFloat(document.getElementById('myRnov').value);
+  var num9 = parseFloat(document.getElementById('myScorenov').value);
 
-//   setTimeout(function () {
-//     $.bootstrapGrowl("Danger, Danger!", {
-//       type: 'danger',
-//       align: 'center',
-//       width: 'auto',
-//       allow_dismiss: false
-//     });
-//   }, 2000);
+  var sum = num5 + num6 + num7 + num8;
+  var div = num9 / 3;
+  div = parseFloat(div).toFixed(2);
+  var uu = num5 + num9;
+  uu = parseFloat(uu).toFixed(2);
+  var lll = uu / 4;
+  lll = parseFloat(lll).toFixed(2);
+  document.getElementById("myWnov").value = div;
+  document.getElementById("myLnov").value = div;
+  document.getElementById("myRnov").value = div;
+  document.getElementById("myAnov").value = lll;
 
-//   setTimeout(function () {
-//     $.bootstrapGrowl("Danger, Danger!", {
-//       type: 'info',
-//       align: 'left',
-//       stackup_spacing: 30
-//     });
-//   }, 3000);
-// });
+}
+document.getElementById('myScorenov').addEventListener('input', function () {
+  var ll = "simple";
+  var lll = "unsimple";
+  var check = document.getElementById("myCheck");
+  if (db4 == ll) {
+    divid2();
+    check.checked = true;
+  } else if (db4 == lll) {
+    newScore();
+    check.checked = false;
+  }
+
+})
+document.getElementById('mySnov').addEventListener('input', function () {
+  var ll = "simple";
+  var lll = "unsimple";
+  var check = document.getElementById("myCheck");
+  if (db4 == ll) {
+    divid2();
+    check.checked = true;
+  } else if (db4 == lll) {
+    newScore();
+    check.checked = false;
+  }
+})

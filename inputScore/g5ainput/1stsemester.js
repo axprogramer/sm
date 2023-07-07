@@ -276,7 +276,6 @@ function divid2(){
   var num6 = parseFloat(document.getElementById('my1Sescore').value);
   var total = num6 / 4;
   total = parseFloat(total).toFixed(2);
-  console.log(total);
   document.getElementById('my1SeA').value = total;
 }
 var iii = document.getElementById("my1Sescore");
