@@ -72,7 +72,6 @@ async function UploadProcess() {
     },
     () => {
         getDownloadURL(UploadTask.snapshot.ref).then((getDownloadURL) => {
-            console.log(getDownloadURL);
             showURL.value = getDownloadURL;
             proglab.innerHTML = `Upload completed!<img style="width: 75px;" src="./img/completedPer.gif">`;
             setTimeout(function(){

@@ -64,7 +64,7 @@ const getElementVal = (id) => {
 function selectAllData() {
   document.getElementById('showInput5a').innerHTML = "";
   studentN0 = 0;
-  // NewBox();
+  NewBox();
   firebase.database().ref(`${db}/` + `${db3}/`).once('value',
     function (AllRecords) {
       AllRecords.forEach(
@@ -77,6 +77,11 @@ function selectAllData() {
           var myKh = CurrentRecord.val().myKh;
           var url = CurrentRecord.val().urlImg;
           addItemsToTable(name, id, sex, grade, year, myKh,url);
+          showAuto();
+          b = 1;
+          document.getElementById('showNNN').value = b;
+          cccSS();
+
         }
       );
     });
@@ -97,9 +102,6 @@ function addItemsToTable(name, id, sex, grade, year, myKh,url) {
   var td5 = document.createElement('td');
   var td6 = document.createElement('td');
 
-
-
-
   stdList.push([name, id, sex, grade, year, myKh,url]);
   td0.innerHTML = ++studentN0;
   td1.innerHTML = id;
@@ -107,7 +109,6 @@ function addItemsToTable(name, id, sex, grade, year, myKh,url) {
   td3.innerHTML = myKh;
   td4.innerHTML = sex;
   td5.innerHTML = grade;
-
 
   trow.appendChild(td0);
   trow.appendChild(td1);
@@ -133,31 +134,112 @@ var submit = document.getElementById("mySubmit");
 var update = document.getElementById("myUpdate");
 var dele = document.getElementById("myDelete");
 
-function Fillbox(index) {
-  if (index == null) {
-    submit.style.display = 'inline-block';
-    update.style.display = 'none';
-    dele.style.display = 'none';
+//Show data input auto
+function showAuto() {
+  Mname.value = stdList[0][0];
+  Mid.value = stdList[0][1];
+  Msex.value = stdList[0][2];
+  Mgrade.value = stdList[0][3];
+  Myear.value = stdList[0][4];
+  Mkhname.value = stdList[0][5];
+  url.value = stdList[0][6];
+  if (stdList[0][6] == undefined){
+    document.getElementById('showImgUpload').src = './img/4x6sample.png';
+  }else{
+    document.getElementById('showImgUpload').src = url.value = stdList[0][6];
   }
-  else {
-    --index;
-    Mname.value = stdList[index][0];
-    Mid.value = stdList[index][1];
-    Msex.value = stdList[index][2];
-    Mgrade.value = stdList[index][3];
-    Myear.value = stdList[index][4];
-    Mkhname.value = stdList[index][5];
-    url.value = stdList[index][6];
-    document.getElementById('showImgUpload').src = url.value;
-    
-    submit.style.display = 'none';
-    update.style.display = 'inline-block';
-    dele.style.display = 'inline-block';
+  update.style.display = 'inline-block';
+  submit.style.display = 'inline-block';
+  dele.style.display = 'inline-block';
 
-
-  }
 }
-NewBox();
+
+//Count students in table row
+function cccSS() {
+  var ss = document.getElementById("myTable");
+  var tbodyRowCount = ss.tBodies[0].rows.length;
+  // console.log(tbodyRowCount);
+  return tbodyRowCount;
+}
+// Next data show in input
+let b = 0;
+function nextBtn() {
+  var stdNum = cccSS();
+  if (b < stdNum) {
+    b++;
+    document.getElementById('showNNN').value = b;
+
+  }
+  var oo = b;
+  // console.log(b);
+  --oo;
+  Mname.value = stdList[oo][0];
+  Mid.value = stdList[oo][1];
+  Msex.value = stdList[oo][2];
+  Mgrade.value = stdList[oo][3];
+  Myear.value = stdList[oo][4];
+  Mkhname.value = stdList[oo][5];
+  url.value = stdList[oo][6];
+  if (stdList[oo][6] == undefined) {
+    document.getElementById('showImgUpload').src = './img/4x6sample.png';
+  } else {
+    document.getElementById('showImgUpload').src = url.value = stdList[oo][6];
+  }
+
+  // document.getElementById('showImgUpload').src = url.value = stdList[oo][6];
+
+
+}
+function goBack() {
+  if (b > 1) {
+    b--;
+    document.getElementById('showNNN').value = b;
+  }
+  var oo = b;
+  // console.log(oo);
+  --oo;
+  Mname.value = stdList[oo][0];
+  Mid.value = stdList[oo][1];
+  Msex.value = stdList[oo][2];
+  Mgrade.value = stdList[oo][3];
+  Myear.value = stdList[oo][4];
+  Mkhname.value = stdList[oo][5];
+  url.value = stdList[oo][6];
+  if (stdList[oo][6] == undefined) {
+    document.getElementById('showImgUpload').src = './img/4x6sample.png';
+  } else {
+    document.getElementById('showImgUpload').src = url.value = stdList[oo][6];
+  }
+
+  // document.getElementById('showImgUpload').src = url.value = stdList[oo][6];
+
+}
+function Fillbox(index) {
+  b = index;
+  document.getElementById('showNNN').value = index;
+  --index;
+  Mname.value = stdList[index][0];
+  Mid.value = stdList[index][1];
+  Msex.value = stdList[index][2];
+  Mgrade.value = stdList[index][3];
+  Myear.value = stdList[index][4];
+  Mkhname.value = stdList[index][5];
+  url.value = stdList[index][6];
+  if (stdList[index][6] == undefined) {
+    document.getElementById('showImgUpload').src = './img/4x6sample.png';
+  } else {
+    document.getElementById('showImgUpload').src = url.value = stdList[index][6];
+  }
+
+  // document.getElementById('showImgUpload').src = url.value = stdList[index][6];
+  submit.style.display = 'none';
+  update.style.display = 'inline-block';
+  dele.style.display = 'inline-block';
+
+
+  // }
+}
+
 function NewBox() {
   submit.style.display = 'inline-block';
   update.style.display = 'none';
@@ -222,7 +304,7 @@ function UpStd(e) {
       return setTimeout(resolve, milliseconds);
     });
     document.getElementById("showAlert").style.display = "none";
-
+    nextBtn();
 
   };
   sleep(2000);

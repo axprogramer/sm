@@ -171,6 +171,12 @@
                 </div>
             </div> -->
             <div class="container-fluid pt-4 px-4 Div1">
+                <div class="nexttt">
+                    <button onclick="nextBtn()" id="nextBtn" class="heighBtnN"><i class="bi bi-caret-right-fill"
+                            style="color: brown;"></i></button>
+                    <button onclick="goBack()" id="backBtn" class="heighBtnB"><i class="bi bi-caret-left-fill"
+                            style="color: brown;"></i></button>
+                </div>
                 <div class="alert alert-success" role="alert" id="showAlert">
                     <i class="bi bi-check-circle-fill me-2"></i> <span id="info"></span> <span id="getname"></span>
                 </div>
@@ -194,10 +200,13 @@
                                     <table class="table-borderless table text-center">
                                         <tr>
                                             <td>
-                                                <p id="showPercent" style="color: greenyellow;"><span id="showCheck" style="display: none;"><img style="width: 75px;" src="./img/completedPer.gif" alt=""></span></p>
+                                                <p id="showPercent" style="color: greenyellow;"><span id="showCheck"
+                                                        style="display: none;"><img style="width: 75px;"
+                                                            src="./img/completedPer.gif" alt=""></span></p>
                                                 <button id="seleImg"
                                                     style="background-color: transparent;border: none;color: aliceblue;">
-                                                    <img src="./img/4x6sample.png" id="showImgUpload" style="height: 15vh;">
+                                                    <img src="./img/4x6sample.png" id="showImgUpload"
+                                                        style="height: 15vh;">
                                                 </button>
                                             </td>
                                         </tr>
@@ -216,6 +225,15 @@
                                     </table>
                                     <table class="table kh">
                                         <tr>
+                                            <td>
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" disabled class="form-control color-bac kh"
+                                                        id="showNNN" placeholder="#">
+                                                    <label for="showStdNum">#</label>
+                                                </div>
+
+                                            </td>
+
                                             <td>
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control" id="myID" placeholder="ID">
