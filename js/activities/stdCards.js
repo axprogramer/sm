@@ -60,43 +60,35 @@ function addItemsToTable(
     // container.appendChild(table);
 
     let tt = `
-    <div class="card text-center border-card">
-    <div class="bg-image hover-overlay ripple letCard">
-    <table class="tgTable kh">
-        <thead>
-        <tr>
-            <th>
-            <img class="picStd" src="${url}"
-            </th>
-            <th class="kh middle newFont">
-            <div class="getCenter">
-            <img src="./img/salamomlogo.png" class="logSchool">
-            </div>
-            <p class="schoolBrand">SALAMOM SCHOOL<p>
-            Name: ${name}
-            <br>
-            Sex: ${sex}
-            <br>
-            Khmer Name: ${myKh}
-            <br>
-            Subject: English
-            <br>
-            Level: Let's Go 4
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td class="middle black2">GRADE: ${grade}</td>
-        </tr>
-        </tbody>
-        </table>
+<div class="card text-center border-card">
+                                    <div class="bg-image hover-overlay ripple letCard">
+                                        <table class="tgTable kh">
+                                            <thead>
+                                                <tr>
+                                                    <th class="kh middle newFont">
+                                                        <p class="schoolBrand">❤️ SALAMOM SCHOOL ❤️
+                                                        <p>
+                                                            NAME: ${name}
+                                                            <br>
+                                                            SEX: ${sex}
+                                                            <br>
+                                                            KHMER NAME: ${myKh}
+                                                            <br>
+                                                            SUBJJECT: English
+                                                            <br>
+                                                            GRADE: ${grade}
+                                                            <br>
+                                                            LEVEL: Let's Go 4
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
 
-    <div class="black">Academic Year ${dbyearAct}</div>
-    </div>
-    </div>
-    
-    
+                                        <div class="black">Academic Year ${dbyearAct}</div>
+                                    </div>
+                                </div>
     `
 
     container.innerHTML += tt;
