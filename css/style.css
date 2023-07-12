@@ -3,6 +3,7 @@
     font-family: khmerCN;
     src: url(../fonts/Fasthand-Regular.ttf);
 }
+
 @font-face {
     font-family: takteng;
     src: url(../fonts/Tacteing.ttf);
@@ -959,14 +960,15 @@ label {
     grid-template-columns: auto auto;
     border: 1px solid black;
     border-radius: 5px;
-    
+
 }
 
-.picStd{
+.picStd {
     margin-top: 10px;
     height: 15vh;
 
 }
+
 .border-card {
     border: 1px solid black;
     border-radius: 5px;
@@ -976,12 +978,13 @@ label {
     color: #000000;
 }
 
-.black{
+.black {
     color: #000000;
     background-color: rgb(243, 243, 203);
     font-size: 1.3vw;
 }
-.black2{
+
+.black2 {
     color: #000000;
     font-size: 1.6vw;
     font-weight: bold;
@@ -991,28 +994,63 @@ label {
     width: 100%;
     font-size: 1.6vw;
 }
-.newFont{
+
+.newFont {
     text-align: left;
     color: #000000;
 
 }
-.schoolBrand{
+
+.schoolBrand {
     color: darkblue;
     text-align: center;
 }
-.logSchool{
+
+.logSchool {
     width: 6vh;
     height: 6vh;
 }
-.getCenter{
+
+.getCenter {
     padding: 10px;
     text-align: center;
 }
-.letCard{
+
+.letCard {
     padding: 25px;
     border: 1px solid black;
     background-color: lightyellow;
 }
-.backGG{
+
+.backGG {
     background-color: #ffffff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.grid-name {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.grid-item {
+    padding: 8px;
+}
+
+.mySticName {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: left;
+    vertical-align: middle;
+    color: #000000;
+    font-size: 28px;
 }
