@@ -98,7 +98,12 @@ function Fillbox(index) {
     }
     else {
         Mid.value = stdR[index][0];
-        Mother.value = stdR[index][5];
+        if (stdR[index][5] == undefined){
+            Mother.value = 'Nothing here...';
+        }else{
+
+            Mother.value = stdR[index][5];
+        }
         // BtnClearBox.style.display = 'inline-block';
 
         // BtnSubmit.style.display = 'none';
@@ -132,18 +137,18 @@ function DelStd(e) {
 
 document.getElementById('myGradeAct').addEventListener('change', function () {
     var gradeact = document.getElementById('myGradeAct').value;
-    localStorage.setItem('cardsgradeAct', gradeact);
+    localStorage.setItem('stdRgradeAct', gradeact);
     window.location.reload();
 })
 document.getElementById('myYearAct').addEventListener('change', function () {
     var yeareact = document.getElementById('myYearAct').value;
-    localStorage.setItem('cardsyeareAct', yeareact);
+    localStorage.setItem('stdRyeareAct', yeareact);
     window.location.reload();
 
 })
 
-var dbgradeAct = localStorage.getItem('cardsgradeAct'); // grade activity
-var dbyearAct = localStorage.getItem('cardsyeareAct'); // year activity
+var dbgradeAct = localStorage.getItem('stdRgradeAct'); // grade activity
+var dbyearAct = localStorage.getItem('stdRyeareAct'); // year activity
 document.getElementById('myGradeAct').value = dbgradeAct;
 document.getElementById('myYearAct').value = dbyearAct;
 
