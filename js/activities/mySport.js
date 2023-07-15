@@ -159,7 +159,7 @@ function addItemsToTable(
     var span20 = document.createElement('span');
     //Sub total
     var span21 = document.createElement('span');
-    
+
 
     //Week 1
     var input1 = document.createElement('input');
@@ -668,7 +668,7 @@ function addItemsToTable(
     td23.appendChild(span21);
 
     tbody.appendChild(trow);
-    getTotalVal();
+    // getTotalVal();
     //week 1
     forcheckP1();
     forcheckU1();
@@ -716,10 +716,26 @@ function checkP1(source) {
             checkBoxp1.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 5;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                {
+                    prac1: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                {
+                    prac1: data.innerText,
+                },
+            )
+
         }
     }
 
@@ -733,6 +749,18 @@ function forcheckP1() {
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}p1`;
         var checkBoxp1 = document.getElementById(`${chID}`);
+
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                {
+                    prac1: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 5) {
             checkBoxp1.checked = true;
         } else {
@@ -744,11 +772,24 @@ function forcheckP1() {
                 checkBoxp1.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 5;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
 
+                    {
+                        prac1: data.innerText,
+                    },
+                )
             }
             if (checkBoxp1.checked == false) {
                 checkBoxp1.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                    {
+                        prac1: data.innerText,
+                    },
+                )
 
             }
         })
@@ -773,10 +814,26 @@ function checkU1(source) {
             checkBoxU1.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 3;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                {
+                    uniform1: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                {
+                    uniform1: data.innerText,
+                },
+            )
+
         }
 
 
@@ -792,6 +849,17 @@ function forcheckU1() {
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}u1`;
         var checkBoxU1 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                {
+                    uniform1: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 3) {
             checkBoxU1.checked = true;
 
@@ -804,11 +872,27 @@ function forcheckU1() {
                 checkBoxU1.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 3;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                    {
+                        uniform1: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxU1.checked == false) {
                 checkBoxU1.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                    {
+                        uniform1: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -833,10 +917,26 @@ function checkSH1(source) {
             checkBoxU1.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 2;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                {
+                    shoe1: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                {
+                    shoe1: data.innerText,
+                },
+            )
+
         }
 
     }
@@ -851,6 +951,17 @@ function forcheckSH1(source) {
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}sh1`;
         var checkBoxU1 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                {
+                    shoe1: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 2) {
             checkBoxU1.checked = true;
 
@@ -862,11 +973,27 @@ function forcheckSH1(source) {
                 checkBoxU1.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 2;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                    {
+                        shoe1: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxU1.checked == false) {
                 checkBoxU1.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget1).update(
+
+                    {
+                        shoe1: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -892,10 +1019,26 @@ function checkP2(source) {
             checkBoxp2.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 5;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                {
+                    prac2: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                {
+                    prac2: data.innerText,
+                },
+            )
+
         }
     }
 
@@ -909,6 +1052,17 @@ function forcheckP2() {
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}p2`;
         var checkBoxp2 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                {
+                    prac2: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 5) {
             checkBoxp2.checked = true;
         } else {
@@ -920,11 +1074,27 @@ function forcheckP2() {
                 checkBoxp2.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 5;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                    {
+                        prac2: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxp2.checked == false) {
                 checkBoxp2.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                    {
+                        prac2: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -949,10 +1119,26 @@ function checkU2(source) {
             checkBoxU2.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 3;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                {
+                    uniform2: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                {
+                    uniform2: data.innerText,
+                },
+            )
+
         }
 
 
@@ -968,6 +1154,17 @@ function forcheckU2() {
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}u2`;
         var checkBoxU2 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                {
+                    uniform2: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 3) {
             checkBoxU2.checked = true;
 
@@ -980,11 +1177,27 @@ function forcheckU2() {
                 checkBoxU2.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 3;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                    {
+                        uniform2: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxU2.checked == false) {
                 checkBoxU2.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                    {
+                        uniform2: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -1009,10 +1222,26 @@ function checkSH2(source) {
             checkBoxU2.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 2;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                {
+                    shoe2: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                {
+                    shoe2: data.innerText,
+                },
+            )
+
         }
 
     }
@@ -1027,6 +1256,17 @@ function forcheckSH2(source) {
         var noSpp2 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp2}sh2`;
         var checkBoxU2 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                {
+                    shoe2: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 2) {
             checkBoxU2.checked = true;
 
@@ -1038,11 +1278,27 @@ function forcheckSH2(source) {
                 checkBoxU2.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 2;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                    {
+                        shoe2: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxU2.checked == false) {
                 checkBoxU2.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget2).update(
+
+                    {
+                        shoe2: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -1068,10 +1324,26 @@ function checkP3(source) {
             checkBoxp3.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 5;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                {
+                    prac3: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                {
+                    prac3: data.innerText,
+                },
+            )
+
         }
     }
 
@@ -1085,6 +1357,17 @@ function forcheckP3() {
         var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp3}p3`;
         var checkBoxp3 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                {
+                    prac3: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 5) {
             checkBoxp3.checked = true;
         } else {
@@ -1096,11 +1379,27 @@ function forcheckP3() {
                 checkBoxp3.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 5;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                    {
+                        prac3: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxp3.checked == false) {
                 checkBoxp3.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                    {
+                        prac3: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -1125,10 +1424,26 @@ function checkU3(source) {
             checkBoxU3.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 3;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                {
+                    uniform3: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                {
+                    uniform3: data.innerText,
+                },
+            )
+
         }
 
 
@@ -1144,6 +1459,17 @@ function forcheckU3() {
         var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp3}u3`;
         var checkBoxU3 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                {
+                    uniform3: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 3) {
             checkBoxU3.checked = true;
 
@@ -1156,11 +1482,27 @@ function forcheckU3() {
                 checkBoxU3.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 3;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                    {
+                        uniform3: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxU3.checked == false) {
                 checkBoxU3.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                    {
+                        uniform3: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -1185,10 +1527,26 @@ function checkSH3(source) {
             checkBoxU3.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 2;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                {
+                    shoe3: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                {
+                    shoe3: data.innerText,
+                },
+            )
+
         }
 
     }
@@ -1203,6 +1561,17 @@ function forcheckSH3() {
         var noSpp3 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp3}sh3`;
         var checkBoxU3 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                {
+                    shoe3: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 2) {
             checkBoxU3.checked = true;
 
@@ -1214,11 +1583,27 @@ function forcheckSH3() {
                 checkBoxU3.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 2;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                    {
+                        shoe3: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxU3.checked == false) {
                 checkBoxU3.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget3).update(
+
+                    {
+                        shoe3: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -1244,10 +1629,26 @@ function checkP4(source) {
             checkBoxp4.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 5;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                {
+                    prac4: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                {
+                    prac4: data.innerText,
+                },
+            )
+
         }
     }
 
@@ -1261,6 +1662,17 @@ function forcheckP4() {
         var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp4}p4`;
         var checkBoxp4 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                {
+                    prac4: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 5) {
             checkBoxp4.checked = true;
         } else {
@@ -1272,11 +1684,27 @@ function forcheckP4() {
                 checkBoxp4.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 5;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                    {
+                        prac4: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxp4.checked == false) {
                 checkBoxp4.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                    {
+                        prac4: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -1301,10 +1729,26 @@ function checkU4(source) {
             checkBoxU4.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 3;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                {
+                    uniform4: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                {
+                    uniform4: data.innerText,
+                },
+            )
+
         }
 
 
@@ -1320,6 +1764,17 @@ function forcheckU4() {
         var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp4}u4`;
         var checkBoxU4 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                {
+                    uniform4: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 3) {
             checkBoxU4.checked = true;
 
@@ -1332,11 +1787,27 @@ function forcheckU4() {
                 checkBoxU4.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 3;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                    {
+                        uniform4: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxU4.checked == false) {
                 checkBoxU4.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                    {
+                        uniform4: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -1361,10 +1832,27 @@ function checkSH4(source) {
             checkBoxU4.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 2;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                {
+                    shoe4: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                {
+                    shoe4: data.innerText,
+                },
+            )
+
+
         }
 
     }
@@ -1379,6 +1867,17 @@ function forcheckSH4() {
         var noSpp4 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp4}sh4`;
         var checkBoxU4 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                {
+                    shoe4: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 2) {
             checkBoxU4.checked = true;
 
@@ -1390,11 +1889,29 @@ function forcheckSH4() {
                 checkBoxU4.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 2;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                    {
+                        shoe4: data.innerText,
+                    },
+                )
+
+
 
             }
             if (checkBoxU4.checked == false) {
                 checkBoxU4.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget4).update(
+
+                    {
+                        shoe4: data.innerText,
+                    },
+                )
+
+
 
             }
         })
@@ -1420,10 +1937,27 @@ function checkP5(source) {
             checkBoxp5.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 5;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                {
+                    prac5: data.innerText,
+                },
+            )
+
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                {
+                    prac5: data.innerText,
+                },
+            )
+
         }
     }
 
@@ -1437,6 +1971,17 @@ function forcheckP5() {
         var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp5}p5`;
         var checkBoxp5 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                {
+                    prac5: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 5) {
             checkBoxp5.checked = true;
         } else {
@@ -1448,11 +1993,27 @@ function forcheckP5() {
                 checkBoxp5.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 5;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                    {
+                        prac5: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxp5.checked == false) {
                 checkBoxp5.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                    {
+                        prac5: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -1477,10 +2038,26 @@ function checkU5(source) {
             checkBoxU5.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 3;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                {
+                    uniform5: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                {
+                    uniform5: data.innerText,
+                },
+            )
+
         }
 
 
@@ -1496,6 +2073,17 @@ function forcheckU5() {
         var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp5}u5`;
         var checkBoxU5 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                {
+                    uniform5: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 3) {
             checkBoxU5.checked = true;
 
@@ -1508,11 +2096,27 @@ function forcheckU5() {
                 checkBoxU5.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 3;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                    {
+                        uniform5: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxU5.checked == false) {
                 checkBoxU5.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                    {
+                        uniform5: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -1537,10 +2141,26 @@ function checkSH5(source) {
             checkBoxU5.checked = true;
 
             document.getElementById(`${chSPid}`).innerHTML = 2;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                {
+                    shoe5: data.innerText,
+                },
+            )
+
 
         } else {
 
             document.getElementById(`${chSPid}`).innerHTML = 0;
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                {
+                    shoe5: data.innerText,
+                },
+            )
+
         }
 
     }
@@ -1555,6 +2175,17 @@ function forcheckSH5() {
         var noSpp5 = nameSS.replace(/\s+/g, ''); //no name space
         var chSPid = `${noSpp5}sh5`;
         var checkBoxU5 = document.getElementById(`${chID}`);
+        var sp = document.getElementById(`${chSPid}`);
+        sp.addEventListener('input', function () {
+            var data = document.getElementById(`${chSPid}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                {
+                    shoe5: data.innerText,
+                },
+            )
+        })
+
         if (document.getElementById(`${chSPid}`).innerHTML == 2) {
             checkBoxU5.checked = true;
 
@@ -1566,11 +2197,27 @@ function forcheckSH5() {
                 checkBoxU5.checked = true;
 
                 document.getElementById(`${chSPid}`).innerHTML = 2;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                    {
+                        shoe5: data.innerText,
+                    },
+                )
+
 
             }
             if (checkBoxU5.checked == false) {
                 checkBoxU5.checked = false;
                 document.getElementById(`${chSPid}`).innerHTML = 0;
+                var data = document.getElementById(`${chSPid}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + idget5).update(
+
+                    {
+                        shoe5: data.innerText,
+                    },
+                )
+
 
             }
         })
@@ -1588,73 +2235,75 @@ function toggleGet(source) {
 }
 toggleGet(this);
 
-setInterval(function () {
-    $("#mySportRecord tbody tr").each(function () {
-        var currentRow = $(this);
-        var col1 = currentRow.find("td:eq(1)").html();
-        var col2 = currentRow.find("td:eq(2)").html();
-        //Week 1
-        var col3 = currentRow.find("td:eq(3)").text();
-        var col4 = currentRow.find("td:eq(4)").text();
-        var col5 = currentRow.find("td:eq(5)").text();
-        var col6 = currentRow.find("td:eq(6)").text();
-        //Week 2
-        var p2 = currentRow.find("td:eq(7)").text();
-        var u2 = currentRow.find("td:eq(8)").text();
-        var sh2 = currentRow.find("td:eq(9)").text();
-        var total2 = currentRow.find("td:eq(10)").text();
-        //Week 3
-        var p3 = currentRow.find("td:eq(11)").text();
-        var u3 = currentRow.find("td:eq(12)").text();
-        var sh3 = currentRow.find("td:eq(13)").text();
-        var total3 = currentRow.find("td:eq(14)").text();
-        //Week 4
-        var p4 = currentRow.find("td:eq(15)").text();
-        var u4 = currentRow.find("td:eq(16)").text();
-        var sh4 = currentRow.find("td:eq(17)").text();
-        var total4 = currentRow.find("td:eq(18)").text();
-        //Week 5
-        var p5 = currentRow.find("td:eq(19)").text();
-        var u5 = currentRow.find("td:eq(20)").text();
-        var sh5 = currentRow.find("td:eq(21)").text();
-        var total5 = currentRow.find("td:eq(22)").text();
-        var totalAll = currentRow.find("td:eq(23)").text();
-        var obj = {};
-        obj.id = col1;
-        obj.sex = col2;
-        //week 1
-        obj.p1 = col3;
-        obj.u1 = col4;
-        obj.sh1 = col5;
-        obj.total1 = col6;
-        //week 2
-        obj.p2 = p2;
-        obj.u2 = u2;
-        obj.sh2 = sh2;
-        obj.total2 = total2;
-        //week 3
-        obj.p3 = p3;
-        obj.u3 = u3;
-        obj.sh3 = sh3;
-        obj.total3 = total3;
-        //week 4
-        obj.p4 = p4;
-        obj.u4 = u4;
-        obj.sh4 = sh4;
-        obj.total4 = total4;
-        //week 5
-        obj.p5 = p5;
-        obj.u5 = u5;
-        obj.sh5 = sh5;
-        obj.total5 = total5;
-        obj.totalAll = totalAll;
-        if (currentRow.find(".chSport").is(":checked")) {
-            sportData.push(obj);
-        }
-    });
+// setInterval(function () {
+//     $("#mySportRecord tbody tr").each(function () {
+//         var currentRow = $(this);
+//         var col1 = currentRow.find("td:eq(1)").html();
+//         var col2 = currentRow.find("td:eq(2)").html();
+//         //Week 1
+//         var col3 = currentRow.find("td:eq(3)").text();
+//         var col4 = currentRow.find("td:eq(4)").text();
+//         var col5 = currentRow.find("td:eq(5)").text();
+//         var col6 = currentRow.find("td:eq(6)").text();
+//         //Week 2
+//         var p2 = currentRow.find("td:eq(7)").text();
+//         var u2 = currentRow.find("td:eq(8)").text();
+//         var sh2 = currentRow.find("td:eq(9)").text();
+//         var total2 = currentRow.find("td:eq(10)").text();
+//         //Week 3
+//         var p3 = currentRow.find("td:eq(11)").text();
+//         var u3 = currentRow.find("td:eq(12)").text();
+//         var sh3 = currentRow.find("td:eq(13)").text();
+//         var total3 = currentRow.find("td:eq(14)").text();
+//         //Week 4
+//         var p4 = currentRow.find("td:eq(15)").text();
+//         var u4 = currentRow.find("td:eq(16)").text();
+//         var sh4 = currentRow.find("td:eq(17)").text();
+//         var total4 = currentRow.find("td:eq(18)").text();
+//         //Week 5
+//         var p5 = currentRow.find("td:eq(19)").text();
+//         var u5 = currentRow.find("td:eq(20)").text();
+//         var sh5 = currentRow.find("td:eq(21)").text();
+//         var total5 = currentRow.find("td:eq(22)").text();
+//         var totalAll = currentRow.find("td:eq(23)").text();
+//         var obj = {};
+//         obj.id = col1;
+//         obj.sex = col2;
+//         //week 1
+//         obj.p1 = col3;
+//         obj.u1 = col4;
+//         obj.sh1 = col5;
+//         obj.total1 = col6;
+//         //week 2
+//         obj.p2 = p2;
+//         obj.u2 = u2;
+//         obj.sh2 = sh2;
+//         obj.total2 = total2;
+//         //week 3
+//         obj.p3 = p3;
+//         obj.u3 = u3;
+//         obj.sh3 = sh3;
+//         obj.total3 = total3;
+//         //week 4
+//         obj.p4 = p4;
+//         obj.u4 = u4;
+//         obj.sh4 = sh4;
+//         obj.total4 = total4;
+//         //week 5
+//         obj.p5 = p5;
+//         obj.u5 = u5;
+//         obj.sh5 = sh5;
+//         obj.total5 = total5;
+//         obj.totalAll = totalAll;
+//         if (currentRow.find(".chSport").is(":checked")) {
+//             sportData.push(obj);
+//         }
+//     });
 
 
-}, 200);
+// }, 200);
+
+document.getElementById('sumUpScore').onclick = getTotalVal;
 function getTotalVal() {
     for (i = 0; i < stdList.length; i++) {
         var name = stdList[i][1]; // for s
@@ -1685,7 +2334,7 @@ function getTotalVal() {
         var nameah5 = `${noSpc}ssh5`;
         var nametol5 = `${noSpc}to5`;
         var nametolAll = `${noSpc}totalAll`;
-        setInterval(function () {
+        // setInterval(function () {
             //Week 1
             var sp1 = 0;
             var su1 = 0;
@@ -1771,8 +2420,25 @@ function getTotalVal() {
             var totalDivid = parseFloat(allGetTotal) / `${dbgetDivide}`;
             totalDivid = parseFloat(totalDivid).toFixed(2);
             document.getElementById(`${nametolAll}`).innerText = parseFloat(totalDivid);
+            var data = document.getElementById(`${nametolAll}`);
+            // var data1 = document.getElementById(`${nametol1}`);
+            // var data2 = document.getElementById(`${nametol2}`);
+            // var data3 = document.getElementById(`${nametol3}`);
+            // var data4 = document.getElementById(`${nametol4}`);
+            // var data5 = document.getElementById(`${nametol5}`);
+            firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
 
-        }, 100);
+                {
+                    // total1: data1.innerText,
+                    // total2: data2.innerText,
+                    // total3: data3.innerText,
+                    // total4: data4.innerText,
+                    // total5: data5.innerText,
+                    subTotal: data.innerText,
+                },
+            )
+
+        // }, 100);
     }
 }
 
@@ -1802,33 +2468,88 @@ document.getElementById('myYearAct').addEventListener('change', function () {
 })
 //Get Date value
 document.getElementById('mySpDate1').addEventListener('change', function () {
-    var dateWeek1 = document.getElementById('mySpDate1').value;
-    localStorage.setItem('dateWeek1', dateWeek1);
-    window.location.reload();
+    // var dateWeek1 = document.getElementById('mySpDate1').value;
+    // localStorage.setItem('dateWeek1', dateWeek1);
+    // window.location.reload();
+    var data = this.value;
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1]; // for s
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
+
+            {
+                date1: data,
+            },
+        )
+    }
 
 })
 document.getElementById('mySpDate2').addEventListener('change', function () {
-    var dateWeek2 = document.getElementById('mySpDate2').value;
-    localStorage.setItem('dateWeek2', dateWeek2);
-    window.location.reload();
+    // var dateWeek2 = document.getElementById('mySpDate2').value;
+    // localStorage.setItem('dateWeek2', dateWeek2);
+    // window.location.reload();
+    var data = this.value;
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1]; // for s
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
+
+            {
+                date2: data,
+            },
+        )
+    }
 
 })
 document.getElementById('mySpDate3').addEventListener('change', function () {
-    var dateWeek3 = document.getElementById('mySpDate3').value;
-    localStorage.setItem('dateWeek3', dateWeek3);
-    window.location.reload();
+    // var dateWeek3 = document.getElementById('mySpDate3').value;
+    // localStorage.setItem('dateWeek3', dateWeek3);
+    // window.location.reload();
+    var data = this.value;
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1]; // for s
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
+
+            {
+                date3: data,
+            },
+        )
+    }
 
 })
 document.getElementById('mySpDate4').addEventListener('change', function () {
-    var dateWeek4 = document.getElementById('mySpDate4').value;
-    localStorage.setItem('dateWeek4', dateWeek4);
-    window.location.reload();
+    // var dateWeek4 = document.getElementById('mySpDate4').value;
+    // localStorage.setItem('dateWeek4', dateWeek4);
+    // window.location.reload();
+    var data = this.value;
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1]; // for s
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
+
+            {
+                date4: data,
+            },
+        )
+    }
 
 })
 document.getElementById('mySpDate5').addEventListener('change', function () {
-    var dateWeek5 = document.getElementById('mySpDate5').value;
-    localStorage.setItem('dateWeek5', dateWeek5);
-    window.location.reload();
+    // var dateWeek5 = document.getElementById('mySpDate5').value;
+    // localStorage.setItem('dateWeek5', dateWeek5);
+    // window.location.reload();
+    var data = this.value;
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1]; // for s
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
+
+            {
+                date5: data,
+            },
+        )
+    }
 
 })
 
@@ -1847,46 +2568,102 @@ document.getElementById('myGradeAct').value = dbgradeAct;
 document.getElementById('myYearAct').value = dbyearAct;
 
 //Get topic value
-document.getElementById('myTopic1').addEventListener('change', function () {
-    var getTopic1 = document.getElementById('myTopic1').value;
-    localStorage.setItem('myTopicget1', getTopic1);
-    window.location.reload();
+document.getElementById('myTopic1').addEventListener('input', function () {
+    // var getTopic1 = document.getElementById('myTopic1').value;
+    // localStorage.setItem('myTopicget1', getTopic1);
+    // window.location.reload();
+    var data = this.value;
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1]; // for s
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
+
+            {
+                topic1: data,
+            },
+        )
+    }
+})
+document.getElementById('myTopic2').addEventListener('input', function () {
+    // var getTopic2 = document.getElementById('myTopic2').value;
+    // localStorage.setItem('myTopicget2', getTopic2);
+    // window.location.reload();
+    var data = this.value;
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1]; // for s
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
+
+            {
+                topic2: data,
+            },
+        )
+    }
+
 
 })
-document.getElementById('myTopic2').addEventListener('change', function () {
-    var getTopic2 = document.getElementById('myTopic2').value;
-    localStorage.setItem('myTopicget2', getTopic2);
-    window.location.reload();
+document.getElementById('myTopic3').addEventListener('input', function () {
+    // var getTopic3 = document.getElementById('myTopic3').value;
+    // localStorage.setItem('myTopicget3', getTopic3);
+    // window.location.reload();
+    var data = this.value;
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1]; // for s
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
+
+            {
+                topic3: data,
+            },
+        )
+    }
+
 
 })
-document.getElementById('myTopic3').addEventListener('change', function () {
-    var getTopic3 = document.getElementById('myTopic3').value;
-    localStorage.setItem('myTopicget3', getTopic3);
-    window.location.reload();
+document.getElementById('myTopic4').addEventListener('input', function () {
+    // var getTopic4 = document.getElementById('myTopic4').value;
+    // localStorage.setItem('myTopicget4', getTopic4);
+    // window.location.reload();
+    var data = this.value;
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1]; // for s
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
+
+            {
+                topic4: data,
+            },
+        )
+    }
 
 })
-document.getElementById('myTopic4').addEventListener('change', function () {
-    var getTopic4 = document.getElementById('myTopic4').value;
-    localStorage.setItem('myTopicget4', getTopic4);
-    window.location.reload();
+document.getElementById('myTopic5').addEventListener('input', function () {
+    // var getTopic5 = document.getElementById('myTopic5').value;
+    // localStorage.setItem('myTopicget5', getTopic5);
+    // window.location.reload();
+    var data = this.value;
+    for (i = 0; i < stdList.length; i++) {
+        var name = stdList[i][1]; // for s
+
+        firebase.database().ref(`${dbgradeAct}/` + `recordSport/` + `${dbyearAct}/` + `${dbmonthAct}/` + name).update(
+
+            {
+                topic5: data,
+            },
+        )
+    }
 
 })
-document.getElementById('myTopic5').addEventListener('change', function () {
-    var getTopic5 = document.getElementById('myTopic5').value;
-    localStorage.setItem('myTopicget5', getTopic5);
-    window.location.reload();
-
-})
-var dbgetTopic1 = localStorage.getItem('myTopicget1'); //get value of topic 1
-document.getElementById('myTopic1').value = dbgetTopic1;
-var dbgetTopic2 = localStorage.getItem('myTopicget2'); //get value of topic 2
-document.getElementById('myTopic2').value = dbgetTopic2;
-var dbgetTopic3 = localStorage.getItem('myTopicget3'); //get value of topic 3
-document.getElementById('myTopic3').value = dbgetTopic3;
-var dbgetTopic4 = localStorage.getItem('myTopicget4'); //get value of topic 4
-document.getElementById('myTopic4').value = dbgetTopic4;
-var dbgetTopic5 = localStorage.getItem('myTopicget5'); //get value of topic 5
-document.getElementById('myTopic5').value = dbgetTopic5;
+// var dbgetTopic1 = localStorage.getItem('myTopicget1'); //get value of topic 1
+// document.getElementById('myTopic1').value = dbgetTopic1;
+// var dbgetTopic2 = localStorage.getItem('myTopicget2'); //get value of topic 2
+// document.getElementById('myTopic2').value = dbgetTopic2;
+// var dbgetTopic3 = localStorage.getItem('myTopicget3'); //get value of topic 3
+// document.getElementById('myTopic3').value = dbgetTopic3;
+// var dbgetTopic4 = localStorage.getItem('myTopicget4'); //get value of topic 4
+// document.getElementById('myTopic4').value = dbgetTopic4;
+// var dbgetTopic5 = localStorage.getItem('myTopicget5'); //get value of topic 5
+// document.getElementById('myTopic5').value = dbgetTopic5;
 
 //Save data to firebase
 var sportData = [];
