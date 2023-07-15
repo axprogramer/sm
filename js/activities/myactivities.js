@@ -31,7 +31,7 @@ function selectAllData() {
                     var attitude = CurrentRecord.val().attitude;
                     var note = CurrentRecord.val().note;
                     var total = CurrentRecord.val().total;
-                    addItemsToTable(name, id, 
+                    addItemsToTable(name, id,
                         sex, date, s, w, a, attitude, note,
                         total);
 
@@ -94,6 +94,7 @@ function addItemsToTable(name, id,
     chkS.setAttribute('name', 'myS');
     chkS.setAttribute('class', 'myS');
     chkS.setAttribute('id', `${id}s`);
+    chkS.setAttribute('onclick', `dataS(${studentN0})`);
 
     var chkW = document.createElement('input');
     chkW.type = "checkbox";
@@ -222,12 +223,411 @@ function toggleS(source) {
             var s = 3;
             checkBoxs.checked = true;
             document.getElementById(`${namerowS}`).innerHTML = 3;
+            if (dbtimesAct == 1) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 2) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 3) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 4) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 5) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 6) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 7) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 8) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 9) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 10) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 11) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 12) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 13) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 14) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 15) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 16) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 17) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 18) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 19) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 20) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
 
         }
         if (checkBoxs.checked == false) {
             checkBoxs.checked = false;
             document.getElementById(`${namerowS}`).innerHTML = 0;
+            if (dbtimesAct == 1) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
 
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 2) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 3) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 4) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 5) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 6) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 7) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 8) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 9) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 10) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 11) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 12) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 13) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 14) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 15) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 16) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 17) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 18) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 19) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 20) {
+                var data = document.getElementById(`${namerowS}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget1).update(
+
+                    {
+                        s: data.innerText,
+                    },
+                )
+
+            }
         }
     }
 
@@ -244,11 +644,412 @@ function toggleW(source) {
             var w = 1;
             checkBoxw.checked = true;
             document.getElementById(`${namerowW}`).innerHTML = w;
+            if (dbtimesAct == 1) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 2) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 3) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 4) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 5) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 6) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 7) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 8) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 9) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 10) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 11) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 12) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 13) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 14) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 15) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 16) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 17) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 18) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 19) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 20) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
         }
         if (checkBoxw.checked == false) {
             var w = 0;
             checkBoxw.checked = false;
             document.getElementById(`${namerowW}`).innerHTML = w;
+            if (dbtimesAct == 1) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 2) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 3) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 4) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 5) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 6) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 7) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 8) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 9) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 10) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 11) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 12) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 13) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 14) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 15) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 16) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 17) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 18) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 19) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 20) {
+                var data = document.getElementById(`${namerowW}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget2).update(
+
+                    {
+                        w: data.innerText,
+                    },
+                )
+
+            }
+
         }
     }
 }
@@ -264,11 +1065,413 @@ function toggleA(source) {
             var a = 1;
             checkBoxa.checked = true;
             document.getElementById(`${namerowA}`).innerHTML = a;
+            if (dbtimesAct == 1) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 2) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 3) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 4) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 5) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 6) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 7) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 8) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 9) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 10) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 11) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 12) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 13) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 14) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 15) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 16) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 17) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 18) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 19) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 20) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+
         }
         if (checkBoxa.checked == false) {
             var a = 0;
             checkBoxa.checked = false;
             document.getElementById(`${namerowA}`).innerHTML = a;
+            if (dbtimesAct == 1) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 2) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 3) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 4) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 5) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 6) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 7) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 8) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 9) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 10) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 11) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 12) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 13) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 14) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 15) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 16) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 17) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 18) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 19) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 20) {
+                var data = document.getElementById(`${namerowA}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget3).update(
+
+                    {
+                        a: data.innerText,
+                    },
+                )
+
+            }
+
         }
     }
 }
@@ -284,11 +1487,413 @@ function toggleAtt(source) {
             var att = -1;
             checkBoxatt.checked = true;
             document.getElementById(`${namerowAtt}`).innerHTML = att;
+            if (dbtimesAct == 1) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 2) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 3) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 4) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 5) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 6) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 7) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 8) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 9) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 10) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 11) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 12) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 13) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 14) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 15) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 16) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 17) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 18) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 19) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 20) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+
         }
         if (checkBoxatt.checked == false) {
             var att = 0;
             checkBoxatt.checked = false;
             document.getElementById(`${namerowAtt}`).innerHTML = att;
+            if (dbtimesAct == 1) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 2) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 3) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 4) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 5) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 6) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 7) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 8) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 9) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 10) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 11) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 12) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 13) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 14) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 15) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 16) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 17) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 18) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 19) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 20) {
+                var data = document.getElementById(`${namerowAtt}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idget4).update(
+
+                    {
+                        attitude: data.innerText,
+                    },
+                )
+
+            }
+
         }
     }
 }
@@ -364,12 +1969,215 @@ function getTotalVal() {
             });
             var getSum = parseFloat(sumS) + parseFloat(sumW) + parseFloat(sumA) + parseFloat(sumAtt);
             document.getElementById(`${allTotal}`).innerText = parseFloat(getSum);
+            //Push total auto to Firebase
+            if (dbtimesAct == 1) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total1: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 2) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total2: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 3) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total3: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 4) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total4: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 5) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total5: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 6) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total6: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 7) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total7: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 8) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total8: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 9) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total9: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 10) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total10: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 11) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total11: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 12) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total12: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 13) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total13: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 14) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total14: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 15) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total15: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 16) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total16: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 17) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total17: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 18) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total18: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 19) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total19: data.innerText,
+                    },
+                )
+
+            }
+            if (dbtimesAct == 20) {
+                var data = document.getElementById(`${allTotal}`);
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+
+                    {
+                        total20: data.innerText,
+                    },
+                )
+
+            }
+
 
         }, 100);
     }
 }
-function dataS() {
+function dataS(index) {
     //S checked for checkbook
+    // var ChID = stdList[index][1]; // for s
     for (i = 0; i < stdList.length; i++) {
 
         //get id for checkbox
@@ -394,6 +2202,206 @@ function dataS() {
                 var s = 3;
                 checkBoxs.checked = true;
                 document.getElementById(`${nameSS}`).innerHTML = s;
+                if (dbtimesAct == 1) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 2) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 3) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 4) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 5) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 6) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 7) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 8) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 9) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 10) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 11) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 12) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 13) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 14) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 15) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 16) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 17) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 18) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 19) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 20) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
 
 
             }
@@ -401,7 +2409,206 @@ function dataS() {
                 var s = 0;
                 checkBoxs.checked = false;
                 document.getElementById(`${nameSS}`).innerHTML = s;
+                if (dbtimesAct == 1) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
 
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 2) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 3) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 4) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 5) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 6) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 7) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 8) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 9) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 10) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 11) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 12) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 13) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 14) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 15) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 16) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 17) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 18) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 19) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 20) {
+                    var data = document.getElementById(`${nameSS}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            s: data.innerText,
+                        },
+                    )
+
+                }
             }
         })
         //Checkbox for W
@@ -410,11 +2617,413 @@ function dataS() {
                 var w = 1;
                 checkBoxw.checked = true;
                 document.getElementById(`${nameWW}`).innerHTML = w;
+                if (dbtimesAct == 1) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 2) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 3) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 4) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 5) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 6) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 7) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 8) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 9) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 10) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 11) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 12) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 13) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 14) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 15) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 16) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 17) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 18) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 19) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 20) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+
             }
             if (checkBoxw.checked == false) {
                 var w = 0;
                 checkBoxw.checked = false;
                 document.getElementById(`${nameWW}`).innerHTML = w;
+                if (dbtimesAct == 1) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 2) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 3) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 4) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 5) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 6) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 7) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 8) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 9) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 10) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 11) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 12) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 13) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 14) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 15) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 16) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 17) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 18) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 19) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 20) {
+                    var data = document.getElementById(`${nameWW}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            w: data.innerText,
+                        },
+                    )
+
+                }
+
             }
         })
         //Checkbox for A
@@ -423,11 +3032,413 @@ function dataS() {
                 var a = 1;
                 checkBoxa.checked = true;
                 document.getElementById(`${nameAA}`).innerHTML = a;
+                if (dbtimesAct == 1) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 2) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 3) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 4) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 5) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 6) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 7) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 8) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 9) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 10) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 11) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 12) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 13) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 14) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 15) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 16) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 17) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 18) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 19) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 20) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+
             }
             if (checkBoxa.checked == false) {
                 var a = 0;
                 checkBoxa.checked = false;
                 document.getElementById(`${nameAA}`).innerHTML = a;
+                if (dbtimesAct == 1) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 2) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 3) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 4) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 5) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 6) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 7) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 8) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 9) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 10) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 11) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 12) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 13) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 14) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 15) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 16) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 17) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 18) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 19) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 20) {
+                    var data = document.getElementById(`${nameAA}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            a: data.innerText,
+                        },
+                    )
+
+                }
+
             }
         })
         //Checkbox for Att
@@ -436,11 +3447,413 @@ function dataS() {
                 var att = -1;
                 checkBoxatt.checked = true;
                 document.getElementById(`${nameAtt}`).innerHTML = att;
+                if (dbtimesAct == 1) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 2) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 3) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 4) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 5) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 6) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 7) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 8) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 9) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 10) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 11) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 12) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 13) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 14) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 15) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 16) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 17) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 18) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 19) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 20) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+
             }
             if (checkBoxatt.checked == false) {
                 var att = 0;
                 checkBoxatt.checked = false;
                 document.getElementById(`${nameAtt}`).innerHTML = att;
+                if (dbtimesAct == 1) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 2) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 3) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 4) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 5) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 6) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 7) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 8) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 9) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 10) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 11) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 12) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 13) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 14) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 15) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 16) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 17) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 18) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 19) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+                if (dbtimesAct == 20) {
+                    var data = document.getElementById(`${nameAtt}`);
+                    firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + name).update(
+
+                        {
+                            attitude: data.innerText,
+                        },
+                    )
+
+                }
+
             }
         })
 
@@ -569,8 +3982,8 @@ function cook() {
         var total = activityData[i].total;
         firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `${dbmonthAct}/` + `${dbtimesAct}/` + idM).set(
             {
-                name:name,
-                sex:sex,
+                name: name,
+                sex: sex,
                 id: idM,
                 s: s,
                 w: w,
@@ -584,6 +3997,7 @@ function cook() {
 
     }
 }
+
 // Push total data to firebase
 function totalData() {
     for (i = 0; i < activityData.length; i++) {
