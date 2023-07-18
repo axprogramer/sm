@@ -197,6 +197,65 @@
                     </div>
                 </div>
             </div> -->
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div>
+                                <a id="getmyID"></a>
+                            </div>
+                            <table class="table table-bordered"
+                                style="color: black;font-size: 1.4vw;font-family: 'Times New Roman', Times, serif;">
+                                <tr style="border: 1px solid black;text-align: center;background-color: aquamarine;">
+                                    <td style="border: 1px solid black;">Date</td>
+                                    <td style="border: 1px solid black;">Title</td>
+                                    <td style="border: 1px solid black;width: 20vw;">Time 5A</td>
+                                    <td style="border: 1px solid black;width: 20vw;">Time 5B</td>
+                                </tr>
+                                <tbody style="border: 1px solid black;">
+                                    <tr>
+                                        <td id="getmyDate" rowspan="2" style="border: 1px solid black;" class="middle"
+                                            contenteditable>01-05-2023</td>
+                                        <td id="getmyTitle"
+                                            style="border: 1px solid black;text-align: center; color: red;"
+                                            contenteditable>Unit 0</td>
+                                        <td rowspan="2" style="border: 1px solid black;" class="middle">
+                                            <select class="form-select" id="getmyTime" style="font-size: 1.4vw">
+                                                <option>08:00 - 09:30</option>
+                                                <option>09:45 - 11:15</option>
+                                                <option>12:20 - 01:50</option>
+                                                <option>02:05 - 03:35</option>
+                                            </select>
+                                        </td>
+                                        <td rowspan="2" style="border: 1px solid black;" class="middle">
+                                            <select class="form-select" id="getmyTime2" style="font-size: 1.4vw">
+                                                <option>08:00 - 09:30</option>
+                                                <option>09:45 - 11:15</option>
+                                                <option>12:20 - 01:50</option>
+                                                <option>02:05 - 03:35</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td contenteditable id="getmyTopic" style="text-align: center;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                            <button type="button" class="btn btn-success" onclick="setData2()">Add</button>
+                            <button type="button" class="btn btn-warning" onclick="udpateData()">Update</button>
+                            <button type="button" class="btn btn-danger" onclick="deleteData()">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="container-fluid pt-2 px-4 Div1">
                 <div class="row bg-secondary rounded align-items-center justify-content-center ">
                     <div class="bg-secondary rounded h-100 p-4" style="overflow-x: auto;">
@@ -277,6 +336,10 @@
                                         <button type="button" class="btn btn-warning rounded-pill" id="goPrint">
                                             <i class="bi bi-calendar-plus me-2"></i>Print
                                         </button>
+                                        <button type="button" class="btn btn-info rounded-pill" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">
+                                            + Add
+                                        </button>
                                     </td>
                                 </tr>
                             </table>
@@ -334,265 +397,31 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        <table id="myshowTable" class="table table-bordered" style="color: black;font-size: 1.4vw;font-family: 'Times New Roman', Times, serif;">
-                                            <tr class="timeStyle">
-                                                <td>Grade</td>
-                                                <td>Monday</td>
-                                                <td>Tuesday</td>
-                                                <td>Wednesday</td>
-                                                <td>Thursday</td>
-                                                <td>Friday</td>
-                                            </tr>
-                                            <tr style="text-align: center;">
-                                                <td>5A</td>
-                                                <td contenteditable id="time1"></td>
-                                                <td contenteditable id="time2"></td>
-                                                <td contenteditable id="time3"></td>
-                                                <td contenteditable id="time4"></td>
-                                                <td contenteditable id="time5"></td>
-                                            </tr>
-                                            <tr style="text-align: center;">
-                                                <td>5B</td>
-                                                <td contenteditable id="time6"></td>
-                                                <td contenteditable id="time7"></td>
-                                                <td contenteditable id="time8"></td>
-                                                <td contenteditable id="time9"></td>
-                                                <td contenteditable id="time10"></td>
-                                            </tr>
-                                        </table>
+
                                     </div>
-                                    <table class="tg table" id="myScedual" style="font-family: 'Times New Roman', Times, serif;">
-                                        <colgroup>
-                                            <col style="width: 58.2px">
-                                            <col style="width: 122.2px">
-                                            <col style="width: 122.2px">
-                                            <col style="width: 122.2px">
-                                            <col style="width: 122.2px">
-                                            <col style="width: 122.2px">
-                                        </colgroup>
-                                        <thead>
-                                            <tr>
-                                                <th class="tg-a99a">WEEK</th>
-                                                <th class="tg-a99a">MON</th>
-                                                <th class="tg-a99a">TUE</th>
-                                                <th class="tg-a99a">WED</th>
-                                                <th class="tg-a99a">THU</th>
-                                                <th class="tg-a99a">FRI</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="tg-etzd">Date</td>
-                                                <td class="tg-etzd" id="day1" contenteditable> </td>
-                                                <td class="tg-etzd" id="day2" contenteditable> </td>
-                                                <td class="tg-etzd" id="day3" contenteditable> </td>
-                                                <td class="tg-etzd" id="day4" contenteditable> </td>
-                                                <td class="tg-etzd" id="day5" contenteditable> </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tg-i6ci" rowspan="2">Week 1</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title1"
-                                                        id="title1"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title2"
-                                                        id="title2"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title3"
-                                                        id="title3"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title4"
-                                                        id="title4"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title5"
-                                                        id="title5"></textarea></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tg-nrix"> <textarea name="point1" id="point1"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point2" id="point2"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point3" id="point3"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point4" id="point4"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point5" id="point5"></textarea>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tg-etzd">Date</td>
-                                                <td class="tg-etzd" id="day6" contenteditable> </td>
-                                                <td class="tg-etzd" id="day7" contenteditable> </td>
-                                                <td class="tg-etzd" id="day8" contenteditable> </td>
-                                                <td class="tg-etzd" id="day9" contenteditable> </td>
-                                                <td class="tg-etzd" id="day10" contenteditable> </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tg-i6ci" rowspan="2">Week 2</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title6"
-                                                        id="title6"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title7"
-                                                        id="title7"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title8"
-                                                        id="title8"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title9"
-                                                        id="title9"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title10"
-                                                        id="title10"></textarea></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tg-nrix"> <textarea name="point6" id="point6"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point7" id="point7"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point8" id="point8"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point9" id="point9"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point10" id="point10"></textarea>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tg-etzd">Date</td>
-                                                <td class="tg-etzd" id="day11" contenteditable> </td>
-                                                <td class="tg-etzd" id="day12" contenteditable> </td>
-                                                <td class="tg-etzd" id="day13" contenteditable> </td>
-                                                <td class="tg-etzd" id="day14" contenteditable> </td>
-                                                <td class="tg-etzd" id="day15" contenteditable> </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tg-i6ci" rowspan="2">Week 3</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title11"
-                                                        id="title11"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title12"
-                                                        id="title12"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title13"
-                                                        id="title13"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title14"
-                                                        id="title14"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title15"
-                                                        id="title15"></textarea></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tg-nrix"> <textarea name="point11" id="point11"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point12" id="point12"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point13" id="point13"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point14" id="point14"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point15" id="point15"></textarea>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tg-etzd">Date</td>
-                                                <td class="tg-etzd" id="day16" contenteditable> </td>
-                                                <td class="tg-etzd" id="day17" contenteditable> </td>
-                                                <td class="tg-etzd" id="day18" contenteditable> </td>
-                                                <td class="tg-etzd" id="day19" contenteditable> </td>
-                                                <td class="tg-etzd" id="day20" contenteditable> </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tg-i6ci" rowspan="2">Week 4</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title16"
-                                                        id="title16"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title17"
-                                                        id="title17"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title18"
-                                                        id="title18"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title19"
-                                                        id="title19"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title20"
-                                                        id="title20"></textarea></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="tg-nrix"> <textarea name="point16" id="point16"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point17" id="point17"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point18" id="point18"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point19" id="point19"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point20" id="point20"></textarea>
-                                                </td>
-                                            </tr>
-                                            <tr id="dis1">
-                                                <td class="tg-etzd">Date</td>
-                                                <td class="tg-etzd" id="day21" contenteditable> </td>
-                                                <td class="tg-etzd" id="day22" contenteditable> </td>
-                                                <td class="tg-etzd" id="day23" contenteditable> </td>
-                                                <td class="tg-etzd" id="day24" contenteditable> </td>
-                                                <td class="tg-etzd" id="day25" contenteditable> </td>
-                                            </tr>
-                                            <tr id="dis2">
-                                                <td class="tg-i6ci" rowspan="2">Week 5</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title21"
-                                                        id="title21"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title22"
-                                                        id="title22"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title23"
-                                                        id="title23"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title24"
-                                                        id="title24"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title25"
-                                                        id="title25"></textarea></td>
-                                            </tr>
-                                            <tr id="dis3">
-                                                <td class="tg-nrix"> <textarea name="point21" id="point21"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point22" id="point22"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point23" id="point23"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point24" id="point24"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point25" id="point25"></textarea>
-                                                </td>
-                                            </tr>
-                                            <tr id="dis4">
-                                                <td class="tg-etzd">Date</td>
-                                                <td class="tg-etzd" id="day26" contenteditable> </td>
-                                                <td class="tg-etzd" id="day27" contenteditable> </td>
-                                                <td class="tg-etzd" id="day28" contenteditable> </td>
-                                                <td class="tg-etzd" id="day29" contenteditable> </td>
-                                                <td class="tg-etzd" id="day30" contenteditable> </td>
-                                            </tr>
-                                            <tr id="dis5">
-                                                <td class="tg-i6ci" rowspan="2">Week 6</td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title26"
-                                                        id="title26"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title27"
-                                                        id="title27"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title28"
-                                                        id="title28"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title29"
-                                                        id="title29"></textarea></td>
-                                                <td class="tg-nrix"> <textarea class="redTitle" name="title30"
-                                                        id="title30"></textarea></td>
-                                                        
-                                            </tr>
-                                            <tr id="dis6">
-                                                <td class="tg-nrix"> <textarea name="point26" id="point26"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point27" id="point27"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point28" id="point28"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point29" id="point29"></textarea>
-                                                </td>
-                                                <td class="tg-nrix"> <textarea name="point30" id="point30"></textarea>
-                                                </td>
-                                            </tr>
+                                    <table class="table table-bordered"
+                                        style="color: black;font-size: 1.4vw;font-family: 'Times New Roman', Times, serif;">
+                                        <tr style="border: 1px solid black;text-align: center;background-color: rgb(255, 209, 110);
+                                                                            font-weight: bold;">
+                                            <td style="border: 1px solid black;width: 20vw;">Date</td>
+                                            <td style="border: 1px solid black;">Title</td>
+                                            <td style="border: 1px solid black;width: 20vw;">Time</td>
+                                        </tr>
+                                        <tbody style="border: 1px solid black;" id="newschedual">
+
                                         </tbody>
                                     </table>
-                                    <br>
                                     <table class="table table-borderless">
                                         <tr style="padding: 20px; font-size: 1.6vw;color: black; text-align: center;">
-                                            <td style="width: 35vh;"> </td>
-                                            <td>SalaMOM, Date: ........./........../20......</td>
+                                            <td style="width: 35vh;font-family: 'Times New Roman', Times, serif;"> </td>
+                                            <td style="font-family: 'Times New Roman', Times, serif;">SalaMOM, Date: ........./........../20......</td>
                                         </tr>
-                                        <tr style="font-size: 1.6vw;color: black; text-align: center;">
+                                        <tr style="font-size: 1.6vw;color: black; text-align: center;font-family: 'Times New Roman', Times, serif;">
                                             <td> </td>
-                                            <td>Signature</td>
+                                            <td style="font-family: 'Times New Roman', Times, serif;font-weight: bold;">Signature</td>
                                         </tr>
                                     </table>
+
                                 </div>
 
 
