@@ -128,7 +128,6 @@ function addItemsToTable(name, id, sex,
     // tdbook.id = `${noSpname}book`;
     spanBook.id = `${noSpname}bookSpa`;
     spanPT.id = `${noSpname}ptSpa`;
-
     //checkbox
     var chbook = document.createElement('input');
     chbook.type = "checkbox";

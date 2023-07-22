@@ -1054,3 +1054,23 @@ label {
     color: #000000;
     font-size: 28px;
 }
+.mytable {
+    color: black;
+    text-align: center;
+    position: relative;
+    border: 1px solid black;
+}
+
+.myThead {
+    background: white;
+    position: sticky;
+    top: 0;
+}
+.myFreze td {
+    text-align: center;
+    background: white;
+    position: sticky;
+    left: 0;
+    border: 0;
+    font-weight: bold;
+}

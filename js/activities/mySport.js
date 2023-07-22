@@ -84,6 +84,7 @@ function addItemsToTable(
 ) {
     var tbody = document.getElementById('mySportAct');
     var trow = document.createElement('tr');
+    var thead = document.createElement('thead');
     var td0 = document.createElement('td');
     var td1 = document.createElement('td');
     var td2 = document.createElement('td');
@@ -185,6 +186,7 @@ function addItemsToTable(
 
     //Set ID for ech td
     var noSpp = id.replace(/\s+/g, ''); //no name space
+    thead.className = 'myFreze';
 
     //date values
     if (date1 == undefined) {
@@ -574,7 +576,10 @@ function addItemsToTable(
 
 
     trow.appendChild(td0);
-    trow.appendChild(td1);
+    trow.appendChild(thead);
+    thead.appendChild(td1);
+    
+    // trow.appendChild(td1);
     trow.appendChild(td2);
     trow.appendChild(td3);
     trow.appendChild(td4);
