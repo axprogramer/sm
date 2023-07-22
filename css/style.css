@@ -491,11 +491,7 @@
     height: 24em;
 }
 
-.Div7 {
-    background-color: transparent;
-    padding: 10px;
-    height: 33em;
-}
+
 
 .Div10 {
     background-color: transparent;
@@ -764,7 +760,7 @@ label {
     margin-right: 2vh;
     color: #ffffff;
     right: 0;
-    height: 31rem;
+    height: 29rem;
     /* From https://css.glass */
     background: rgba(108, 114, 147, 0.159);
     /* border-radius: 16px; */
@@ -777,7 +773,7 @@ label {
 .heighBtnB {
     position: absolute;
     left: 0;
-    height: 31rem;
+    height: 29rem;
     color: #ffffff;
     /* From https://css.glass */
     background: rgba(108, 114, 147, 0.159);
@@ -1055,6 +1051,12 @@ label {
     font-size: 28px;
 }
 .mytable {
+    color: black;
+    text-align: center;
+    position: relative;
+    border: 1px solid black;
+}
+.mytable1 {
     color: black;
     text-align: center;
     position: relative;

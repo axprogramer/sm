@@ -289,10 +289,10 @@ table1.style.display = "none";
 table2.style.display = "none";
 table3.style.display = "none";
 //Style
-var div = document.getElementById("myDiv");
-div.style.backgroundColor = "transparent";
-div.style.padding = "10px";
-div.style.height = "30em";
+// var div = document.getElementById("myDiv");
+// div.style.backgroundColor = "transparent";
+// div.style.padding = "10px";
+// div.style.height = "30em";
 document.getElementById("myTable2").style.display = "block";
 document.getElementById("my1stsemetable").style.display = "block";
 

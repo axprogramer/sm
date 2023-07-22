@@ -180,7 +180,7 @@
                     </div>
                 </div>
             </div> -->
-            <div class="container-fluid pt-4 px-4 Div1">
+            <div class="container-fluid pt-4 px-4">
                 <div class="nexttt">
                     <button onclick="nextBtn()" id="nextBtn" class="heighBtnN"><i class="bi bi-caret-right-fill"
                             style="color: brown;"></i></button>
@@ -193,13 +193,13 @@
                 <div class="row bg-secondary rounded align-items-center justify-content-center mx-0">
                     <div class="bg-secondary rounded h-100 p-4" style="overflow-x: auto;">
                         <div class="bg-secondary rounded pt-4">
-                            <table class="table">
+                            <table style="width: 100%;">
                                 <tr>
-                                    <td>
+                                    <td style="text-align: center;">
                                         <h6 class="mb-4 gen"><i class="bi bi-file-person me-2"
                                                 style="color: red;"></i>Add New Students</h6>
                                     </td>
-                                    <td style="text-align: right;">
+                                    <td style="text-align: left;">
                                         <h6 class="mb-4 gen">Grade: <span id="showGradedata"></span></h6>
                                     </td>
                                 </tr>
@@ -262,6 +262,10 @@
                                                     </select>
                                                 </div>
                                             </td>
+                                            
+                                            
+                                        </tr>
+                                        <tr>
                                             <td>
                                                 <div class="form-floating mb-3">
                                                     <select class="form-select" id="myGrade"
@@ -328,12 +332,12 @@
                                                             <option value="11B">11B</option>
                                                             <option value="12A">12A</option>
                                                             <option value="12B">12B</option> -->
-
+    
                                                     </select>
                                                 </div>
                                             </td>
                                             <td>
-                                                <div class="form-floating mb-3" style="width: 6em;">
+                                                <div class="form-floating mb-3">
                                                     <select class="form-select" id="academicYear"
                                                         aria-label="Floating label select example">
                                                         <option selected>Add Academic Year</option>
@@ -349,7 +353,6 @@
                                                     </select>
                                                 </div>
                                             </td>
-
 
                                         </tr>
                                     </table>
@@ -420,29 +423,31 @@
                     </div>
                 </div>
             </div>
-            <div class="Div10">
-            </div>
+            <!-- <div class="Div10">
+            </div> -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row bg-secondary rounded align-items-center justify-content-center mx-0">
                     <div class="bg-secondary rounded h-100 p-4" style="overflow-x: auto;">
                         <h6 class="mb-4 gen-center">Student's Names</h6>
-                        <div style="overflow-x: auto;font-family:Times New Roman,serif">
+                        <div style="overflow: auto;font-family:Times New Roman,serif">
+                            <div style="overflow: auto;height: 10rem;">
+                                <table class="myTable2 table table-bordered whiteBack table-hover mytable1" id="myTable" >
+                                    <thead class="table-info bordered myThead">
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Eng Name</th>
+                                            <th scope="col">Khmer Name</th>
+                                            <th scope="col">Sex</th>
+                                            <th scope="col">Grade</th>
+                                            <!-- <th scope="col">Academic Year</th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody id="showInput5a">
+                                    </tbody>
+                                </table>
 
-                            <table class="myTable2 table table-bordered whiteBack table-hover" id="myTable">
-                                <thead class="table-info bordered">
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Eng Name</th>
-                                        <th scope="col">Khmer Name</th>
-                                        <th scope="col">Sex</th>
-                                        <th scope="col">Grade</th>
-                                        <!-- <th scope="col">Academic Year</th> -->
-                                    </tr>
-                                </thead>
-                                <tbody id="showInput5a">
-                                </tbody>
-                            </table>
+                            </div>
                         </div>
                     </div>
 

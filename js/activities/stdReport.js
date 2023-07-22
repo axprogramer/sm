@@ -170,13 +170,13 @@ document.getElementById('btnRows').addEventListener('click', function () {
 document.getElementById("showAlert").style.display = "none";
 document.getElementById("alertMagWait").style.display = "none";
 
-document.getElementById('goPrint').addEventListener('click', function () {
-    var printContents = document.getElementById('myPrint').innerHTML;
-    var originalContents = document.body.innerHTML;
-    document.body.innerHTML = "<html><head><title></title></head><body>" + printContents + "</body>";
-    window.print();
-    document.body.innerHTML = originalContents;
-    window.location.reload();
-    return true;
-})
+// document.getElementById('goPrint').addEventListener('click', function () {
+//     var printContents = document.getElementById('myPrint').innerHTML;
+//     var originalContents = document.body.innerHTML;
+//     document.body.innerHTML = "<html><head><title></title></head><body>" + printContents + "</body>";
+//     window.print();
+//     document.body.innerHTML = originalContents;
+//     window.location.reload();
+//     return true;
+// })
 
