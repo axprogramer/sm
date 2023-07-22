@@ -9,6 +9,11 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+var dbmonthAct = localStorage.getItem('previewmonthAct'); //month activity
+var dbtimesAct = localStorage.getItem('previewtimesAct'); // times activity
+var dbgradeAct = localStorage.getItem('previewgradeAct'); // grade activity
+var dbyearAct = localStorage.getItem('previewyeareAct'); // year activity
+var dbdiviAct = localStorage.getItem('previewdiviAct'); // divide activity
 
 const getElementVal = (id) => {
     return document.getElementById(id).value;
@@ -129,6 +134,8 @@ function addItemsToTable(name, id, sex,
     chbook.type = "checkbox";
     chbook.setAttribute('name', 'myBook');
     chbook.id = `${noSpname}chBook`;
+    spanBook.contentEditable = 'true';
+    spanPT.contentEditable = 'true';
 
     var chPt = document.createElement('input');
     chPt.type = "checkbox";
@@ -285,8 +292,22 @@ function addItemsToTable(name, id, sex,
     }
 
     tdS21.innerHTML = 0;
-
-
+    spanBook.addEventListener('input', function () {
+        var nnn = this.innerText;
+        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+            {
+                book: nnn,
+            },
+        )
+    })
+    spanPT.addEventListener('input', function () {
+        var nnn = this.innerText;
+        firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+            {
+                book: nnn,
+            },
+        )
+    })
     trow.appendChild(td0);
     trow.appendChild(td1);
     trow.appendChild(tdsex);
@@ -324,13 +345,15 @@ function addItemsToTable(name, id, sex,
     tbody.appendChild(trow);
     clickBook();
     clickPT();
-    dataS();
+    // dataS();
 }
 //Sum the table score
+var btnPush = document.getElementById('sumUpScore');
 function dataS() {
     //S checked for checkbook
     for (i = 0; i < stdList.length; i++) {
         //Sum for All score
+        var idM = stdList[i][1];
         var getName = stdList[i][0]; // for s
         var noSp = getName.replace(/\s+/g, '');
         var getTotal = `${noSp}s21`;
@@ -356,128 +379,191 @@ function dataS() {
         var s18 = `${noSp}s18`;
         var s19 = `${noSp}s19`;
         var s20 = `${noSp}s20`;
-        setInterval(function () {
-            var gbook = 0;
-            var gpt = 0;
-            var gs1 = 0;
-            var gs2 = 0;
-            var gs3 = 0;
-            var gs4 = 0;
-            var gs5 = 0;
-            var gs6 = 0;
-            var gs7 = 0;
-            var gs8 = 0;
-            var gs9 = 0;
-            var gs10 = 0;
-            var gs11 = 0;
-            var gs12 = 0;
-            var gs13 = 0;
-            var gs14 = 0;
-            var gs15 = 0;
-            var gs16 = 0;
-            var gs17 = 0;
-            var gs18 = 0;
-            var gs19 = 0;
-            var gs20 = 0;
-            $(`.${sbook}`).each(function () {
-                gbook += parseFloat($(this).text()); // 
-            });
-            $(`.${spt}`).each(function () {
-                gpt += parseFloat($(this).text()); // 
-            });
-            $(`.${s1}`).each(function () {
-                gs1 += parseFloat($(this).text()); // 
-            });
-            $(`.${s2}`).each(function () {
-                gs2 += parseFloat($(this).text()); // 
-            });
-            $(`.${s3}`).each(function () {
-                gs3 += parseFloat($(this).text()); // 
-            });
-            $(`.${s4}`).each(function () {
-                gs4 += parseFloat($(this).text()); // 
-            });
-            $(`.${s5}`).each(function () {
-                gs5 += parseFloat($(this).text()); // 
-            });
-            $(`.${s6}`).each(function () {
-                gs6 += parseFloat($(this).text()); // 
-            });
-            $(`.${s7}`).each(function () {
-                gs7 += parseFloat($(this).text()); // 
-            });
-            $(`.${s8}`).each(function () {
-                gs8 += parseFloat($(this).text()); // 
-            });
-            $(`.${s9}`).each(function () {
-                gs9 += parseFloat($(this).text()); // 
-            });
-            $(`.${s10}`).each(function () {
-                gs10 += parseFloat($(this).text()); // 
-            });
-            $(`.${s11}`).each(function () {
-                gs11 += parseFloat($(this).text()); // 
-            });
-            $(`.${s12}`).each(function () {
-                gs12 += parseFloat($(this).text()); // 
-            });
-            $(`.${s13}`).each(function () {
-                gs13 += parseFloat($(this).text()); // 
-            });
-            $(`.${s14}`).each(function () {
-                gs14 += parseFloat($(this).text()); // 
-            });
-            $(`.${s15}`).each(function () {
-                gs15 += parseFloat($(this).text()); // 
-            });
-            $(`.${s16}`).each(function () {
-                gs16 += parseFloat($(this).text()); // 
-            });
-            $(`.${s17}`).each(function () {
-                gs17 += parseFloat($(this).text()); // 
-            });
-            $(`.${s18}`).each(function () {
-                gs18 += parseFloat($(this).text()); // 
-            });
-            $(`.${s19}`).each(function () {
-                gs19 += parseFloat($(this).text()); // 
-            });
-            $(`.${s20}`).each(function () {
-                gs20 += parseFloat($(this).text()); // 
-            });
-            var bookPt = parseFloat(gbook) + parseFloat(gpt);
-            var actSum =
-                parseFloat(gs1) +
-                parseFloat(gs2) +
-                parseFloat(gs3) +
-                parseFloat(gs4) +
-                parseFloat(gs5) +
-                parseFloat(gs6) +
-                parseFloat(gs7) +
-                parseFloat(gs8) +
-                parseFloat(gs9) +
-                parseFloat(gs10) +
-                parseFloat(gs11) +
-                parseFloat(gs12) +
-                parseFloat(gs13) +
-                parseFloat(gs14) +
-                parseFloat(gs15) +
-                parseFloat(gs16) +
-                parseFloat(gs17) +
-                parseFloat(gs18) +
-                parseFloat(gs19) +
-                parseFloat(gs20);
-            var di = actSum / `${dbdiviAct}` / 2;
-            var sumAll = bookPt + di;
-            sumAll = parseFloat(sumAll).toFixed(2);
-            document.getElementById(`${getTotal}`).innerHTML = sumAll;
+        // setInterval(function () {
+        var gbook = 0;
+        var gpt = 0;
+        var gs1 = 0;
+        var gs2 = 0;
+        var gs3 = 0;
+        var gs4 = 0;
+        var gs5 = 0;
+        var gs6 = 0;
+        var gs7 = 0;
+        var gs8 = 0;
+        var gs9 = 0;
+        var gs10 = 0;
+        var gs11 = 0;
+        var gs12 = 0;
+        var gs13 = 0;
+        var gs14 = 0;
+        var gs15 = 0;
+        var gs16 = 0;
+        var gs17 = 0;
+        var gs18 = 0;
+        var gs19 = 0;
+        var gs20 = 0;
+        $(`.${sbook}`).each(function () {
+            gbook += parseFloat($(this).text()); // 
+        });
+        $(`.${spt}`).each(function () {
+            gpt += parseFloat($(this).text()); // 
+        });
+        $(`.${s1}`).each(function () {
+            gs1 += parseFloat($(this).text()); // 
+        });
+        $(`.${s2}`).each(function () {
+            gs2 += parseFloat($(this).text()); // 
+        });
+        $(`.${s3}`).each(function () {
+            gs3 += parseFloat($(this).text()); // 
+        });
+        $(`.${s4}`).each(function () {
+            gs4 += parseFloat($(this).text()); // 
+        });
+        $(`.${s5}`).each(function () {
+            gs5 += parseFloat($(this).text()); // 
+        });
+        $(`.${s6}`).each(function () {
+            gs6 += parseFloat($(this).text()); // 
+        });
+        $(`.${s7}`).each(function () {
+            gs7 += parseFloat($(this).text()); // 
+        });
+        $(`.${s8}`).each(function () {
+            gs8 += parseFloat($(this).text()); // 
+        });
+        $(`.${s9}`).each(function () {
+            gs9 += parseFloat($(this).text()); // 
+        });
+        $(`.${s10}`).each(function () {
+            gs10 += parseFloat($(this).text()); // 
+        });
+        $(`.${s11}`).each(function () {
+            gs11 += parseFloat($(this).text()); // 
+        });
+        $(`.${s12}`).each(function () {
+            gs12 += parseFloat($(this).text()); // 
+        });
+        $(`.${s13}`).each(function () {
+            gs13 += parseFloat($(this).text()); // 
+        });
+        $(`.${s14}`).each(function () {
+            gs14 += parseFloat($(this).text()); // 
+        });
+        $(`.${s15}`).each(function () {
+            gs15 += parseFloat($(this).text()); // 
+        });
+        $(`.${s16}`).each(function () {
+            gs16 += parseFloat($(this).text()); // 
+        });
+        $(`.${s17}`).each(function () {
+            gs17 += parseFloat($(this).text()); // 
+        });
+        $(`.${s18}`).each(function () {
+            gs18 += parseFloat($(this).text()); // 
+        });
+        $(`.${s19}`).each(function () {
+            gs19 += parseFloat($(this).text()); // 
+        });
+        $(`.${s20}`).each(function () {
+            gs20 += parseFloat($(this).text()); // 
+        });
+        var bookPt = parseFloat(gbook) + parseFloat(gpt);
+        var actSum =
+            parseFloat(gs1) +
+            parseFloat(gs2) +
+            parseFloat(gs3) +
+            parseFloat(gs4) +
+            parseFloat(gs5) +
+            parseFloat(gs6) +
+            parseFloat(gs7) +
+            parseFloat(gs8) +
+            parseFloat(gs9) +
+            parseFloat(gs10) +
+            parseFloat(gs11) +
+            parseFloat(gs12) +
+            parseFloat(gs13) +
+            parseFloat(gs14) +
+            parseFloat(gs15) +
+            parseFloat(gs16) +
+            parseFloat(gs17) +
+            parseFloat(gs18) +
+            parseFloat(gs19) +
+            parseFloat(gs20);
+        var di = actSum / `${dbdiviAct}` / 2;
+        var sumAll = bookPt + di;
+        sumAll = parseFloat(sumAll).toFixed(2);
+        document.getElementById(`${getTotal}`).innerHTML = sumAll;
 
+        if (dbmonthAct == 'October') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    speakingNov: sumAll,
+                },
+            )
+        }
+        if (dbmonthAct == 'November') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    speakingDec: sumAll,
+                },
+            )
+        }
+        if (dbmonthAct == 'December') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    speakingJan: sumAll,
+                },
+            )
+        }
+        if (dbmonthAct == 'January') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    speakingfeb: sumAll,
+                },
+            )
+        }
+        if (dbmonthAct == 'February') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    speakingmar: sumAll,
+                },
+            )
+        }
+        if (dbmonthAct == 'March') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    speakingma: sumAll,
+                },
+            )
+        }
+        if (dbmonthAct == 'April-May') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    speakingjun: sumAll,
+                },
+            )
+        }
+        if (dbmonthAct == 'June') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    speakingjuly: sumAll,
+                },
+            )
+        }
+        if (dbmonthAct == 'July') {
+            firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
+                {
+                    speakingfinal: sumAll,
+                },
+            )
+        }
 
-
-        }, 1000);
+        // }, 1000);
 
     }
 }
+btnPush.onclick = dataS;
 //Check to give value
 function toggleBook(source) {
     checkboxes = document.getElementsByName('myBook');
@@ -494,11 +580,23 @@ function toggleBook(source) {
         if (checkboxBook.checked == true) {
             checkboxBook.checked = true;
             document.getElementById(`${getNameTd}`).innerText = 2.5;
+            var data = 2.5;
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+                {
+                    book: data,
+                },
+            )
 
         }
         if (checkboxBook.checked == false) {
             checkboxBook.checked = false;
             document.getElementById(`${getNameTd}`).innerText = 0;
+            var data = 0;
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+                {
+                    book: data,
+                },
+            )
 
         }
 
@@ -525,11 +623,23 @@ function clickBook() {
             if (checkboxBook.checked == true) {
                 checkboxBook.checked = true;
                 document.getElementById(`${getNameTd}`).innerText = 2.5;
+                var data = 2.5;
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+                    {
+                        book: data,
+                    },
+                )
 
             }
             if (checkboxBook.checked == false) {
                 checkboxBook.checked = false;
                 document.getElementById(`${getNameTd}`).innerText = 0;
+                var data = 0;
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+                    {
+                        book: data,
+                    },
+                )
 
             }
         })
@@ -552,11 +662,23 @@ function togglePT(source) {
         if (checkboxPT.checked == true) {
             checkboxPT.checked = true;
             document.getElementById(`${getNameTd}`).innerText = 5;
+            var data = 5;
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+                {
+                    pt: data,
+                },
+            )
 
         }
         if (checkboxPT.checked == false) {
             checkboxPT.checked = false;
             document.getElementById(`${getNameTd}`).innerText = 0;
+            var data = 0;
+            firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+                {
+                    pt: data,
+                },
+            )
 
         }
         //when click
@@ -564,11 +686,23 @@ function togglePT(source) {
             if (checkboxPT.checked == true) {
                 checkboxPT.checked = true;
                 document.getElementById(`${getNameTd}`).innerText = 5;
+                var data = 5;
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+                    {
+                        pt: data,
+                    },
+                )
 
             }
             if (checkboxPT.checked == false) {
                 checkboxPT.checked = false;
                 document.getElementById(`${getNameTd}`).innerText = 0;
+                var data = 0;
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+                    {
+                        pt: data,
+                    },
+                )
 
             }
         })
@@ -596,11 +730,23 @@ function clickPT() {
             if (checkboxPT.checked == true) {
                 checkboxPT.checked = true;
                 document.getElementById(`${getNameTd}`).innerText = 5;
+                var data = 5;
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+                    {
+                        pt: data,
+                    },
+                )
 
             }
             if (checkboxPT.checked == false) {
                 checkboxPT.checked = false;
                 document.getElementById(`${getNameTd}`).innerText = 0;
+                var data = 0;
+                firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + name).update(
+                    {
+                        pt: data,
+                    },
+                )
 
             }
         })
@@ -647,11 +793,6 @@ document.getElementById('myDivide').addEventListener('change', function () {
     window.location.reload();
 
 })
-var dbmonthAct = localStorage.getItem('previewmonthAct'); //month activity
-var dbtimesAct = localStorage.getItem('previewtimesAct'); // times activity
-var dbgradeAct = localStorage.getItem('previewgradeAct'); // grade activity
-var dbyearAct = localStorage.getItem('previewyeareAct'); // year activity
-var dbdiviAct = localStorage.getItem('previewdiviAct'); // divide activity
 
 document.getElementById('myMonthAct').value = dbmonthAct;
 document.getElementById('myTimesAct').value = dbtimesAct;
@@ -689,7 +830,7 @@ document.getElementById('btnRows').addEventListener('click', function () {
     document.getElementById("alertMag").style.display = "none";
     document.getElementById("alertMagWait").style.display = "block";
     setTimeout(function () {
-        cook();
+        // cook();
         saveToStock();
         setTimeout(function () {
             window.location.reload();
@@ -708,7 +849,7 @@ function cook() {
 
         firebase.database().ref(`${dbgradeAct}/` + `recordActivity/` + `${dbyearAct}/` + `Total/` + `${dbmonthAct}/` + idM).update(
             {
-                
+
                 id: idM,
                 sex: sex,
                 book: book,
@@ -728,9 +869,6 @@ function saveToStock() {
         if (dbmonthAct == 'October') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    
-                    id: idM,
-                    sex: sex,
                     speakingNov: total,
                 },
             )
@@ -738,9 +876,6 @@ function saveToStock() {
         if (dbmonthAct == 'November') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    
-                    id: idM,
-                    sex: sex,
                     speakingDec: total,
                 },
             )
@@ -748,9 +883,6 @@ function saveToStock() {
         if (dbmonthAct == 'December') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    
-                    id: idM,
-                    sex: sex,
                     speakingJan: total,
                 },
             )
@@ -758,9 +890,6 @@ function saveToStock() {
         if (dbmonthAct == 'January') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    
-                    id: idM,
-                    sex: sex,
                     speakingfeb: total,
                 },
             )
@@ -768,9 +897,6 @@ function saveToStock() {
         if (dbmonthAct == 'February') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    
-                    id: idM,
-                    sex: sex,
                     speakingmar: total,
                 },
             )
@@ -778,9 +904,6 @@ function saveToStock() {
         if (dbmonthAct == 'March') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    
-                    id: idM,
-                    sex: sex,
                     speakingma: total,
                 },
             )
@@ -788,9 +911,6 @@ function saveToStock() {
         if (dbmonthAct == 'April-May') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    
-                    id: idM,
-                    sex: sex,
                     speakingjun: total,
                 },
             )
@@ -798,9 +918,6 @@ function saveToStock() {
         if (dbmonthAct == 'June') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    
-                    id: idM,
-                    sex: sex,
                     speakingjuly: total,
                 },
             )
@@ -808,10 +925,7 @@ function saveToStock() {
         if (dbmonthAct == 'July') {
             firebase.database().ref(`${dbgradeAct}/` + `${dbyearAct}/` + idM).update(
                 {
-                    
-                    id: idM,
-                    sex: sex,
-                    listeningfinal: total,
+                    speakingfinal: total,
                 },
             )
         }
