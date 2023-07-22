@@ -10,9 +10,9 @@
 }
 
 :root {
-    --primary: #EB1616;
+    --primary: #ff0000;
     --secondary: #191C24;
-    --light: rgb(108, 114, 147);
+    --light: rgb(94, 249, 249);
     --dark: #000000;
     --white: #ffffff;
 }
