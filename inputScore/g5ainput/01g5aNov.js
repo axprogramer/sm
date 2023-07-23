@@ -43,10 +43,7 @@ function selectAllData() {
           var myKh = CurrentRecord.val().myKh;
           addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
             readingNov, averageNov, rankNOv, myKh);
-          showAuto();
-          b = 1;
-          document.getElementById('showNNN').value = b;
-          cccSS();
+          
          
         }
       );
@@ -124,8 +121,15 @@ function addItemsToTable(name, id, sex, speakingNov, writingNov, listeningNov,
 
   td1.innerHTML = `<button type="button" class="button-7" onclick="Fillbox(${studentN0})">${myKh}</button>`;
   tbody.appendChild(trow);
-}
+  showAuto();
+  b = 1;
+  document.getElementById('showNNN').value = b;
+  cccSS();
 
+}
+// setInterval(()=>{
+//   selectAllData();
+// },100)
 
 var Mname = document.getElementById('myName');
 var Mid = document.getElementById('myID');
@@ -314,6 +318,7 @@ function UpStd(e) {
     });
     document.getElementById("showAlert").style.display = "none";
     nextBtn();
+    
 
   };
   sleep(2000);
