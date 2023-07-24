@@ -1,17 +1,3 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getStorage, ref as sRef, uploadBytesResumable,getDownloadURL }
- from "https://www.gstatic.com/firebasejs/9.23.0/firebase-storage.js"
-const firebaseConfig = {
-    apiKey: "AIzaSyAOX5I_BB9soXF4yHMp9NCPVk2Z-d3DEPE",
-    authDomain: "teachingrecord-6b575.firebaseapp.com",
-    databaseURL: "https://teachingrecord-6b575-default-rtdb.firebaseio.com",
-    projectId: "teachingrecord-6b575",
-    storageBucket: "teachingrecord-6b575.appspot.com",
-    messagingSenderId: "1097574891233",
-    appId: "1:1097574891233:web:d69ed85c4f4b83daad41a0"
-};
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
 var files = [];
 var reader = new FileReader();
 var nameBox = document.getElementById('nameBox');
@@ -58,10 +44,10 @@ async function UploadProcess() {
     const metaData = {
         contenType: ImgToUpload.type
     }
-    const storage = getStorage();
-    const stroageRef = sRef(storage, 'StdImages/' + `${dbYear}/` + `${dbGrade}/` + ImgName);
-    const UploadTask = uploadBytesResumable(stroageRef, ImgToUpload, metaData);
-
+    const storage = firebase.storage().ref();
+    // const stroageRef = storage.child('StdImages/' + `${dbYear}/` + `${dbGrade}/` + ImgName);
+    // const UploadTask = uploadBytesResumable(stroageRef, ImgToUpload, metaData);
+    var UploadTask = storage.child('StdImages/' + `${dbYear}/` + `${dbGrade}/` + ImgName).put(ImgToUpload);
     UploadTask.on('state-changed', (snapshot) => {
         var progess = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         progess = parseFloat(progess).toFixed(0);
@@ -71,7 +57,7 @@ async function UploadProcess() {
         alert("error: image not uploaded!");
     },
     () => {
-        getDownloadURL(UploadTask.snapshot.ref).then((getDownloadURL) => {
+        UploadTask.snapshot.ref.getDownloadURL().then((getDownloadURL) => {
             showURL.value = getDownloadURL;
             proglab.innerHTML = `Upload completed!<img style="width: 75px;" src="./img/completedPer.gif">`;
             setTimeout(function(){
